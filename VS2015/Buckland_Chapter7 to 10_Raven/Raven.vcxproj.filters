@@ -77,6 +77,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{f3f5ab42-49d8-4348-aa63-66655abd9be1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\teams">
+      <UniqueIdentifier>{b8560ffb-5879-49da-8ee7-4205140975da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -267,6 +270,15 @@
     </ClCompile>
     <ClCompile Include="..\Common\misc\WindowUtils.cpp">
       <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Team.cpp">
+      <Filter>Game\teams</Filter>
+    </ClCompile>
+    <ClCompile Include="Single_Target_Team.cpp">
+      <Filter>Game\teams</Filter>
+    </ClCompile>
+    <ClCompile Include="Random_Single_Target_Team.cpp">
+      <Filter>Game\teams</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -605,6 +617,15 @@
     </ClInclude>
     <ClInclude Include="..\Common\misc\WindowUtils.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Team.h">
+      <Filter>Game\teams</Filter>
+    </ClInclude>
+    <ClInclude Include="Single_Target_Team.h">
+      <Filter>Game\teams</Filter>
+    </ClInclude>
+    <ClInclude Include="Random_Single_Target_Team.h">
+      <Filter>Game\teams</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

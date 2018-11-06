@@ -28,7 +28,7 @@ class Raven_Bot;
 class Goal_Think;
 class Raven_WeaponSystem;
 class Raven_SensoryMemory;
-
+class Team;
 
 
 
@@ -45,6 +45,9 @@ private:
 
   //a pointer to the world data
   Raven_Game*                        m_pWorld;
+
+  //Team the bot is a part of
+  Team*								 m_pTeam;
 
   //this object handles the arbitration and processing of high level goals
   Goal_Think*                        m_pBrain;
@@ -156,6 +159,8 @@ public:
   bool          isDead()const{return m_Status == dead;}
   bool          isAlive()const{return m_Status == alive;}
   bool          isSpawning()const{return m_Status == spawning;}
+
+
   
   void          SetSpawning(){m_Status = spawning;}
   void          SetDead(){m_Status = dead;}

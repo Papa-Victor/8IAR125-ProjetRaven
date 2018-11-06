@@ -19,6 +19,7 @@
 #include "goals/Raven_Goal_Types.h"
 #include "goals/Goal_Think.h"
 
+#include "Team.h"
 
 #include "Debug/DebugConsole.h"
 
@@ -40,6 +41,7 @@ Raven_Bot::Raven_Bot(Raven_Game* world,Vector2D pos):
                  m_pPathPlanner(NULL),
                  m_pSteering(NULL),
                  m_pWorld(world),
+				 m_pTeam(NULL),
                  m_pBrain(NULL),
                  m_iNumUpdatesHitPersistant((int)(FrameRate * script->GetDouble("HitFlashTime"))),
                  m_bHit(false),

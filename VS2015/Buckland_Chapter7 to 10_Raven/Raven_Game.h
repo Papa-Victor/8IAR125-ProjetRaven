@@ -25,6 +25,7 @@
 #include "game/EntityFunctionTemplates.h"
 #include "Raven_Bot.h"
 #include "navigation/pathmanager.h"
+#include "Single_Target_Team.h"
 
 
 class BaseGameEntity;
@@ -47,6 +48,9 @@ private:
   //the user may select a bot to control manually. This is a pointer to that
   //bot
   Raven_Bot*                       m_pSelectedBot;
+
+  //a list of the active single target teams
+  std::vector<Single_Target_Team>  m_singleTargetTeams;
   
   //this list contains any active projectiles (slugs, rockets,
   //shotgun pellets, etc)
