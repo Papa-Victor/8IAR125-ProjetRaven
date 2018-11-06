@@ -16,6 +16,6 @@ public:
 	Single_Target_Team();
 	virtual ~Single_Target_Team();
 
-	void CheckDeadBot(const Raven_Bot* bot);
+	void CheckDeadBot(const Raven_Bot* bot) override;
 };
 #endif // !SINGLE_TARGET_TEAM_H

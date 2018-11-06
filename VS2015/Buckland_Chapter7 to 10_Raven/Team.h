@@ -14,14 +14,15 @@ protected:
 	std::list<Raven_Bot*> m_teamBots;
 
 	bool BotInTeam(Raven_Bot const *bot)const;
-	void addBot(Raven_Bot* bot) { m_teamBots.push_back(bot); }
 
 public:
 
 	Team();
 	~Team();
 
-	virtual bool HandleMessage(const Telegram& msg) = 0;
+	virtual void AddBot(Raven_Bot* bot) = 0;
+	virtual void RemoveBot(Raven_Bot* bot) = 0;
+	virtual void CheckDeadBot(const Raven_Bot* bot){}
 
 };
 #endif // !TEAM_H

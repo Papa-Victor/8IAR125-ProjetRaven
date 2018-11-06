@@ -25,9 +25,9 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG152876 DB	'AT: ', 00H
+$SG152888 DB	'AT: ', 00H
 	ORG $+3
-$SG152877 DB	', ', 00H
+$SG152889 DB	', ', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -18609,7 +18609,7 @@ _pBot$ = 24						; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	mov	ecx, DWORD PTR tv161[ebp]
 	push	ecx
-	push	OFFSET $SG152876
+	push	OFFSET $SG152888
 	lea	edx, DWORD PTR $T10[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -18670,7 +18670,7 @@ _pBot$ = 24						; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
 	mov	ecx, DWORD PTR tv165[ebp]
 	push	ecx
-	push	OFFSET $SG152877
+	push	OFFSET $SG152889
 	push	2
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
@@ -18948,7 +18948,7 @@ _this$ = -4						; size = 4
 ?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ PROC ; Raven_Bot::GetTargetSys, COMDAT
 ; _this$ = ecx
 
-; 213  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
+; 218  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18970,7 +18970,7 @@ _this$ = -4						; size = 4
 ?GetBrain@Raven_Bot@@QAEQAVGoal_Think@@XZ PROC		; Raven_Bot::GetBrain, COMDAT
 ; _this$ = ecx
 
-; 211  :   Goal_Think* const                  GetBrain(){return m_pBrain;}
+; 216  :   Goal_Think* const                  GetBrain(){return m_pBrain;}
 
 	push	ebp
 	mov	ebp, esp

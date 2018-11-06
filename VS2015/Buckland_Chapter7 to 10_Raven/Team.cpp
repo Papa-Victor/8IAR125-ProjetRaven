@@ -4,10 +4,8 @@
 
 bool Team::BotInTeam(Raven_Bot const *bot) const
 {
-	for (std::list<Raven_Bot*>::const_iterator it = m_teamBots.begin(); it != m_teamBots.end(); it++) {
-		if (bot == *it) {
-			return true;
-		}
+	if (bot->GetTeam() == this) {
+		return true;
 	}
 	return false;
 }

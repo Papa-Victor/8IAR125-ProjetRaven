@@ -27,9 +27,9 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG162496 DB	'DefaultGiverTriggerRange', 00H
+$SG162508 DB	'DefaultGiverTriggerRange', 00H
 	ORG $+3
-$SG162497 DB	'Health_RespawnDelay', 00H
+$SG162509 DB	'Health_RespawnDelay', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -30830,7 +30830,7 @@ _in$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG162496
+	push	OFFSET $SG162508
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv214[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -30865,7 +30865,7 @@ _in$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG162497
+	push	OFFSET $SG162509
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv215[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1

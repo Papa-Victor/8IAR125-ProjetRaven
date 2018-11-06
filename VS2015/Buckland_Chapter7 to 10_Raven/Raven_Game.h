@@ -25,13 +25,12 @@
 #include "game/EntityFunctionTemplates.h"
 #include "Raven_Bot.h"
 #include "navigation/pathmanager.h"
-#include "Single_Target_Team.h"
-
 
 class BaseGameEntity;
 class Raven_Projectile;
 class Raven_Map;
 class GraveMarkers;
+class Team;
 
 
 
@@ -49,8 +48,8 @@ private:
   //bot
   Raven_Bot*                       m_pSelectedBot;
 
-  //a list of the active single target teams
-  std::vector<Single_Target_Team>  m_singleTargetTeams;
+  //a list of the active teams
+  std::vector<Team*>  m_vTeams;
   
   //this list contains any active projectiles (slugs, rockets,
   //shotgun pellets, etc)

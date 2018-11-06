@@ -27,9 +27,9 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG163644 DB	'DefaultGiverTriggerRange', 00H
+$SG163656 DB	'DefaultGiverTriggerRange', 00H
 	ORG $+3
-$SG163645 DB	'Weapon_RespawnDelay', 00H
+$SG163657 DB	'Weapon_RespawnDelay', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -33444,7 +33444,7 @@ _in$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG163644
+	push	OFFSET $SG163656
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv204[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -33480,7 +33480,7 @@ _in$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG163645
+	push	OFFSET $SG163657
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv205[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -34944,7 +34944,7 @@ _this$ = -4						; size = 4
 ?GetWeaponSys@Raven_Bot@@QBEQAVRaven_WeaponSystem@@XZ PROC ; Raven_Bot::GetWeaponSys, COMDAT
 ; _this$ = ecx
 
-; 215  :   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
+; 220  :   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
 
 	push	ebp
 	mov	ebp, esp
@@ -34952,7 +34952,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax+176]
+	mov	eax, DWORD PTR [eax+180]
 	mov	esp, ebp
 	pop	ebp
 	ret	0

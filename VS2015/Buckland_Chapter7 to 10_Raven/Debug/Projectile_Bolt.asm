@@ -25,17 +25,17 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG171410 DB	'Bolt_MaxForce', 00H
+$SG171376 DB	'Bolt_MaxForce', 00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+1
-$SG171411 DB	'Bolt_Mass', 00H
+$SG171377 DB	'Bolt_Mass', 00H
 	ORG $+2
-$SG171412 DB	'Bolt_MaxSpeed', 00H
+$SG171378 DB	'Bolt_MaxSpeed', 00H
 	ORG $+2
-$SG171413 DB	'Bolt_Scale', 00H
+$SG171379 DB	'Bolt_Scale', 00H
 	ORG $+1
-$SG171414 DB	'Bolt_Damage', 00H
-$SG171415 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+$SG171380 DB	'Bolt_Damage', 00H
+$SG171381 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
 	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
 	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
@@ -54,7 +54,7 @@ $SG171415 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	00H, 'o', 00H, 'j', 00H, 'e', 00H, 'c', 00H, 't', 00H, 'i', 00H
 	DB	'l', 00H, 'e', 00H, '_', 00H, 'b', 00H, 'o', 00H, 'l', 00H, 't'
 	DB	00H, '.', 00H, 'c', 00H, 'p', 00H, 'p', 00H, 00H, 00H
-$SG171416 DB	't', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'e', 00H, 't', 00H
+$SG171382 DB	't', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'e', 00H, 't', 00H
 	DB	' ', 00H, '!', 00H, '=', 00H, ' ', 00H, 'V', 00H, 'e', 00H, 'c'
 	DB	00H, 't', 00H, 'o', 00H, 'r', 00H, '2', 00H, 'D', 00H, '(', 00H
 	DB	')', 00H, 00H, 00H
@@ -484,7 +484,6 @@ PUBLIC	??_C@_1NK@EBBPJMHO@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$
 PUBLIC	??_C@_1GM@FNBFNBEL@?$AA?$CC?$AAc?$AAa?$AAn?$AA?8?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe@ ; `string'
 PUBLIC	??_C@_0CP@MDHADBHN@can?8t?5dereference?5out?5of?5range?5@ ; `string'
 PUBLIC	??_C@_1GC@JDCKOLAC@?$AA?$CC?$AAc?$AAa?$AAn?$AA?8?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe@ ; `string'
-PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_0BA@JFNIOLAK@string?5too?5long@		; `string'
 PUBLIC	??_C@_0BM@BALDKKHE@list?5iterators?5incompatible@ ; `string'
 PUBLIC	??_C@_1DM@KDLJAKOP@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs@ ; `string'
@@ -498,6 +497,7 @@ PUBLIC	??_C@_1EA@DJDGNIII@?$AA?$CC?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt
 PUBLIC	??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ ; `string'
 PUBLIC	??_C@_1CFG@NNFHAOFN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ ; `string'
+PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_0CC@KEJJOMBH@list?5erase?5iterator?5outside?5ran@ ; `string'
 PUBLIC	??_C@_1DII@KPOMEIKI@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAl?$AAi?$AAs?$AAt?$AA?$DM?$AAs?$AAt?$AAr?$AAu?$AAc@ ; `string'
 PUBLIC	??_C@_1EI@FHIDKIBN@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe@ ; `string'
@@ -944,6 +944,10 @@ CONST	SEGMENT
 ??_C@_0CC@KEJJOMBH@list?5erase?5iterator?5outside?5ran@ DB 'list erase it'
 	DB	'erator outside range', 00H			; `string'
 CONST	ENDS
+;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
+CONST	SEGMENT
+??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@
 CONST	SEGMENT
 ??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ DB 's'
@@ -1191,10 +1195,6 @@ CONST	ENDS
 ;	COMDAT ??_C@_0BA@JFNIOLAK@string?5too?5long@
 CONST	SEGMENT
 ??_C@_0BA@JFNIOLAK@string?5too?5long@ DB 'string too long', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
-CONST	SEGMENT
-??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1GC@JDCKOLAC@?$AA?$CC?$AAc?$AAa?$AAn?$AA?8?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe@
 CONST	SEGMENT
@@ -9722,7 +9722,7 @@ _this$ = -4						; size = 4
 ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
 ; _this$ = ecx
 
-; 162  :   Raven_Map* const                         GetMap(){return m_pMap;}
+; 161  :   Raven_Map* const                         GetMap(){return m_pMap;}
 
 	push	ebp
 	mov	ebp, esp
@@ -9810,7 +9810,7 @@ _this$ = -4						; size = 4
 ?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ PROC		; Raven_Bot::GetWorld, COMDAT
 ; _this$ = ecx
 
-; 208  :   Raven_Game* const                  GetWorld(){return m_pWorld;} 
+; 213  :   Raven_Game* const                  GetWorld(){return m_pWorld;} 
 
 	push	ebp
 	mov	ebp, esp
@@ -9833,7 +9833,7 @@ ___$ReturnUdt$ = 8					; size = 4
 ?Facing@Raven_Bot@@QBE?AUVector2D@@XZ PROC		; Raven_Bot::Facing, COMDAT
 ; _this$ = ecx
 
-; 155  :   Vector2D      Facing()const{return m_vFacing;}
+; 158  :   Vector2D      Facing()const{return m_vFacing;}
 
 	push	ebp
 	mov	ebp, esp
@@ -16450,7 +16450,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T9[ebp], esp
-	push	OFFSET $SG171410
+	push	OFFSET $SG171376
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv276[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -16465,7 +16465,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG171411
+	push	OFFSET $SG171377
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv277[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -16480,7 +16480,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG171412
+	push	OFFSET $SG171378
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv278[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -16495,7 +16495,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG171413
+	push	OFFSET $SG171379
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv279[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -16510,7 +16510,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG171414
+	push	OFFSET $SG171380
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv280[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
@@ -16586,8 +16586,8 @@ _target$ = 12						; size = 16
 	test	edx, edx
 	jne	SHORT $LN3@Bolt
 	push	29					; 0000001dH
-	push	OFFSET $SG171415
-	push	OFFSET $SG171416
+	push	OFFSET $SG171381
+	push	OFFSET $SG171382
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN3@Bolt:

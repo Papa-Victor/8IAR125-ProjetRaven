@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG174615 DB	'RailGun_MaxRoundsCarried', 00H
+$SG174627 DB	'RailGun_MaxRoundsCarried', 00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+2
-$SG174617 DB	'RocketLauncher_MaxRoundsCarried', 00H
-$SG174619 DB	'ShotGun_MaxRoundsCarried', 00H
+$SG174629 DB	'RocketLauncher_MaxRoundsCarried', 00H
+$SG174631 DB	'ShotGun_MaxRoundsCarried', 00H
 	ORG $+3
-$SG174622 DB	'trying to calculate  of unknown weapon', 00H
+$SG174634 DB	'trying to calculate  of unknown weapon', 00H
 	ORG $+1
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
@@ -8369,7 +8369,7 @@ $LN4@GetMaxRoun:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG174615
+	push	OFFSET $SG174627
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv176[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -8390,7 +8390,7 @@ $LN5@GetMaxRoun:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG174617
+	push	OFFSET $SG174629
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv177[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -8411,7 +8411,7 @@ $LN6@GetMaxRoun:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T3[ebp], esp
-	push	OFFSET $SG174619
+	push	OFFSET $SG174631
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv178[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -8429,7 +8429,7 @@ $LN7@GetMaxRoun:
 ; 52   : 
 ; 53   :     throw std::runtime_error("trying to calculate  of unknown weapon");
 
-	push	OFFSET $SG174622
+	push	OFFSET $SG174634
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0runtime_error@std@@QAE@PBD@Z		; std::runtime_error::runtime_error
 	push	OFFSET __TI2?AVruntime_error@std@@
@@ -14458,7 +14458,7 @@ _this$ = -4						; size = 4
 ?GetWeaponSys@Raven_Bot@@QBEQAVRaven_WeaponSystem@@XZ PROC ; Raven_Bot::GetWeaponSys, COMDAT
 ; _this$ = ecx
 
-; 215  :   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
+; 220  :   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
 
 	push	ebp
 	mov	ebp, esp
@@ -14466,7 +14466,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax+176]
+	mov	eax, DWORD PTR [eax+180]
 	mov	esp, ebp
 	pop	ebp
 	ret	0
@@ -14480,7 +14480,7 @@ _this$ = -4						; size = 4
 ?GetPathPlanner@Raven_Bot@@QAEQAVRaven_PathPlanner@@XZ PROC ; Raven_Bot::GetPathPlanner, COMDAT
 ; _this$ = ecx
 
-; 210  :   Raven_PathPlanner* const           GetPathPlanner(){return m_pPathPlanner;}
+; 215  :   Raven_PathPlanner* const           GetPathPlanner(){return m_pPathPlanner;}
 
 	push	ebp
 	mov	ebp, esp
@@ -14502,7 +14502,7 @@ _this$ = -4						; size = 4
 ?MaxHealth@Raven_Bot@@QBEHXZ PROC			; Raven_Bot::MaxHealth, COMDAT
 ; _this$ = ecx
 
-; 147  :   int           MaxHealth()const{return m_iMaxHealth;}
+; 150  :   int           MaxHealth()const{return m_iMaxHealth;}
 
 	push	ebp
 	mov	ebp, esp
@@ -14510,7 +14510,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax+204]
+	mov	eax, DWORD PTR [eax+208]
 	mov	esp, ebp
 	pop	ebp
 	ret	0
@@ -14524,7 +14524,7 @@ _this$ = -4						; size = 4
 ?Health@Raven_Bot@@QBEHXZ PROC				; Raven_Bot::Health, COMDAT
 ; _this$ = ecx
 
-; 146  :   int           Health()const{return m_iHealth;}
+; 149  :   int           Health()const{return m_iHealth;}
 
 	push	ebp
 	mov	ebp, esp
@@ -14532,7 +14532,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax+200]
+	mov	eax, DWORD PTR [eax+204]
 	mov	esp, ebp
 	pop	ebp
 	ret	0

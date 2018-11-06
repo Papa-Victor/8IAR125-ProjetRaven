@@ -66,6 +66,9 @@ private:
   //this is responsible for choosing the bot's current target
   Raven_TargetingSystem*             m_pTargSys;
 
+  //This determines if the bot is in control of targeting
+  bool								 m_bTargetControl;
+
   //this handles all the weapons. and has methods for aiming, selecting and
   //shooting them
   Raven_WeaponSystem*                m_pWeaponSys;
@@ -160,7 +163,9 @@ public:
   bool          isAlive()const{return m_Status == alive;}
   bool          isSpawning()const{return m_Status == spawning;}
 
-
+  Team*			GetTeam() const { return m_pTeam; }
+  void			SetTeam(Team* team) { m_pTeam = team; }
+  void			SetTargetControl(bool val) { m_bTargetControl = val; }
   
   void          SetSpawning(){m_Status = spawning;}
   void          SetDead(){m_Status = dead;}

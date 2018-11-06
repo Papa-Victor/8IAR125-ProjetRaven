@@ -34,7 +34,7 @@ PUBLIC	?end@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE?AV?$
 PUBLIC	?GiveCurrentTarget@Single_Target_Team@@IAEXXZ	; Single_Target_Team::GiveCurrentTarget
 PUBLIC	??0Single_Target_Team@@QAE@XZ			; Single_Target_Team::Single_Target_Team
 PUBLIC	??1Single_Target_Team@@UAE@XZ			; Single_Target_Team::~Single_Target_Team
-PUBLIC	?CheckDeadBot@Single_Target_Team@@QAEXPBVRaven_Bot@@@Z ; Single_Target_Team::CheckDeadBot
+PUBLIC	?CheckDeadBot@Single_Target_Team@@UAEXPBVRaven_Bot@@@Z ; Single_Target_Team::CheckDeadBot
 PUBLIC	??_GSingle_Target_Team@@UAEPAXI@Z		; Single_Target_Team::`scalar deleting destructor'
 PUBLIC	??0?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@U_Iterator_base12@2@@std@@QAE@PAU?$_List_node@PAVRaven_Bot@@PAX@1@PBV?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@1@@Z ; std::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>
 PUBLIC	??1?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@U_Iterator_base12@2@@std@@QAE@XZ ; std::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>::~_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>
@@ -393,6 +393,8 @@ CONST	ENDS
 CONST	SEGMENT
 ??_7Single_Target_Team@@6B@ DD FLAT:??_R4Single_Target_Team@@6B@ ; Single_Target_Team::`vftable'
 	DD	FLAT:__purecall
+	DD	FLAT:__purecall
+	DD	FLAT:?CheckDeadBot@Single_Target_Team@@UAEXPBVRaven_Bot@@@Z
 	DD	FLAT:__purecall
 	DD	FLAT:??_ESingle_Target_Team@@UAEPAXI@Z
 CONST	ENDS
@@ -1519,7 +1521,7 @@ _TEXT	ENDS
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
 _deadBot$ = 8						; size = 4
-?CheckDeadBot@Single_Target_Team@@QAEXPBVRaven_Bot@@@Z PROC ; Single_Target_Team::CheckDeadBot
+?CheckDeadBot@Single_Target_Team@@UAEXPBVRaven_Bot@@@Z PROC ; Single_Target_Team::CheckDeadBot
 ; _this$ = ecx
 
 ; 24   : {
@@ -1544,7 +1546,7 @@ _deadBot$ = 8						; size = 4
 	mov	eax, DWORD PTR [edx]
 	mov	esi, esp
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [eax+4]
+	mov	edx, DWORD PTR [eax+12]
 	call	edx
 	cmp	esi, esp
 	call	__RTC_CheckEsp
@@ -1560,7 +1562,7 @@ $LN1@CheckDeadB:
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-?CheckDeadBot@Single_Target_Team@@QAEXPBVRaven_Bot@@@Z ENDP ; Single_Target_Team::CheckDeadBot
+?CheckDeadBot@Single_Target_Team@@UAEXPBVRaven_Bot@@@Z ENDP ; Single_Target_Team::CheckDeadBot
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\single_target_team.cpp
@@ -2008,7 +2010,7 @@ _this$ = -4						; size = 4
 ?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ PROC ; Raven_Bot::GetTargetSys, COMDAT
 ; _this$ = ecx
 
-; 213  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
+; 218  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
 
 	push	ebp
 	mov	ebp, esp

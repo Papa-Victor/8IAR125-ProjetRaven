@@ -12,7 +12,7 @@ INCLUDELIB OLDNAMES
 CONST	SEGMENT
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+3
-$SG166898 DB	'Bot_TriggerUpdateFreq', 00H
+$SG166864 DB	'Bot_TriggerUpdateFreq', 00H
 	ORG $+2
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
@@ -414,7 +414,6 @@ PUBLIC	??_C@_1GK@NKIMOCIG@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe
 PUBLIC	??_C@_0CF@JCBFHMPL@cannot?5dereference?5end?5list?5ite@ ; `string'
 PUBLIC	??_C@_1EO@CNEFBDCF@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr@ ; `string'
 PUBLIC	?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
-PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_0BA@JFNIOLAK@string?5too?5long@		; `string'
 PUBLIC	??_C@_0BM@BALDKKHE@list?5iterators?5incompatible@ ; `string'
 PUBLIC	??_C@_1DM@KDLJAKOP@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs@ ; `string'
@@ -425,6 +424,7 @@ PUBLIC	??_C@_1EK@OKKCFDJN@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn
 PUBLIC	??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ ; `string'
 PUBLIC	??_C@_1CFG@NNFHAOFN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ ; `string'
+PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_0CC@KEJJOMBH@list?5erase?5iterator?5outside?5ran@ ; `string'
 PUBLIC	??_C@_1DII@KPOMEIKI@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAl?$AAi?$AAs?$AAt?$AA?$DM?$AAs?$AAt?$AAr?$AAu?$AAc@ ; `string'
 PUBLIC	??_C@_1EI@FHIDKIBN@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe@ ; `string'
@@ -915,6 +915,10 @@ CONST	SEGMENT
 ??_C@_0CC@KEJJOMBH@list?5erase?5iterator?5outside?5ran@ DB 'list erase it'
 	DB	'erator outside range', 00H			; `string'
 CONST	ENDS
+;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
+CONST	SEGMENT
+??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@
 CONST	SEGMENT
 ??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ DB 's'
@@ -1127,10 +1131,6 @@ CONST	ENDS
 ;	COMDAT ??_C@_0BA@JFNIOLAK@string?5too?5long@
 CONST	SEGMENT
 ??_C@_0BA@JFNIOLAK@string?5too?5long@ DB 'string too long', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
-CONST	SEGMENT
-??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1EO@CNEFBDCF@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr@
 CONST	SEGMENT
@@ -14468,7 +14468,7 @@ _range$ = 12						; size = 8
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG166898
+	push	OFFSET $SG166864
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv180[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0

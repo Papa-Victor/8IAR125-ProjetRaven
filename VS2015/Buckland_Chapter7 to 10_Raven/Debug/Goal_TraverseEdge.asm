@@ -25,16 +25,16 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG169972 DB	'Bot_MaxSwimmingSpeed', 00H
-$SG170004 DB	00H
+$SG169984 DB	'Bot_MaxSwimmingSpeed', 00H
+$SG170016 DB	00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+1
-$SG169974 DB	'Bot_MaxCrawlingSpeed', 00H
+$SG169986 DB	'Bot_MaxCrawlingSpeed', 00H
 	ORG $+3
-$SG170002 DB	'BOT ', 00H
+$SG170014 DB	'BOT ', 00H
 	ORG $+3
-$SG170003 DB	' IS STUCK!!', 00H
-$SG170009 DB	'Bot_MaxSpeed', 00H
+$SG170015 DB	' IS STUCK!!', 00H
+$SG170021 DB	'Bot_MaxSpeed', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -31934,7 +31934,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG170009
+	push	OFFSET $SG170021
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv147[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -32146,7 +32146,7 @@ $LN4@Activate:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG169972
+	push	OFFSET $SG169984
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv229[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -32177,7 +32177,7 @@ $LN5@Activate:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG169974
+	push	OFFSET $SG169986
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv230[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -32456,11 +32456,11 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR [edx+8]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG170004
-	push	OFFSET $SG170003
+	push	OFFSET $SG170016
+	push	OFFSET $SG170015
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG170002
+	push	OFFSET $SG170014
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY04D@DebugConsole@@QAEAAV0@AAY04$$CBD@Z ; DebugConsole::operator<<<char [5]>
@@ -33063,7 +33063,7 @@ _this$ = -4						; size = 4
 ?GetSteering@Raven_Bot@@QAEQAVRaven_Steering@@XZ PROC	; Raven_Bot::GetSteering, COMDAT
 ; _this$ = ecx
 
-; 209  :   Raven_Steering* const              GetSteering(){return m_pSteering;}
+; 214  :   Raven_Steering* const              GetSteering(){return m_pSteering;}
 
 	push	ebp
 	mov	ebp, esp

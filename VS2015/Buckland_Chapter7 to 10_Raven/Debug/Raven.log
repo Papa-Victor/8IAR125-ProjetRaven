@@ -1,9 +1,11 @@
-﻿  Team.cpp
-  Single_Target_Team.cpp
-  Raven_Bot.cpp
+﻿  Raven_Game.cpp
   Random_Single_Target_Team.cpp
   Génération de code en cours...
   Compilation en cours...
+  Team.cpp
+  Single_Target_Team.cpp
+  Génération de code en cours...
+  Ignoré... (aucune modification pertinente détectée)
   Trigger_WeaponGiver.cpp
   Trigger_SoundNotify.cpp
   Trigger_HealthGiver.cpp
@@ -24,8 +26,6 @@
   Goal_AttackTarget.cpp
   Goal_AdjustRange.cpp
   GetWeaponGoal_Evaluator.cpp
-  Génération de code en cours...
-  Compilation en cours...
   GetHealthGoal_Evaluator.cpp
   ExploreGoal_Evaluator.cpp
   AttackTargetGoal_Evaluator.cpp
@@ -44,7 +44,6 @@
   Raven_SteeringBehaviors.cpp
   Raven_SensoryMemory.cpp
   Raven_Map.cpp
-  Raven_Game.cpp
   Raven_Door.cpp
-  Génération de code en cours...
+  Raven_Bot.cpp
   Raven.vcxproj -> C:\Users\Utilisateur\Documents\GitHub\8IAR125-ProjetRaven\VS2015\Buckland_Chapter7 to 10_Raven\.\Debug\Raven.exe

@@ -10,6 +10,37 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
+$SG189050 DB	'<SparseGraph::GetNode>: invalid index', 00H
+?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
+	ORG $+1
+$SG189051 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
+	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
+	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
+	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, 's', 00H, '\', 00H, 'g', 00H
+	DB	'i', 00H, 't', 00H, 'h', 00H, 'u', 00H, 'b', 00H, '\', 00H, '8'
+	DB	00H, 'i', 00H, 'a', 00H, 'r', 00H, '1', 00H, '2', 00H, '5', 00H
+	DB	'-', 00H, 'p', 00H, 'r', 00H, 'o', 00H, 'j', 00H, 'e', 00H, 't'
+	DB	00H, 'r', 00H, 'a', 00H, 'v', 00H, 'e', 00H, 'n', 00H, '\', 00H
+	DB	'v', 00H, 's', 00H, '2', 00H, '0', 00H, '1', 00H, '5', 00H, '\'
+	DB	00H, 'c', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'o', 00H, 'n', 00H
+	DB	'\', 00H, 'g', 00H, 'r', 00H, 'a', 00H, 'p', 00H, 'h', 00H, '\'
+	DB	00H, 's', 00H, 'p', 00H, 'a', 00H, 'r', 00H, 's', 00H, 'e', 00H
+	DB	'g', 00H, 'r', 00H, 'a', 00H, 'p', 00H, 'h', 00H, '.', 00H, 'h'
+	DB	00H, 00H, 00H
+$SG189052 DB	'(', 00H, 'i', 00H, 'd', 00H, 'x', 00H, ' ', 00H, '<', 00H
+	DB	' ', 00H, '(', 00H, 'i', 00H, 'n', 00H, 't', 00H, ')', 00H, 'm'
+	DB	00H, '_', 00H, 'N', 00H, 'o', 00H, 'd', 00H, 'e', 00H, 's', 00H
+	DB	'.', 00H, 's', 00H, 'i', 00H, 'z', 00H, 'e', 00H, '(', 00H, ')'
+	DB	00H, ')', 00H, ' ', 00H, '&', 00H, '&', 00H, ' ', 00H, '(', 00H
+	DB	'i', 00H, 'd', 00H, 'x', 00H, ' ', 00H, '>', 00H, '=', 00H, '0'
+	DB	00H, ')', 00H, ' ', 00H, '&', 00H, '&', 00H, ' ', 00H, '"', 00H
+	DB	'<', 00H, 'S', 00H, 'p', 00H, 'a', 00H, 'r', 00H, 's', 00H, 'e'
+	DB	00H, 'G', 00H, 'r', 00H, 'a', 00H, 'p', 00H, 'h', 00H, ':', 00H
+	DB	':', 00H, 'G', 00H, 'e', 00H, 't', 00H, 'N', 00H, 'o', 00H, 'd'
+	DB	00H, 'e', 00H, '>', 00H, ':', 00H, ' ', 00H, 'i', 00H, 'n', 00H
+	DB	'v', 00H, 'a', 00H, 'l', 00H, 'i', 00H, 'd', 00H, ' ', 00H, 'i'
+	DB	00H, 'n', 00H, 'd', 00H, 'e', 00H, 'x', 00H, '"', 00H, 00H, 00H
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
 	DD	0ff00H
@@ -25,40 +56,9 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG189185 DB	'<SparseGraph::GetNode>: invalid index', 00H
-?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
+$SG175593 DB	'<Raven_PathPlanner::GetPathAsNodes>: no current search', 00H
 	ORG $+5
-$SG189186 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
-	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
-	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
-	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
-	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, 's', 00H, '\', 00H, 'g', 00H
-	DB	'i', 00H, 't', 00H, 'h', 00H, 'u', 00H, 'b', 00H, '\', 00H, '8'
-	DB	00H, 'i', 00H, 'a', 00H, 'r', 00H, '1', 00H, '2', 00H, '5', 00H
-	DB	'-', 00H, 'p', 00H, 'r', 00H, 'o', 00H, 'j', 00H, 'e', 00H, 't'
-	DB	00H, 'r', 00H, 'a', 00H, 'v', 00H, 'e', 00H, 'n', 00H, '\', 00H
-	DB	'v', 00H, 's', 00H, '2', 00H, '0', 00H, '1', 00H, '5', 00H, '\'
-	DB	00H, 'c', 00H, 'o', 00H, 'm', 00H, 'm', 00H, 'o', 00H, 'n', 00H
-	DB	'\', 00H, 'g', 00H, 'r', 00H, 'a', 00H, 'p', 00H, 'h', 00H, '\'
-	DB	00H, 's', 00H, 'p', 00H, 'a', 00H, 'r', 00H, 's', 00H, 'e', 00H
-	DB	'g', 00H, 'r', 00H, 'a', 00H, 'p', 00H, 'h', 00H, '.', 00H, 'h'
-	DB	00H, 00H, 00H
-$SG189187 DB	'(', 00H, 'i', 00H, 'd', 00H, 'x', 00H, ' ', 00H, '<', 00H
-	DB	' ', 00H, '(', 00H, 'i', 00H, 'n', 00H, 't', 00H, ')', 00H, 'm'
-	DB	00H, '_', 00H, 'N', 00H, 'o', 00H, 'd', 00H, 'e', 00H, 's', 00H
-	DB	'.', 00H, 's', 00H, 'i', 00H, 'z', 00H, 'e', 00H, '(', 00H, ')'
-	DB	00H, ')', 00H, ' ', 00H, '&', 00H, '&', 00H, ' ', 00H, '(', 00H
-	DB	'i', 00H, 'd', 00H, 'x', 00H, ' ', 00H, '>', 00H, '=', 00H, '0'
-	DB	00H, ')', 00H, ' ', 00H, '&', 00H, '&', 00H, ' ', 00H, '"', 00H
-	DB	'<', 00H, 'S', 00H, 'p', 00H, 'a', 00H, 'r', 00H, 's', 00H, 'e'
-	DB	00H, 'G', 00H, 'r', 00H, 'a', 00H, 'p', 00H, 'h', 00H, ':', 00H
-	DB	':', 00H, 'G', 00H, 'e', 00H, 't', 00H, 'N', 00H, 'o', 00H, 'd'
-	DB	00H, 'e', 00H, '>', 00H, ':', 00H, ' ', 00H, 'i', 00H, 'n', 00H
-	DB	'v', 00H, 'a', 00H, 'l', 00H, 'i', 00H, 'd', 00H, ' ', 00H, 'i'
-	DB	00H, 'n', 00H, 'd', 00H, 'e', 00H, 'x', 00H, '"', 00H, 00H, 00H
-$SG175627 DB	'<Raven_PathPlanner::GetPathAsNodes>: no current search', 00H
-	ORG $+1
-$SG175628 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+$SG175594 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
 	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
 	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
@@ -78,7 +78,7 @@ $SG175628 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'n', 00H, '_', 00H, 'p', 00H, 'a', 00H, 't', 00H, 'h', 00H, 'p'
 	DB	00H, 'l', 00H, 'a', 00H, 'n', 00H, 'n', 00H, 'e', 00H, 'r', 00H
 	DB	'.', 00H, 'c', 00H, 'p', 00H, 'p', 00H, 00H, 00H
-$SG175629 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
+$SG175595 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
 	DB	'r', 00H, 'e', 00H, 'n', 00H, 't', 00H, 'S', 00H, 'e', 00H, 'a'
 	DB	00H, 'r', 00H, 'c', 00H, 'h', 00H, ' ', 00H, '&', 00H, '&', 00H
 	DB	' ', 00H, '"', 00H, '<', 00H, 'R', 00H, 'a', 00H, 'v', 00H, 'e'
@@ -91,10 +91,10 @@ $SG175629 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
 	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, ' ', 00H, 's', 00H, 'e', 00H
 	DB	'a', 00H, 'r', 00H, 'c', 00H, 'h', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG176597 DB	'<Raven_PathPlanner::CycleOnce>: No search object instant'
+$SG176563 DB	'<Raven_PathPlanner::CycleOnce>: No search object instant'
 	DB	'iated', 00H
 	ORG $+6
-$SG176598 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+$SG176564 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
 	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
 	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
@@ -114,7 +114,7 @@ $SG176598 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'n', 00H, '_', 00H, 'p', 00H, 'a', 00H, 't', 00H, 'h', 00H, 'p'
 	DB	00H, 'l', 00H, 'a', 00H, 'n', 00H, 'n', 00H, 'e', 00H, 'r', 00H
 	DB	'.', 00H, 'c', 00H, 'p', 00H, 'p', 00H, 00H, 00H
-$SG176599 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
+$SG176565 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
 	DB	'r', 00H, 'e', 00H, 'n', 00H, 't', 00H, 'S', 00H, 'e', 00H, 'a'
 	DB	00H, 'r', 00H, 'c', 00H, 'h', 00H, ' ', 00H, '&', 00H, '&', 00H
 	DB	' ', 00H, '"', 00H, '<', 00H, 'R', 00H, 'a', 00H, 'v', 00H, 'e'
@@ -893,8 +893,8 @@ PUBLIC	??_C@_1HC@HBCEAHKD@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$
 PUBLIC	?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
 PUBLIC	??_C@_1MO@IGMNEFGG@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ ; `string'
 PUBLIC	??_C@_1PE@KDKMFEPD@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
-PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_1BDI@JCBOAGAM@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ ; `string'
+PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_1OG@CKJILIHG@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1OG@IKGFFBLD@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1OE@FGJDIBAM@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
@@ -1520,6 +1520,10 @@ CONST	SEGMENT
 	DB	00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o', 00H, 'r', 00H
 	DB	' ', 00H, '=', 00H, '=', 00H, 00H, 00H	; `string'
 CONST	ENDS
+;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
+CONST	SEGMENT
+??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1BDI@JCBOAGAM@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@
 CONST	SEGMENT
 ??_C@_1BDI@JCBOAGAM@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ DB 's'
@@ -1547,10 +1551,6 @@ CONST	SEGMENT
 	DB	'>', 00H, ' ', 00H, '>', 00H, ' ', 00H, '>', 00H, ':', 00H, ':'
 	DB	00H, 'o', 00H, 'p', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H
 	DB	'o', 00H, 'r', 00H, ' ', 00H, '[', 00H, ']', 00H, 00H, 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
-CONST	SEGMENT
-??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1PE@KDKMFEPD@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@
 CONST	SEGMENT
@@ -31536,7 +31536,7 @@ _this$ = -4						; size = 4
 ?GetPathManager@Raven_Game@@QAEQAV?$PathManager@VRaven_PathPlanner@@@@XZ PROC ; Raven_Game::GetPathManager, COMDAT
 ; _this$ = ecx
 
-; 164  :   PathManager<Raven_PathPlanner>* const    GetPathManager(){return m_pPathManager;}
+; 163  :   PathManager<Raven_PathPlanner>* const    GetPathManager(){return m_pPathManager;}
 
 	push	ebp
 	mov	ebp, esp
@@ -31558,7 +31558,7 @@ _this$ = -4						; size = 4
 ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
 ; _this$ = ecx
 
-; 162  :   Raven_Map* const                         GetMap(){return m_pMap;}
+; 161  :   Raven_Map* const                         GetMap(){return m_pMap;}
 
 	push	ebp
 	mov	ebp, esp
@@ -31656,13 +31656,13 @@ __$EHRec$ = -12						; size = 12
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+8], 0
 	je	SHORT $LN6@CycleOnce
-	mov	ecx, OFFSET $SG176597
+	mov	ecx, OFFSET $SG176563
 	test	ecx, ecx
 	jne	SHORT $LN7@CycleOnce
 $LN6@CycleOnce:
 	push	249					; 000000f9H
-	push	OFFSET $SG176598
-	push	OFFSET $SG176599
+	push	OFFSET $SG176564
+	push	OFFSET $SG176565
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN7@CycleOnce:
@@ -32262,13 +32262,13 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+8], 0
 	je	SHORT $LN6@GetPath
-	mov	ecx, OFFSET $SG175627
+	mov	ecx, OFFSET $SG175593
 	test	ecx, ecx
 	jne	SHORT $LN7@GetPath
 $LN6@GetPath:
 	push	126					; 0000007eH
-	push	OFFSET $SG175628
-	push	OFFSET $SG175629
+	push	OFFSET $SG175594
+	push	OFFSET $SG175595
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN7@GetPath:
@@ -34413,13 +34413,13 @@ _idx$ = 8						; size = 4
 	jge	SHORT $LN3@GetNode
 	cmp	DWORD PTR _idx$[ebp], 0
 	jl	SHORT $LN3@GetNode
-	mov	eax, OFFSET $SG189185
+	mov	eax, OFFSET $SG189050
 	test	eax, eax
 	jne	SHORT $LN4@GetNode
 $LN3@GetNode:
 	push	449					; 000001c1H
-	push	OFFSET $SG189186
-	push	OFFSET $SG189187
+	push	OFFSET $SG189051
+	push	OFFSET $SG189052
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN4@GetNode:
@@ -35055,7 +35055,7 @@ _this$ = -4						; size = 4
 ?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ PROC		; Raven_Bot::GetWorld, COMDAT
 ; _this$ = ecx
 
-; 208  :   Raven_Game* const                  GetWorld(){return m_pWorld;} 
+; 213  :   Raven_Game* const                  GetWorld(){return m_pWorld;} 
 
 	push	ebp
 	mov	ebp, esp

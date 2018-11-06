@@ -4,7 +4,7 @@
 #include "Single_Target_Team.h"
 #include "Raven_Game.h"
 
-class Random_Single_Target_Team : Single_Target_Team
+class Random_Single_Target_Team : public Single_Target_Team
 {
 private:
 	void DetermineTarget() override;
@@ -14,5 +14,8 @@ private:
 public:
 	Random_Single_Target_Team(Raven_Game* game) { this->game = game; }
 	~Random_Single_Target_Team();
+
+	void AddBot(Raven_Bot* bot) override;
+	void RemoveBot(Raven_Bot* bot) override;
 };
 #endif // !Random_Single_Target_Team

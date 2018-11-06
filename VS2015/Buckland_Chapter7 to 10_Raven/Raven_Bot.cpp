@@ -39,6 +39,7 @@ Raven_Bot::Raven_Bot(Raven_Game* world,Vector2D pos):
                  m_iMaxHealth(script->GetInt("Bot_MaxHealth")),
                  m_iHealth(script->GetInt("Bot_MaxHealth")),
                  m_pPathPlanner(NULL),
+				 m_bTargetControl(true),
                  m_pSteering(NULL),
                  m_pWorld(world),
 				 m_pTeam(NULL),
@@ -112,7 +113,9 @@ void Raven_Bot::Spawn(Vector2D pos)
 {
     SetAlive();
     m_pBrain->RemoveAllSubgoals();
-    m_pTargSys->ClearTarget();
+	if (m_bTargetControl) {
+		m_pTargSys->ClearTarget();
+	}
     SetPos(pos);
     m_pWeaponSys->Initialize();
     RestoreHealthToMaximum();
@@ -135,7 +138,7 @@ void Raven_Bot::Update()
   {           
     //examine all the opponents in the bots sensory memory and select one
     //to be the current target
-    if (m_pTargetSelectionRegulator->isReady())
+    if (m_pTargetSelectionRegulator->isReady() && m_bTargetControl)
     {      
       m_pTargSys->Update();
     }

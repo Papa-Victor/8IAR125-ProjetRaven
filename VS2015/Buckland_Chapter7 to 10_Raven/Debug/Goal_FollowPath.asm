@@ -25,7 +25,7 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG163476 DB	'<Goal_FollowPath::Activate>: Unrecognized edge type', 00H
+$SG163332 DB	'<Goal_FollowPath::Activate>: Unrecognized edge type', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -405,7 +405,6 @@ PUBLIC	??_C@_0CD@LEPJCKBH@list?5insert?5iterator?5outside?5ra@ ; `string'
 PUBLIC	??_C@_1JA@LFOKFNP@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAl?$AAi?$AAs?$AAt?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs@ ; `string'
 PUBLIC	??_C@_1EK@HLNIPGJB@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAn?$AAs?$AAe?$AAr?$AAt?$AA?5?$AAi?$AAt@ ; `string'
 PUBLIC	?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
-PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_0DB@MCPEHPCC@cannot?5decrement?5value?9initiali@ ; `string'
 PUBLIC	??_C@_1NO@CPMEHOJC@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1GG@FLDKPFOH@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAc?$AAr?$AAe?$AAm?$AAe@ ; `string'
@@ -417,6 +416,7 @@ PUBLIC	??_C@_1PM@HGDEDNCE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$
 PUBLIC	??_C@_1PK@KKMOJEL@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1NG@CFOJKHE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAl?$AAi?$AAs?$AAt?$AA?$DM?$AAc?$AAl?$AAa?$AAs?$AAs@ ; `string'
 PUBLIC	??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ ; `string'
+PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_1CG@LJCPDKEJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAr?$AAi?$AAf?$AAy?$AA_?$AAr?$AAa@ ; `string'
 PUBLIC	??_C@_0DG@GAGDEJEE@list?5iterators?5in?5range?5are?5fro@ ; `string'
 PUBLIC	??_C@_1HA@KAMKPLHN@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs@ ; `string'
@@ -770,6 +770,10 @@ CONST	SEGMENT
 	DB	'e', 00H, 'r', 00H, 'i', 00H, 'f', 00H, 'y', 00H, '_', 00H, 'r'
 	DB	00H, 'a', 00H, 'n', 00H, 'g', 00H, 'e', 00H, 00H, 00H ; `string'
 CONST	ENDS
+;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
+CONST	SEGMENT
+??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@
 CONST	SEGMENT
 ??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ DB 's'
@@ -949,10 +953,6 @@ CONST	ENDS
 CONST	SEGMENT
 ??_C@_0DB@MCPEHPCC@cannot?5decrement?5value?9initiali@ DB 'cannot decreme'
 	DB	'nt value-initialized list iterator', 00H	; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
-CONST	SEGMENT
-??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1EK@HLNIPGJB@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAn?$AAs?$AAe?$AAr?$AAt?$AA?5?$AAi?$AAt@
 CONST	SEGMENT
@@ -8938,7 +8938,7 @@ $LN8@Activate:
 ; 69   : 
 ; 70   :     throw std::runtime_error("<Goal_FollowPath::Activate>: Unrecognized edge type");
 
-	push	OFFSET $SG163476
+	push	OFFSET $SG163332
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0runtime_error@std@@QAE@PBD@Z		; std::runtime_error::runtime_error
 	push	OFFSET __TI2?AVruntime_error@std@@

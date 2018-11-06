@@ -26,6 +26,8 @@
 #include "goals/Goal_Think.h"
 #include "goals/Raven_Goal_Types.h"
 
+#include "Random_Single_Target_Team.h"
+
 
 
 //uncomment to write object creation/deletion to debug console
@@ -165,6 +167,9 @@ void Raven_Game::Update()
 
       //change its status to spawning
       (*curBot)->SetSpawning();
+	  /*for (std::vector<Team*>::iterator it = m_vTeams.begin(); it != m_vTeams.end(); it++) {
+		  (*it)->CheckDeadBot(*curBot);
+	  }*/
     }
 
     //if this bot is alive update it.
@@ -184,10 +189,17 @@ void Raven_Game::Update()
     if (!m_Bots.empty())
     {
       Raven_Bot* pBot = m_Bots.back();
+	  m_Bots.pop_back();
       if (pBot == m_pSelectedBot)m_pSelectedBot=0;
+	  //for (std::vector<Team*>::iterator it = m_vTeams.begin(); it != m_vTeams.end(); it++) {
+		 // (*it)->CheckDeadBot(pBot);
+	  //}
       NotifyAllBotsOfRemoval(pBot);
-      delete m_Bots.back();
-      m_Bots.remove(pBot);
+	  delete pBot;
+
+
+      /*delete m_Bots.back();
+      m_Bots.remove(pBot);*/
       pBot = 0;
     }
 

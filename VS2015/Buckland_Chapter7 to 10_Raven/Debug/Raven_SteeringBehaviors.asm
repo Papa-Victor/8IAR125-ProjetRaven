@@ -27,18 +27,18 @@ CONST	SEGMENT
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+3
-$SG170155 DB	'WallDetectionFeelerLength', 00H
+$SG170011 DB	'WallDetectionFeelerLength', 00H
 	ORG $+2
-$SG170156 DB	'SeparationWeight', 00H
+$SG170012 DB	'SeparationWeight', 00H
 	ORG $+3
-$SG170157 DB	'WanderWeight', 00H
+$SG170013 DB	'WanderWeight', 00H
 	ORG $+3
-$SG170158 DB	'WallAvoidanceWeight', 00H
-$SG170159 DB	'SeekWeight', 00H
+$SG170014 DB	'WallAvoidanceWeight', 00H
+$SG170015 DB	'SeekWeight', 00H
 	ORG $+1
-$SG170160 DB	'ArriveWeight', 00H
+$SG170016 DB	'ArriveWeight', 00H
 	ORG $+3
-$SG170161 DB	'ViewDistance', 00H
+$SG170017 DB	'ViewDistance', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -550,11 +550,11 @@ PUBLIC	?id@?$collate@D@std@@2V0locale@2@A		; std::collate<char>::id
 PUBLIC	??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_1CFE@NAGNFDGG@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
-PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_0BA@JFNIOLAK@string?5too?5long@		; `string'
 PUBLIC	??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ ; `string'
 PUBLIC	??_C@_1CFG@NNFHAOFN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ ; `string'
+PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_0CC@KEJJOMBH@list?5erase?5iterator?5outside?5ran@ ; `string'
 PUBLIC	??_C@_1DII@KPOMEIKI@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAl?$AAi?$AAs?$AAt?$AA?$DM?$AAs?$AAt?$AAr?$AAu?$AAc@ ; `string'
 PUBLIC	??_C@_1EI@FHIDKIBN@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAi?$AAt?$AAe@ ; `string'
@@ -896,6 +896,10 @@ CONST	SEGMENT
 ??_C@_0CC@KEJJOMBH@list?5erase?5iterator?5outside?5ran@ DB 'list erase it'
 	DB	'erator outside range', 00H			; `string'
 CONST	ENDS
+;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
+CONST	SEGMENT
+??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@
 CONST	SEGMENT
 ??_C@_1FAE@HHPIMLIJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ DB 's'
@@ -1062,10 +1066,6 @@ CONST	ENDS
 ;	COMDAT ??_C@_0BA@JFNIOLAK@string?5too?5long@
 CONST	SEGMENT
 ??_C@_0BA@JFNIOLAK@string?5too?5long@ DB 'string too long', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@
-CONST	SEGMENT
-??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@ DB 'list<T> too long', 00H ; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_1CFE@NAGNFDGG@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@
 CONST	SEGMENT
@@ -16524,7 +16524,7 @@ _range$ = 12						; size = 8
 ?TagRaven_BotsWithinViewRange@Raven_Game@@QAEXPAVBaseGameEntity@@N@Z PROC ; Raven_Game::TagRaven_BotsWithinViewRange, COMDAT
 ; _this$ = ecx
 
-; 169  :               {TagNeighbors(pRaven_Bot, m_Bots, range);}  
+; 168  :               {TagNeighbors(pRaven_Bot, m_Bots, range);}  
 
 	push	ebp
 	mov	ebp, esp
@@ -16557,7 +16557,7 @@ _this$ = -4						; size = 4
 ?GetAllBots@Raven_Game@@QBEABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@XZ PROC ; Raven_Game::GetAllBots, COMDAT
 ; _this$ = ecx
 
-; 163  :   const std::list<Raven_Bot*>&             GetAllBots()const{return m_Bots;}
+; 162  :   const std::list<Raven_Bot*>&             GetAllBots()const{return m_Bots;}
 
 	push	ebp
 	mov	ebp, esp
@@ -16579,7 +16579,7 @@ _this$ = -4						; size = 4
 ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
 ; _this$ = ecx
 
-; 162  :   Raven_Map* const                         GetMap(){return m_pMap;}
+; 161  :   Raven_Map* const                         GetMap(){return m_pMap;}
 
 	push	ebp
 	mov	ebp, esp
@@ -19104,7 +19104,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T9[ebp], esp
-	push	OFFSET $SG170155
+	push	OFFSET $SG170011
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv318[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
@@ -19146,7 +19146,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG170156
+	push	OFFSET $SG170012
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv320[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
@@ -19164,7 +19164,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG170157
+	push	OFFSET $SG170013
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv322[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 3
@@ -19182,7 +19182,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG170158
+	push	OFFSET $SG170014
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv324[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 4
@@ -19200,7 +19200,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG170159
+	push	OFFSET $SG170015
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv326[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
@@ -19218,7 +19218,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG170160
+	push	OFFSET $SG170016
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv328[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 6
@@ -19236,7 +19236,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T3[ebp], esp
-	push	OFFSET $SG170161
+	push	OFFSET $SG170017
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv330[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 7
