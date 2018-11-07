@@ -1,7 +1,7 @@
 #include "Raven_TargetingSystem.h"
 #include "Raven_Bot.h"
 #include "Raven_SensoryMemory.h"
-
+#include "Team.h"
 
 
 //-------------------------------- ctor ---------------------------------------
@@ -24,19 +24,23 @@ void Raven_TargetingSystem::Update()
   std::list<Raven_Bot*> SensedBots;
   SensedBots = m_pOwner->GetSensoryMem()->GetListOfRecentlySensedOpponents();
   
+
+  Team* ownerTeam = m_pOwner->GetTeam();
   std::list<Raven_Bot*>::const_iterator curBot = SensedBots.begin();
   for (curBot; curBot != SensedBots.end(); ++curBot)
   {
-    //make sure the bot is alive and that it is not the owner
-    if ((*curBot)->isAlive() && (*curBot != m_pOwner) )
+    //make sure the bot is alive and that it is not the owner and that it is not in the same team as the owner
+    if ((*curBot)->isAlive() && (*curBot != m_pOwner))
     {
-      double dist = Vec2DDistanceSq((*curBot)->Pos(), m_pOwner->Pos());
+	  if (ownerTeam == NULL || !ownerTeam->BotInTeam(*curBot)) {
+		  double dist = Vec2DDistanceSq((*curBot)->Pos(), m_pOwner->Pos());
 
-      if (dist < ClosestDistSoFar)
-      {
-        ClosestDistSoFar = dist;
-        m_pCurrentTarget = *curBot;
-      }
+		  if (dist < ClosestDistSoFar)
+		  {
+			  ClosestDistSoFar = dist;
+			  m_pCurrentTarget = *curBot;
+		  }
+	  }
     }
   }
 }

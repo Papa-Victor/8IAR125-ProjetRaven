@@ -320,7 +320,7 @@ EXTRN	??1_Lockit@std@@QAE@XZ:PROC			; std::_Lockit::~_Lockit
 EXTRN	_rand:PROC
 EXTRN	_memmove:PROC
 EXTRN	?_Xlength_error@std@@YAXPBD@Z:PROC		; std::_Xlength_error
-EXTRN	?BotInTeam@Team@@IBE_NPBVRaven_Bot@@@Z:PROC	; Team::BotInTeam
+EXTRN	?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z:PROC	; Team::BotInTeam
 EXTRN	?GiveCurrentTarget@Single_Target_Team@@IAEXXZ:PROC ; Single_Target_Team::GiveCurrentTarget
 EXTRN	??1Single_Target_Team@@UAE@XZ:PROC		; Single_Target_Team::~Single_Target_Team
 EXTRN	?CheckDeadBot@Single_Target_Team@@UAEXPBVRaven_Bot@@@Z:PROC ; Single_Target_Team::CheckDeadBot
@@ -8663,7 +8663,7 @@ $LN4@DetermineT:
 	mov	ecx, DWORD PTR [eax]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?BotInTeam@Team@@IBE_NPBVRaven_Bot@@@Z	; Team::BotInTeam
+	call	?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z	; Team::BotInTeam
 	movzx	edx, al
 	test	edx, edx
 	jne	SHORT $LN5@DetermineT

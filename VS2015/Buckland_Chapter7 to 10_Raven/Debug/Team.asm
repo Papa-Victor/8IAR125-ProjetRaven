@@ -58,9 +58,9 @@ PUBLIC	??1?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE@XZ ; s
 PUBLIC	?clear@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXXZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::clear
 PUBLIC	?_Tidy@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXXZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::_Tidy
 PUBLIC	?_Orphan_ptr@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXPAU?$_List_node@PAVRaven_Bot@@PAX@2@@Z ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::_Orphan_ptr
-PUBLIC	?BotInTeam@Team@@IBE_NPBVRaven_Bot@@@Z		; Team::BotInTeam
 PUBLIC	??0Team@@QAE@XZ					; Team::Team
 PUBLIC	??1Team@@QAE@XZ					; Team::~Team
+PUBLIC	?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z		; Team::BotInTeam
 PUBLIC	?CheckDeadBot@Team@@UAEXPBVRaven_Bot@@@Z	; Team::CheckDeadBot
 PUBLIC	??$addressof@PAVRaven_Bot@@@std@@YAPAPAVRaven_Bot@@AAPAV1@@Z ; std::addressof<Raven_Bot *>
 PUBLIC	??$destroy@PAVRaven_Bot@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@1@QAPAVRaven_Bot@@@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_Bot *,void *> > >::destroy<Raven_Bot *>
@@ -1356,6 +1356,51 @@ _TEXT	ENDS
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.cpp
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
+_bot$ = 8						; size = 4
+?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z PROC		; Team::BotInTeam
+; _this$ = ecx
+
+; 6    : {
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 7    : 	if (bot->GetTeam() == this) {
+
+	mov	ecx, DWORD PTR _bot$[ebp]
+	call	?GetTeam@Raven_Bot@@QBEPAVTeam@@XZ	; Raven_Bot::GetTeam
+	cmp	eax, DWORD PTR _this$[ebp]
+	jne	SHORT $LN2@BotInTeam
+
+; 8    : 		return true;
+
+	mov	al, 1
+	jmp	SHORT $LN1@BotInTeam
+$LN2@BotInTeam:
+
+; 9    : 	}
+; 10   : 	return false;
+
+	xor	al, al
+$LN1@BotInTeam:
+
+; 11   : }
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z ENDP		; Team::BotInTeam
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.cpp
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
 ??1Team@@QAE@XZ PROC					; Team::~Team
 ; _this$ = ecx
 
@@ -1418,51 +1463,6 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ??0Team@@QAE@XZ ENDP					; Team::Team
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.cpp
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-_bot$ = 8						; size = 4
-?BotInTeam@Team@@IBE_NPBVRaven_Bot@@@Z PROC		; Team::BotInTeam
-; _this$ = ecx
-
-; 6    : {
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 7    : 	if (bot->GetTeam() == this) {
-
-	mov	ecx, DWORD PTR _bot$[ebp]
-	call	?GetTeam@Raven_Bot@@QBEPAVTeam@@XZ	; Raven_Bot::GetTeam
-	cmp	eax, DWORD PTR _this$[ebp]
-	jne	SHORT $LN2@BotInTeam
-
-; 8    : 		return true;
-
-	mov	al, 1
-	jmp	SHORT $LN1@BotInTeam
-$LN2@BotInTeam:
-
-; 9    : 	}
-; 10   : 	return false;
-
-	xor	al, al
-$LN1@BotInTeam:
-
-; 11   : }
-
-	add	esp, 4
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-?BotInTeam@Team@@IBE_NPBVRaven_Bot@@@Z ENDP		; Team::BotInTeam
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\list

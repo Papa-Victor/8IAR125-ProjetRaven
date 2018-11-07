@@ -13,12 +13,12 @@ class Team
 protected:
 	std::list<Raven_Bot*> m_teamBots;
 
-	bool BotInTeam(Raven_Bot const *bot)const;
-
 public:
 
 	Team();
 	~Team();
+
+	bool BotInTeam(Raven_Bot const *bot)const;
 
 	virtual void AddBot(Raven_Bot* bot) = 0;
 	virtual void RemoveBot(Raven_Bot* bot) = 0;
