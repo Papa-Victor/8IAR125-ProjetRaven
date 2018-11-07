@@ -31,6 +31,7 @@ PUBLIC	?_Myhead@?$_List_alloc@U?$_List_base_types@PAVRaven_Bot@@V?$allocator@PAV
 PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@2@$00@std@@QAEAAV?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@2@XZ ; std::_Compressed_pair<std::allocator<std::_List_node<Raven_Bot *,void *> >,std::_List_val<std::_List_simple_types<Raven_Bot *> >,1>::_Get_second
 PUBLIC	?begin@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@2@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::begin
 PUBLIC	?end@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@2@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::end
+PUBLIC	?NewWorldBot@Team@@UAEXPBVRaven_Bot@@@Z		; Team::NewWorldBot
 PUBLIC	?GiveCurrentTarget@Single_Target_Team@@IAEXXZ	; Single_Target_Team::GiveCurrentTarget
 PUBLIC	??0Single_Target_Team@@QAE@XZ			; Single_Target_Team::Single_Target_Team
 PUBLIC	??1Single_Target_Team@@UAE@XZ			; Single_Target_Team::~Single_Target_Team
@@ -100,7 +101,7 @@ EXTRN	__CrtDbgReport:PROC
 EXTRN	??0_Lockit@std@@QAE@H@Z:PROC			; std::_Lockit::_Lockit
 EXTRN	??1_Lockit@std@@QAE@XZ:PROC			; std::_Lockit::~_Lockit
 EXTRN	??0Team@@QAE@XZ:PROC				; Team::Team
-EXTRN	??1Team@@QAE@XZ:PROC				; Team::~Team
+EXTRN	??1Team@@UAE@XZ:PROC				; Team::~Team
 EXTRN	??_ESingle_Target_Team@@UAEPAXI@Z:PROC		; Single_Target_Team::`vector deleting destructor'
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__security_check_cookie@4:PROC
@@ -392,11 +393,12 @@ CONST	ENDS
 ;	COMDAT ??_7Single_Target_Team@@6B@
 CONST	SEGMENT
 ??_7Single_Target_Team@@6B@ DD FLAT:??_R4Single_Target_Team@@6B@ ; Single_Target_Team::`vftable'
+	DD	FLAT:??_ESingle_Target_Team@@UAEPAXI@Z
 	DD	FLAT:__purecall
 	DD	FLAT:__purecall
 	DD	FLAT:?CheckDeadBot@Single_Target_Team@@UAEXPBVRaven_Bot@@@Z
+	DD	FLAT:?NewWorldBot@Team@@UAEXPBVRaven_Bot@@@Z
 	DD	FLAT:__purecall
-	DD	FLAT:??_ESingle_Target_Team@@UAEPAXI@Z
 CONST	ENDS
 ;	COMDAT ??_C@_1DG@PLBPCAEM@?$AA?$CC?$AAI?$AAT?$AAE?$AAR?$AAA?$AAT?$AAO?$AAR?$AA?5?$AAL?$AAI?$AAS?$AAT?$AA?5@
 CONST	SEGMENT
@@ -1546,7 +1548,7 @@ _deadBot$ = 8						; size = 4
 	mov	eax, DWORD PTR [edx]
 	mov	esi, esp
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [eax+12]
+	mov	edx, DWORD PTR [eax+20]
 	call	edx
 	cmp	esi, esp
 	call	__RTC_CheckEsp
@@ -1589,7 +1591,7 @@ _this$ = -4						; size = 4
 ; 21   : }
 
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	??1Team@@QAE@XZ				; Team::~Team
+	call	??1Team@@UAE@XZ				; Team::~Team
 	add	esp, 4
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
@@ -1777,6 +1779,27 @@ __ehhandler$?GiveCurrentTarget@Single_Target_Team@@IAEXXZ:
 	jmp	___CxxFrameHandler3
 text$x	ENDS
 ?GiveCurrentTarget@Single_Target_Team@@IAEXXZ ENDP	; Single_Target_Team::GiveCurrentTarget
+; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.h
+;	COMDAT ?NewWorldBot@Team@@UAEXPBVRaven_Bot@@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_bot$ = 8						; size = 4
+?NewWorldBot@Team@@UAEXPBVRaven_Bot@@@Z PROC		; Team::NewWorldBot, COMDAT
+; _this$ = ecx
+
+; 26   : 	virtual void NewWorldBot(const Raven_Bot* bot){}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?NewWorldBot@Team@@UAEXPBVRaven_Bot@@@Z ENDP		; Team::NewWorldBot
+_TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\list
 ;	COMDAT ?end@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAE?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@2@XZ

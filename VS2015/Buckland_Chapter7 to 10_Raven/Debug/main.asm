@@ -16,23 +16,23 @@ _BSS	SEGMENT
 ?g_pRaven@@3PAVRaven_Game@@A DD 01H DUP (?)		; g_pRaven
 _BSS	ENDS
 CONST	SEGMENT
-$SG172518 DB	'Raven', 00H
-$SG172595 DB	00H
+$SG172408 DB	'Raven', 00H
+$SG172485 DB	00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-$SG172520 DB	'MyWindowClass', 00H
+$SG172410 DB	'MyWindowClass', 00H
 	ORG $+2
-$SG172592 DB	'map', 00H
-$SG172593 DB	'Raven map file (*.map)', 00H
+$SG172482 DB	'map', 00H
+$SG172483 DB	'Raven map file (*.map)', 00H
 	ORG $+1
-$SG172594 DB	'Filename: ', 00H
+$SG172484 DB	'Filename: ', 00H
 	ORG $+1
-$SG172650 DB	'Error', 00H
+$SG172540 DB	'Error', 00H
 	ORG $+2
-$SG172651 DB	'Registration Failed!', 00H
+$SG172541 DB	'Registration Failed!', 00H
 	ORG $+3
-$SG172654 DB	'Error!', 00H
+$SG172544 DB	'Error!', 00H
 	ORG $+1
-$SG172655 DB	'CreateWindowEx Failed!', 00H
+$SG172545 DB	'CreateWindowEx Failed!', 00H
 	ORG $+1
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
@@ -51,8 +51,8 @@ $SG172655 DB	'CreateWindowEx Failed!', 00H
 	DD	0e6e6ffH
 CONST	ENDS
 _DATA	SEGMENT
-?g_szApplicationName@@3PADA DD FLAT:$SG172518		; g_szApplicationName
-?g_szWindowClassName@@3PADA DD FLAT:$SG172520		; g_szWindowClassName
+?g_szApplicationName@@3PADA DD FLAT:$SG172408		; g_szApplicationName
+?g_szWindowClassName@@3PADA DD FLAT:$SG172410		; g_szWindowClassName
 _DATA	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -357,6 +357,11 @@ PUBLIC	??$move@AAV?$allocator@D@std@@@std@@YA$$QAV?$allocator@D@0@AAV10@@Z ; std
 PUBLIC	??$?0V?$allocator@D@std@@X@?$_String_alloc@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@$$QAV?$allocator@D@1@@Z ; std::_String_alloc<std::_String_base_types<char,std::allocator<char> > >::_String_alloc<std::_String_base_types<char,std::allocator<char> > ><std::allocator<char>,void>
 PUBLIC	??0?$fpos@U_Mbstatet@@@std@@QAE@_J@Z		; std::fpos<_Mbstatet>::fpos<_Mbstatet>
 PUBLIC	??B?$fpos@U_Mbstatet@@@std@@QBE_JXZ		; std::fpos<_Mbstatet>::operator __int64
+PUBLIC	??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
+PUBLIC	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
+PUBLIC	??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
+PUBLIC	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
+PUBLIC	??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator bool
 PUBLIC	??$_Destroy_range@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z ; std::_Destroy_range<std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
 PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><>
 PUBLIC	??$addressof@PAD@std@@YAPAPADAAPAD@Z		; std::addressof<char *>
@@ -393,11 +398,6 @@ PUBLIC	?get@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@
 PUBLIC	?release@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAEPAV_Facet_base@2@XZ ; std::unique_ptr<std::_Facet_base,std::default_delete<std::_Facet_base> >::release
 PUBLIC	??$?0U?$default_delete@V_Facet_base@std@@@std@@$0A@@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@PAV_Facet_base@1@@Z ; std::unique_ptr<std::_Facet_base,std::default_delete<std::_Facet_base> >::unique_ptr<std::_Facet_base,std::default_delete<std::_Facet_base> ><std::default_delete<std::_Facet_base>,0>
 PUBLIC	??$_Immortalize_impl@V_Iostream_error_category@std@@@std@@YGHPAX0PAPAX@Z ; std::_Immortalize_impl<std::_Iostream_error_category>
-PUBLIC	??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
-PUBLIC	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-PUBLIC	??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
-PUBLIC	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
-PUBLIC	??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator bool
 PUBLIC	??0?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@H@Z ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??1?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UAE@XZ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::~basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	?str@?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@XZ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::str
@@ -513,6 +513,8 @@ PUBLIC	??_7?$basic_streambuf@DU?$char_traits@D@std@@@std@@6B@ ; std::basic_strea
 PUBLIC	??_C@_0GH@PHBFPDPI@c?3?2program?5files?5?$CIx86?$CJ?2microsof@ ; `string'
 PUBLIC	??_C@_1MO@GGNBFPEH@?$AAc?$AA?3?$AA?2?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAf?$AAi?$AAl?$AAe@ ; `string'
 PUBLIC	?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A	; std::codecvt<char,char,_Mbstatet>::id
+PUBLIC	?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
+PUBLIC	?id@?$numpunct@D@std@@2V0locale@2@A		; std::numpunct<char>::id
 PUBLIC	?id@?$collate@D@std@@2V0locale@2@A		; std::collate<char>::id
 PUBLIC	??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	?_Psave@?$_Facetptr@V?$ctype@D@std@@@std@@2PBVfacet@locale@2@B ; std::_Facetptr<std::ctype<char> >::_Psave
@@ -526,7 +528,6 @@ PUBLIC	??_7?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6B@ ;
 PUBLIC	??_7?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6B@ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::`vftable'
 PUBLIC	??_8?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@7B@ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::`vbtable'
 PUBLIC	?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
-PUBLIC	?id@?$numpunct@D@std@@2V0locale@2@A		; std::numpunct<char>::id
 PUBLIC	??_C@_0BO@OKMPKPLD@back?$CI?$CJ?5called?5on?5empty?5vector@ ; `string'
 PUBLIC	??_C@_1BLG@ICGKBFAM@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa@ ; `string'
 PUBLIC	??_C@_1EA@OBAHGFFK@?$AA?$CC?$AAb?$AAa?$AAc?$AAk?$AA?$CI?$AA?$CJ?$AA?5?$AAc?$AAa?$AAl?$AAl?$AAe?$AAd?$AA?5@ ; `string'
@@ -806,6 +807,14 @@ _BSS	ENDS
 _BSS	SEGMENT
 ?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::codecvt<char,char,_Mbstatet>::id
 _BSS	ENDS
+;	COMDAT ?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A
+_BSS	SEGMENT
+?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
+_BSS	ENDS
+;	COMDAT ?id@?$numpunct@D@std@@2V0locale@2@A
+_BSS	SEGMENT
+?id@?$numpunct@D@std@@2V0locale@2@A DD 01H DUP (?)	; std::numpunct<char>::id
+_BSS	ENDS
 ;	COMDAT ?id@?$collate@D@std@@2V0locale@2@A
 _BSS	SEGMENT
 ?id@?$collate@D@std@@2V0locale@2@A DD 01H DUP (?)	; std::collate<char>::id
@@ -825,10 +834,6 @@ _BSS	ENDS
 ;	COMDAT ?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A
 _BSS	SEGMENT
 ?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
-_BSS	ENDS
-;	COMDAT ?id@?$numpunct@D@std@@2V0locale@2@A
-_BSS	SEGMENT
-?id@?$numpunct@D@std@@2V0locale@2@A DD 01H DUP (?)	; std::numpunct<char>::id
 _BSS	ENDS
 CRT$XCU	SEGMENT
 ?MaxInt$initializer$@@3P6AXXZA DD FLAT:??__EMaxInt@@YAXXZ ; MaxInt$initializer$
@@ -2347,6 +2352,16 @@ __ehfuncinfo$??0?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@s
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
+__ehfuncinfo$??$?0U?$default_delete@V_Facet_base@std@@@std@@$0A@@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@PAV_Facet_base@1@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
 __ehfuncinfo$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
@@ -2370,16 +2385,6 @@ xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
 __ehfuncinfo$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$??$?0U?$default_delete@V_Facet_base@std@@@std@@$0A@@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@PAV_Facet_base@1@@Z DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -2925,6 +2930,10 @@ CRT$XCU	SEGMENT
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
 CRT$XCU	SEGMENT
+??id$initializer$@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA
+CRT$XCU	ENDS
+;	COMDAT CRT$XCU
+CRT$XCU	SEGMENT
 ??id$initializer$@?$codecvt@DDU_Mbstatet@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$codecvt@DDU_Mbstatet@@@std@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
@@ -2933,11 +2942,11 @@ CRT$XCU	SEGMENT
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
 CRT$XCU	SEGMENT
-??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA
+??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
 CRT$XCU	SEGMENT
-??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA
+??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
 ; Function compile flags: /Odsp /RTCsu
 ;	COMDAT ??_E?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$4PPPPPPPM@A@AEPAXI@Z
@@ -3518,25 +3527,6 @@ _<_Val2_0>$ = 12					; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
-;	COMDAT ??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ
-text$di	SEGMENT
-??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ PROC	; `dynamic initializer for 'std::numpunct<char>::id'', COMDAT
-
-; 297  : 	__PURE_APPDOMAIN_GLOBAL locale::id numpunct<_Elem>::id;
-
-	push	ebp
-	mov	ebp, esp
-	push	0
-	mov	ecx, OFFSET ?id@?$numpunct@D@std@@2V0locale@2@A ; std::numpunct<char>::id
-	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	pop	ebp
-	ret	0
-??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ENDP	; `dynamic initializer for 'std::numpunct<char>::id''
-text$di	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
 ;	COMDAT ??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ
 text$di	SEGMENT
 ??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ PROC ; `dynamic initializer for 'std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id'', COMDAT
@@ -3938,6 +3928,25 @@ __Ptr$ = 8						; size = 4
 ??$?0PAV_Facet_base@std@@@?$_Unique_ptr_base@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QAE@PAV_Facet_base@1@@Z ENDP ; std::_Unique_ptr_base<std::_Facet_base,std::default_delete<std::_Facet_base> >::_Unique_ptr_base<std::_Facet_base,std::default_delete<std::_Facet_base> ><std::_Facet_base *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
+;	COMDAT ??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ
+text$di	SEGMENT
+??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ PROC	; `dynamic initializer for 'std::numpunct<char>::id'', COMDAT
+
+; 297  : 	__PURE_APPDOMAIN_GLOBAL locale::id numpunct<_Elem>::id;
+
+	push	ebp
+	mov	ebp, esp
+	push	0
+	mov	ecx, OFFSET ?id@?$numpunct@D@std@@2V0locale@2@A ; std::numpunct<char>::id
+	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	pop	ebp
+	ret	0
+??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ENDP	; `dynamic initializer for 'std::numpunct<char>::id''
+text$di	ENDS
+; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\locale
 ;	COMDAT ??__E?id@?$collate@D@std@@2V0locale@2@A@@YAXXZ
 text$di	SEGMENT
@@ -3974,6 +3983,25 @@ text$di	SEGMENT
 	pop	ebp
 	ret	0
 ??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::codecvt<char,char,_Mbstatet>::id''
+text$di	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
+;	COMDAT ??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ
+text$di	SEGMENT
+??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ PROC ; `dynamic initializer for 'std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id'', COMDAT
+
+; 1843 : 	__PURE_APPDOMAIN_GLOBAL locale::id num_put<_Elem, _OutIt>::id;
+
+	push	ebp
+	mov	ebp, esp
+	push	0
+	mov	ecx, OFFSET ?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
+	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	pop	ebp
+	ret	0
+??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id''
 text$di	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xstddef
@@ -7093,390 +7121,6 @@ __ehhandler$??0?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@st
 text$x	ENDS
 ??0?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@H@Z ENDP ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >
 ; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
-;	COMDAT ??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator bool, COMDAT
-; _this$ = ecx
-
-; 152  : 			{	// test if stream state okay
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 153  : 			return (_Ok);
-
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	al, BYTE PTR [eax+4]
-
-; 154  : 			}
-
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator bool
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
-;	COMDAT ??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry, COMDAT
-; _this$ = ecx
-
-; 135  : 			{	// destroy the object
-
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	push	ecx
-	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 136  :  #if _HAS_EXCEPTIONS
-; 137  : 			if (!_STD uncaught_exception())	// TRANSITION, OS#15518458
-
-	call	?uncaught_exception@std@@YA_NXZ		; std::uncaught_exception
-	movzx	eax, al
-	test	eax, eax
-	jne	SHORT $LN1@sentry
-
-; 138  : 				{
-; 139  : 				this->_Myostr._Osfx();
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [ecx]
-	call	?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ ; std::basic_ostream<char,std::char_traits<char> >::_Osfx
-$LN1@sentry:
-
-; 140  : 				}
-; 141  :  #else /* _HAS_EXCEPTIONS */
-; 142  : 			this->_Myostr._Osfx();
-; 143  :  #endif /* _HAS_EXCEPTIONS */
-; 144  : 			}
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	add	esp, 16					; 00000010H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ:
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-8]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
-;	COMDAT ??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-__Ostr$ = 8						; size = 4
-??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry, COMDAT
-; _this$ = ecx
-
-; 121  : 			{	// construct locking and testing stream
-
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	push	ecx
-	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 120  : 			: _Sentry_base(_Ostr)
-
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
-	mov	DWORD PTR __$EHRec$[ebp+8], 0
-
-; 122  : 			if (_Ostr.good() && _Ostr.tie() != nullptr && _Ostr.tie() != &_Ostr)
-
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	add	ecx, DWORD PTR [edx+4]
-	call	?good@ios_base@std@@QBE_NXZ		; std::ios_base::good
-	movzx	eax, al
-	test	eax, eax
-	je	SHORT $LN2@sentry
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	add	ecx, DWORD PTR [edx+4]
-	call	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::tie
-	test	eax, eax
-	je	SHORT $LN2@sentry
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	ecx, edx
-	call	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::tie
-	cmp	eax, DWORD PTR __Ostr$[ebp]
-	je	SHORT $LN2@sentry
-
-; 123  : 				_Ostr.tie()->flush();
-
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	ecx, edx
-	call	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::tie
-	mov	ecx, eax
-	call	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ ; std::basic_ostream<char,std::char_traits<char> >::flush
-$LN2@sentry:
-
-; 124  : 			_Ok = _Ostr.good();	// store test only after flushing tie
-
-	mov	eax, DWORD PTR __Ostr$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Ostr$[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	ecx, edx
-	call	?good@ios_base@std@@QBE_NXZ		; std::ios_base::good
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	BYTE PTR [ecx+4], al
-
-; 125  : 			}
-
-	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	add	esp, 16					; 00000010H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0:
-	mov	ecx, DWORD PTR _this$[ebp]
-	jmp	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z:
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-8]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
-;	COMDAT ??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-_TEXT	SEGMENT
-tv92 = -28						; size = 4
-tv86 = -24						; size = 4
-tv72 = -20						; size = 4
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ PROC ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base, COMDAT
-; _this$ = ecx
-
-; 105  : 			{	// destroy after unlocking
-
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	sub	esp, 16					; 00000010H
-	push	esi
-	mov	eax, -858993460				; ccccccccH
-	mov	DWORD PTR [ebp-28], eax
-	mov	DWORD PTR [ebp-24], eax
-	mov	DWORD PTR [ebp-20], eax
-	mov	DWORD PTR [ebp-16], eax
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 106  : 			if (_Myostr.rdbuf() != nullptr)
-
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR tv72[ebp], ecx
-	mov	edx, DWORD PTR tv72[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR tv72[ebp]
-	add	ecx, DWORD PTR [eax+4]
-	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
-	test	eax, eax
-	je	SHORT $LN3@Sentry_bas
-
-; 107  : 				_Myostr.rdbuf()->_Unlock();
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	DWORD PTR tv86[ebp], edx
-	mov	eax, DWORD PTR tv86[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR tv86[ebp]
-	add	edx, DWORD PTR [ecx+4]
-	mov	ecx, edx
-	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
-	mov	DWORD PTR tv92[ebp], eax
-	mov	eax, DWORD PTR tv92[ebp]
-	mov	edx, DWORD PTR [eax]
-	mov	esi, esp
-	mov	ecx, DWORD PTR tv92[ebp]
-	mov	eax, DWORD PTR [edx+8]
-	call	eax
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-$LN3@Sentry_bas:
-
-; 108  : 			}
-
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	pop	esi
-	add	esp, 28					; 0000001cH
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ:
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-24]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
-;	COMDAT ??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
-_TEXT	SEGMENT
-tv93 = -16						; size = 4
-tv87 = -12						; size = 4
-tv73 = -8						; size = 4
-_this$ = -4						; size = 4
-__Ostr$ = 8						; size = 4
-??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z PROC ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base, COMDAT
-; _this$ = ecx
-
-; 99   : 			{	// lock the stream buffer, if there
-
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 16					; 00000010H
-	push	esi
-	mov	eax, -858993460				; ccccccccH
-	mov	DWORD PTR [ebp-16], eax
-	mov	DWORD PTR [ebp-12], eax
-	mov	DWORD PTR [ebp-8], eax
-	mov	DWORD PTR [ebp-4], eax
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 98   : 			: _Myostr(_Ostr)
-
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR __Ostr$[ebp]
-	mov	DWORD PTR [eax], ecx
-
-; 100  : 			if (_Myostr.rdbuf() != nullptr)
-
-	mov	edx, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	DWORD PTR tv73[ebp], eax
-	mov	ecx, DWORD PTR tv73[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	ecx, DWORD PTR tv73[ebp]
-	add	ecx, DWORD PTR [edx+4]
-	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
-	test	eax, eax
-	je	SHORT $LN1@Sentry_bas
-
-; 101  : 				_Myostr.rdbuf()->_Lock();
-
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR tv87[ebp], ecx
-	mov	edx, DWORD PTR tv87[ebp]
-	mov	eax, DWORD PTR [edx]
-	mov	ecx, DWORD PTR tv87[ebp]
-	add	ecx, DWORD PTR [eax+4]
-	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
-	mov	DWORD PTR tv93[ebp], eax
-	mov	ecx, DWORD PTR tv93[ebp]
-	mov	edx, DWORD PTR [ecx]
-	mov	esi, esp
-	mov	ecx, DWORD PTR tv93[ebp]
-	mov	eax, DWORD PTR [edx+4]
-	call	eax
-	cmp	esi, esp
-	call	__RTC_CheckEsp
-$LN1@Sentry_bas:
-
-; 102  : 			}
-
-	mov	eax, DWORD PTR _this$[ebp]
-	pop	esi
-	add	esp, 16					; 00000010H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ENDP ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\system_error
 ;	COMDAT ??$_Immortalize_impl@V_Iostream_error_category@std@@@std@@YGHPAX0PAPAX@Z
 _TEXT	SEGMENT
@@ -9234,6 +8878,390 @@ __Al$ = 16						; size = 4
 ??$_Destroy_range@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAXPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z ENDP ; std::_Destroy_range<std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
+;	COMDAT ??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator bool, COMDAT
+; _this$ = ecx
+
+; 152  : 			{	// test if stream state okay
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 153  : 			return (_Ok);
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	al, BYTE PTR [eax+4]
+
+; 154  : 			}
+
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator bool
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
+;	COMDAT ??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry, COMDAT
+; _this$ = ecx
+
+; 135  : 			{	// destroy the object
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	push	ecx
+	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 136  :  #if _HAS_EXCEPTIONS
+; 137  : 			if (!_STD uncaught_exception())	// TRANSITION, OS#15518458
+
+	call	?uncaught_exception@std@@YA_NXZ		; std::uncaught_exception
+	movzx	eax, al
+	test	eax, eax
+	jne	SHORT $LN1@sentry
+
+; 138  : 				{
+; 139  : 				this->_Myostr._Osfx();
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx]
+	call	?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ ; std::basic_ostream<char,std::char_traits<char> >::_Osfx
+$LN1@sentry:
+
+; 140  : 				}
+; 141  :  #else /* _HAS_EXCEPTIONS */
+; 142  : 			this->_Myostr._Osfx();
+; 143  :  #endif /* _HAS_EXCEPTIONS */
+; 144  : 			}
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	add	esp, 16					; 00000010H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-8]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
+;	COMDAT ??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
+_TEXT	SEGMENT
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+__Ostr$ = 8						; size = 4
+??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z PROC ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry, COMDAT
+; _this$ = ecx
+
+; 121  : 			{	// construct locking and testing stream
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	push	ecx
+	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 120  : 			: _Sentry_base(_Ostr)
+
+	mov	eax, DWORD PTR __Ostr$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+
+; 122  : 			if (_Ostr.good() && _Ostr.tie() != nullptr && _Ostr.tie() != &_Ostr)
+
+	mov	ecx, DWORD PTR __Ostr$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	ecx, DWORD PTR __Ostr$[ebp]
+	add	ecx, DWORD PTR [edx+4]
+	call	?good@ios_base@std@@QBE_NXZ		; std::ios_base::good
+	movzx	eax, al
+	test	eax, eax
+	je	SHORT $LN2@sentry
+	mov	ecx, DWORD PTR __Ostr$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	ecx, DWORD PTR __Ostr$[ebp]
+	add	ecx, DWORD PTR [edx+4]
+	call	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::tie
+	test	eax, eax
+	je	SHORT $LN2@sentry
+	mov	eax, DWORD PTR __Ostr$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Ostr$[ebp]
+	add	edx, DWORD PTR [ecx+4]
+	mov	ecx, edx
+	call	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::tie
+	cmp	eax, DWORD PTR __Ostr$[ebp]
+	je	SHORT $LN2@sentry
+
+; 123  : 				_Ostr.tie()->flush();
+
+	mov	eax, DWORD PTR __Ostr$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Ostr$[ebp]
+	add	edx, DWORD PTR [ecx+4]
+	mov	ecx, edx
+	call	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::tie
+	mov	ecx, eax
+	call	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ ; std::basic_ostream<char,std::char_traits<char> >::flush
+$LN2@sentry:
+
+; 124  : 			_Ok = _Ostr.good();	// store test only after flushing tie
+
+	mov	eax, DWORD PTR __Ostr$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Ostr$[ebp]
+	add	edx, DWORD PTR [ecx+4]
+	mov	ecx, edx
+	call	?good@ios_base@std@@QBE_NXZ		; std::ios_base::good
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	BYTE PTR [ecx+4], al
+
+; 125  : 			}
+
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	add	esp, 16					; 00000010H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0:
+	mov	ecx, DWORD PTR _this$[ebp]
+	jmp	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
+__ehhandler$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-8]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ENDP ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
+;	COMDAT ??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+tv92 = -28						; size = 4
+tv86 = -24						; size = 4
+tv72 = -20						; size = 4
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ PROC ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base, COMDAT
+; _this$ = ecx
+
+; 105  : 			{	// destroy after unlocking
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 16					; 00000010H
+	push	esi
+	mov	eax, -858993460				; ccccccccH
+	mov	DWORD PTR [ebp-28], eax
+	mov	DWORD PTR [ebp-24], eax
+	mov	DWORD PTR [ebp-20], eax
+	mov	DWORD PTR [ebp-16], eax
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 106  : 			if (_Myostr.rdbuf() != nullptr)
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR tv72[ebp], ecx
+	mov	edx, DWORD PTR tv72[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR tv72[ebp]
+	add	ecx, DWORD PTR [eax+4]
+	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
+	test	eax, eax
+	je	SHORT $LN3@Sentry_bas
+
+; 107  : 				_Myostr.rdbuf()->_Unlock();
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	DWORD PTR tv86[ebp], edx
+	mov	eax, DWORD PTR tv86[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR tv86[ebp]
+	add	edx, DWORD PTR [ecx+4]
+	mov	ecx, edx
+	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
+	mov	DWORD PTR tv92[ebp], eax
+	mov	eax, DWORD PTR tv92[ebp]
+	mov	edx, DWORD PTR [eax]
+	mov	esi, esp
+	mov	ecx, DWORD PTR tv92[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	call	eax
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN3@Sentry_bas:
+
+; 108  : 			}
+
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	esi
+	add	esp, 28					; 0000001cH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-24]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ENDP ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\ostream
+;	COMDAT ??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z
+_TEXT	SEGMENT
+tv93 = -16						; size = 4
+tv87 = -12						; size = 4
+tv73 = -8						; size = 4
+_this$ = -4						; size = 4
+__Ostr$ = 8						; size = 4
+??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z PROC ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base, COMDAT
+; _this$ = ecx
+
+; 99   : 			{	// lock the stream buffer, if there
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 16					; 00000010H
+	push	esi
+	mov	eax, -858993460				; ccccccccH
+	mov	DWORD PTR [ebp-16], eax
+	mov	DWORD PTR [ebp-12], eax
+	mov	DWORD PTR [ebp-8], eax
+	mov	DWORD PTR [ebp-4], eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 98   : 			: _Myostr(_Ostr)
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __Ostr$[ebp]
+	mov	DWORD PTR [eax], ecx
+
+; 100  : 			if (_Myostr.rdbuf() != nullptr)
+
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	DWORD PTR tv73[ebp], eax
+	mov	ecx, DWORD PTR tv73[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	ecx, DWORD PTR tv73[ebp]
+	add	ecx, DWORD PTR [edx+4]
+	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
+	test	eax, eax
+	je	SHORT $LN1@Sentry_bas
+
+; 101  : 				_Myostr.rdbuf()->_Lock();
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR tv87[ebp], ecx
+	mov	edx, DWORD PTR tv87[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR tv87[ebp]
+	add	ecx, DWORD PTR [eax+4]
+	call	?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::rdbuf
+	mov	DWORD PTR tv93[ebp], eax
+	mov	ecx, DWORD PTR tv93[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	esi, esp
+	mov	ecx, DWORD PTR tv93[ebp]
+	mov	eax, DWORD PTR [edx+4]
+	call	eax
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN1@Sentry_bas:
+
+; 102  : 			}
+
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	esi
+	add	esp, 16					; 00000010H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z ENDP ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\iosfwd
 ;	COMDAT ??B?$fpos@U_Mbstatet@@@std@@QBE_JXZ
 _TEXT	SEGMENT
@@ -10286,7 +10314,7 @@ _wParam$ = 16						; size = 4
 _lParam$ = 20						; size = 4
 ?WindowProc@@YGJPAUHWND__@@IIJ@Z PROC			; WindowProc
 
-; 41   : {
+; 42   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -10308,21 +10336,21 @@ _lParam$ = 20						; size = 4
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 
-; 42   :  
-; 43   :    //these hold the dimensions of the client window area
-; 44   : 	 static int cxClient, cyClient; 
-; 45   : 
-; 46   : 	 //used to create the back buffer
-; 47   :    static HDC		hdcBackBuffer;
-; 48   :    static HBITMAP	hBitmap;
-; 49   :    static HBITMAP	hOldBitmap;
-; 50   : 
-; 51   :       //to grab filenames
-; 52   :    static TCHAR   szFileName[MAX_PATH],
-; 53   :                   szTitleName[MAX_PATH];
-; 54   : 
+; 43   :  
+; 44   :    //these hold the dimensions of the client window area
+; 45   : 	 static int cxClient, cyClient; 
+; 46   : 
+; 47   : 	 //used to create the back buffer
+; 48   :    static HDC		hdcBackBuffer;
+; 49   :    static HBITMAP	hBitmap;
+; 50   :    static HBITMAP	hOldBitmap;
+; 51   : 
+; 52   :       //to grab filenames
+; 53   :    static TCHAR   szFileName[MAX_PATH],
+; 54   :                   szTitleName[MAX_PATH];
 ; 55   : 
-; 56   :     switch (msg)
+; 56   : 
+; 57   :     switch (msg)
 
 	mov	eax, DWORD PTR _msg$[ebp]
 	mov	DWORD PTR tv64[ebp], eax
@@ -10348,19 +10376,19 @@ $LN69@WindowProc:
 	jmp	$LN2@WindowProc
 $LN8@WindowProc:
 
-; 57   :     {
-; 58   : 	
-; 59   : 		//A WM_CREATE msg is sent when your application window is first
-; 60   : 		//created
-; 61   :     case WM_CREATE:
-; 62   :       {
-; 63   :          //to get get the size of the client window first we need  to create
-; 64   :          //a RECT and then ask Windows to fill in our RECT structure with
-; 65   :          //the client window size. Then we assign to cxClient and cyClient 
-; 66   :          //accordingly
-; 67   : 			   RECT rect;
-; 68   : 
-; 69   : 			   GetClientRect(hwnd, &rect);
+; 58   :     {
+; 59   : 	
+; 60   : 		//A WM_CREATE msg is sent when your application window is first
+; 61   : 		//created
+; 62   :     case WM_CREATE:
+; 63   :       {
+; 64   :          //to get get the size of the client window first we need  to create
+; 65   :          //a RECT and then ask Windows to fill in our RECT structure with
+; 66   :          //the client window size. Then we assign to cxClient and cyClient 
+; 67   :          //accordingly
+; 68   : 			   RECT rect;
+; 69   : 
+; 70   : 			   GetClientRect(hwnd, &rect);
 
 	mov	esi, esp
 	lea	ecx, DWORD PTR _rect$10[ebp]
@@ -10371,20 +10399,20 @@ $LN8@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 70   : 
-; 71   : 			   cxClient = rect.right;
+; 71   : 
+; 72   : 			   cxClient = rect.right;
 
 	mov	eax, DWORD PTR _rect$10[ebp+8]
 	mov	DWORD PTR ?cxClient@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4HA, eax
 
-; 72   : 			   cyClient = rect.bottom;
+; 73   : 			   cyClient = rect.bottom;
 
 	mov	ecx, DWORD PTR _rect$10[ebp+12]
 	mov	DWORD PTR ?cyClient@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4HA, ecx
 
-; 73   : 
-; 74   :          //seed random number generator
-; 75   :          srand((unsigned) time(NULL));
+; 74   : 
+; 75   :          //seed random number generator
+; 76   :          srand((unsigned) time(NULL));
 
 	push	0
 	call	_time
@@ -10393,12 +10421,12 @@ $LN8@WindowProc:
 	call	_srand
 	add	esp, 4
 
-; 76   : 
-; 77   :          
-; 78   :          //---------------create a surface to render to(backbuffer)
-; 79   : 
-; 80   :          //create a memory device context
-; 81   :          hdcBackBuffer = CreateCompatibleDC(NULL);
+; 77   : 
+; 78   :          
+; 79   :          //---------------create a surface to render to(backbuffer)
+; 80   : 
+; 81   :          //create a memory device context
+; 82   :          hdcBackBuffer = CreateCompatibleDC(NULL);
 
 	mov	esi, esp
 	push	0
@@ -10407,9 +10435,9 @@ $LN8@WindowProc:
 	call	__RTC_CheckEsp
 	mov	DWORD PTR ?hdcBackBuffer@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHDC__@@A, eax
 
-; 82   : 
-; 83   :          //get the DC for the front buffer
-; 84   :          HDC hdc = GetDC(hwnd);
+; 83   : 
+; 84   :          //get the DC for the front buffer
+; 85   :          HDC hdc = GetDC(hwnd);
 
 	mov	esi, esp
 	mov	edx, DWORD PTR _hwnd$[ebp]
@@ -10419,8 +10447,8 @@ $LN8@WindowProc:
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _hdc$9[ebp], eax
 
-; 85   : 
-; 86   :          hBitmap = CreateCompatibleBitmap(hdc,
+; 86   : 
+; 87   :          hBitmap = CreateCompatibleBitmap(hdc,
 
 	mov	esi, esp
 	mov	eax, DWORD PTR ?cyClient@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4HA
@@ -10434,12 +10462,12 @@ $LN8@WindowProc:
 	call	__RTC_CheckEsp
 	mov	DWORD PTR ?hBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A, eax
 
-; 87   :                                           cxClient,
-; 88   :                                           cyClient);
-; 89   : 
-; 90   : 			  
-; 91   :          //select the bitmap into the memory device context
-; 92   : 			   hOldBitmap = (HBITMAP)SelectObject(hdcBackBuffer, hBitmap);
+; 88   :                                           cxClient,
+; 89   :                                           cyClient);
+; 90   : 
+; 91   : 			  
+; 92   :          //select the bitmap into the memory device context
+; 93   : 			   hOldBitmap = (HBITMAP)SelectObject(hdcBackBuffer, hBitmap);
 
 	mov	esi, esp
 	mov	eax, DWORD PTR ?hBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A
@@ -10451,9 +10479,9 @@ $LN8@WindowProc:
 	call	__RTC_CheckEsp
 	mov	DWORD PTR ?hOldBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A, eax
 
-; 93   : 
-; 94   :          //don't forget to release the DC
-; 95   :          ReleaseDC(hwnd, hdc);  
+; 94   : 
+; 95   :          //don't forget to release the DC
+; 96   :          ReleaseDC(hwnd, hdc);  
 
 	mov	esi, esp
 	mov	edx, DWORD PTR _hdc$9[ebp]
@@ -10464,11 +10492,11 @@ $LN8@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 96   :               
-; 97   :          //create the game
-; 98   :          g_pRaven = new Raven_Game();
+; 97   :               
+; 98   :          //create the game
+; 99   :          g_pRaven = new Raven_Game();
 
-	push	60					; 0000003cH
+	push	48					; 00000030H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T2[ebp], eax
@@ -10488,9 +10516,9 @@ $LN44@WindowProc:
 	mov	edx, DWORD PTR $T3[ebp]
 	mov	DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A, edx ; g_pRaven
 
-; 99   : 
-; 100  :         //make sure the menu items are ticked/unticked accordingly
-; 101  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_NAVGRAPH, UserOptions->m_bShowGraph);
+; 100  : 
+; 101  :         //make sure the menu items are ticked/unticked accordingly
+; 102  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_NAVGRAPH, UserOptions->m_bShowGraph);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax]
@@ -10502,7 +10530,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 102  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_PATH, UserOptions->m_bShowPathOfSelectedBot);
+; 103  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_PATH, UserOptions->m_bShowPathOfSelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+2]
@@ -10514,7 +10542,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 103  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_IDS, UserOptions->m_bShowBotIDs);
+; 104  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_IDS, UserOptions->m_bShowBotIDs);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+11]
@@ -10526,7 +10554,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 104  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_QUICK, UserOptions->m_bSmoothPathsQuick);
+; 105  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_QUICK, UserOptions->m_bSmoothPathsQuick);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+9]
@@ -10538,7 +10566,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 105  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_PRECISE, UserOptions->m_bSmoothPathsPrecise);
+; 106  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_PRECISE, UserOptions->m_bSmoothPathsPrecise);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+10]
@@ -10550,7 +10578,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 106  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_HEALTH, UserOptions->m_bShowBotHealth);
+; 107  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_HEALTH, UserOptions->m_bShowBotHealth);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+12]
@@ -10562,7 +10590,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 107  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_TARGET, UserOptions->m_bShowTargetOfSelectedBot);
+; 108  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_TARGET, UserOptions->m_bShowTargetOfSelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+3]
@@ -10574,7 +10602,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 108  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_FOV, UserOptions->m_bOnlyShowBotsInTargetsFOV);
+; 109  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_FOV, UserOptions->m_bOnlyShowBotsInTargetsFOV);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+5]
@@ -10586,7 +10614,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 109  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SCORES, UserOptions->m_bShowScore);
+; 110  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SCORES, UserOptions->m_bShowScore);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+13]
@@ -10598,7 +10626,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 110  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_GOAL_Q, UserOptions->m_bShowGoalsOfSelectedBot);
+; 111  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_GOAL_Q, UserOptions->m_bShowGoalsOfSelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+6]
@@ -10610,7 +10638,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 111  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_INDICES, UserOptions->m_bShowNodeIndices);
+; 112  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_INDICES, UserOptions->m_bShowNodeIndices);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+1]
@@ -10622,7 +10650,7 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 112  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SENSED, UserOptions->m_bShowOpponentsSensedBySelectedBot);
+; 113  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SENSED, UserOptions->m_bShowOpponentsSensedBySelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	al, BYTE PTR [eax+4]
@@ -10634,18 +10662,18 @@ $LN44@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 113  : 
-; 114  :       }
-; 115  : 
-; 116  :       break;
+; 114  : 
+; 115  :       }
+; 116  : 
+; 117  :       break;
 
 	jmp	$LN2@WindowProc
 $LN9@WindowProc:
 
-; 117  : 
-; 118  :     case WM_KEYUP:
-; 119  :       {
-; 120  :         switch(wParam)
+; 118  : 
+; 119  :     case WM_KEYUP:
+; 120  :       {
+; 121  :         switch(wParam)
 
 	mov	eax, DWORD PTR _wParam$[ebp]
 	mov	DWORD PTR tv187[ebp], eax
@@ -10659,10 +10687,10 @@ $LN9@WindowProc:
 	jmp	DWORD PTR $LN82@WindowProc[eax*4]
 $LN10@WindowProc:
 
-; 121  :         {
-; 122  :          case VK_ESCAPE:
-; 123  :           {
-; 124  :             SendMessage(hwnd, WM_DESTROY, NULL, NULL);
+; 122  :         {
+; 123  :          case VK_ESCAPE:
+; 124  :           {
+; 125  :             SendMessage(hwnd, WM_DESTROY, NULL, NULL);
 
 	mov	esi, esp
 	push	0
@@ -10674,106 +10702,106 @@ $LN10@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 125  :           }
-; 126  :           
-; 127  :           break;
+; 126  :           }
+; 127  :           
+; 128  :           break;
 
 	jmp	SHORT $LN4@WindowProc
 $LN11@WindowProc:
 
-; 128  : 
-; 129  :          case 'P':
-; 130  : 
-; 131  :            g_pRaven->TogglePause();
+; 129  : 
+; 130  :          case 'P':
+; 131  : 
+; 132  :            g_pRaven->TogglePause();
 
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?TogglePause@Raven_Game@@QAEXXZ		; Raven_Game::TogglePause
 
-; 132  : 
-; 133  :            break;
+; 133  : 
+; 134  :            break;
 
 	jmp	SHORT $LN4@WindowProc
 $LN12@WindowProc:
 
-; 134  : 
-; 135  :          case '1':
-; 136  : 
-; 137  :            g_pRaven->ChangeWeaponOfPossessedBot(type_blaster);
+; 135  : 
+; 136  :          case '1':
+; 137  : 
+; 138  :            g_pRaven->ChangeWeaponOfPossessedBot(type_blaster);
 
 	push	9
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?ChangeWeaponOfPossessedBot@Raven_Game@@QBEXI@Z ; Raven_Game::ChangeWeaponOfPossessedBot
 
-; 138  : 
-; 139  :            break;
+; 139  : 
+; 140  :            break;
 
 	jmp	SHORT $LN4@WindowProc
 $LN13@WindowProc:
 
-; 140  : 
-; 141  :          case '2':
-; 142  : 
-; 143  :            g_pRaven->ChangeWeaponOfPossessedBot(type_shotgun);
+; 141  : 
+; 142  :          case '2':
+; 143  : 
+; 144  :            g_pRaven->ChangeWeaponOfPossessedBot(type_shotgun);
 
 	push	8
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?ChangeWeaponOfPossessedBot@Raven_Game@@QBEXI@Z ; Raven_Game::ChangeWeaponOfPossessedBot
 
-; 144  : 
-; 145  :            break;
+; 145  : 
+; 146  :            break;
 
 	jmp	SHORT $LN4@WindowProc
 $LN14@WindowProc:
 
-; 146  :            
-; 147  :          case '3':
-; 148  : 
-; 149  :            g_pRaven->ChangeWeaponOfPossessedBot(type_rocket_launcher);
+; 147  :            
+; 148  :          case '3':
+; 149  : 
+; 150  :            g_pRaven->ChangeWeaponOfPossessedBot(type_rocket_launcher);
 
 	push	7
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?ChangeWeaponOfPossessedBot@Raven_Game@@QBEXI@Z ; Raven_Game::ChangeWeaponOfPossessedBot
 
-; 150  : 
-; 151  :            break;
+; 151  : 
+; 152  :            break;
 
 	jmp	SHORT $LN4@WindowProc
 $LN15@WindowProc:
 
-; 152  : 
-; 153  :          case '4':
-; 154  : 
-; 155  :            g_pRaven->ChangeWeaponOfPossessedBot(type_rail_gun);
+; 153  : 
+; 154  :          case '4':
+; 155  : 
+; 156  :            g_pRaven->ChangeWeaponOfPossessedBot(type_rail_gun);
 
 	push	6
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?ChangeWeaponOfPossessedBot@Raven_Game@@QBEXI@Z ; Raven_Game::ChangeWeaponOfPossessedBot
 
-; 156  : 
-; 157  :            break;
+; 157  : 
+; 158  :            break;
 
 	jmp	SHORT $LN4@WindowProc
 $LN16@WindowProc:
 
-; 158  : 
-; 159  :          case 'X':
-; 160  : 
-; 161  :            g_pRaven->ExorciseAnyPossessedBot();
+; 159  : 
+; 160  :          case 'X':
+; 161  : 
+; 162  :            g_pRaven->ExorciseAnyPossessedBot();
 
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?ExorciseAnyPossessedBot@Raven_Game@@QAEXXZ ; Raven_Game::ExorciseAnyPossessedBot
 
-; 162  : 
-; 163  :            break;
+; 163  : 
+; 164  :            break;
 
 	jmp	SHORT $LN4@WindowProc
 $LN17@WindowProc:
 
-; 164  : 
 ; 165  : 
-; 166  :          case VK_UP:
-; 167  : 
-; 168  :            g_pRaven->AddBots(1); break;
+; 166  : 
+; 167  :          case VK_UP:
+; 168  : 
+; 169  :            g_pRaven->AddBots(1); break;
 
 	push	1
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
@@ -10781,65 +10809,65 @@ $LN17@WindowProc:
 	jmp	SHORT $LN4@WindowProc
 $LN18@WindowProc:
 
-; 169  : 
-; 170  :          case VK_DOWN:
-; 171  : 
-; 172  :            g_pRaven->RemoveBot(); break;
+; 170  : 
+; 171  :          case VK_DOWN:
+; 172  : 
+; 173  :            g_pRaven->RemoveBot(); break;
 
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?RemoveBot@Raven_Game@@QAEXXZ		; Raven_Game::RemoveBot
 $LN4@WindowProc:
 
-; 173  :            
-; 174  : 
-; 175  :         }
-; 176  :       }
-; 177  : 
-; 178  :       break;
+; 174  :            
+; 175  : 
+; 176  :         }
+; 177  :       }
+; 178  : 
+; 179  :       break;
 
 	jmp	$LN2@WindowProc
 $LN19@WindowProc:
 
-; 179  : 
 ; 180  : 
-; 181  :     case WM_LBUTTONDOWN:
-; 182  :     {
-; 183  :       g_pRaven->ClickLeftMouseButton(MAKEPOINTS(lParam));
+; 181  : 
+; 182  :     case WM_LBUTTONDOWN:
+; 183  :     {
+; 184  :       g_pRaven->ClickLeftMouseButton(MAKEPOINTS(lParam));
 
 	mov	edx, DWORD PTR _lParam$[ebp]
 	push	edx
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?ClickLeftMouseButton@Raven_Game@@QAEXUtagPOINTS@@@Z ; Raven_Game::ClickLeftMouseButton
 
-; 184  :     }
-; 185  :     
-; 186  :     break;
+; 185  :     }
+; 186  :     
+; 187  :     break;
 
 	jmp	$LN2@WindowProc
 $LN20@WindowProc:
 
-; 187  : 
-; 188  :    case WM_RBUTTONDOWN:
-; 189  :     {
-; 190  :       g_pRaven->ClickRightMouseButton(MAKEPOINTS(lParam));
+; 188  : 
+; 189  :    case WM_RBUTTONDOWN:
+; 190  :     {
+; 191  :       g_pRaven->ClickRightMouseButton(MAKEPOINTS(lParam));
 
 	mov	eax, DWORD PTR _lParam$[ebp]
 	push	eax
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?ClickRightMouseButton@Raven_Game@@QAEXUtagPOINTS@@@Z ; Raven_Game::ClickRightMouseButton
 
-; 191  :     }
-; 192  :     
-; 193  :     break;
+; 192  :     }
+; 193  :     
+; 194  :     break;
 
 	jmp	$LN2@WindowProc
 $LN21@WindowProc:
 
-; 194  : 
-; 195  :     case WM_COMMAND:
-; 196  :     {
-; 197  : 
-; 198  :      switch(wParam)
+; 195  : 
+; 196  :     case WM_COMMAND:
+; 197  :     {
+; 198  : 
+; 199  :      switch(wParam)
 
 	mov	ecx, DWORD PTR _wParam$[ebp]
 	mov	DWORD PTR tv211[ebp], ecx
@@ -10852,18 +10880,18 @@ $LN21@WindowProc:
 	jmp	DWORD PTR $LN83@WindowProc[eax*4]
 $LN22@WindowProc:
 
-; 199  :       {
-; 200  :       
-; 201  : 
-; 202  :       case IDM_GAME_LOAD:
-; 203  :           
-; 204  :           FileOpenDlg(hwnd, szFileName, szTitleName, "Raven map file (*.map)", "map");
+; 200  :       {
+; 201  :       
+; 202  : 
+; 203  :       case IDM_GAME_LOAD:
+; 204  :           
+; 205  :           FileOpenDlg(hwnd, szFileName, szTitleName, "Raven map file (*.map)", "map");
 
-	push	OFFSET $SG172592
+	push	OFFSET $SG172482
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
-	push	OFFSET $SG172593
+	push	OFFSET $SG172483
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
@@ -10884,12 +10912,12 @@ $LN22@WindowProc:
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 205  : 
-; 206  :           debug_con << "Filename: " << szTitleName << "";
+; 206  : 
+; 207  :           debug_con << "Filename: " << szTitleName << "";
 
-	push	OFFSET $SG172595
+	push	OFFSET $SG172485
 	push	OFFSET ?szTitleName@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PADA
-	push	OFFSET $SG172594
+	push	OFFSET $SG172484
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0L@D@DebugConsole@@QAEAAV0@AAY0L@$$CBD@Z ; DebugConsole::operator<<<char [11]>
@@ -10898,8 +10926,8 @@ $LN22@WindowProc:
 	mov	ecx, eax
 	call	??$?6$$BY00D@DebugConsole@@QAEAAV0@AAY00$$CBD@Z ; DebugConsole::operator<<<char [1]>
 
-; 207  : 
-; 208  :           if (strlen(szTitleName) > 0)
+; 208  : 
+; 209  :           if (strlen(szTitleName) > 0)
 
 	push	OFFSET ?szTitleName@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PADA
 	call	_strlen
@@ -10907,8 +10935,8 @@ $LN22@WindowProc:
 	test	eax, eax
 	jbe	SHORT $LN23@WindowProc
 
-; 209  :           {
-; 210  :             g_pRaven->LoadMap(szTitleName);
+; 210  :           {
+; 211  :             g_pRaven->LoadMap(szTitleName);
 
 	push	OFFSET ?szTitleName@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PADA
 	lea	ecx, DWORD PTR $T6[ebp]
@@ -10923,62 +10951,62 @@ $LN22@WindowProc:
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN23@WindowProc:
 
-; 211  :           }
-; 212  : 
-; 213  :           break;
+; 212  :           }
+; 213  : 
+; 214  :           break;
 
 	jmp	$LN39@WindowProc
 $LN24@WindowProc:
 
-; 214  : 
-; 215  :       case IDM_GAME_ADDBOT:
-; 216  : 
-; 217  :           g_pRaven->AddBots(1);
+; 215  : 
+; 216  :       case IDM_GAME_ADDBOT:
+; 217  : 
+; 218  :           g_pRaven->AddBots(1);
 
 	push	1
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?AddBots@Raven_Game@@QAEXI@Z		; Raven_Game::AddBots
 
-; 218  :           
-; 219  :           break;
+; 219  :           
+; 220  :           break;
 
 	jmp	$LN39@WindowProc
 $LN25@WindowProc:
 
-; 220  : 
-; 221  :       case IDM_GAME_REMOVEBOT:
-; 222  :           
-; 223  :           g_pRaven->RemoveBot();
+; 221  : 
+; 222  :       case IDM_GAME_REMOVEBOT:
+; 223  :           
+; 224  :           g_pRaven->RemoveBot();
 
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?RemoveBot@Raven_Game@@QAEXXZ		; Raven_Game::RemoveBot
 
-; 224  : 
-; 225  :           break;
+; 225  : 
+; 226  :           break;
 
 	jmp	$LN39@WindowProc
 $LN26@WindowProc:
 
-; 226  : 
-; 227  :       case IDM_GAME_PAUSE:
-; 228  :           
-; 229  :           g_pRaven->TogglePause();
+; 227  : 
+; 228  :       case IDM_GAME_PAUSE:
+; 229  :           
+; 230  :           g_pRaven->TogglePause();
 
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?TogglePause@Raven_Game@@QAEXXZ		; Raven_Game::TogglePause
 
-; 230  : 
-; 231  :           break;
+; 231  : 
+; 232  :           break;
 
 	jmp	$LN39@WindowProc
 $LN27@WindowProc:
 
-; 232  : 
 ; 233  : 
 ; 234  : 
-; 235  :       case IDM_NAVIGATION_SHOW_NAVGRAPH:
-; 236  : 
-; 237  :         UserOptions->m_bShowGraph = !UserOptions->m_bShowGraph;
+; 235  : 
+; 236  :       case IDM_NAVIGATION_SHOW_NAVGRAPH:
+; 237  : 
+; 238  :         UserOptions->m_bShowGraph = !UserOptions->m_bShowGraph;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax]
@@ -10993,8 +11021,8 @@ $LN46@WindowProc:
 	mov	cl, BYTE PTR tv253[ebp]
 	mov	BYTE PTR [eax], cl
 
-; 238  : 
-; 239  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_NAVGRAPH, UserOptions->m_bShowGraph);
+; 239  : 
+; 240  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_NAVGRAPH, UserOptions->m_bShowGraph);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax]
@@ -11006,16 +11034,16 @@ $LN46@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 240  : 
-; 241  :         break;
+; 241  : 
+; 242  :         break;
 
 	jmp	$LN39@WindowProc
 $LN28@WindowProc:
 
-; 242  :         
-; 243  :       case IDM_NAVIGATION_SHOW_PATH:
-; 244  : 
-; 245  :         UserOptions->m_bShowPathOfSelectedBot = !UserOptions->m_bShowPathOfSelectedBot;
+; 243  :         
+; 244  :       case IDM_NAVIGATION_SHOW_PATH:
+; 245  : 
+; 246  :         UserOptions->m_bShowPathOfSelectedBot = !UserOptions->m_bShowPathOfSelectedBot;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+2]
@@ -11030,8 +11058,8 @@ $LN48@WindowProc:
 	mov	cl, BYTE PTR tv266[ebp]
 	mov	BYTE PTR [eax+2], cl
 
-; 246  : 
-; 247  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_PATH, UserOptions->m_bShowPathOfSelectedBot);
+; 247  : 
+; 248  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_PATH, UserOptions->m_bShowPathOfSelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+2]
@@ -11043,16 +11071,16 @@ $LN48@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 248  : 
-; 249  :         break;
+; 249  : 
+; 250  :         break;
 
 	jmp	$LN39@WindowProc
 $LN29@WindowProc:
 
-; 250  : 
-; 251  :       case IDM_NAVIGATION_SHOW_INDICES:
-; 252  : 
-; 253  :         UserOptions->m_bShowNodeIndices = !UserOptions->m_bShowNodeIndices;
+; 251  : 
+; 252  :       case IDM_NAVIGATION_SHOW_INDICES:
+; 253  : 
+; 254  :         UserOptions->m_bShowNodeIndices = !UserOptions->m_bShowNodeIndices;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+1]
@@ -11067,8 +11095,8 @@ $LN50@WindowProc:
 	mov	cl, BYTE PTR tv279[ebp]
 	mov	BYTE PTR [eax+1], cl
 
-; 254  : 
-; 255  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_INDICES, UserOptions->m_bShowNodeIndices);
+; 255  : 
+; 256  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_INDICES, UserOptions->m_bShowNodeIndices);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+1]
@@ -11080,16 +11108,16 @@ $LN50@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 256  : 
-; 257  :         break;
+; 257  : 
+; 258  :         break;
 
 	jmp	$LN39@WindowProc
 $LN30@WindowProc:
 
-; 258  : 
-; 259  :       case IDM_NAVIGATION_SMOOTH_PATHS_QUICK:
-; 260  : 
-; 261  :         UserOptions->m_bSmoothPathsQuick = !UserOptions->m_bSmoothPathsQuick;
+; 259  : 
+; 260  :       case IDM_NAVIGATION_SMOOTH_PATHS_QUICK:
+; 261  : 
+; 262  :         UserOptions->m_bSmoothPathsQuick = !UserOptions->m_bSmoothPathsQuick;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+9]
@@ -11104,12 +11132,12 @@ $LN52@WindowProc:
 	mov	cl, BYTE PTR tv292[ebp]
 	mov	BYTE PTR [eax+9], cl
 
-; 262  :         UserOptions->m_bSmoothPathsPrecise = false;
+; 263  :         UserOptions->m_bSmoothPathsPrecise = false;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	BYTE PTR [eax+10], 0
 
-; 263  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_PRECISE, UserOptions->m_bSmoothPathsPrecise);
+; 264  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_PRECISE, UserOptions->m_bSmoothPathsPrecise);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+10]
@@ -11121,7 +11149,7 @@ $LN52@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 264  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_QUICK, UserOptions->m_bSmoothPathsQuick);
+; 265  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_QUICK, UserOptions->m_bSmoothPathsQuick);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+9]
@@ -11133,16 +11161,16 @@ $LN52@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 265  : 
-; 266  :         break;
+; 266  : 
+; 267  :         break;
 
 	jmp	$LN39@WindowProc
 $LN31@WindowProc:
 
-; 267  : 
-; 268  :       case IDM_NAVIGATION_SMOOTH_PATHS_PRECISE:
-; 269  : 
-; 270  :         UserOptions->m_bSmoothPathsPrecise = !UserOptions->m_bSmoothPathsPrecise;
+; 268  : 
+; 269  :       case IDM_NAVIGATION_SMOOTH_PATHS_PRECISE:
+; 270  : 
+; 271  :         UserOptions->m_bSmoothPathsPrecise = !UserOptions->m_bSmoothPathsPrecise;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+10]
@@ -11157,12 +11185,12 @@ $LN54@WindowProc:
 	mov	cl, BYTE PTR tv312[ebp]
 	mov	BYTE PTR [eax+10], cl
 
-; 271  :         UserOptions->m_bSmoothPathsQuick = false;
+; 272  :         UserOptions->m_bSmoothPathsQuick = false;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	BYTE PTR [eax+9], 0
 
-; 272  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_QUICK, UserOptions->m_bSmoothPathsQuick);
+; 273  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_QUICK, UserOptions->m_bSmoothPathsQuick);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+9]
@@ -11174,7 +11202,7 @@ $LN54@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 273  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_PRECISE, UserOptions->m_bSmoothPathsPrecise);
+; 274  :         CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SMOOTH_PATHS_PRECISE, UserOptions->m_bSmoothPathsPrecise);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+10]
@@ -11186,16 +11214,16 @@ $LN54@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 274  : 
-; 275  :         break;
+; 275  : 
+; 276  :         break;
 
 	jmp	$LN39@WindowProc
 $LN32@WindowProc:
 
-; 276  : 
-; 277  :       case IDM_BOTS_SHOW_IDS:
-; 278  : 
-; 279  :         UserOptions->m_bShowBotIDs = !UserOptions->m_bShowBotIDs;
+; 277  : 
+; 278  :       case IDM_BOTS_SHOW_IDS:
+; 279  : 
+; 280  :         UserOptions->m_bShowBotIDs = !UserOptions->m_bShowBotIDs;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+11]
@@ -11210,8 +11238,8 @@ $LN56@WindowProc:
 	mov	cl, BYTE PTR tv332[ebp]
 	mov	BYTE PTR [eax+11], cl
 
-; 280  : 
-; 281  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_IDS, UserOptions->m_bShowBotIDs);
+; 281  : 
+; 282  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_IDS, UserOptions->m_bShowBotIDs);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+11]
@@ -11223,16 +11251,16 @@ $LN56@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 282  : 
-; 283  :         break;
+; 283  : 
+; 284  :         break;
 
 	jmp	$LN39@WindowProc
 $LN33@WindowProc:
 
-; 284  : 
-; 285  :       case IDM_BOTS_SHOW_HEALTH:
-; 286  : 
-; 287  :         UserOptions->m_bShowBotHealth = !UserOptions->m_bShowBotHealth;
+; 285  : 
+; 286  :       case IDM_BOTS_SHOW_HEALTH:
+; 287  : 
+; 288  :         UserOptions->m_bShowBotHealth = !UserOptions->m_bShowBotHealth;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+12]
@@ -11247,8 +11275,8 @@ $LN58@WindowProc:
 	mov	cl, BYTE PTR tv345[ebp]
 	mov	BYTE PTR [eax+12], cl
 
-; 288  :         
-; 289  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_HEALTH, UserOptions->m_bShowBotHealth);
+; 289  :         
+; 290  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_HEALTH, UserOptions->m_bShowBotHealth);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+12]
@@ -11260,16 +11288,16 @@ $LN58@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 290  : 
-; 291  :         break;
+; 291  : 
+; 292  :         break;
 
 	jmp	$LN39@WindowProc
 $LN34@WindowProc:
 
-; 292  : 
-; 293  :       case IDM_BOTS_SHOW_TARGET:
-; 294  : 
-; 295  :         UserOptions->m_bShowTargetOfSelectedBot = !UserOptions->m_bShowTargetOfSelectedBot;
+; 293  : 
+; 294  :       case IDM_BOTS_SHOW_TARGET:
+; 295  : 
+; 296  :         UserOptions->m_bShowTargetOfSelectedBot = !UserOptions->m_bShowTargetOfSelectedBot;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+3]
@@ -11284,8 +11312,8 @@ $LN60@WindowProc:
 	mov	cl, BYTE PTR tv358[ebp]
 	mov	BYTE PTR [eax+3], cl
 
-; 296  :         
-; 297  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_TARGET, UserOptions->m_bShowTargetOfSelectedBot);
+; 297  :         
+; 298  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_TARGET, UserOptions->m_bShowTargetOfSelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+3]
@@ -11297,16 +11325,16 @@ $LN60@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 298  : 
-; 299  :         break;
+; 299  : 
+; 300  :         break;
 
 	jmp	$LN39@WindowProc
 $LN35@WindowProc:
 
-; 300  : 
-; 301  :       case IDM_BOTS_SHOW_SENSED:
-; 302  : 
-; 303  :         UserOptions->m_bShowOpponentsSensedBySelectedBot = !UserOptions->m_bShowOpponentsSensedBySelectedBot;
+; 301  : 
+; 302  :       case IDM_BOTS_SHOW_SENSED:
+; 303  : 
+; 304  :         UserOptions->m_bShowOpponentsSensedBySelectedBot = !UserOptions->m_bShowOpponentsSensedBySelectedBot;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+4]
@@ -11321,8 +11349,8 @@ $LN62@WindowProc:
 	mov	cl, BYTE PTR tv371[ebp]
 	mov	BYTE PTR [eax+4], cl
 
-; 304  :         
-; 305  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SENSED, UserOptions->m_bShowOpponentsSensedBySelectedBot);
+; 305  :         
+; 306  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SENSED, UserOptions->m_bShowOpponentsSensedBySelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+4]
@@ -11334,17 +11362,17 @@ $LN62@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 306  : 
-; 307  :         break;
+; 307  : 
+; 308  :         break;
 
 	jmp	$LN39@WindowProc
 $LN36@WindowProc:
 
-; 308  : 
 ; 309  : 
-; 310  :       case IDM_BOTS_SHOW_FOV:
-; 311  : 
-; 312  :         UserOptions->m_bOnlyShowBotsInTargetsFOV = !UserOptions->m_bOnlyShowBotsInTargetsFOV;
+; 310  : 
+; 311  :       case IDM_BOTS_SHOW_FOV:
+; 312  : 
+; 313  :         UserOptions->m_bOnlyShowBotsInTargetsFOV = !UserOptions->m_bOnlyShowBotsInTargetsFOV;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+5]
@@ -11359,8 +11387,8 @@ $LN64@WindowProc:
 	mov	cl, BYTE PTR tv384[ebp]
 	mov	BYTE PTR [eax+5], cl
 
-; 313  :         
-; 314  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_FOV, UserOptions->m_bOnlyShowBotsInTargetsFOV);
+; 314  :         
+; 315  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_FOV, UserOptions->m_bOnlyShowBotsInTargetsFOV);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+5]
@@ -11372,16 +11400,16 @@ $LN64@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 315  : 
-; 316  :         break;
+; 316  : 
+; 317  :         break;
 
 	jmp	$LN39@WindowProc
 $LN37@WindowProc:
 
-; 317  : 
-; 318  :       case IDM_BOTS_SHOW_SCORES:
-; 319  : 
-; 320  :         UserOptions->m_bShowScore = !UserOptions->m_bShowScore;
+; 318  : 
+; 319  :       case IDM_BOTS_SHOW_SCORES:
+; 320  : 
+; 321  :         UserOptions->m_bShowScore = !UserOptions->m_bShowScore;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+13]
@@ -11396,8 +11424,8 @@ $LN66@WindowProc:
 	mov	cl, BYTE PTR tv397[ebp]
 	mov	BYTE PTR [eax+13], cl
 
-; 321  :         
-; 322  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SCORES, UserOptions->m_bShowScore);
+; 322  :         
+; 323  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SCORES, UserOptions->m_bShowScore);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+13]
@@ -11409,16 +11437,16 @@ $LN66@WindowProc:
 	call	?CheckMenuItemAppropriately@@YAXPAUHWND__@@I_N@Z ; CheckMenuItemAppropriately
 	add	esp, 12					; 0000000cH
 
-; 323  : 
-; 324  :         break;
+; 324  : 
+; 325  :         break;
 
 	jmp	SHORT $LN39@WindowProc
 $LN38@WindowProc:
 
-; 325  : 
-; 326  :       case IDM_BOTS_SHOW_GOAL_Q:
-; 327  : 
-; 328  :         UserOptions->m_bShowGoalsOfSelectedBot = !UserOptions->m_bShowGoalsOfSelectedBot;
+; 326  : 
+; 327  :       case IDM_BOTS_SHOW_GOAL_Q:
+; 328  : 
+; 329  :         UserOptions->m_bShowGoalsOfSelectedBot = !UserOptions->m_bShowGoalsOfSelectedBot;
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+6]
@@ -11433,8 +11461,8 @@ $LN68@WindowProc:
 	mov	cl, BYTE PTR tv410[ebp]
 	mov	BYTE PTR [eax+6], cl
 
-; 329  :         
-; 330  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_GOAL_Q, UserOptions->m_bShowGoalsOfSelectedBot);
+; 330  :         
+; 331  :         CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_GOAL_Q, UserOptions->m_bShowGoalsOfSelectedBot);
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	mov	dl, BYTE PTR [eax+6]
@@ -11447,19 +11475,19 @@ $LN68@WindowProc:
 	add	esp, 12					; 0000000cH
 $LN39@WindowProc:
 
-; 331  : 
-; 332  :         break;
-; 333  : 
-; 334  :       }//end switch
-; 335  :     }
-; 336  : 
-; 337  :     
-; 338  :     case WM_PAINT:
-; 339  :       {
-; 340  :  		       
-; 341  :          PAINTSTRUCT ps;
-; 342  :           
-; 343  :          BeginPaint (hwnd, &ps);
+; 332  : 
+; 333  :         break;
+; 334  : 
+; 335  :       }//end switch
+; 336  :     }
+; 337  : 
+; 338  :     
+; 339  :     case WM_PAINT:
+; 340  :       {
+; 341  :  		       
+; 342  :          PAINTSTRUCT ps;
+; 343  :           
+; 344  :          BeginPaint (hwnd, &ps);
 
 	mov	esi, esp
 	lea	edx, DWORD PTR _ps$5[ebp]
@@ -11470,9 +11498,9 @@ $LN39@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 344  : 
-; 345  :         //fill our backbuffer with white
-; 346  :          BitBlt(hdcBackBuffer,
+; 345  : 
+; 346  :         //fill our backbuffer with white
+; 347  :          BitBlt(hdcBackBuffer,
 
 	mov	esi, esp
 	push	16711778				; 00ff0062H
@@ -11491,17 +11519,17 @@ $LN39@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 347  :                 0,
 ; 348  :                 0,
-; 349  :                 cxClient,
-; 350  :                 cyClient,
-; 351  :                 NULL,
+; 349  :                 0,
+; 350  :                 cxClient,
+; 351  :                 cyClient,
 ; 352  :                 NULL,
 ; 353  :                 NULL,
-; 354  :                 WHITENESS);
-; 355  :           
-; 356  :          
-; 357  :          gdi->StartDrawing(hdcBackBuffer);
+; 354  :                 NULL,
+; 355  :                 WHITENESS);
+; 356  :           
+; 357  :          
+; 358  :          gdi->StartDrawing(hdcBackBuffer);
 
 	mov	ecx, DWORD PTR ?hdcBackBuffer@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHDC__@@A
 	push	ecx
@@ -11509,14 +11537,14 @@ $LN39@WindowProc:
 	mov	ecx, eax
 	call	?StartDrawing@Cgdi@@QAEXPAUHDC__@@@Z	; Cgdi::StartDrawing
 
-; 358  : 
-; 359  :          g_pRaven->Render();
+; 359  : 
+; 360  :          g_pRaven->Render();
 
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?Render@Raven_Game@@QAEXXZ		; Raven_Game::Render
 
-; 360  : 
-; 361  :          gdi->StopDrawing(hdcBackBuffer);
+; 361  : 
+; 362  :          gdi->StopDrawing(hdcBackBuffer);
 
 	mov	edx, DWORD PTR ?hdcBackBuffer@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHDC__@@A
 	push	edx
@@ -11524,10 +11552,10 @@ $LN39@WindowProc:
 	mov	ecx, eax
 	call	?StopDrawing@Cgdi@@QAEXPAUHDC__@@@Z	; Cgdi::StopDrawing
 
-; 362  : 
 ; 363  : 
-; 364  :          //now blit backbuffer to front
-; 365  : 			   BitBlt(ps.hdc, 0, 0, cxClient, cyClient, hdcBackBuffer, 0, 0, SRCCOPY); 
+; 364  : 
+; 365  :          //now blit backbuffer to front
+; 366  : 			   BitBlt(ps.hdc, 0, 0, cxClient, cyClient, hdcBackBuffer, 0, 0, SRCCOPY); 
 
 	mov	esi, esp
 	push	13369376				; 00cc0020H
@@ -11547,8 +11575,8 @@ $LN39@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 366  :           
-; 367  :          EndPaint (hwnd, &ps);
+; 367  :           
+; 368  :          EndPaint (hwnd, &ps);
 
 	mov	esi, esp
 	lea	ecx, DWORD PTR _ps$5[ebp]
@@ -11559,28 +11587,28 @@ $LN39@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 368  : 
-; 369  :       }
-; 370  : 
-; 371  :       break;
+; 369  : 
+; 370  :       }
+; 371  : 
+; 372  :       break;
 
 	jmp	$LN2@WindowProc
 $LN40@WindowProc:
 
-; 372  : 
-; 373  :     //has the user resized the client area?
-; 374  : 		case WM_SIZE:
-; 375  : 		  {
-; 376  :         //if so we need to update our variables so that any drawing
-; 377  :         //we do using cxClient and cyClient is scaled accordingly
-; 378  : 			  cxClient = LOWORD(lParam);
+; 373  : 
+; 374  :     //has the user resized the client area?
+; 375  : 		case WM_SIZE:
+; 376  : 		  {
+; 377  :         //if so we need to update our variables so that any drawing
+; 378  :         //we do using cxClient and cyClient is scaled accordingly
+; 379  : 			  cxClient = LOWORD(lParam);
 
 	mov	eax, DWORD PTR _lParam$[ebp]
 	and	eax, 65535				; 0000ffffH
 	movzx	ecx, ax
 	mov	DWORD PTR ?cxClient@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4HA, ecx
 
-; 379  : 			  cyClient = HIWORD(lParam);
+; 380  : 			  cyClient = HIWORD(lParam);
 
 	mov	edx, DWORD PTR _lParam$[ebp]
 	shr	edx, 16					; 00000010H
@@ -11588,10 +11616,10 @@ $LN40@WindowProc:
 	movzx	eax, dx
 	mov	DWORD PTR ?cyClient@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4HA, eax
 
-; 380  : 
-; 381  :         //now to resize the backbuffer accordingly. First select
-; 382  :         //the old bitmap back into the DC
-; 383  : 			  SelectObject(hdcBackBuffer, hOldBitmap);
+; 381  : 
+; 382  :         //now to resize the backbuffer accordingly. First select
+; 383  :         //the old bitmap back into the DC
+; 384  : 			  SelectObject(hdcBackBuffer, hOldBitmap);
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR ?hOldBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A
@@ -11602,9 +11630,9 @@ $LN40@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 384  : 
-; 385  :         //don't forget to do this or you will get resource leaks
-; 386  :         DeleteObject(hBitmap); 
+; 385  : 
+; 386  :         //don't forget to do this or you will get resource leaks
+; 387  :         DeleteObject(hBitmap); 
 
 	mov	esi, esp
 	mov	eax, DWORD PTR ?hBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A
@@ -11613,9 +11641,9 @@ $LN40@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 387  : 
-; 388  : 			  //get the DC for the application
-; 389  :         HDC hdc = GetDC(hwnd);
+; 388  : 
+; 389  : 			  //get the DC for the application
+; 390  :         HDC hdc = GetDC(hwnd);
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR _hwnd$[ebp]
@@ -11625,10 +11653,10 @@ $LN40@WindowProc:
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _hdc$4[ebp], eax
 
-; 390  : 
-; 391  : 			  //create another bitmap of the same size and mode
-; 392  :         //as the application
-; 393  :         hBitmap = CreateCompatibleBitmap(hdc,
+; 391  : 
+; 392  : 			  //create another bitmap of the same size and mode
+; 393  :         //as the application
+; 394  :         hBitmap = CreateCompatibleBitmap(hdc,
 
 	mov	esi, esp
 	mov	edx, DWORD PTR ?cyClient@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4HA
@@ -11642,10 +11670,10 @@ $LN40@WindowProc:
 	call	__RTC_CheckEsp
 	mov	DWORD PTR ?hBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A, eax
 
-; 394  : 											  cxClient,
-; 395  : 											  cyClient);
-; 396  : 
-; 397  : 			  ReleaseDC(hwnd, hdc);
+; 395  : 											  cxClient,
+; 396  : 											  cyClient);
+; 397  : 
+; 398  : 			  ReleaseDC(hwnd, hdc);
 
 	mov	esi, esp
 	mov	edx, DWORD PTR _hdc$4[ebp]
@@ -11656,9 +11684,9 @@ $LN40@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 398  : 			  
-; 399  : 			  //select the new bitmap into the DC
-; 400  :         SelectObject(hdcBackBuffer, hBitmap);
+; 399  : 			  
+; 400  : 			  //select the new bitmap into the DC
+; 401  :         SelectObject(hdcBackBuffer, hBitmap);
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR ?hBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A
@@ -11669,20 +11697,20 @@ $LN40@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 401  : 
-; 402  :       }
-; 403  : 
-; 404  :       break;
+; 402  : 
+; 403  :       }
+; 404  : 
+; 405  :       break;
 
 	jmp	SHORT $LN2@WindowProc
 $LN41@WindowProc:
 
-; 405  :           
-; 406  : 		 case WM_DESTROY:
-; 407  : 			 {
-; 408  : 
-; 409  :          //clean up our backbuffer objects
-; 410  :          SelectObject(hdcBackBuffer, hOldBitmap);
+; 406  :           
+; 407  : 		 case WM_DESTROY:
+; 408  : 			 {
+; 409  : 
+; 410  :          //clean up our backbuffer objects
+; 411  :          SelectObject(hdcBackBuffer, hOldBitmap);
 
 	mov	esi, esp
 	mov	eax, DWORD PTR ?hOldBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A
@@ -11693,8 +11721,8 @@ $LN41@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 411  : 
-; 412  :          DeleteDC(hdcBackBuffer);
+; 412  : 
+; 413  :          DeleteDC(hdcBackBuffer);
 
 	mov	esi, esp
 	mov	edx, DWORD PTR ?hdcBackBuffer@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHDC__@@A
@@ -11703,7 +11731,7 @@ $LN41@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 413  :          DeleteObject(hBitmap); 
+; 414  :          DeleteObject(hBitmap); 
 
 	mov	esi, esp
 	mov	eax, DWORD PTR ?hBitmap@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PAUHBITMAP__@@A
@@ -11712,10 +11740,10 @@ $LN41@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 414  :          
-; 415  : 
-; 416  :          // kill the application, this sends a WM_QUIT message  
-; 417  : 				 PostQuitMessage (0);
+; 415  :          
+; 416  : 
+; 417  :          // kill the application, this sends a WM_QUIT message  
+; 418  : 				 PostQuitMessage (0);
 
 	mov	esi, esp
 	push	0
@@ -11724,15 +11752,15 @@ $LN41@WindowProc:
 	call	__RTC_CheckEsp
 $LN2@WindowProc:
 
-; 418  : 			 }
-; 419  : 
-; 420  :        break;
-; 421  : 
-; 422  :      }//end switch
-; 423  : 
-; 424  :      //this is where all the messages not specifically handled by our 
-; 425  : 		 //winproc are sent to be processed
-; 426  : 		 return DefWindowProc (hwnd, msg, wParam, lParam);
+; 419  : 			 }
+; 420  : 
+; 421  :        break;
+; 422  : 
+; 423  :      }//end switch
+; 424  : 
+; 425  :      //this is where all the messages not specifically handled by our 
+; 426  : 		 //winproc are sent to be processed
+; 427  : 		 return DefWindowProc (hwnd, msg, wParam, lParam);
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR _lParam$[ebp]
@@ -11747,7 +11775,7 @@ $LN2@WindowProc:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 427  : }
+; 428  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -11910,7 +11938,7 @@ $LN83@WindowProc:
 _TEXT	ENDS
 text$x	SEGMENT
 __unwindfunclet$?WindowProc@@YGJPAUHWND__@@IIJ@Z$0:
-	push	60					; 0000003cH
+	push	48					; 00000030H
 	mov	eax, DWORD PTR $T2[ebp]
 	push	eax
 	call	??3@YAXPAXI@Z				; operator delete
@@ -11955,7 +11983,7 @@ ___flags$ = 8						; size = 4
 	mov	eax, DWORD PTR ___flags$[ebp]
 	and	eax, 1
 	je	SHORT $LN2@scalar
-	push	60					; 0000003cH
+	push	48					; 00000030H
 	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
 	call	??3@YAXPAXI@Z				; operator delete
@@ -11988,7 +12016,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, BYTE PTR [eax+52]
+	movzx	ecx, BYTE PTR [eax+40]
 	test	ecx, ecx
 	jne	SHORT $LN3@TogglePaus
 	mov	DWORD PTR tv68[ebp], 1
@@ -11998,7 +12026,7 @@ $LN3@TogglePaus:
 $LN4@TogglePaus:
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	al, BYTE PTR tv68[ebp]
-	mov	BYTE PTR [edx+52], al
+	mov	BYTE PTR [edx+40], al
 	mov	esp, ebp
 	pop	ebp
 	ret	0
@@ -26888,7 +26916,7 @@ _szCmdLine$ = 16					; size = 4
 _iCmdShow$ = 20						; size = 4
 _WinMain@16 PROC
 
-; 438  : {
+; 439  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -26914,40 +26942,40 @@ _WinMain@16 PROC
 	mov	DWORD PTR __$EHRec$[ebp], esp
 	mov	BYTE PTR $T2[ebp], 0
 
-; 439  :   MSG msg;
-; 440  :   //handle to our window
-; 441  : 	HWND						hWnd;
-; 442  : 
-; 443  :  //the window class structure
-; 444  : 	WNDCLASSEX     winclass;
-; 445  : 
-; 446  :   // first fill in the window class stucture
-; 447  : 	winclass.cbSize        = sizeof(WNDCLASSEX);
+; 440  :   MSG msg;
+; 441  :   //handle to our window
+; 442  : 	HWND						hWnd;
+; 443  : 
+; 444  :  //the window class structure
+; 445  : 	WNDCLASSEX     winclass;
+; 446  : 
+; 447  :   // first fill in the window class stucture
+; 448  : 	winclass.cbSize        = sizeof(WNDCLASSEX);
 
 	mov	DWORD PTR _winclass$[ebp], 48		; 00000030H
 
-; 448  : 	winclass.style         = CS_HREDRAW | CS_VREDRAW;
+; 449  : 	winclass.style         = CS_HREDRAW | CS_VREDRAW;
 
 	mov	DWORD PTR _winclass$[ebp+4], 3
 
-; 449  :   winclass.lpfnWndProc   = WindowProc;
+; 450  :   winclass.lpfnWndProc   = WindowProc;
 
 	mov	DWORD PTR _winclass$[ebp+8], OFFSET ?WindowProc@@YGJPAUHWND__@@IIJ@Z ; WindowProc
 
-; 450  :   winclass.cbClsExtra    = 0;
+; 451  :   winclass.cbClsExtra    = 0;
 
 	mov	DWORD PTR _winclass$[ebp+12], 0
 
-; 451  :   winclass.cbWndExtra    = 0;
+; 452  :   winclass.cbWndExtra    = 0;
 
 	mov	DWORD PTR _winclass$[ebp+16], 0
 
-; 452  :   winclass.hInstance     = hInstance;
+; 453  :   winclass.hInstance     = hInstance;
 
 	mov	eax, DWORD PTR _hInstance$[ebp]
 	mov	DWORD PTR _winclass$[ebp+20], eax
 
-; 453  :   winclass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+; 454  :   winclass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
 
 	mov	esi, esp
 	push	32512					; 00007f00H
@@ -26957,7 +26985,7 @@ _WinMain@16 PROC
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _winclass$[ebp+24], eax
 
-; 454  :   winclass.hCursor       = LoadCursor(NULL, IDC_ARROW);
+; 455  :   winclass.hCursor       = LoadCursor(NULL, IDC_ARROW);
 
 	mov	esi, esp
 	push	32512					; 00007f00H
@@ -26967,20 +26995,20 @@ _WinMain@16 PROC
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _winclass$[ebp+28], eax
 
-; 455  :   winclass.hbrBackground = NULL;
+; 456  :   winclass.hbrBackground = NULL;
 
 	mov	DWORD PTR _winclass$[ebp+32], 0
 
-; 456  :   winclass.lpszMenuName  = MAKEINTRESOURCE(IDR_MENU1);
+; 457  :   winclass.lpszMenuName  = MAKEINTRESOURCE(IDR_MENU1);
 
 	mov	DWORD PTR _winclass$[ebp+36], 101	; 00000065H
 
-; 457  :   winclass.lpszClassName = g_szWindowClassName;
+; 458  :   winclass.lpszClassName = g_szWindowClassName;
 
 	mov	ecx, DWORD PTR ?g_szWindowClassName@@3PADA ; g_szWindowClassName
 	mov	DWORD PTR _winclass$[ebp+40], ecx
 
-; 458  : 	winclass.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
+; 459  : 	winclass.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
 
 	mov	esi, esp
 	push	32512					; 00007f00H
@@ -26990,9 +27018,9 @@ _WinMain@16 PROC
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _winclass$[ebp+44], eax
 
-; 459  : 
-; 460  :   //register the window class
-; 461  :   if (!RegisterClassEx(&winclass))
+; 460  : 
+; 461  :   //register the window class
+; 462  :   if (!RegisterClassEx(&winclass))
 
 	mov	esi, esp
 	lea	edx, DWORD PTR _winclass$[ebp]
@@ -27004,36 +27032,36 @@ _WinMain@16 PROC
 	test	eax, eax
 	jne	SHORT $LN6@WinMain
 
-; 462  :   {
-; 463  : 		MessageBox(NULL, "Registration Failed!", "Error", 0);
+; 463  :   {
+; 464  : 		MessageBox(NULL, "Registration Failed!", "Error", 0);
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG172650
-	push	OFFSET $SG172651
+	push	OFFSET $SG172540
+	push	OFFSET $SG172541
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 464  : 
-; 465  : 	  //exit the application
-; 466  : 		return 0;
+; 465  : 
+; 466  : 	  //exit the application
+; 467  : 		return 0;
 
 	xor	eax, eax
 	jmp	$LN1@WinMain
 $LN6@WinMain:
 
-; 467  :   }
-; 468  : 		
-; 469  : 
-; 470  :   try
+; 468  :   }
+; 469  : 		
+; 470  : 
+; 471  :   try
 
 	mov	DWORD PTR __$EHRec$[ebp+12], 0
 
-; 471  :   {  		 
-; 472  : 		 //create the window and assign its ID to hwnd    
-; 473  :      hWnd = CreateWindowEx (NULL,                 // extended style
+; 472  :   {  		 
+; 473  : 		 //create the window and assign its ID to hwnd    
+; 474  :      hWnd = CreateWindowEx (NULL,                 // extended style
 
 	mov	esi, esp
 	push	0
@@ -27074,42 +27102,42 @@ $LN6@WinMain:
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _hWnd$[ebp], eax
 
-; 474  :                             g_szWindowClassName,  // window class name
-; 475  :                             g_szApplicationName,  // window caption
-; 476  :                             WS_OVERLAPPED | WS_VISIBLE | WS_CAPTION | WS_SYSMENU,  // window style
-; 477  :                             GetSystemMetrics(SM_CXSCREEN)/2 - WindowWidth/2,
-; 478  :                             GetSystemMetrics(SM_CYSCREEN)/2 - WindowHeight/2,                    
-; 479  :                             WindowWidth,     // initial x size
-; 480  :                             WindowHeight,    // initial y size
-; 481  :                             NULL,                 // parent window handle
-; 482  :                             NULL,                 // window menu handle
-; 483  :                             hInstance,            // program instance handle
-; 484  :                             NULL);                // creation parameters
-; 485  : 
-; 486  :      //make sure the window creation has gone OK
-; 487  :      if(!hWnd)
+; 475  :                             g_szWindowClassName,  // window class name
+; 476  :                             g_szApplicationName,  // window caption
+; 477  :                             WS_OVERLAPPED | WS_VISIBLE | WS_CAPTION | WS_SYSMENU,  // window style
+; 478  :                             GetSystemMetrics(SM_CXSCREEN)/2 - WindowWidth/2,
+; 479  :                             GetSystemMetrics(SM_CYSCREEN)/2 - WindowHeight/2,                    
+; 480  :                             WindowWidth,     // initial x size
+; 481  :                             WindowHeight,    // initial y size
+; 482  :                             NULL,                 // parent window handle
+; 483  :                             NULL,                 // window menu handle
+; 484  :                             hInstance,            // program instance handle
+; 485  :                             NULL);                // creation parameters
+; 486  : 
+; 487  :      //make sure the window creation has gone OK
+; 488  :      if(!hWnd)
 
 	cmp	DWORD PTR _hWnd$[ebp], 0
 	jne	SHORT $LN8@WinMain
 
-; 488  :      {
-; 489  :        MessageBox(NULL, "CreateWindowEx Failed!", "Error!", 0);
+; 489  :      {
+; 490  :        MessageBox(NULL, "CreateWindowEx Failed!", "Error!", 0);
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG172654
-	push	OFFSET $SG172655
+	push	OFFSET $SG172544
+	push	OFFSET $SG172545
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 $LN8@WinMain:
 
-; 490  :      }
-; 491  : 
-; 492  :      
-; 493  :     //make the window visible
-; 494  :     ShowWindow (hWnd, iCmdShow);
+; 491  :      }
+; 492  : 
+; 493  :      
+; 494  :     //make the window visible
+; 495  :     ShowWindow (hWnd, iCmdShow);
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR _iCmdShow$[ebp]
@@ -27120,7 +27148,7 @@ $LN8@WinMain:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 495  :     UpdateWindow (hWnd);
+; 496  :     UpdateWindow (hWnd);
 
 	mov	esi, esp
 	mov	eax, DWORD PTR _hWnd$[ebp]
@@ -27129,9 +27157,9 @@ $LN8@WinMain:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 496  :    
-; 497  :     //create a timer
-; 498  :     PrecisionTimer timer(FrameRate);
+; 497  :    
+; 498  :     //create a timer
+; 499  :     PrecisionTimer timer(FrameRate);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@404e000000000000
@@ -27139,30 +27167,30 @@ $LN8@WinMain:
 	lea	ecx, DWORD PTR _timer$11[ebp]
 	call	??0PrecisionTimer@@QAE@N@Z		; PrecisionTimer::PrecisionTimer
 
-; 499  : 
-; 500  :     //start the timer
-; 501  :     timer.Start();
+; 500  : 
+; 501  :     //start the timer
+; 502  :     timer.Start();
 
 	lea	ecx, DWORD PTR _timer$11[ebp]
 	call	?Start@PrecisionTimer@@QAEXXZ		; PrecisionTimer::Start
 
-; 502  : 
-; 503  :     //enter the message loop
-; 504  :     bool bDone = false;
+; 503  : 
+; 504  :     //enter the message loop
+; 505  :     bool bDone = false;
 
 	mov	BYTE PTR _bDone$10[ebp], 0
 $LN2@WinMain:
 
-; 505  : 
-; 506  :     while(!bDone)
+; 506  : 
+; 507  :     while(!bDone)
 
 	movzx	ecx, BYTE PTR _bDone$10[ebp]
 	test	ecx, ecx
 	jne	$LN3@WinMain
 $LN4@WinMain:
 
-; 507  :     {
-; 508  :       while( PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) ) 
+; 508  :     {
+; 509  :       while( PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) ) 
 
 	mov	esi, esp
 	push	1
@@ -27178,27 +27206,27 @@ $LN4@WinMain:
 	test	eax, eax
 	je	SHORT $LN5@WinMain
 
-; 509  :       {
-; 510  :         if( msg.message == WM_QUIT ) 
+; 510  :       {
+; 511  :         if( msg.message == WM_QUIT ) 
 
 	cmp	DWORD PTR _msg$[ebp+4], 18		; 00000012H
 	jne	SHORT $LN9@WinMain
 
-; 511  :         {
-; 512  :           // Stop loop if it's a quit message
-; 513  : 	        bDone = true;
+; 512  :         {
+; 513  :           // Stop loop if it's a quit message
+; 514  : 	        bDone = true;
 
 	mov	BYTE PTR _bDone$10[ebp], 1
 
-; 514  :         } 
-; 515  : 
-; 516  :         else 
+; 515  :         } 
+; 516  : 
+; 517  :         else 
 
 	jmp	SHORT $LN10@WinMain
 $LN9@WinMain:
 
-; 517  :         {
-; 518  :           TranslateMessage( &msg );
+; 518  :         {
+; 519  :           TranslateMessage( &msg );
 
 	mov	BYTE PTR $T2[ebp], 1
 	mov	esi, esp
@@ -27208,7 +27236,7 @@ $LN9@WinMain:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 519  :           DispatchMessage( &msg );
+; 520  :           DispatchMessage( &msg );
 
 	mov	BYTE PTR $T2[ebp], 1
 	mov	esi, esp
@@ -27219,14 +27247,14 @@ $LN9@WinMain:
 	call	__RTC_CheckEsp
 $LN10@WinMain:
 
-; 520  :         }
-; 521  :       }
+; 521  :         }
+; 522  :       }
 
 	jmp	SHORT $LN4@WinMain
 $LN5@WinMain:
 
-; 522  : 
-; 523  :       if (timer.ReadyForNextFrame() && msg.message != WM_QUIT)
+; 523  : 
+; 524  :       if (timer.ReadyForNextFrame() && msg.message != WM_QUIT)
 
 	lea	ecx, DWORD PTR _timer$11[ebp]
 	call	?ReadyForNextFrame@PrecisionTimer@@QAE_NXZ ; PrecisionTimer::ReadyForNextFrame
@@ -27237,15 +27265,15 @@ $LN5@WinMain:
 	cmp	DWORD PTR _msg$[ebp+4], 18		; 00000012H
 	je	SHORT $LN11@WinMain
 
-; 524  :       {
-; 525  :         g_pRaven->Update();
+; 525  :       {
+; 526  :         g_pRaven->Update();
 
 	mov	ecx, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	call	?Update@Raven_Game@@QAEXXZ		; Raven_Game::Update
 
-; 526  :         
-; 527  :         //render 
-; 528  :         RedrawWindow(hWnd);
+; 527  :         
+; 528  :         //render 
+; 529  :         RedrawWindow(hWnd);
 
 	push	1
 	mov	eax, DWORD PTR _hWnd$[ebp]
@@ -27254,10 +27282,10 @@ $LN5@WinMain:
 	add	esp, 8
 $LN11@WinMain:
 
-; 529  :       }
-; 530  : 
-; 531  :       //give the OS a little time
-; 532  :       Sleep(2);
+; 530  :       }
+; 531  : 
+; 532  :       //give the OS a little time
+; 533  :       Sleep(2);
 
 	mov	esi, esp
 	push	2
@@ -27265,22 +27293,22 @@ $LN11@WinMain:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 533  :      					
-; 534  :     }//end while
+; 534  :      					
+; 535  :     }//end while
 
 	jmp	$LN2@WinMain
 $LN3@WinMain:
 
-; 535  : 
-; 536  :   }//end try block
+; 536  : 
+; 537  :   }//end try block
 
 	jmp	__tryend$_WinMain@16$1
 __catch$_WinMain@16$0:
 
-; 537  : 
-; 538  :   catch (const std::runtime_error& err)
-; 539  :   {
-; 540  :     ErrorBox(std::string(err.what()));
+; 538  : 
+; 539  :   catch (const std::runtime_error& err)
+; 540  :   {
+; 541  :     ErrorBox(std::string(err.what()));
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR _err$9[ebp]
@@ -27305,8 +27333,8 @@ __catch$_WinMain@16$0:
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 541  :     //tidy up
-; 542  :     delete g_pRaven;
+; 542  :     //tidy up
+; 543  :     delete g_pRaven;
 
 	mov	eax, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	mov	DWORD PTR $T6[ebp], eax
@@ -27323,7 +27351,7 @@ $LN13@WinMain:
 	mov	DWORD PTR tv216[ebp], 0
 $LN14@WinMain:
 
-; 543  :     UnregisterClass( g_szWindowClassName, winclass.hInstance );
+; 544  :     UnregisterClass( g_szWindowClassName, winclass.hInstance );
 
 	mov	esi, esp
 	mov	edx, DWORD PTR _winclass$[ebp+20]
@@ -27334,13 +27362,13 @@ $LN14@WinMain:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 544  :     return 0;
+; 545  :     return 0;
 
 	mov	DWORD PTR $T5[ebp], 0
 	mov	eax, $LN21@WinMain
 	ret	0
 
-; 545  :   }
+; 546  :   }
 
 	mov	eax, __tryend$_WinMain@16$1
 	ret	0
@@ -27350,15 +27378,15 @@ __tryend$_WinMain@16$1:
 $LN21@WinMain:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 
-; 544  :     return 0;
+; 545  :     return 0;
 
 	mov	eax, DWORD PTR $T5[ebp]
 	jmp	SHORT $LN1@WinMain
 $LN20@WinMain:
 
-; 546  :   
-; 547  :  //tidy up
-; 548  :  UnregisterClass( g_szWindowClassName, winclass.hInstance );
+; 547  :   
+; 548  :  //tidy up
+; 549  :  UnregisterClass( g_szWindowClassName, winclass.hInstance );
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR _winclass$[ebp+20]
@@ -27369,7 +27397,7 @@ $LN20@WinMain:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 549  :  delete g_pRaven;
+; 550  :  delete g_pRaven;
 
 	mov	eax, DWORD PTR ?g_pRaven@@3PAVRaven_Game@@A ; g_pRaven
 	mov	DWORD PTR $T3[ebp], eax
@@ -27386,7 +27414,7 @@ $LN15@WinMain:
 	mov	DWORD PTR tv225[ebp], 0
 $LN16@WinMain:
 
-; 550  :  return msg.wParam;
+; 551  :  return msg.wParam;
 
 	cmp	BYTE PTR $T2[ebp], 0
 	jne	SHORT $LN22@WinMain
@@ -27397,7 +27425,7 @@ $LN22@WinMain:
 	mov	eax, DWORD PTR _msg$[ebp+8]
 $LN1@WinMain:
 
-; 551  : }
+; 552  : }
 
 	push	edx
 	mov	ecx, ebp

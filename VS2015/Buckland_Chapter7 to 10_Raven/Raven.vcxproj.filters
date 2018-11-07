@@ -280,6 +280,9 @@
     <ClCompile Include="Random_Single_Target_Team.cpp">
       <Filter>Game\teams</Filter>
     </ClCompile>
+    <ClCompile Include="TeamManager.cpp">
+      <Filter>Game\teams</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Raven_Bot.h">
@@ -625,6 +628,9 @@
       <Filter>Game\teams</Filter>
     </ClInclude>
     <ClInclude Include="Random_Single_Target_Team.h">
+      <Filter>Game\teams</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamManager.h">
       <Filter>Game\teams</Filter>
     </ClInclude>
   </ItemGroup>

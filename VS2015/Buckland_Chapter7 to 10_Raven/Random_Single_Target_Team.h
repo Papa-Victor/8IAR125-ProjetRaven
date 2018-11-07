@@ -17,5 +17,6 @@ public:
 
 	void AddBot(Raven_Bot* bot) override;
 	void RemoveBot(Raven_Bot* bot) override;
+	void NewWorldBot(const Raven_Bot* bot) override;
 };
 #endif // !Random_Single_Target_Team

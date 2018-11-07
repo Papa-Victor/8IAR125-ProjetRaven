@@ -473,6 +473,7 @@
     </ClCompile>
     <ClCompile Include="Single_Target_Team.cpp" />
     <ClCompile Include="Team.cpp" />
+    <ClCompile Include="TeamManager.cpp" />
     <ClCompile Include="triggers\Trigger_HealthGiver.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -622,6 +623,7 @@
     <ClInclude Include="..\Common\Triggers\Trigger.h" />
     <ClInclude Include="Single_Target_Team.h" />
     <ClInclude Include="Team.h" />
+    <ClInclude Include="TeamManager.h" />
     <ClInclude Include="triggers\Trigger_HealthGiver.h" />
     <ClInclude Include="..\Common\Triggers\Trigger_LimitedLifeTime.h" />
     <ClInclude Include="triggers\Trigger_OnButtonSendMsg.h" />

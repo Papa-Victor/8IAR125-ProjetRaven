@@ -25,17 +25,17 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG171376 DB	'Bolt_MaxForce', 00H
+$SG170774 DB	'Bolt_MaxForce', 00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+1
-$SG171377 DB	'Bolt_Mass', 00H
+$SG170775 DB	'Bolt_Mass', 00H
 	ORG $+2
-$SG171378 DB	'Bolt_MaxSpeed', 00H
+$SG170776 DB	'Bolt_MaxSpeed', 00H
 	ORG $+2
-$SG171379 DB	'Bolt_Scale', 00H
+$SG170777 DB	'Bolt_Scale', 00H
 	ORG $+1
-$SG171380 DB	'Bolt_Damage', 00H
-$SG171381 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+$SG170778 DB	'Bolt_Damage', 00H
+$SG170779 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
 	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
 	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
@@ -54,7 +54,7 @@ $SG171381 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	00H, 'o', 00H, 'j', 00H, 'e', 00H, 'c', 00H, 't', 00H, 'i', 00H
 	DB	'l', 00H, 'e', 00H, '_', 00H, 'b', 00H, 'o', 00H, 'l', 00H, 't'
 	DB	00H, '.', 00H, 'c', 00H, 'p', 00H, 'p', 00H, 00H, 00H
-$SG171382 DB	't', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'e', 00H, 't', 00H
+$SG170780 DB	't', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'e', 00H, 't', 00H
 	DB	' ', 00H, '!', 00H, '=', 00H, ' ', 00H, 'V', 00H, 'e', 00H, 'c'
 	DB	00H, 't', 00H, 'o', 00H, 'r', 00H, '2', 00H, 'D', 00H, '(', 00H
 	DB	')', 00H, 00H, 00H
@@ -16450,7 +16450,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T9[ebp], esp
-	push	OFFSET $SG171376
+	push	OFFSET $SG170774
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv276[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -16465,7 +16465,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG171377
+	push	OFFSET $SG170775
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv277[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -16480,7 +16480,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG171378
+	push	OFFSET $SG170776
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv278[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -16495,7 +16495,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG171379
+	push	OFFSET $SG170777
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv279[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -16510,7 +16510,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG171380
+	push	OFFSET $SG170778
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv280[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
@@ -16586,8 +16586,8 @@ _target$ = 12						; size = 16
 	test	edx, edx
 	jne	SHORT $LN3@Bolt
 	push	29					; 0000001dH
-	push	OFFSET $SG171381
-	push	OFFSET $SG171382
+	push	OFFSET $SG170779
+	push	OFFSET $SG170780
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN3@Bolt:

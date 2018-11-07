@@ -27,7 +27,7 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG171568 DB	' ', 00H
+$SG170966 DB	' ', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -13135,7 +13135,7 @@ $LN7@RenderDesi:
 
 	lea	edx, DWORD PTR _type$11[ebp]
 	push	edx
-	push	OFFSET $SG171568
+	push	OFFSET $SG170966
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR _score$12[ebp]
 	movsd	QWORD PTR [esp], xmm0

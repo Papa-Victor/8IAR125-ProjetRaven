@@ -26,59 +26,59 @@ CONST	SEGMENT
 	DD	0c8c8c8H
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-$SG177967 DB	00H
-$SG178070 DB	00H
-$SG178079 DB	00H
-$SG177898 DB	'Bot_MaxForce', 00H
+$SG177368 DB	00H
+$SG177471 DB	00H
+$SG177480 DB	00H
+$SG177299 DB	'Bot_MaxForce', 00H
 	ORG $+3
-$SG177899 DB	'Bot_MaxHeadTurnRate', 00H
-$SG177900 DB	'Bot_Scale', 00H
+$SG177300 DB	'Bot_MaxHeadTurnRate', 00H
+$SG177301 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG177901 DB	'Bot_Scale', 00H
+$SG177302 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG177902 DB	'Bot_Mass', 00H
+$SG177303 DB	'Bot_Mass', 00H
 	ORG $+3
-$SG177903 DB	'Bot_MaxSpeed', 00H
+$SG177304 DB	'Bot_MaxSpeed', 00H
 	ORG $+3
-$SG177904 DB	'Bot_Scale', 00H
+$SG177305 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG177905 DB	'Bot_MaxHealth', 00H
+$SG177306 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG177906 DB	'Bot_MaxHealth', 00H
+$SG177307 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG177907 DB	'Bot_FOV', 00H
-$SG177908 DB	'HitFlashTime', 00H
+$SG177308 DB	'Bot_FOV', 00H
+$SG177309 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG177912 DB	'Bot_WeaponSelectionFrequency', 00H
+$SG177313 DB	'Bot_WeaponSelectionFrequency', 00H
 	ORG $+3
-$SG177914 DB	'Bot_GoalAppraisalUpdateFreq', 00H
-$SG177916 DB	'Bot_TargetingUpdateFreq', 00H
-$SG177918 DB	'Bot_TriggerUpdateFreq', 00H
+$SG177315 DB	'Bot_GoalAppraisalUpdateFreq', 00H
+$SG177317 DB	'Bot_TargetingUpdateFreq', 00H
+$SG177319 DB	'Bot_TriggerUpdateFreq', 00H
 	ORG $+2
-$SG177920 DB	'Bot_VisionUpdateFreq', 00H
+$SG177321 DB	'Bot_VisionUpdateFreq', 00H
 	ORG $+3
-$SG177924 DB	'Bot_AimPersistance', 00H
+$SG177325 DB	'Bot_AimPersistance', 00H
 	ORG $+1
-$SG177925 DB	'Bot_AimAccuracy', 00H
-$SG177926 DB	'Bot_ReactionTime', 00H
+$SG177326 DB	'Bot_AimAccuracy', 00H
+$SG177327 DB	'Bot_ReactionTime', 00H
 	ORG $+3
-$SG177928 DB	'Bot_MemorySpan', 00H
+$SG177329 DB	'Bot_MemorySpan', 00H
 	ORG $+1
-$SG177965 DB	'deleting raven bot (id = ', 00H
+$SG177366 DB	'deleting raven bot (id = ', 00H
 	ORG $+2
-$SG177966 DB	')', 00H
+$SG177367 DB	')', 00H
 	ORG $+2
-$SG178060 DB	'HitFlashTime', 00H
+$SG177461 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG178069 DB	'Player Possesses bot ', 00H
+$SG177470 DB	'Player Possesses bot ', 00H
 	ORG $+2
-$SG178078 DB	'Player is exorcised from bot ', 00H
+$SG177479 DB	'Player is exorcised from bot ', 00H
 	ORG $+2
-$SG178229 DB	'H:', 00H
+$SG177630 DB	'H:', 00H
 	ORG $+1
-$SG178231 DB	'Scr:', 00H
+$SG177632 DB	'Scr:', 00H
 	ORG $+3
-$SG178247 DB	'Bot_Scale', 00H
+$SG177648 DB	'Bot_Scale', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -48094,10 +48094,10 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG178079
+	push	OFFSET $SG177480
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
-	push	OFFSET $SG178078
+	push	OFFSET $SG177479
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BO@D@DebugConsole@@QAEAAV0@AAY0BO@$$CBD@Z ; DebugConsole::operator<<<char [30]>
@@ -48158,10 +48158,10 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG178070
+	push	OFFSET $SG177471
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG178069
+	push	OFFSET $SG177470
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BG@D@DebugConsole@@QAEAAV0@AAY0BG@$$CBD@Z ; DebugConsole::operator<<<char [22]>
@@ -48731,7 +48731,7 @@ $LN2@ReduceHeal:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG178060
+	push	OFFSET $SG177461
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv131[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -49839,7 +49839,7 @@ $LN6@Render:
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
 	mov	ecx, DWORD PTR tv330[ebp]
 	push	ecx
-	push	OFFSET $SG178229
+	push	OFFSET $SG177630
 	lea	edx, DWORD PTR $T18[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -49902,7 +49902,7 @@ $LN7@Render:
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
 	mov	ecx, DWORD PTR tv334[ebp]
 	push	ecx
-	push	OFFSET $SG178231
+	push	OFFSET $SG177632
 	lea	edx, DWORD PTR $T16[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -50048,11 +50048,11 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T18[ebp], eax
-	push	OFFSET $SG177967
-	push	OFFSET $SG177966
+	push	OFFSET $SG177368
+	push	OFFSET $SG177367
 	lea	ecx, DWORD PTR $T18[ebp]
 	push	ecx
-	push	OFFSET $SG177965
+	push	OFFSET $SG177366
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BK@D@DebugConsole@@QAEAAV0@AAY0BK@$$CBD@Z ; DebugConsole::operator<<<char [26]>
@@ -50402,7 +50402,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T46[ebp], esp
-	push	OFFSET $SG177898
+	push	OFFSET $SG177299
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv875[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -50417,7 +50417,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T45[ebp], esp
-	push	OFFSET $SG177899
+	push	OFFSET $SG177300
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv876[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -50432,7 +50432,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T43[ebp], esp
-	push	OFFSET $SG177900
+	push	OFFSET $SG177301
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv877[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -50447,7 +50447,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T42[ebp], esp
-	push	OFFSET $SG177901
+	push	OFFSET $SG177302
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv878[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -50476,7 +50476,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T41[ebp], esp
-	push	OFFSET $SG177902
+	push	OFFSET $SG177303
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv879[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
@@ -50509,7 +50509,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T39[ebp], esp
-	push	OFFSET $SG177903
+	push	OFFSET $SG177304
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv880[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 5
@@ -50542,7 +50542,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T37[ebp], esp
-	push	OFFSET $SG177904
+	push	OFFSET $SG177305
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv881[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 6
@@ -50615,7 +50615,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T36[ebp], esp
-	push	OFFSET $SG177905
+	push	OFFSET $SG177306
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv882[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 8
@@ -50642,7 +50642,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T35[ebp], esp
-	push	OFFSET $SG177906
+	push	OFFSET $SG177307
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv884[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 9
@@ -50671,7 +50671,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T34[ebp], esp
-	push	OFFSET $SG177907
+	push	OFFSET $SG177308
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv886[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 10		; 0000000aH
@@ -50693,7 +50693,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T33[ebp], esp
-	push	OFFSET $SG177908
+	push	OFFSET $SG177309
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv888[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 11		; 0000000bH
@@ -50828,7 +50828,7 @@ $LN6@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T26[ebp], esp
-	push	OFFSET $SG177912
+	push	OFFSET $SG177313
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv900[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 17		; 00000011H
@@ -50866,7 +50866,7 @@ $LN8@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T23[ebp], esp
-	push	OFFSET $SG177914
+	push	OFFSET $SG177315
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv904[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 19		; 00000013H
@@ -50904,7 +50904,7 @@ $LN10@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T20[ebp], esp
-	push	OFFSET $SG177916
+	push	OFFSET $SG177317
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv908[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 21		; 00000015H
@@ -50942,7 +50942,7 @@ $LN12@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T17[ebp], esp
-	push	OFFSET $SG177918
+	push	OFFSET $SG177319
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv912[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 23		; 00000017H
@@ -50980,7 +50980,7 @@ $LN14@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T14[ebp], esp
-	push	OFFSET $SG177920
+	push	OFFSET $SG177321
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv916[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 25		; 00000019H
@@ -51073,7 +51073,7 @@ $LN20@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG177924
+	push	OFFSET $SG177325
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv924[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 29		; 0000001dH
@@ -51088,7 +51088,7 @@ $LN20@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG177925
+	push	OFFSET $SG177326
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv926[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 30		; 0000001eH
@@ -51103,7 +51103,7 @@ $LN20@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG177926
+	push	OFFSET $SG177327
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv928[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 31		; 0000001fH
@@ -51149,7 +51149,7 @@ $LN22@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG177928
+	push	OFFSET $SG177329
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv932[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 33		; 00000021H
@@ -51455,7 +51455,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG178247
+	push	OFFSET $SG177648
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv190[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0

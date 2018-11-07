@@ -26,6 +26,7 @@
 #include "goals/Goal_Think.h"
 #include "goals/Raven_Goal_Types.h"
 
+#include "TeamManager.h"
 #include "Random_Single_Target_Team.h"
 
 
@@ -41,7 +42,8 @@ Raven_Game::Raven_Game():m_pSelectedBot(NULL),
                          m_bRemoveABot(false),
                          m_pMap(NULL),
                          m_pPathManager(NULL),
-                         m_pGraveMarkers(NULL)
+                         m_pGraveMarkers(NULL),
+						 m_pTeamManager(TeamManager::Instance())
 {
   //load in the default map
   LoadMap(script->GetString("StartMap"));
@@ -167,9 +169,8 @@ void Raven_Game::Update()
 
       //change its status to spawning
       (*curBot)->SetSpawning();
-	  /*for (std::vector<Team*>::iterator it = m_vTeams.begin(); it != m_vTeams.end(); it++) {
-		  (*it)->CheckDeadBot(*curBot);
-	  }*/
+
+	  m_pTeamManager->OnBotDeath(*curBot);
     }
 
     //if this bot is alive update it.
@@ -191,9 +192,7 @@ void Raven_Game::Update()
       Raven_Bot* pBot = m_Bots.back();
 	  m_Bots.pop_back();
       if (pBot == m_pSelectedBot)m_pSelectedBot=0;
-	  //for (std::vector<Team*>::iterator it = m_vTeams.begin(); it != m_vTeams.end(); it++) {
-		 // (*it)->CheckDeadBot(pBot);
-	  //}
+	  m_pTeamManager->OnBotDeath(pBot);
       NotifyAllBotsOfRemoval(pBot);
 	  delete pBot;
 
@@ -272,6 +271,8 @@ void Raven_Game::AddBots(unsigned int NumBotsToAdd)
 
     //register the bot with the entity manager
     EntityMgr->RegisterEntity(rb);
+
+	m_pTeamManager->NewWorldBot(rb);
 
     
 #ifdef LOG_CREATIONAL_STUFF

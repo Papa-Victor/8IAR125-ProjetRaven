@@ -26,6 +26,7 @@
 #include "Raven_Bot.h"
 #include "navigation/pathmanager.h"
 
+class TeamManager;
 class BaseGameEntity;
 class Raven_Projectile;
 class Raven_Map;
@@ -47,9 +48,6 @@ private:
   //the user may select a bot to control manually. This is a pointer to that
   //bot
   Raven_Bot*                       m_pSelectedBot;
-
-  //a list of the active teams
-  std::vector<Team*>  m_vTeams;
   
   //this list contains any active projectiles (slugs, rockets,
   //shotgun pellets, etc)
@@ -58,6 +56,8 @@ private:
   //this class manages all the path planning requests
   PathManager<Raven_PathPlanner>*  m_pPathManager;
 
+  //This class manages the teams
+  TeamManager*					   m_pTeamManager;
 
   //if true the game will be paused
   bool                             m_bPaused;
@@ -162,6 +162,7 @@ public:
   const std::list<Raven_Bot*>&             GetAllBots()const{return m_Bots;}
   PathManager<Raven_PathPlanner>* const    GetPathManager(){return m_pPathManager;}
   int                                      GetNumBots()const{return m_Bots.size();}
+  TeamManager*							   GetTeamManager() const{ return m_pTeamManager; }
 
   
   void  TagRaven_BotsWithinViewRange(BaseGameEntity* pRaven_Bot, double range)

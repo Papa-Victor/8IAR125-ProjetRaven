@@ -26,6 +26,10 @@ void Random_Single_Target_Team::DetermineTarget()
 
 Random_Single_Target_Team::~Random_Single_Target_Team()
 {
+	m_currentTarget = NULL;
+	while(!m_teamBots.empty()){
+		RemoveBot(m_teamBots.back());
+	}
 }
 
 void Random_Single_Target_Team::AddBot(Raven_Bot * bot)
@@ -44,4 +48,11 @@ void Random_Single_Target_Team::RemoveBot(Raven_Bot * bot)
 	m_teamBots.remove(bot);
 	bot->SetTeam(NULL);
 	bot->SetTargetControl(true);
+}
+
+void Random_Single_Target_Team::NewWorldBot(const Raven_Bot * bot)
+{
+	if (m_currentTarget == NULL) {
+		DetermineTarget();
+	}
 }

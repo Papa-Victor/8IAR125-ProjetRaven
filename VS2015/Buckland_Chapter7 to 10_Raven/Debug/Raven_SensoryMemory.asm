@@ -27,7 +27,7 @@ CONST	SEGMENT
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+3
-$SG154637 DB	'< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent'
+$SG154035 DB	'< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent'
 	DB	'>: Attempting to get position of unrecorded bot', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
@@ -14573,7 +14573,7 @@ $LN2@GetLastRec:
 ; 208  : 
 ; 209  :   throw std::runtime_error("< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent>: Attempting to get position of unrecorded bot");
 
-	push	OFFSET $SG154637
+	push	OFFSET $SG154035
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0runtime_error@std@@QAE@PBD@Z		; std::runtime_error::runtime_error
 	push	OFFSET __TI2?AVruntime_error@std@@

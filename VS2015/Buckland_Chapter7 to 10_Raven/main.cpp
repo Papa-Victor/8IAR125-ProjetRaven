@@ -11,6 +11,7 @@
 #include "Raven_UserOptions.h"
 #include "Raven_Game.h"
 #include "lua/Raven_Scriptor.h"
+#include "TeamManager.h"
 
 
 //need to include this for the toolbar stuff

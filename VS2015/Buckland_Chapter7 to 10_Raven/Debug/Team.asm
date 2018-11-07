@@ -59,9 +59,10 @@ PUBLIC	?clear@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXXZ
 PUBLIC	?_Tidy@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXXZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::_Tidy
 PUBLIC	?_Orphan_ptr@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXPAU?$_List_node@PAVRaven_Bot@@PAX@2@@Z ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::_Orphan_ptr
 PUBLIC	??0Team@@QAE@XZ					; Team::Team
-PUBLIC	??1Team@@QAE@XZ					; Team::~Team
+PUBLIC	??1Team@@UAE@XZ					; Team::~Team
 PUBLIC	?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z		; Team::BotInTeam
 PUBLIC	?CheckDeadBot@Team@@UAEXPBVRaven_Bot@@@Z	; Team::CheckDeadBot
+PUBLIC	??_GTeam@@UAEPAXI@Z				; Team::`scalar deleting destructor'
 PUBLIC	??$addressof@PAVRaven_Bot@@@std@@YAPAPAVRaven_Bot@@AAPAV1@@Z ; std::addressof<Raven_Bot *>
 PUBLIC	??$destroy@PAVRaven_Bot@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@1@QAPAVRaven_Bot@@@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_Bot *,void *> > >::destroy<Raven_Bot *>
 PUBLIC	??$_Freenode0@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@?$_List_node@PAVRaven_Bot@@PAX@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@1@PAU01@@Z ; std::_List_node<Raven_Bot *,void *>::_Freenode0<std::allocator<std::_List_node<Raven_Bot *,void *> > >
@@ -110,6 +111,7 @@ EXTRN	__invalid_parameter:PROC
 EXTRN	__CrtDbgReport:PROC
 EXTRN	??0_Lockit@std@@QAE@H@Z:PROC			; std::_Lockit::_Lockit
 EXTRN	??1_Lockit@std@@QAE@XZ:PROC			; std::_Lockit::~_Lockit
+EXTRN	??_ETeam@@UAEPAXI@Z:PROC			; Team::`vector deleting destructor'
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__CxxThrowException@8:PROC
@@ -212,6 +214,7 @@ CONST	ENDS
 ;	COMDAT ??_7Team@@6B@
 CONST	SEGMENT
 ??_7Team@@6B@ DD FLAT:??_R4Team@@6B@			; Team::`vftable'
+	DD	FLAT:??_ETeam@@UAEPAXI@Z
 	DD	FLAT:__purecall
 	DD	FLAT:__purecall
 	DD	FLAT:?CheckDeadBot@Team@@UAEXPBVRaven_Bot@@@Z
@@ -1332,6 +1335,38 @@ __Val$ = 8						; size = 4
 ??$addressof@PAVRaven_Bot@@@std@@YAPAPAVRaven_Bot@@AAPAV1@@Z ENDP ; std::addressof<Raven_Bot *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+;	COMDAT ??_GTeam@@UAEPAXI@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___flags$ = 8						; size = 4
+??_GTeam@@UAEPAXI@Z PROC				; Team::`scalar deleting destructor', COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1Team@@UAE@XZ				; Team::~Team
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN2@scalar
+	push	16					; 00000010H
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
+	call	??3@YAXPAXI@Z				; operator delete
+	add	esp, 8
+$LN2@scalar:
+	mov	eax, DWORD PTR _this$[ebp]
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??_GTeam@@UAEPAXI@Z ENDP				; Team::`scalar deleting destructor'
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.h
 ;	COMDAT ?CheckDeadBot@Team@@UAEXPBVRaven_Bot@@@Z
 _TEXT	SEGMENT
@@ -1401,7 +1436,7 @@ _TEXT	ENDS
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.cpp
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-??1Team@@QAE@XZ PROC					; Team::~Team
+??1Team@@UAE@XZ PROC					; Team::~Team
 ; _this$ = ecx
 
 ; 19   : {
@@ -1431,7 +1466,7 @@ _this$ = -4						; size = 4
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-??1Team@@QAE@XZ ENDP					; Team::~Team
+??1Team@@UAE@XZ ENDP					; Team::~Team
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.cpp

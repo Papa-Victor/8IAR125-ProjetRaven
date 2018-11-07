@@ -27,18 +27,18 @@ CONST	SEGMENT
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+3
-$SG170011 DB	'WallDetectionFeelerLength', 00H
+$SG169412 DB	'WallDetectionFeelerLength', 00H
 	ORG $+2
-$SG170012 DB	'SeparationWeight', 00H
+$SG169413 DB	'SeparationWeight', 00H
 	ORG $+3
-$SG170013 DB	'WanderWeight', 00H
+$SG169414 DB	'WanderWeight', 00H
 	ORG $+3
-$SG170014 DB	'WallAvoidanceWeight', 00H
-$SG170015 DB	'SeekWeight', 00H
+$SG169415 DB	'WallAvoidanceWeight', 00H
+$SG169416 DB	'SeekWeight', 00H
 	ORG $+1
-$SG170016 DB	'ArriveWeight', 00H
+$SG169417 DB	'ArriveWeight', 00H
 	ORG $+3
-$SG170017 DB	'ViewDistance', 00H
+$SG169418 DB	'ViewDistance', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -16524,7 +16524,7 @@ _range$ = 12						; size = 8
 ?TagRaven_BotsWithinViewRange@Raven_Game@@QAEXPAVBaseGameEntity@@N@Z PROC ; Raven_Game::TagRaven_BotsWithinViewRange, COMDAT
 ; _this$ = ecx
 
-; 168  :               {TagNeighbors(pRaven_Bot, m_Bots, range);}  
+; 169  :               {TagNeighbors(pRaven_Bot, m_Bots, range);}  
 
 	push	ebp
 	mov	ebp, esp
@@ -19104,7 +19104,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T9[ebp], esp
-	push	OFFSET $SG170011
+	push	OFFSET $SG169412
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv318[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
@@ -19146,7 +19146,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG170012
+	push	OFFSET $SG169413
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv320[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
@@ -19164,7 +19164,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG170013
+	push	OFFSET $SG169414
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv322[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 3
@@ -19182,7 +19182,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG170014
+	push	OFFSET $SG169415
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv324[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 4
@@ -19200,7 +19200,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG170015
+	push	OFFSET $SG169416
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv326[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
@@ -19218,7 +19218,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG170016
+	push	OFFSET $SG169417
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv328[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 6
@@ -19236,7 +19236,7 @@ _agent$ = 12						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T3[ebp], esp
-	push	OFFSET $SG170017
+	push	OFFSET $SG169418
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv330[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 7
