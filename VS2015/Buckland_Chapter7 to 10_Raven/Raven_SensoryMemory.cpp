@@ -205,6 +205,8 @@ Vector2D  Raven_SensoryMemory::GetLastRecordedPositionOfOpponent(Raven_Bot* pOpp
   {
     return it->second.vLastSensedPosition;
   }
+  //solution bâtard pour pas que les Random_Single_Target_Team crash pas à l'ajout d'une target hors de vue...............
+  return Vector2D(0, 0);
 
   throw std::runtime_error("< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent>: Attempting to get position of unrecorded bot");
 }

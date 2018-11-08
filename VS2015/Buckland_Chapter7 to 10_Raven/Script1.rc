@@ -58,21 +58,30 @@ BEGIN
     BEGIN
         POPUP "Red Team"
         BEGIN
-            MENUITEM "Create/Modify Team",          ID_REDTEAM_CREATE
+            POPUP "Create/Modify Team"
+            BEGIN
+                MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_RED
+            END
             MENUITEM "Remove Team",                 ID_REDTEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_REDTEAM_ADDBOT, INACTIVE
             MENUITEM "Remove Bot",                  ID_REDTEAM_REMOVEBOT, INACTIVE
         END
         POPUP "Blue Team"
         BEGIN
-            MENUITEM "Create/Modify Team",          ID_BLUETEAM_CREATE
+            POPUP "Create/Modify Team"
+            BEGIN
+                MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_BLUE
+            END
             MENUITEM "Remove Team",                 ID_BLUETEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_BLUETEAM_ADDBOT, INACTIVE
             MENUITEM "Remove Bot",                  ID_BLUETEAM_REMOVEBOT, INACTIVE
         END
         POPUP "Green Team"
         BEGIN
-            MENUITEM "Create/Modify Team",          ID_GREENTEAM_CREATE
+            POPUP "Create/Modify Team"
+            BEGIN
+                MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_GREEN
+            END
             MENUITEM "Remove Team",                 ID_GREENTEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_GREENTEAM_ADDBOT, INACTIVE
             MENUITEM "Remove Bot",                  ID_GREENTEAM_REMOVEBOT, INACTIVE

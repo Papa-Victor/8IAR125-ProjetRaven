@@ -15,7 +15,9 @@ enum teams
 class TeamManager
 {
 private:
-	TeamManager();
+	Raven_Game* game;
+
+	TeamManager(Raven_Game* game);
 
 	static TeamManager* instance;
 
@@ -26,10 +28,10 @@ public:
 	TeamManager(const TeamManager&) = delete;
 	TeamManager& operator=(const TeamManager&) = delete;
 
-	static TeamManager* Instance();
+	static TeamManager* Instance(Raven_Game* game);
 
 	template <class T>
-	void AddTeam(teams colour, Raven_Game* game);
+	void AddTeam(teams colour);
 	void RemoveTeam(teams colour) { delete m_Teams[colour]; m_Teams[colour] = NULL; }
 	void AddBot(teams colour, Raven_Bot* bot);
 	void RemoveBot(teams colour, Raven_Bot* bot);
@@ -40,9 +42,9 @@ public:
 #endif // !TEAM_MANAGER_H
 
 template<class T>
-inline void TeamManager::AddTeam(teams colour, Raven_Game* game)
+inline void TeamManager::AddTeam(teams colour)
 {
-	if (m_Teams[colour] == NULL) {
+	if (m_Teams[colour] != NULL) {
 		delete m_Teams[colour];
 	}
 	m_Teams[colour] = new T(game);

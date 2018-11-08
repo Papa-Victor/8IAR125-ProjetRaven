@@ -43,7 +43,7 @@ Raven_Game::Raven_Game():m_pSelectedBot(NULL),
                          m_pMap(NULL),
                          m_pPathManager(NULL),
                          m_pGraveMarkers(NULL),
-						 m_pTeamManager(TeamManager::Instance())
+						 m_pTeamManager(TeamManager::Instance(this))
 {
   //load in the default map
   LoadMap(script->GetString("StartMap"));

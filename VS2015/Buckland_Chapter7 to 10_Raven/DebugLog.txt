@@ -73,6 +73,9 @@ Creating a shotgun
 Creating a shotgun
 Creating a rocket_launcher
 maps/Raven_DM1.map loaded okay
+deleting raven bot (id = 403)
+Player is exorcised from bot 401
+BOT 402 IS STUCK!!
 deleting raven bot (id = 401)
 deleting raven bot (id = 402)
-deleting raven bot (id = 403)
+deleting raven bot (id = 404)

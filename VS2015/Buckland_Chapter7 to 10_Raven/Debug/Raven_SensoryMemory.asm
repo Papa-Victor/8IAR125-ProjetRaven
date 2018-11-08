@@ -27,7 +27,7 @@ CONST	SEGMENT
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+3
-$SG154035 DB	'< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent'
+$SG154042 DB	'< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent'
 	DB	'>: Attempting to get position of unrecorded bot', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
@@ -69,6 +69,7 @@ PUBLIC	??0runtime_error@std@@QAE@ABV01@@Z		; std::runtime_error::runtime_error
 PUBLIC	??_Gruntime_error@std@@UAEPAXI@Z		; std::runtime_error::`scalar deleting destructor'
 PUBLIC	??0id@locale@std@@QAE@I@Z			; std::locale::id::id
 PUBLIC	??0Vector2D@@QAE@XZ				; Vector2D::Vector2D
+PUBLIC	??0Vector2D@@QAE@NN@Z				; Vector2D::Vector2D
 PUBLIC	?Length@Vector2D@@QBENXZ			; Vector2D::Length
 PUBLIC	?Dot@Vector2D@@QBENABU1@@Z			; Vector2D::Dot
 PUBLIC	??G@YA?AUVector2D@@ABU0@0@Z			; operator-
@@ -10781,7 +10782,7 @@ _this$ = -4						; size = 4
 ?GetAllBots@Raven_Game@@QBEABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@XZ PROC ; Raven_Game::GetAllBots, COMDAT
 ; _this$ = ecx
 
-; 162  :   const std::list<Raven_Bot*>&             GetAllBots()const{return m_Bots;}
+; 164  :   const std::list<Raven_Bot*>&             GetAllBots()const{return m_Bots;}
 
 	push	ebp
 	mov	ebp, esp
@@ -13451,7 +13452,7 @@ __$EHRec$ = -12						; size = 12
 ?RenderBoxesAroundRecentlySensed@Raven_SensoryMemory@@QBEXXZ PROC ; Raven_SensoryMemory::RenderBoxesAroundRecentlySensed
 ; _this$ = ecx
 
-; 266  : {
+; 268  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -13474,7 +13475,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 267  :   std::list<Raven_Bot*> opponents = GetListOfRecentlySensedOpponents();
+; 269  :   std::list<Raven_Bot*> opponents = GetListOfRecentlySensedOpponents();
 
 	lea	eax, DWORD PTR _opponents$[ebp]
 	push	eax
@@ -13482,13 +13483,13 @@ __$EHRec$ = -12						; size = 12
 	call	?GetListOfRecentlySensedOpponents@Raven_SensoryMemory@@QBE?AV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@XZ ; Raven_SensoryMemory::GetListOfRecentlySensedOpponents
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 268  :   std::list<Raven_Bot*>::const_iterator it;
+; 270  :   std::list<Raven_Bot*>::const_iterator it;
 
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??0?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
 
-; 269  :   for (it = opponents.begin(); it != opponents.end(); ++it)
+; 271  :   for (it = opponents.begin(); it != opponents.end(); ++it)
 
 	lea	ecx, DWORD PTR $T4[ebp]
 	push	ecx
@@ -13526,14 +13527,14 @@ $LN4@RenderBoxe:
 	test	eax, eax
 	je	$LN3@RenderBoxe
 
-; 270  :   {
-; 271  :     gdi->OrangePen();
+; 272  :   {
+; 273  :     gdi->OrangePen();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?OrangePen@Cgdi@@QAEXXZ			; Cgdi::OrangePen
 
-; 272  :     Vector2D p = (*it)->Pos();
+; 274  :     Vector2D p = (*it)->Pos();
 
 	lea	ecx, DWORD PTR _p$6[ebp]
 	push	ecx
@@ -13542,7 +13543,7 @@ $LN4@RenderBoxe:
 	mov	ecx, DWORD PTR [eax]
 	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
 
-; 273  :     double   b = (*it)->BRadius();
+; 275  :     double   b = (*it)->BRadius();
 
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
@@ -13550,8 +13551,8 @@ $LN4@RenderBoxe:
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
 	fstp	QWORD PTR _b$5[ebp]
 
-; 274  :       
-; 275  :     gdi->Line(p.x-b, p.y-b, p.x+b, p.y-b);
+; 276  :       
+; 277  :     gdi->Line(p.x-b, p.y-b, p.x+b, p.y-b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	subsd	xmm0, QWORD PTR _b$5[ebp]
@@ -13573,7 +13574,7 @@ $LN4@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 276  :     gdi->Line(p.x+b, p.y-b, p.x+b, p.y+b);
+; 278  :     gdi->Line(p.x+b, p.y-b, p.x+b, p.y+b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	addsd	xmm0, QWORD PTR _b$5[ebp]
@@ -13595,7 +13596,7 @@ $LN4@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 277  :     gdi->Line(p.x+b, p.y+b, p.x-b, p.y+b);
+; 279  :     gdi->Line(p.x+b, p.y+b, p.x-b, p.y+b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	addsd	xmm0, QWORD PTR _b$5[ebp]
@@ -13617,7 +13618,7 @@ $LN4@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 278  :     gdi->Line(p.x-b, p.y+b, p.x-b, p.y-b);
+; 280  :     gdi->Line(p.x-b, p.y+b, p.x-b, p.y-b);
 
 	movsd	xmm0, QWORD PTR _p$6[ebp+8]
 	subsd	xmm0, QWORD PTR _b$5[ebp]
@@ -13639,13 +13640,13 @@ $LN4@RenderBoxe:
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXNNNN@Z			; Cgdi::Line
 
-; 279  :   }
+; 281  :   }
 
 	jmp	$LN2@RenderBoxe
 $LN3@RenderBoxe:
 
-; 280  : 
-; 281  : }
+; 282  : 
+; 283  : }
 
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
 	lea	ecx, DWORD PTR _it$[ebp]
@@ -13955,7 +13956,7 @@ _pOpponent$ = 8						; size = 4
 ?GetTimeOpponentHasBeenOutOfView@Raven_SensoryMemory@@QBENPAVRaven_Bot@@@Z PROC ; Raven_SensoryMemory::GetTimeOpponentHasBeenOutOfView
 ; _this$ = ecx
 
-; 234  : {
+; 236  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -13978,7 +13979,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 235  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 237  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -13989,8 +13990,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 236  :  
-; 237  :   if (it != m_MemoryMap.end())
+; 238  :  
+; 239  :   if (it != m_MemoryMap.end())
 
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
@@ -14013,8 +14014,8 @@ _pOpponent$ = 8						; size = 4
 	test	edx, edx
 	je	SHORT $LN2@GetTimeOpp
 
-; 238  :   {
-; 239  :     return Clock->GetCurrentTime() - it->second.fTimeLastVisible;
+; 240  :   {
+; 241  :     return Clock->GetCurrentTime() - it->second.fTimeLastVisible;
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -14034,9 +14035,9 @@ _pOpponent$ = 8						; size = 4
 	jmp	SHORT $LN1@GetTimeOpp
 $LN2@GetTimeOpp:
 
-; 240  :   }
-; 241  : 
-; 242  :   return MaxDouble;
+; 242  :   }
+; 243  : 
+; 244  :   return MaxDouble;
 
 	movsd	xmm0, QWORD PTR __real@7fefffffffffffff
 	movsd	QWORD PTR $T2[ebp], xmm0
@@ -14046,7 +14047,7 @@ $LN2@GetTimeOpp:
 	fld	QWORD PTR $T2[ebp]
 $LN1@GetTimeOpp:
 
-; 243  : }
+; 245  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -14115,7 +14116,7 @@ _pOpponent$ = 8						; size = 4
 ?GetTimeSinceLastSensed@Raven_SensoryMemory@@QBENPAVRaven_Bot@@@Z PROC ; Raven_SensoryMemory::GetTimeSinceLastSensed
 ; _this$ = ecx
 
-; 250  : {
+; 252  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -14139,7 +14140,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	DWORD PTR $T2[ebp], 0
 
-; 251  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 253  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -14150,8 +14151,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 252  :  
-; 253  :   if (it != m_MemoryMap.end() && it->second.bWithinFOV)
+; 254  :  
+; 255  :   if (it != m_MemoryMap.end() && it->second.bWithinFOV)
 
 	lea	edx, DWORD PTR $T5[ebp]
 	push	edx
@@ -14196,8 +14197,8 @@ $LN9@GetTimeSin:
 	test	ecx, ecx
 	je	SHORT $LN2@GetTimeSin
 
-; 254  :   {
-; 255  :     return Clock->GetCurrentTime() - it->second.fTimeLastSensed;
+; 256  :   {
+; 257  :     return Clock->GetCurrentTime() - it->second.fTimeLastSensed;
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -14217,9 +14218,9 @@ $LN9@GetTimeSin:
 	jmp	SHORT $LN1@GetTimeSin
 $LN2@GetTimeSin:
 
-; 256  :   }
-; 257  : 
-; 258  :   return 0;
+; 258  :   }
+; 259  : 
+; 260  :   return 0;
 
 	xorps	xmm0, xmm0
 	movsd	QWORD PTR $T3[ebp], xmm0
@@ -14229,7 +14230,7 @@ $LN2@GetTimeSin:
 	fld	QWORD PTR $T3[ebp]
 $LN1@GetTimeSin:
 
-; 259  : }
+; 261  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -14304,7 +14305,7 @@ _pOpponent$ = 8						; size = 4
 ?GetTimeOpponentHasBeenVisible@Raven_SensoryMemory@@QBENPAVRaven_Bot@@@Z PROC ; Raven_SensoryMemory::GetTimeOpponentHasBeenVisible
 ; _this$ = ecx
 
-; 217  : {
+; 219  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -14328,7 +14329,7 @@ _pOpponent$ = 8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	DWORD PTR $T2[ebp], 0
 
-; 218  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
+; 220  :   MemoryMap::const_iterator it = m_MemoryMap.find(pOpponent);
 
 	lea	eax, DWORD PTR _pOpponent$[ebp]
 	push	eax
@@ -14339,8 +14340,8 @@ _pOpponent$ = 8						; size = 4
 	call	?find@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@ABQAVRaven_Bot@@@Z ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::find
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 219  :  
-; 220  :   if (it != m_MemoryMap.end() && it->second.bWithinFOV)
+; 221  :  
+; 222  :   if (it != m_MemoryMap.end() && it->second.bWithinFOV)
 
 	lea	edx, DWORD PTR $T5[ebp]
 	push	edx
@@ -14385,8 +14386,8 @@ $LN9@GetTimeOpp:
 	test	ecx, ecx
 	je	SHORT $LN2@GetTimeOpp
 
-; 221  :   {
-; 222  :     return Clock->GetCurrentTime() - it->second.fTimeBecameVisible;
+; 223  :   {
+; 224  :     return Clock->GetCurrentTime() - it->second.fTimeBecameVisible;
 
 	call	?Instance@CrudeTimer@@SAPAV1@XZ		; CrudeTimer::Instance
 	mov	ecx, eax
@@ -14406,9 +14407,9 @@ $LN9@GetTimeOpp:
 	jmp	SHORT $LN1@GetTimeOpp
 $LN2@GetTimeOpp:
 
-; 223  :   }
-; 224  : 
-; 225  :   return 0;
+; 225  :   }
+; 226  : 
+; 227  :   return 0;
 
 	xorps	xmm0, xmm0
 	movsd	QWORD PTR $T3[ebp], xmm0
@@ -14418,7 +14419,7 @@ $LN2@GetTimeOpp:
 	fld	QWORD PTR $T3[ebp]
 $LN1@GetTimeOpp:
 
-; 226  : }
+; 228  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -14476,7 +14477,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_sensorymemory.cpp
 _TEXT	SEGMENT
-tv132 = -72						; size = 4
+tv135 = -72						; size = 4
 tv70 = -68						; size = 4
 $T2 = -64						; size = 12
 $T3 = -52						; size = 12
@@ -14533,9 +14534,9 @@ _pOpponent$ = 12					; size = 4
 	call	?end@?$_Tree@V?$_Tmap_traits@PAVRaven_Bot@@VMemoryRecord@@U?$less@PAVRaven_Bot@@@std@@V?$allocator@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@4@$0A@@std@@@std@@QBE?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@2@XZ ; std::_Tree<std::_Tmap_traits<Raven_Bot *,MemoryRecord,std::less<Raven_Bot *>,std::allocator<std::pair<Raven_Bot * const,MemoryRecord> >,0> >::end
 	mov	DWORD PTR tv70[ebp], eax
 	mov	eax, DWORD PTR tv70[ebp]
-	mov	DWORD PTR tv132[ebp], eax
+	mov	DWORD PTR tv135[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
-	mov	ecx, DWORD PTR tv132[ebp]
+	mov	ecx, DWORD PTR tv135[ebp]
 	push	ecx
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??9?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QBE_NABV01@@Z ; std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > > >::operator!=
@@ -14566,27 +14567,41 @@ _pOpponent$ = 12					; size = 4
 	lea	ecx, DWORD PTR _it$[ebp]
 	call	??1?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QAE@XZ
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
-	jmp	SHORT $LN3@GetLastRec
+	jmp	SHORT $LN1@GetLastRec
 $LN2@GetLastRec:
 
 ; 207  :   }
-; 208  : 
-; 209  :   throw std::runtime_error("< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent>: Attempting to get position of unrecorded bot");
+; 208  :   //solution bâtard pour pas que les Random_Single_Target_Team crash pas à l'ajout d'une target hors de vue...............
+; 209  :   return Vector2D(0, 0);
 
-	push	OFFSET $SG154035
+	sub	esp, 8
+	xorps	xmm0, xmm0
+	movsd	QWORD PTR [esp], xmm0
+	sub	esp, 8
+	xorps	xmm0, xmm0
+	movsd	QWORD PTR [esp], xmm0
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	call	??0Vector2D@@QAE@NN@Z			; Vector2D::Vector2D
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??1?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+	jmp	SHORT $LN1@GetLastRec
+
+; 210  : 
+; 211  :   throw std::runtime_error("< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent>: Attempting to get position of unrecorded bot");
+
+	push	OFFSET $SG154042
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0runtime_error@std@@QAE@PBD@Z		; std::runtime_error::runtime_error
 	push	OFFSET __TI2?AVruntime_error@std@@
 	lea	ecx, DWORD PTR $T2[ebp]
 	push	ecx
 	call	__CxxThrowException@8
+$LN1@GetLastRec:
 
-; 210  : }
+; 212  : }
 
-	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	lea	ecx, DWORD PTR _it$[ebp]
-	call	??1?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@std@@@std@@QAE@XZ
-$LN3@GetLastRec:
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -14604,7 +14619,7 @@ $LN3@GetLastRec:
 	mov	esp, ebp
 	pop	ebp
 	ret	8
-	npad	2
+	npad	3
 $LN9@GetLastRec:
 	DD	1
 	DD	$LN8@GetLastRec
@@ -20631,6 +20646,35 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ?Length@Vector2D@@QBENXZ ENDP				; Vector2D::Length
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\common\2d\vector2d.h
+;	COMDAT ??0Vector2D@@QAE@NN@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_a$ = 8							; size = 8
+_b$ = 16						; size = 8
+??0Vector2D@@QAE@NN@Z PROC				; Vector2D::Vector2D, COMDAT
+; _this$ = ecx
+
+; 25   :   Vector2D(double a, double b):x(a),y(b){}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	movsd	xmm0, QWORD PTR _a$[ebp]
+	movsd	QWORD PTR [eax], xmm0
+	mov	ecx, DWORD PTR _this$[ebp]
+	movsd	xmm0, QWORD PTR _b$[ebp]
+	movsd	QWORD PTR [ecx+8], xmm0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	16					; 00000010H
+??0Vector2D@@QAE@NN@Z ENDP				; Vector2D::Vector2D
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\common\2d\vector2d.h

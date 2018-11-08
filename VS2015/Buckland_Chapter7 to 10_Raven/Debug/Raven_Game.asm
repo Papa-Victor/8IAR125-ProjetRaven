@@ -10,15 +10,15 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG180853 DB	'Map has no spawn points!', 00H
+$SG180860 DB	'Map has no spawn points!', 00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+2
-$SG180982 DB	'GraveLifetime', 00H
+$SG180989 DB	'GraveLifetime', 00H
 	ORG $+2
-$SG180984 DB	'MaxSearchCyclesPerUpdateStep', 00H
+$SG180991 DB	'MaxSearchCyclesPerUpdateStep', 00H
 	ORG $+3
-$SG180987 DB	'NumBots', 00H
-$SG182055 DB	'Queuing', 00H
+$SG180994 DB	'NumBots', 00H
+$SG182062 DB	'Queuing', 00H
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
 	DD	0ff00H
@@ -34,7 +34,7 @@ $SG182055 DB	'Queuing', 00H
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG179262 DB	'StartMap', 00H
+$SG179269 DB	'StartMap', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -1152,7 +1152,7 @@ EXTRN	?AddGoal_MoveToPosition@Goal_Think@@QAEXUVector2D@@@Z:PROC ; Goal_Think::A
 EXTRN	?QueueGoal_MoveToPosition@Goal_Think@@QAEXUVector2D@@@Z:PROC ; Goal_Think::QueueGoal_MoveToPosition
 EXTRN	?RenderEvaluations@Goal_Think@@QBEXHH@Z:PROC	; Goal_Think::RenderEvaluations
 EXTRN	?Instance@GoalTypeToString@@SAPAV1@XZ:PROC	; GoalTypeToString::Instance
-EXTRN	?Instance@TeamManager@@SAPAV1@XZ:PROC		; TeamManager::Instance
+EXTRN	?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z:PROC ; TeamManager::Instance
 EXTRN	?NewWorldBot@TeamManager@@QAEXPAVRaven_Bot@@@Z:PROC ; TeamManager::NewWorldBot
 EXTRN	?OnBotDeath@TeamManager@@QAEXPAVRaven_Bot@@@Z:PROC ; TeamManager::OnBotDeath
 EXTRN	@_RTC_CheckStackVars@8:PROC
@@ -41309,7 +41309,7 @@ $LN9@LoadMap:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG180982
+	push	OFFSET $SG180989
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv243[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
@@ -41347,7 +41347,7 @@ $LN11@LoadMap:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG180984
+	push	OFFSET $SG180991
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv247[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 3
@@ -41423,7 +41423,7 @@ $LN15@LoadMap:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG180987
+	push	OFFSET $SG180994
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv251[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 5
@@ -42942,7 +42942,7 @@ $LN23@Render:
 
 ; 806  :       gdi->TextAtPos(GetClientCursorPosition(), "Queuing");
 
-	push	OFFSET $SG182055
+	push	OFFSET $SG182062
 	lea	ecx, DWORD PTR $T16[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 7
@@ -43229,9 +43229,9 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_game.cpp
 _TEXT	SEGMENT
-tv148 = -64						; size = 4
-tv146 = -60						; size = 4
-tv153 = -56						; size = 4
+tv149 = -64						; size = 4
+tv147 = -60						; size = 4
+tv154 = -56						; size = 4
 $T2 = -52						; size = 4
 $T3 = -48						; size = 28
 _this$ = -20						; size = 4
@@ -43293,9 +43293,12 @@ __$EHRec$ = -12						; size = 12
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+32], 0
 
-; 46   : 						 m_pTeamManager(TeamManager::Instance())
+; 46   : 						 m_pTeamManager(TeamManager::Instance(this))
 
-	call	?Instance@TeamManager@@SAPAV1@XZ	; TeamManager::Instance
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	call	?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z ; TeamManager::Instance
+	add	esp, 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+36], eax
 
@@ -43320,9 +43323,9 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG179262
+	push	OFFSET $SG179269
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
-	mov	DWORD PTR tv153[ebp], eax
+	mov	DWORD PTR tv154[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
 	lea	edx, DWORD PTR $T3[ebp]
 	push	edx
@@ -43330,11 +43333,11 @@ __$EHRec$ = -12						; size = 12
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
 	mov	ecx, eax
 	call	?GetString@Scriptor@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z ; Scriptor::GetString
-	mov	DWORD PTR tv146[ebp], eax
-	mov	eax, DWORD PTR tv146[ebp]
-	mov	DWORD PTR tv148[ebp], eax
+	mov	DWORD PTR tv147[ebp], eax
+	mov	eax, DWORD PTR tv147[ebp]
+	mov	DWORD PTR tv149[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 3
-	mov	ecx, DWORD PTR tv148[ebp]
+	mov	ecx, DWORD PTR tv149[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?LoadMap@Raven_Game@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; Raven_Game::LoadMap
@@ -43608,7 +43611,7 @@ _pBot$ = 8						; size = 4
 ; 216  :   {
 ; 217  :     ErrorBox("Map has no spawn points!"); return false;
 
-	push	OFFSET $SG180853
+	push	OFFSET $SG180860
 	call	?ErrorBox@@YAXPAD@Z			; ErrorBox
 	add	esp, 4
 	xor	al, al

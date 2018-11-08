@@ -39,11 +39,12 @@ PUBLIC	?min@?$numeric_limits@N@std@@SANXZ		; std::numeric_limits<double>::min
 PUBLIC	?max@?$numeric_limits@N@std@@SANXZ		; std::numeric_limits<double>::max
 PUBLIC	??0_Iterator_base12_compatible@std@@QAE@XZ	; std::_Iterator_base12_compatible::_Iterator_base12_compatible
 PUBLIC	??0id@locale@std@@QAE@I@Z			; std::locale::id::id
-PUBLIC	??0TeamManager@@AAE@XZ				; TeamManager::TeamManager
+PUBLIC	?GetTeam@Raven_Bot@@QBEPAVTeam@@XZ		; Raven_Bot::GetTeam
+PUBLIC	??0TeamManager@@AAE@PAVRaven_Game@@@Z		; TeamManager::TeamManager
 PUBLIC	?begin@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::begin
 PUBLIC	?end@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::end
 PUBLIC	??A?$array@PAVTeam@@$02@std@@QAEAAPAVTeam@@I@Z	; std::array<Team *,3>::operator[]
-PUBLIC	?Instance@TeamManager@@SAPAV1@XZ		; TeamManager::Instance
+PUBLIC	?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z	; TeamManager::Instance
 PUBLIC	?AddBot@TeamManager@@QAEXW4teams@@PAVRaven_Bot@@@Z ; TeamManager::AddBot
 PUBLIC	?RemoveBot@TeamManager@@QAEXW4teams@@PAVRaven_Bot@@@Z ; TeamManager::RemoveBot
 PUBLIC	?NewWorldBot@TeamManager@@QAEXPAVRaven_Bot@@@Z	; TeamManager::NewWorldBot
@@ -92,6 +93,7 @@ EXTRN	??2@YAPAXI@Z:PROC				; operator new
 EXTRN	??3@YAXPAXI@Z:PROC				; operator delete
 EXTRN	__invalid_parameter:PROC
 EXTRN	__CrtDbgReport:PROC
+EXTRN	?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z:PROC	; Team::BotInTeam
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__RTC_CheckEsp:PROC
@@ -353,11 +355,11 @@ CONST	SEGMENT
 ??_C@_02DKCKIIND@?$CFs@ DB '%s', 00H			; `string'
 CONST	ENDS
 xdata$x	SEGMENT
-__unwindtable$?Instance@TeamManager@@SAPAV1@XZ DD 0ffffffffH
-	DD	FLAT:__unwindfunclet$?Instance@TeamManager@@SAPAV1@XZ$0
-__ehfuncinfo$?Instance@TeamManager@@SAPAV1@XZ DD 019930522H
+__unwindtable$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z$0
+__ehfuncinfo$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z DD 019930522H
 	DD	01H
-	DD	FLAT:__unwindtable$?Instance@TeamManager@@SAPAV1@XZ
+	DD	FLAT:__unwindtable$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z
 	DD	2 DUP(00H)
 	DD	2 DUP(00H)
 	DD	00H
@@ -1125,7 +1127,7 @@ _bot$ = 8						; size = 4
 ?OnBotDeath@TeamManager@@QAEXPAVRaven_Bot@@@Z PROC	; TeamManager::OnBotDeath
 ; _this$ = ecx
 
-; 42   : {
+; 49   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1140,11 +1142,12 @@ _bot$ = 8						; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 43   : 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+; 50   : 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
 
 	lea	eax, DWORD PTR _curTeam$3[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	?begin@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::begin
 	jmp	SHORT $LN4@OnBotDeath
 $LN2@OnBotDeath:
@@ -1157,6 +1160,7 @@ $LN4@OnBotDeath:
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	?end@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::end
 	push	eax
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
@@ -1165,14 +1169,14 @@ $LN4@OnBotDeath:
 	test	eax, eax
 	je	SHORT $LN1@OnBotDeath
 
-; 44   : 		if (*curTeam != NULL) {
+; 51   : 		if (*curTeam != NULL) {
 
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
 	cmp	DWORD PTR [eax], 0
 	je	SHORT $LN5@OnBotDeath
 
-; 45   : 			(*curTeam)->CheckDeadBot(bot);
+; 52   : 			(*curTeam)->CheckDeadBot(bot);
 
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
@@ -1190,13 +1194,13 @@ $LN4@OnBotDeath:
 	call	__RTC_CheckEsp
 $LN5@OnBotDeath:
 
-; 46   : 		}
-; 47   : 	}
+; 53   : 		}
+; 54   : 	}
 
 	jmp	SHORT $LN2@OnBotDeath
 $LN1@OnBotDeath:
 
-; 48   : }
+; 55   : }
 
 	push	edx
 	mov	ecx, ebp
@@ -1213,7 +1217,7 @@ $LN1@OnBotDeath:
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-	npad	3
+	npad	1
 $LN9@OnBotDeath:
 	DD	1
 	DD	$LN8@OnBotDeath
@@ -1244,7 +1248,7 @@ _addedBot$ = 8						; size = 4
 ?NewWorldBot@TeamManager@@QAEXPAVRaven_Bot@@@Z PROC	; TeamManager::NewWorldBot
 ; _this$ = ecx
 
-; 33   : {
+; 40   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1259,11 +1263,12 @@ _addedBot$ = 8						; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 34   : 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+; 41   : 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
 
 	lea	eax, DWORD PTR _curTeam$3[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	?begin@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::begin
 	jmp	SHORT $LN4@NewWorldBo
 $LN2@NewWorldBo:
@@ -1276,6 +1281,7 @@ $LN4@NewWorldBo:
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	?end@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::end
 	push	eax
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
@@ -1284,14 +1290,14 @@ $LN4@NewWorldBo:
 	test	eax, eax
 	je	SHORT $LN1@NewWorldBo
 
-; 35   : 		if (*curTeam != NULL) {
+; 42   : 		if (*curTeam != NULL) {
 
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
 	cmp	DWORD PTR [eax], 0
 	je	SHORT $LN5@NewWorldBo
 
-; 36   : 			(*curTeam)->NewWorldBot(addedBot);
+; 43   : 			(*curTeam)->NewWorldBot(addedBot);
 
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
@@ -1309,13 +1315,13 @@ $LN4@NewWorldBo:
 	call	__RTC_CheckEsp
 $LN5@NewWorldBo:
 
-; 37   : 		}
-; 38   : 	}
+; 44   : 		}
+; 45   : 	}
 
 	jmp	SHORT $LN2@NewWorldBo
 $LN1@NewWorldBo:
 
-; 39   : }
+; 46   : }
 
 	push	edx
 	mov	ecx, ebp
@@ -1332,7 +1338,7 @@ $LN1@NewWorldBo:
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-	npad	3
+	npad	1
 $LN9@NewWorldBo:
 	DD	1
 	DD	$LN8@NewWorldBo
@@ -1361,7 +1367,7 @@ _bot$ = 12						; size = 4
 ?RemoveBot@TeamManager@@QAEXW4teams@@PAVRaven_Bot@@@Z PROC ; TeamManager::RemoveBot
 ; _this$ = ecx
 
-; 28   : {
+; 35   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1371,11 +1377,12 @@ _bot$ = 12						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 29   : 	m_Teams[colour]->RemoveBot(bot);
+; 36   : 	m_Teams[colour]->RemoveBot(bot);
 
 	mov	eax, DWORD PTR _colour$[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	??A?$array@PAVTeam@@$02@std@@QAEAAPAVTeam@@I@Z ; std::array<Team *,3>::operator[]
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR tv70[ebp], ecx
@@ -1390,7 +1397,7 @@ _bot$ = 12						; size = 4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 30   : }
+; 37   : }
 
 	pop	esi
 	add	esp, 8
@@ -1404,46 +1411,92 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\teammanager.cpp
 _TEXT	SEGMENT
-tv70 = -8						; size = 4
+tv86 = -12						; size = 4
+_originalTeam$ = -8					; size = 4
 _this$ = -4						; size = 4
 _colour$ = 8						; size = 4
 _bot$ = 12						; size = 4
 ?AddBot@TeamManager@@QAEXW4teams@@PAVRaven_Bot@@@Z PROC	; TeamManager::AddBot
 ; _this$ = ecx
 
-; 23   : {
+; 24   : {
 
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 8
+	sub	esp, 12					; 0000000cH
 	push	esi
+	mov	DWORD PTR [ebp-12], -858993460		; ccccccccH
 	mov	DWORD PTR [ebp-8], -858993460		; ccccccccH
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 24   : 	m_Teams[colour]->AddBot(bot);
+; 25   : 	Team* originalTeam = bot->GetTeam();
 
-	mov	eax, DWORD PTR _colour$[ebp]
+	mov	ecx, DWORD PTR _bot$[ebp]
+	call	?GetTeam@Raven_Bot@@QBEPAVTeam@@XZ	; Raven_Bot::GetTeam
+	mov	DWORD PTR _originalTeam$[ebp], eax
+
+; 26   : 	if (originalTeam != NULL) {
+
+	cmp	DWORD PTR _originalTeam$[ebp], 0
+	je	SHORT $LN2@AddBot
+
+; 27   : 		originalTeam->RemoveBot(bot);
+
+	mov	esi, esp
+	mov	eax, DWORD PTR _bot$[ebp]
 	push	eax
+	mov	ecx, DWORD PTR _originalTeam$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	ecx, DWORD PTR _originalTeam$[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	call	eax
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN2@AddBot:
+
+; 28   : 	}
+; 29   : 	if (!m_Teams[colour]->BotInTeam(bot)) {
+
+	mov	ecx, DWORD PTR _bot$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _colour$[ebp]
+	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	??A?$array@PAVTeam@@$02@std@@QAEAAPAVTeam@@I@Z ; std::array<Team *,3>::operator[]
 	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR tv70[ebp], ecx
-	mov	esi, esp
-	mov	edx, DWORD PTR _bot$[ebp]
-	push	edx
-	mov	eax, DWORD PTR tv70[ebp]
+	call	?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z	; Team::BotInTeam
+	movzx	eax, al
+	test	eax, eax
+	jne	SHORT $LN1@AddBot
+
+; 30   : 		m_Teams[colour]->AddBot(bot);
+
+	mov	ecx, DWORD PTR _colour$[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
+	call	??A?$array@PAVTeam@@$02@std@@QAEAAPAVTeam@@I@Z ; std::array<Team *,3>::operator[]
 	mov	edx, DWORD PTR [eax]
-	mov	ecx, DWORD PTR tv70[ebp]
+	mov	DWORD PTR tv86[ebp], edx
+	mov	esi, esp
+	mov	eax, DWORD PTR _bot$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv86[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	ecx, DWORD PTR tv86[ebp]
 	mov	eax, DWORD PTR [edx+4]
 	call	eax
 	cmp	esi, esp
 	call	__RTC_CheckEsp
+$LN1@AddBot:
 
-; 25   : }
+; 31   : 	}
+; 32   : }
 
 	pop	esi
-	add	esp, 8
+	add	esp, 12					; 0000000cH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -1454,18 +1507,19 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\teammanager.cpp
 _TEXT	SEGMENT
-tv76 = -24						; size = 4
+tv77 = -24						; size = 4
 $T2 = -20						; size = 4
 $T3 = -16						; size = 4
 __$EHRec$ = -12						; size = 12
-?Instance@TeamManager@@SAPAV1@XZ PROC			; TeamManager::Instance
+_game$ = 8						; size = 4
+?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z PROC	; TeamManager::Instance
 
-; 15   : {
+; 16   : {
 
 	push	ebp
 	mov	ebp, esp
 	push	-1
-	push	__ehhandler$?Instance@TeamManager@@SAPAV1@XZ
+	push	__ehhandler$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
 	sub	esp, 12					; 0000000cH
@@ -1478,40 +1532,42 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 
-; 16   : 	if (instance == NULL) {
+; 17   : 	if (instance == NULL) {
 
 	cmp	DWORD PTR ?instance@TeamManager@@0PAV1@A, 0 ; TeamManager::instance
 	jne	SHORT $LN2@Instance
 
-; 17   : 		instance = new TeamManager();
+; 18   : 		instance = new TeamManager(game);
 
-	push	12					; 0000000cH
+	push	16					; 00000010H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T2[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	cmp	DWORD PTR $T2[ebp], 0
 	je	SHORT $LN4@Instance
+	mov	eax, DWORD PTR _game$[ebp]
+	push	eax
 	mov	ecx, DWORD PTR $T2[ebp]
-	call	??0TeamManager@@AAE@XZ			; TeamManager::TeamManager
-	mov	DWORD PTR tv76[ebp], eax
+	call	??0TeamManager@@AAE@PAVRaven_Game@@@Z	; TeamManager::TeamManager
+	mov	DWORD PTR tv77[ebp], eax
 	jmp	SHORT $LN5@Instance
 $LN4@Instance:
-	mov	DWORD PTR tv76[ebp], 0
+	mov	DWORD PTR tv77[ebp], 0
 $LN5@Instance:
-	mov	eax, DWORD PTR tv76[ebp]
-	mov	DWORD PTR $T3[ebp], eax
+	mov	ecx, DWORD PTR tv77[ebp]
+	mov	DWORD PTR $T3[ebp], ecx
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	mov	ecx, DWORD PTR $T3[ebp]
-	mov	DWORD PTR ?instance@TeamManager@@0PAV1@A, ecx ; TeamManager::instance
+	mov	edx, DWORD PTR $T3[ebp]
+	mov	DWORD PTR ?instance@TeamManager@@0PAV1@A, edx ; TeamManager::instance
 $LN2@Instance:
 
-; 18   : 	}
-; 19   : 	return instance;
+; 19   : 	}
+; 20   : 	return instance;
 
 	mov	eax, DWORD PTR ?instance@TeamManager@@0PAV1@A ; TeamManager::instance
 
-; 20   : }
+; 21   : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -1524,23 +1580,23 @@ $LN2@Instance:
 	ret	0
 _TEXT	ENDS
 text$x	SEGMENT
-__unwindfunclet$?Instance@TeamManager@@SAPAV1@XZ$0:
-	push	12					; 0000000cH
+__unwindfunclet$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z$0:
+	push	16					; 00000010H
 	mov	eax, DWORD PTR $T2[ebp]
 	push	eax
 	call	??3@YAXPAXI@Z				; operator delete
 	add	esp, 8
 	ret	0
-__ehhandler$?Instance@TeamManager@@SAPAV1@XZ:
+__ehhandler$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z:
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
 	mov	ecx, DWORD PTR [edx-16]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$?Instance@TeamManager@@SAPAV1@XZ
+	mov	eax, OFFSET __ehfuncinfo$?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z
 	jmp	___CxxFrameHandler3
 text$x	ENDS
-?Instance@TeamManager@@SAPAV1@XZ ENDP			; TeamManager::Instance
+?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z ENDP	; TeamManager::Instance
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\array
 ;	COMDAT ??A?$array@PAVTeam@@$02@std@@QAEAAPAVTeam@@I@Z
@@ -1736,7 +1792,8 @@ $T1 = -60						; size = 16
 $T2 = -44						; size = 16
 _curTeam$3 = -24					; size = 16
 _this$ = -4						; size = 4
-??0TeamManager@@AAE@XZ PROC				; TeamManager::TeamManager
+_game$ = 8						; size = 4
+??0TeamManager@@AAE@PAVRaven_Game@@@Z PROC		; TeamManager::TeamManager
 ; _this$ = ecx
 
 ; 8    : {
@@ -1753,43 +1810,51 @@ _this$ = -4						; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 9    : 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+; 9    : 	this->game = game;
 
-	lea	eax, DWORD PTR _curTeam$3[ebp]
-	push	eax
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _game$[ebp]
+	mov	DWORD PTR [eax], ecx
+
+; 10   : 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+
+	lea	edx, DWORD PTR _curTeam$3[ebp]
+	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	?begin@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::begin
 	jmp	SHORT $LN4@TeamManage
 $LN2@TeamManage:
 	push	0
-	lea	ecx, DWORD PTR $T2[ebp]
-	push	ecx
+	lea	eax, DWORD PTR $T2[ebp]
+	push	eax
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
 	call	??E?$_Array_iterator@PAVTeam@@$02@std@@QAE?AV01@H@Z ; std::_Array_iterator<Team *,3>::operator++
 $LN4@TeamManage:
-	lea	edx, DWORD PTR $T1[ebp]
-	push	edx
+	lea	ecx, DWORD PTR $T1[ebp]
+	push	ecx
 	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
 	call	?end@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::end
 	push	eax
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
 	call	??9?$_Array_const_iterator@PAVTeam@@$02@std@@QBE_NABV01@@Z ; std::_Array_const_iterator<Team *,3>::operator!=
-	movzx	eax, al
-	test	eax, eax
+	movzx	edx, al
+	test	edx, edx
 	je	SHORT $LN1@TeamManage
 
-; 10   : 		*curTeam = NULL;
+; 11   : 		*curTeam = NULL;
 
 	lea	ecx, DWORD PTR _curTeam$3[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
 	mov	DWORD PTR [eax], 0
 
-; 11   : 	}
+; 12   : 	}
 
 	jmp	SHORT $LN2@TeamManage
 $LN1@TeamManage:
 
-; 12   : }
+; 13   : }
 
 	mov	eax, DWORD PTR _this$[ebp]
 	push	edx
@@ -1805,7 +1870,7 @@ $LN1@TeamManage:
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
-	ret	0
+	ret	4
 	npad	2
 $LN8@TeamManage:
 	DD	1
@@ -1823,7 +1888,29 @@ $LN6@TeamManage:
 	DB	97					; 00000061H
 	DB	109					; 0000006dH
 	DB	0
-??0TeamManager@@AAE@XZ ENDP				; TeamManager::TeamManager
+??0TeamManager@@AAE@PAVRaven_Game@@@Z ENDP		; TeamManager::TeamManager
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_bot.h
+;	COMDAT ?GetTeam@Raven_Bot@@QBEPAVTeam@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GetTeam@Raven_Bot@@QBEPAVTeam@@XZ PROC			; Raven_Bot::GetTeam, COMDAT
+; _this$ = ecx
+
+; 166  :   Team*			GetTeam() const { return m_pTeam; }
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax+152]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?GetTeam@Raven_Bot@@QBEPAVTeam@@XZ ENDP			; Raven_Bot::GetTeam
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\common\misc\utils.h

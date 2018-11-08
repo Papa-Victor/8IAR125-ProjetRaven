@@ -156,6 +156,8 @@ public:
   Raven_Bot*  PossessedBot()const{return m_pSelectedBot;}
   void        ChangeWeaponOfPossessedBot(unsigned int weapon)const;
 
+  Raven_Bot*  GetSelectedBot() const { return m_pSelectedBot; }
+
   
   const Raven_Map* const                   GetMap()const{return m_pMap;}
   Raven_Map* const                         GetMap(){return m_pMap;}
