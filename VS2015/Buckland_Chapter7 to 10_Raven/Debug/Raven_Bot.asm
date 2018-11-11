@@ -26,59 +26,59 @@ CONST	SEGMENT
 	DD	0c8c8c8H
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-$SG177368 DB	00H
-$SG177471 DB	00H
-$SG177480 DB	00H
-$SG177299 DB	'Bot_MaxForce', 00H
+$SG178510 DB	00H
+$SG178613 DB	00H
+$SG178622 DB	00H
+$SG178441 DB	'Bot_MaxForce', 00H
 	ORG $+3
-$SG177300 DB	'Bot_MaxHeadTurnRate', 00H
-$SG177301 DB	'Bot_Scale', 00H
+$SG178442 DB	'Bot_MaxHeadTurnRate', 00H
+$SG178443 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG177302 DB	'Bot_Scale', 00H
+$SG178444 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG177303 DB	'Bot_Mass', 00H
+$SG178445 DB	'Bot_Mass', 00H
 	ORG $+3
-$SG177304 DB	'Bot_MaxSpeed', 00H
+$SG178446 DB	'Bot_MaxSpeed', 00H
 	ORG $+3
-$SG177305 DB	'Bot_Scale', 00H
+$SG178447 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG177306 DB	'Bot_MaxHealth', 00H
+$SG178448 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG177307 DB	'Bot_MaxHealth', 00H
+$SG178449 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG177308 DB	'Bot_FOV', 00H
-$SG177309 DB	'HitFlashTime', 00H
+$SG178450 DB	'Bot_FOV', 00H
+$SG178451 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG177313 DB	'Bot_WeaponSelectionFrequency', 00H
+$SG178455 DB	'Bot_WeaponSelectionFrequency', 00H
 	ORG $+3
-$SG177315 DB	'Bot_GoalAppraisalUpdateFreq', 00H
-$SG177317 DB	'Bot_TargetingUpdateFreq', 00H
-$SG177319 DB	'Bot_TriggerUpdateFreq', 00H
+$SG178457 DB	'Bot_GoalAppraisalUpdateFreq', 00H
+$SG178459 DB	'Bot_TargetingUpdateFreq', 00H
+$SG178461 DB	'Bot_TriggerUpdateFreq', 00H
 	ORG $+2
-$SG177321 DB	'Bot_VisionUpdateFreq', 00H
+$SG178463 DB	'Bot_VisionUpdateFreq', 00H
 	ORG $+3
-$SG177325 DB	'Bot_AimPersistance', 00H
+$SG178467 DB	'Bot_AimPersistance', 00H
 	ORG $+1
-$SG177326 DB	'Bot_AimAccuracy', 00H
-$SG177327 DB	'Bot_ReactionTime', 00H
+$SG178468 DB	'Bot_AimAccuracy', 00H
+$SG178469 DB	'Bot_ReactionTime', 00H
 	ORG $+3
-$SG177329 DB	'Bot_MemorySpan', 00H
+$SG178471 DB	'Bot_MemorySpan', 00H
 	ORG $+1
-$SG177366 DB	'deleting raven bot (id = ', 00H
+$SG178508 DB	'deleting raven bot (id = ', 00H
 	ORG $+2
-$SG177367 DB	')', 00H
+$SG178509 DB	')', 00H
 	ORG $+2
-$SG177461 DB	'HitFlashTime', 00H
+$SG178603 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG177470 DB	'Player Possesses bot ', 00H
+$SG178612 DB	'Player Possesses bot ', 00H
 	ORG $+2
-$SG177479 DB	'Player is exorcised from bot ', 00H
+$SG178621 DB	'Player is exorcised from bot ', 00H
 	ORG $+2
-$SG177630 DB	'H:', 00H
+$SG178772 DB	'H:', 00H
 	ORG $+1
-$SG177632 DB	'Scr:', 00H
+$SG178774 DB	'Scr:', 00H
 	ORG $+3
-$SG177648 DB	'Bot_Scale', 00H
+$SG178790 DB	'Bot_Scale', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -910,6 +910,7 @@ PUBLIC	??$destroy@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocato
 PUBLIC	??$_Get_size_of_n@$07@std@@YAII@Z		; std::_Get_size_of_n<8>
 PUBLIC	??R<lambda_6607a66f2a10a1261ff9db96cba1015b>@@QBE@QADQBDIIID@Z ; <lambda_6607a66f2a10a1261ff9db96cba1015b>::operator()
 PUBLIC	??$_Reallocate_grow_by@V<lambda_6607a66f2a10a1261ff9db96cba1015b>@@IID@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@IV<lambda_6607a66f2a10a1261ff9db96cba1015b>@@IID@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Reallocate_grow_by<<lambda_6607a66f2a10a1261ff9db96cba1015b>,unsigned int,unsigned int,char>
+PUBLIC	??$swap@DX@std@@YAXAAD0@Z			; std::swap<char,void>
 PUBLIC	??$addressof@PAV?$Goal@VRaven_Bot@@@@@std@@YAPAPAV?$Goal@VRaven_Bot@@@@AAPAV1@@Z ; std::addressof<Goal<Raven_Bot> *>
 PUBLIC	??$destroy@PAV?$Goal@VRaven_Bot@@@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAV?$Goal@VRaven_Bot@@@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAV?$Goal@VRaven_Bot@@@@PAX@std@@@1@QAPAV?$Goal@VRaven_Bot@@@@@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<Goal<Raven_Bot> *,void *> > >::destroy<Goal<Raven_Bot> *>
 PUBLIC	??0?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@U_Iterator_base12@2@@std@@QAE@PAU?$_List_node@PAV?$Goal@VRaven_Bot@@@@PAX@1@PBV?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@1@@Z ; std::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> >,std::_Iterator_base12>::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> >,std::_Iterator_base12>
@@ -920,7 +921,6 @@ PUBLIC	??E?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VR
 PUBLIC	??8?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QBE_NABV01@@Z ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >::operator==
 PUBLIC	??9?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QBE_NABV01@@Z ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >::operator!=
 PUBLIC	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QAE@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >::~_List_const_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >
-PUBLIC	??$swap@DX@std@@YAXAAD0@Z			; std::swap<char,void>
 PUBLIC	??$_Uninitialized_fill_n@PAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@IV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@2@@std@@YAPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@QAV10@IABV10@AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@@Z ; std::_Uninitialized_fill_n<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,unsigned int,std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
 PUBLIC	??$_Get_size_of_n@$03@std@@YAII@Z		; std::_Get_size_of_n<4>
 PUBLIC	??$_Uninitialized_move@PAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@PAV12@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@2@@std@@YAPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@QAV10@0PAV10@AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@@Z ; std::_Uninitialized_move<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
@@ -16596,84 +16596,6 @@ __Al$ = 20						; size = 4
 ??$_Uninitialized_fill_n@PAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@IV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@2@@std@@YAPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@QAV10@IABV10@AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@@Z ENDP ; std::_Uninitialized_fill_n<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,unsigned int,std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\utility
-;	COMDAT ??$swap@DX@std@@YAXAAD0@Z
-_TEXT	SEGMENT
-__Tmp$ = -5						; size = 1
-__Left$ = 8						; size = 4
-__Right$ = 12						; size = 4
-??$swap@DX@std@@YAXAAD0@Z PROC				; std::swap<char,void>, COMDAT
-
-; 66   : 	{	// exchange values stored at _Left and _Right
-
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 12					; 0000000cH
-	mov	DWORD PTR [ebp-12], -858993460		; ccccccccH
-	mov	DWORD PTR [ebp-8], -858993460		; ccccccccH
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-
-; 67   : 	_Ty _Tmp = _STD move(_Left);
-
-	mov	eax, DWORD PTR __Left$[ebp]
-	push	eax
-	call	??$move@AAD@std@@YA$$QADAAD@Z		; std::move<char &>
-	add	esp, 4
-	mov	cl, BYTE PTR [eax]
-	mov	BYTE PTR __Tmp$[ebp], cl
-
-; 68   : 	_Left = _STD move(_Right);
-
-	mov	edx, DWORD PTR __Right$[ebp]
-	push	edx
-	call	??$move@AAD@std@@YA$$QADAAD@Z		; std::move<char &>
-	add	esp, 4
-	mov	ecx, DWORD PTR __Left$[ebp]
-	mov	dl, BYTE PTR [eax]
-	mov	BYTE PTR [ecx], dl
-
-; 69   : 	_Right = _STD move(_Tmp);
-
-	lea	eax, DWORD PTR __Tmp$[ebp]
-	push	eax
-	call	??$move@AAD@std@@YA$$QADAAD@Z		; std::move<char &>
-	add	esp, 4
-	mov	ecx, DWORD PTR __Right$[ebp]
-	mov	dl, BYTE PTR [eax]
-	mov	BYTE PTR [ecx], dl
-
-; 70   : 	}
-
-	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN5@swap
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
-	add	esp, 12					; 0000000cH
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-	npad	3
-$LN5@swap:
-	DD	1
-	DD	$LN4@swap
-$LN4@swap:
-	DD	-5					; fffffffbH
-	DD	1
-	DD	$LN3@swap
-$LN3@swap:
-	DB	95					; 0000005fH
-	DB	84					; 00000054H
-	DB	109					; 0000006dH
-	DB	112					; 00000070H
-	DB	0
-??$swap@DX@std@@YAXAAD0@Z ENDP				; std::swap<char,void>
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
 ;	COMDAT ??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -17194,6 +17116,84 @@ __Val$ = 8						; size = 4
 	pop	ebp
 	ret	0
 ??$addressof@PAV?$Goal@VRaven_Bot@@@@@std@@YAPAPAV?$Goal@VRaven_Bot@@@@AAPAV1@@Z ENDP ; std::addressof<Goal<Raven_Bot> *>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\utility
+;	COMDAT ??$swap@DX@std@@YAXAAD0@Z
+_TEXT	SEGMENT
+__Tmp$ = -5						; size = 1
+__Left$ = 8						; size = 4
+__Right$ = 12						; size = 4
+??$swap@DX@std@@YAXAAD0@Z PROC				; std::swap<char,void>, COMDAT
+
+; 66   : 	{	// exchange values stored at _Left and _Right
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	mov	DWORD PTR [ebp-12], -858993460		; ccccccccH
+	mov	DWORD PTR [ebp-8], -858993460		; ccccccccH
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+
+; 67   : 	_Ty _Tmp = _STD move(_Left);
+
+	mov	eax, DWORD PTR __Left$[ebp]
+	push	eax
+	call	??$move@AAD@std@@YA$$QADAAD@Z		; std::move<char &>
+	add	esp, 4
+	mov	cl, BYTE PTR [eax]
+	mov	BYTE PTR __Tmp$[ebp], cl
+
+; 68   : 	_Left = _STD move(_Right);
+
+	mov	edx, DWORD PTR __Right$[ebp]
+	push	edx
+	call	??$move@AAD@std@@YA$$QADAAD@Z		; std::move<char &>
+	add	esp, 4
+	mov	ecx, DWORD PTR __Left$[ebp]
+	mov	dl, BYTE PTR [eax]
+	mov	BYTE PTR [ecx], dl
+
+; 69   : 	_Right = _STD move(_Tmp);
+
+	lea	eax, DWORD PTR __Tmp$[ebp]
+	push	eax
+	call	??$move@AAD@std@@YA$$QADAAD@Z		; std::move<char &>
+	add	esp, 4
+	mov	ecx, DWORD PTR __Right$[ebp]
+	mov	dl, BYTE PTR [eax]
+	mov	BYTE PTR [ecx], dl
+
+; 70   : 	}
+
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN5@swap
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	add	esp, 12					; 0000000cH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	3
+$LN5@swap:
+	DD	1
+	DD	$LN4@swap
+$LN4@swap:
+	DD	-5					; fffffffbH
+	DD	1
+	DD	$LN3@swap
+$LN3@swap:
+	DB	95					; 0000005fH
+	DB	84					; 00000054H
+	DB	109					; 0000006dH
+	DB	112					; 00000070H
+	DB	0
+??$swap@DX@std@@YAXAAD0@Z ENDP				; std::swap<char,void>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xstring
@@ -48094,10 +48094,10 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG177480
+	push	OFFSET $SG178622
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
-	push	OFFSET $SG177479
+	push	OFFSET $SG178621
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BO@D@DebugConsole@@QAEAAV0@AAY0BO@$$CBD@Z ; DebugConsole::operator<<<char [30]>
@@ -48158,10 +48158,10 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG177471
+	push	OFFSET $SG178613
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG177470
+	push	OFFSET $SG178612
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BG@D@DebugConsole@@QAEAAV0@AAY0BG@$$CBD@Z ; DebugConsole::operator<<<char [22]>
@@ -48731,7 +48731,7 @@ $LN2@ReduceHeal:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG177461
+	push	OFFSET $SG178603
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv131[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -49839,7 +49839,7 @@ $LN6@Render:
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
 	mov	ecx, DWORD PTR tv330[ebp]
 	push	ecx
-	push	OFFSET $SG177630
+	push	OFFSET $SG178772
 	lea	edx, DWORD PTR $T18[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -49902,7 +49902,7 @@ $LN7@Render:
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
 	mov	ecx, DWORD PTR tv334[ebp]
 	push	ecx
-	push	OFFSET $SG177632
+	push	OFFSET $SG178774
 	lea	edx, DWORD PTR $T16[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
@@ -50048,11 +50048,11 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T18[ebp], eax
-	push	OFFSET $SG177368
-	push	OFFSET $SG177367
+	push	OFFSET $SG178510
+	push	OFFSET $SG178509
 	lea	ecx, DWORD PTR $T18[ebp]
 	push	ecx
-	push	OFFSET $SG177366
+	push	OFFSET $SG178508
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BK@D@DebugConsole@@QAEAAV0@AAY0BK@$$CBD@Z ; DebugConsole::operator<<<char [26]>
@@ -50402,7 +50402,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T46[ebp], esp
-	push	OFFSET $SG177299
+	push	OFFSET $SG178441
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv875[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -50417,7 +50417,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T45[ebp], esp
-	push	OFFSET $SG177300
+	push	OFFSET $SG178442
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv876[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -50432,7 +50432,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T43[ebp], esp
-	push	OFFSET $SG177301
+	push	OFFSET $SG178443
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv877[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -50447,7 +50447,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T42[ebp], esp
-	push	OFFSET $SG177302
+	push	OFFSET $SG178444
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv878[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -50476,7 +50476,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T41[ebp], esp
-	push	OFFSET $SG177303
+	push	OFFSET $SG178445
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv879[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
@@ -50509,7 +50509,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T39[ebp], esp
-	push	OFFSET $SG177304
+	push	OFFSET $SG178446
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv880[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 5
@@ -50542,7 +50542,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T37[ebp], esp
-	push	OFFSET $SG177305
+	push	OFFSET $SG178447
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv881[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 6
@@ -50615,7 +50615,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T36[ebp], esp
-	push	OFFSET $SG177306
+	push	OFFSET $SG178448
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv882[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 8
@@ -50642,7 +50642,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T35[ebp], esp
-	push	OFFSET $SG177307
+	push	OFFSET $SG178449
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv884[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 9
@@ -50671,7 +50671,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T34[ebp], esp
-	push	OFFSET $SG177308
+	push	OFFSET $SG178450
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv886[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 10		; 0000000aH
@@ -50693,7 +50693,7 @@ _pos$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T33[ebp], esp
-	push	OFFSET $SG177309
+	push	OFFSET $SG178451
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv888[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 11		; 0000000bH
@@ -50828,7 +50828,7 @@ $LN6@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T26[ebp], esp
-	push	OFFSET $SG177313
+	push	OFFSET $SG178455
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv900[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 17		; 00000011H
@@ -50866,7 +50866,7 @@ $LN8@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T23[ebp], esp
-	push	OFFSET $SG177315
+	push	OFFSET $SG178457
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv904[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 19		; 00000013H
@@ -50904,7 +50904,7 @@ $LN10@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T20[ebp], esp
-	push	OFFSET $SG177317
+	push	OFFSET $SG178459
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv908[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 21		; 00000015H
@@ -50942,7 +50942,7 @@ $LN12@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T17[ebp], esp
-	push	OFFSET $SG177319
+	push	OFFSET $SG178461
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv912[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 23		; 00000017H
@@ -50980,7 +50980,7 @@ $LN14@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T14[ebp], esp
-	push	OFFSET $SG177321
+	push	OFFSET $SG178463
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv916[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 25		; 00000019H
@@ -51073,7 +51073,7 @@ $LN20@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG177325
+	push	OFFSET $SG178467
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv924[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 29		; 0000001dH
@@ -51088,7 +51088,7 @@ $LN20@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG177326
+	push	OFFSET $SG178468
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv926[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 30		; 0000001eH
@@ -51103,7 +51103,7 @@ $LN20@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG177327
+	push	OFFSET $SG178469
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv928[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 31		; 0000001fH
@@ -51149,7 +51149,7 @@ $LN22@Raven_Bot:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG177329
+	push	OFFSET $SG178471
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv932[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 33		; 00000021H
@@ -51455,7 +51455,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG177648
+	push	OFFSET $SG178790
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv190[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0

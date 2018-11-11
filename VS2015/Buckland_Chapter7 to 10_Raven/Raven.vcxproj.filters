@@ -283,6 +283,9 @@
     <ClCompile Include="TeamManager.cpp">
       <Filter>Game\teams</Filter>
     </ClCompile>
+    <ClCompile Include="Trigger_TeamWeaponGiver.cpp">
+      <Filter>AI\Triggers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Raven_Bot.h">
@@ -632,6 +635,9 @@
     </ClInclude>
     <ClInclude Include="TeamManager.h">
       <Filter>Game\teams</Filter>
+    </ClInclude>
+    <ClInclude Include="Trigger_TeamWeaponGiver.h">
+      <Filter>AI\Triggers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

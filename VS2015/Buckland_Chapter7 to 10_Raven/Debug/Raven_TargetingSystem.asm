@@ -9,6 +9,23 @@
 INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
+CONST	SEGMENT
+?colors@@3QBKB DD 0ffH					; colors
+	DD	0ff0000H
+	DD	0ff00H
+	DD	00H
+	DD	0c8c8ffH
+	DD	0c8c8c8H
+	DD	0ffffH
+	DD	0aaffH
+	DD	0aa00ffH
+	DD	05a85H
+	DD	0ffffffH
+	DD	06400H
+	DD	0ffff00H
+	DD	0c8c8c8H
+	DD	0e6e6ffH
+CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
 PUBLIC	??2@YAPAXIPAX@Z					; operator new
@@ -151,11 +168,13 @@ PUBLIC	??_C@_1OC@BFEHCKCD@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$
 PUBLIC	??_C@_1GK@NKIMOCIG@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr@ ; `string'
 PUBLIC	??_C@_0CF@JCBFHMPL@cannot?5dereference?5end?5list?5ite@ ; `string'
 PUBLIC	??_C@_1EO@CNEFBDCF@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr@ ; `string'
+PUBLIC	?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A	; std::codecvt<char,char,_Mbstatet>::id
 PUBLIC	?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
 PUBLIC	??_C@_0BM@BALDKKHE@list?5iterators?5incompatible@ ; `string'
 PUBLIC	??_C@_1OE@HJIALJKP@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1DM@KDLJAKOP@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs@ ; `string'
 PUBLIC	?id@?$numpunct@D@std@@2V0locale@2@A		; std::numpunct<char>::id
+PUBLIC	?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
 PUBLIC	??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ ; `string'
 PUBLIC	__real@0010000000000000
 PUBLIC	__real@00800000
@@ -192,6 +211,10 @@ _BSS	SEGMENT
 ?MaxFloat@@3MB DD 01H DUP (?)				; MaxFloat
 ?MinFloat@@3MB DD 01H DUP (?)				; MinFloat
 _BSS	ENDS
+;	COMDAT ?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A
+_BSS	SEGMENT
+?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::codecvt<char,char,_Mbstatet>::id
+_BSS	ENDS
 ;	COMDAT ?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A
 _BSS	SEGMENT
 ?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
@@ -199,6 +222,10 @@ _BSS	ENDS
 ;	COMDAT ?id@?$numpunct@D@std@@2V0locale@2@A
 _BSS	SEGMENT
 ?id@?$numpunct@D@std@@2V0locale@2@A DD 01H DUP (?)	; std::numpunct<char>::id
+_BSS	ENDS
+;	COMDAT ?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A
+_BSS	SEGMENT
+?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
 _BSS	ENDS
 CRT$XCU	SEGMENT
 ?MaxInt$initializer$@@3P6AXXZA DD FLAT:??__EMaxInt@@YAXXZ ; MaxInt$initializer$
@@ -734,8 +761,35 @@ CRT$XCU	SEGMENT
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
 CRT$XCU	SEGMENT
+??id$initializer$@?$codecvt@DDU_Mbstatet@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$codecvt@DDU_Mbstatet@@@std@@2P6AXXZA@@3P6AXXZA
+CRT$XCU	ENDS
+;	COMDAT CRT$XCU
+CRT$XCU	SEGMENT
 ??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
+;	COMDAT CRT$XCU
+CRT$XCU	SEGMENT
+??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA
+CRT$XCU	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
+;	COMDAT ??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ
+text$di	SEGMENT
+??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ PROC ; `dynamic initializer for 'std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id'', COMDAT
+
+; 1404 : 	__PURE_APPDOMAIN_GLOBAL locale::id num_get<_Elem, _InIt>::id;
+
+	push	ebp
+	mov	ebp, esp
+	push	0
+	mov	ecx, OFFSET ?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
+	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	pop	ebp
+	ret	0
+??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id''
+text$di	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
 ;	COMDAT ??$move@AAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@YA$$QAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@0@AAV10@@Z
@@ -798,6 +852,25 @@ text$di	SEGMENT
 	pop	ebp
 	ret	0
 ??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ENDP	; `dynamic initializer for 'std::numpunct<char>::id''
+text$di	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocale
+;	COMDAT ??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ
+text$di	SEGMENT
+??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ PROC ; `dynamic initializer for 'std::codecvt<char,char,_Mbstatet>::id'', COMDAT
+
+; 955  : 	__PURE_APPDOMAIN_GLOBAL locale::id codecvt<_Elem, _Byte, _Statype>::id;
+
+	push	ebp
+	mov	ebp, esp
+	push	0
+	mov	ecx, OFFSET ?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A ; std::codecvt<char,char,_Mbstatet>::id
+	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	pop	ebp
+	ret	0
+??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::codecvt<char,char,_Mbstatet>::id''
 text$di	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum

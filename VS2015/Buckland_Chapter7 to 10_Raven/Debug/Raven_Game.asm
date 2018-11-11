@@ -10,15 +10,15 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG180860 DB	'Map has no spawn points!', 00H
+$SG180877 DB	'Map has no spawn points!', 00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+2
-$SG180989 DB	'GraveLifetime', 00H
+$SG181006 DB	'GraveLifetime', 00H
 	ORG $+2
-$SG180991 DB	'MaxSearchCyclesPerUpdateStep', 00H
+$SG181008 DB	'MaxSearchCyclesPerUpdateStep', 00H
 	ORG $+3
-$SG180994 DB	'NumBots', 00H
-$SG182062 DB	'Queuing', 00H
+$SG181011 DB	'NumBots', 00H
+$SG182079 DB	'Queuing', 00H
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
 	DD	0ff00H
@@ -34,7 +34,7 @@ $SG182062 DB	'Queuing', 00H
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG179269 DB	'StartMap', 00H
+$SG179286 DB	'StartMap', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -41309,7 +41309,7 @@ $LN9@LoadMap:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG180989
+	push	OFFSET $SG181006
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv243[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
@@ -41347,7 +41347,7 @@ $LN11@LoadMap:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG180991
+	push	OFFSET $SG181008
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv247[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 3
@@ -41423,7 +41423,7 @@ $LN15@LoadMap:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG180994
+	push	OFFSET $SG181011
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv251[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 5
@@ -42942,7 +42942,7 @@ $LN23@Render:
 
 ; 806  :       gdi->TextAtPos(GetClientCursorPosition(), "Queuing");
 
-	push	OFFSET $SG182062
+	push	OFFSET $SG182079
 	lea	ecx, DWORD PTR $T16[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 7
@@ -43323,7 +43323,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG179269
+	push	OFFSET $SG179286
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv154[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
@@ -43611,7 +43611,7 @@ _pBot$ = 8						; size = 4
 ; 216  :   {
 ; 217  :     ErrorBox("Map has no spawn points!"); return false;
 
-	push	OFFSET $SG180860
+	push	OFFSET $SG180877
 	call	?ErrorBox@@YAXPAD@Z			; ErrorBox
 	add	esp, 4
 	xor	al, al

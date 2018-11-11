@@ -13,6 +13,7 @@
 #include "../Raven_Messages.h"
 #include "Messaging/MessageDispatcher.h"
 #include "graph/NodeTypeEnumerations.h"
+#include "../Team.h"
 
 
 #include "Debug/DebugConsole.h"
@@ -85,7 +86,14 @@ double Raven_PathPlanner::GetCostToClosestItem(unsigned int GiverType)const
 
   //iterate through all the triggers to find the closest *active* trigger of 
   //type GiverType
-  const Raven_Map::TriggerSystem::TriggerList& triggers = m_pOwner->GetWorld()->GetMap()->GetTriggers();
+  Raven_Map::TriggerSystem::TriggerList triggers = m_pOwner->GetWorld()->GetMap()->GetTriggers();
+
+  if (m_pOwner->GetTeam() != NULL) {
+	  Raven_Map::TriggerSystem::TriggerList teamTriggers = m_pOwner->GetTeam()->GetDroppedWeapons();
+	  for (Raven_Map::TriggerSystem::TriggerList::iterator it = teamTriggers.begin(); it != teamTriggers.end(); it++) {
+		  triggers.push_back(*it);
+	  }
+  }
 
   Raven_Map::TriggerSystem::TriggerList::const_iterator it;
   for (it = triggers.begin(); it != triggers.end(); ++it)

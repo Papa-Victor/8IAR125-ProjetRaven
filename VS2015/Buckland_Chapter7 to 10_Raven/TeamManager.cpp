@@ -1,4 +1,5 @@
 #include "TeamManager.h"
+#include "Raven_WeaponSystem.h"
 
 TeamManager* TeamManager::instance = NULL;
 
@@ -45,11 +46,13 @@ void TeamManager::NewWorldBot(Raven_Bot * addedBot)
 	}
 }
 
+
 void TeamManager::OnBotDeath(Raven_Bot * bot)
 {
 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
 		if (*curTeam != NULL) {
 			(*curTeam)->CheckDeadBot(bot);
 		}
+
 	}
 }

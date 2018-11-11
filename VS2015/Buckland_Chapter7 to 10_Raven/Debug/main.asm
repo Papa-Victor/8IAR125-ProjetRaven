@@ -15,25 +15,11 @@ PUBLIC	?g_pRaven@@3PAVRaven_Game@@A			; g_pRaven
 _BSS	SEGMENT
 ?g_pRaven@@3PAVRaven_Game@@A DD 01H DUP (?)		; g_pRaven
 _BSS	ENDS
+_DATA	SEGMENT
+?g_szApplicationName@@3PADA DD FLAT:$SG178212		; g_szApplicationName
+?g_szWindowClassName@@3PADA DD FLAT:$SG178214		; g_szWindowClassName
+_DATA	ENDS
 CONST	SEGMENT
-$SG172489 DB	'Raven', 00H
-$SG172569 DB	00H
-?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-$SG172491 DB	'MyWindowClass', 00H
-	ORG $+2
-$SG172566 DB	'map', 00H
-$SG172567 DB	'Raven map file (*.map)', 00H
-	ORG $+1
-$SG172568 DB	'Filename: ', 00H
-	ORG $+1
-$SG172636 DB	'Error', 00H
-	ORG $+2
-$SG172637 DB	'Registration Failed!', 00H
-	ORG $+3
-$SG172640 DB	'Error!', 00H
-	ORG $+1
-$SG172641 DB	'CreateWindowEx Failed!', 00H
-	ORG $+1
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
 	DD	0ff00H
@@ -49,11 +35,24 @@ $SG172641 DB	'CreateWindowEx Failed!', 00H
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
+$SG178212 DB	'Raven', 00H
+$SG178292 DB	00H
+?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
+$SG178214 DB	'MyWindowClass', 00H
+	ORG $+2
+$SG178289 DB	'map', 00H
+$SG178290 DB	'Raven map file (*.map)', 00H
+	ORG $+1
+$SG178291 DB	'Filename: ', 00H
+	ORG $+1
+$SG178359 DB	'Error', 00H
+	ORG $+2
+$SG178360 DB	'Registration Failed!', 00H
+	ORG $+3
+$SG178363 DB	'Error!', 00H
+	ORG $+1
+$SG178364 DB	'CreateWindowEx Failed!', 00H
 CONST	ENDS
-_DATA	SEGMENT
-?g_szApplicationName@@3PADA DD FLAT:$SG172489		; g_szApplicationName
-?g_szWindowClassName@@3PADA DD FLAT:$SG172491		; g_szWindowClassName
-_DATA	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
 PUBLIC	_WinMain@16
@@ -650,6 +649,10 @@ PUBLIC	??_R4failure@ios_base@std@@6B@			; std::ios_base::failure::`RTTI Complete
 PUBLIC	??_R3failure@ios_base@std@@8			; std::ios_base::failure::`RTTI Class Hierarchy Descriptor'
 PUBLIC	??_R2failure@ios_base@std@@8			; std::ios_base::failure::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@failure@ios_base@std@@8		; std::ios_base::failure::`RTTI Base Class Descriptor at (0,-1,0,64)'
+PUBLIC	??_R0?AVTeam@@@8				; Team `RTTI Type Descriptor'
+PUBLIC	??_R3Team@@8					; Team::`RTTI Class Hierarchy Descriptor'
+PUBLIC	??_R2Team@@8					; Team::`RTTI Base Class Array'
+PUBLIC	??_R1A@?0A@EA@Team@@8				; Team::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	??_R4Random_Single_Target_Team@@6B@		; Random_Single_Target_Team::`RTTI Complete Object Locator'
 PUBLIC	??_R0?AVRandom_Single_Target_Team@@@8		; Random_Single_Target_Team `RTTI Type Descriptor'
 PUBLIC	??_R3Random_Single_Target_Team@@8		; Random_Single_Target_Team::`RTTI Class Hierarchy Descriptor'
@@ -659,10 +662,6 @@ PUBLIC	??_R1A@?0A@EA@Single_Target_Team@@8		; Single_Target_Team::`RTTI Base Cla
 PUBLIC	??_R0?AVSingle_Target_Team@@@8			; Single_Target_Team `RTTI Type Descriptor'
 PUBLIC	??_R3Single_Target_Team@@8			; Single_Target_Team::`RTTI Class Hierarchy Descriptor'
 PUBLIC	??_R2Single_Target_Team@@8			; Single_Target_Team::`RTTI Base Class Array'
-PUBLIC	??_R1A@?0A@EA@Team@@8				; Team::`RTTI Base Class Descriptor at (0,-1,0,64)'
-PUBLIC	??_R0?AVTeam@@@8				; Team `RTTI Type Descriptor'
-PUBLIC	??_R3Team@@8					; Team::`RTTI Class Hierarchy Descriptor'
-PUBLIC	??_R2Team@@8					; Team::`RTTI Base Class Array'
 PUBLIC	__real@0000000000000000
 PUBLIC	__real@0010000000000000
 PUBLIC	__real@00800000
@@ -908,33 +907,6 @@ rtc$TMZ	ENDS
 rtc$IMZ	SEGMENT
 __RTC_InitBase.rtc$IMZ DD FLAT:__RTC_InitBase
 rtc$IMZ	ENDS
-;	COMDAT ??_R2Team@@8
-rdata$r	SEGMENT
-??_R2Team@@8 DD	FLAT:??_R1A@?0A@EA@Team@@8		; Team::`RTTI Base Class Array'
-rdata$r	ENDS
-;	COMDAT ??_R3Team@@8
-rdata$r	SEGMENT
-??_R3Team@@8 DD	00H					; Team::`RTTI Class Hierarchy Descriptor'
-	DD	00H
-	DD	01H
-	DD	FLAT:??_R2Team@@8
-rdata$r	ENDS
-;	COMDAT ??_R0?AVTeam@@@8
-data$r	SEGMENT
-??_R0?AVTeam@@@8 DD FLAT:??_7type_info@@6B@		; Team `RTTI Type Descriptor'
-	DD	00H
-	DB	'.?AVTeam@@', 00H
-data$r	ENDS
-;	COMDAT ??_R1A@?0A@EA@Team@@8
-rdata$r	SEGMENT
-??_R1A@?0A@EA@Team@@8 DD FLAT:??_R0?AVTeam@@@8		; Team::`RTTI Base Class Descriptor at (0,-1,0,64)'
-	DD	00H
-	DD	00H
-	DD	0ffffffffH
-	DD	00H
-	DD	040H
-	DD	FLAT:??_R3Team@@8
-rdata$r	ENDS
 ;	COMDAT ??_R2Single_Target_Team@@8
 rdata$r	SEGMENT
 ??_R2Single_Target_Team@@8 DD FLAT:??_R1A@?0A@EA@Single_Target_Team@@8 ; Single_Target_Team::`RTTI Base Class Array'
@@ -1000,6 +972,33 @@ rdata$r	SEGMENT
 	DD	FLAT:??_R0?AVRandom_Single_Target_Team@@@8
 	DD	FLAT:??_R3Random_Single_Target_Team@@8
 rdata$r	ENDS
+;	COMDAT ??_R1A@?0A@EA@Team@@8
+rdata$r	SEGMENT
+??_R1A@?0A@EA@Team@@8 DD FLAT:??_R0?AVTeam@@@8		; Team::`RTTI Base Class Descriptor at (0,-1,0,64)'
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	040H
+	DD	FLAT:??_R3Team@@8
+rdata$r	ENDS
+;	COMDAT ??_R2Team@@8
+rdata$r	SEGMENT
+??_R2Team@@8 DD	FLAT:??_R1A@?0A@EA@Team@@8		; Team::`RTTI Base Class Array'
+rdata$r	ENDS
+;	COMDAT ??_R3Team@@8
+rdata$r	SEGMENT
+??_R3Team@@8 DD	00H					; Team::`RTTI Class Hierarchy Descriptor'
+	DD	00H
+	DD	01H
+	DD	FLAT:??_R2Team@@8
+rdata$r	ENDS
+;	COMDAT ??_R0?AVTeam@@@8
+data$r	SEGMENT
+??_R0?AVTeam@@@8 DD FLAT:??_7type_info@@6B@		; Team `RTTI Type Descriptor'
+	DD	00H
+	DB	'.?AVTeam@@', 00H
+data$r	ENDS
 ;	COMDAT ??_R1A@?0A@EA@failure@ios_base@std@@8
 rdata$r	SEGMENT
 ??_R1A@?0A@EA@failure@ios_base@std@@8 DD FLAT:??_R0?AVfailure@ios_base@std@@@8 ; std::ios_base::failure::`RTTI Base Class Descriptor at (0,-1,0,64)'
@@ -9810,7 +9809,7 @@ $LN2@AddTeam:
 ; 49   : 	}
 ; 50   : 	m_Teams[colour] = new T(game);
 
-	push	24					; 00000018H
+	push	36					; 00000024H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T2[ebp], eax
@@ -9854,7 +9853,7 @@ _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
 __unwindfunclet$??$AddTeam@VRandom_Single_Target_Team@@@TeamManager@@QAEXW4teams@@@Z$0:
-	push	24					; 00000018H
+	push	36					; 00000024H
 	mov	eax, DWORD PTR $T2[ebp]
 	push	eax
 	call	??3@YAXPAXI@Z				; operator delete
@@ -11232,11 +11231,11 @@ $LN22@WindowProc:
 ; 205  :           
 ; 206  :           FileOpenDlg(hwnd, szFileName, szTitleName, "Raven map file (*.map)", "map");
 
-	push	OFFSET $SG172566
+	push	OFFSET $SG178289
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
-	push	OFFSET $SG172567
+	push	OFFSET $SG178290
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
@@ -11260,9 +11259,9 @@ $LN22@WindowProc:
 ; 207  : 
 ; 208  :           debug_con << "Filename: " << szTitleName << "";
 
-	push	OFFSET $SG172569
+	push	OFFSET $SG178292
 	push	OFFSET ?szTitleName@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PADA
-	push	OFFSET $SG172568
+	push	OFFSET $SG178291
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0L@D@DebugConsole@@QAEAAV0@AAY0L@$$CBD@Z ; DebugConsole::operator<<<char [11]>
@@ -12837,7 +12836,7 @@ ___flags$ = 8						; size = 4
 	mov	eax, DWORD PTR ___flags$[ebp]
 	and	eax, 1
 	je	SHORT $LN2@scalar
-	push	24					; 00000018H
+	push	36					; 00000024H
 	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
 	call	??3@YAXPAXI@Z				; operator delete
@@ -12874,7 +12873,7 @@ _game$ = 8						; size = 4
 	mov	DWORD PTR [eax], OFFSET ??_7Random_Single_Target_Team@@6B@
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR _game$[ebp]
-	mov	DWORD PTR [ecx+20], edx
+	mov	DWORD PTR [ecx+32], edx
 	mov	eax, DWORD PTR _this$[ebp]
 	add	esp, 4
 	cmp	ebp, esp
@@ -28131,8 +28130,8 @@ _WinMain@16 PROC
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG172636
-	push	OFFSET $SG172637
+	push	OFFSET $SG178359
+	push	OFFSET $SG178360
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp
@@ -28219,8 +28218,8 @@ $LN6@WinMain:
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG172640
-	push	OFFSET $SG172641
+	push	OFFSET $SG178363
+	push	OFFSET $SG178364
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp
