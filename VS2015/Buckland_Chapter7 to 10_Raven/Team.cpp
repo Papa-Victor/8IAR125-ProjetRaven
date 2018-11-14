@@ -1,5 +1,6 @@
 #include "Team.h"
 #include "Trigger_TeamWeaponGiver.h"
+#include "Raven_WeaponSystem.h"
 
 bool Team::BotInTeam(Raven_Bot const *bot) const
 {
@@ -11,7 +12,7 @@ bool Team::BotInTeam(Raven_Bot const *bot) const
 
 void Team::AddDroppedWeapon(int weaponType, Vector2D pos, NavGraph navGraph, Raven_Bot* pBot)
 {
-	if (pBot->GetWeaponSys->GetWeaponFromInventory(weaponType) != NULL) {
+	if (pBot->GetWeaponSys()->GetWeaponFromInventory(weaponType) != NULL) {
 		Trigger_TeamWeaponGiver *wg = new Trigger_TeamWeaponGiver(pos, pBot);
 
 		wg->SetEntityType(weaponType);
