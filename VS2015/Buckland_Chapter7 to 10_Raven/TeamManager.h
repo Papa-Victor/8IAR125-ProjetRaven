@@ -37,6 +37,11 @@ public:
 	void RemoveBot(teams colour, Raven_Bot* bot);
 	void NewWorldBot(Raven_Bot* addedBot);
 
+	Vector2D GetDroppedWeaponPosition(int team, int weaponType);
+	void TryDroppedWeapons(std::list<Raven_Bot*> botList);
+	void RenderDroppedWeapons();
+
+
 	void OnBotDeath(Raven_Bot* bot);
 };
 #endif // !TEAM_MANAGER_H

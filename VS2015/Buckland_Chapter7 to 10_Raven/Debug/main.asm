@@ -16,8 +16,8 @@ _BSS	SEGMENT
 ?g_pRaven@@3PAVRaven_Game@@A DD 01H DUP (?)		; g_pRaven
 _BSS	ENDS
 _DATA	SEGMENT
-?g_szApplicationName@@3PADA DD FLAT:$SG178883		; g_szApplicationName
-?g_szWindowClassName@@3PADA DD FLAT:$SG178885		; g_szWindowClassName
+?g_szApplicationName@@3PADA DD FLAT:$SG178215		; g_szApplicationName
+?g_szWindowClassName@@3PADA DD FLAT:$SG178217		; g_szWindowClassName
 _DATA	ENDS
 CONST	SEGMENT
 ?colors@@3QBKB DD 0ffH					; colors
@@ -35,23 +35,23 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG178883 DB	'Raven', 00H
-$SG178963 DB	00H
+$SG178215 DB	'Raven', 00H
+$SG178295 DB	00H
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-$SG178885 DB	'MyWindowClass', 00H
+$SG178217 DB	'MyWindowClass', 00H
 	ORG $+2
-$SG178960 DB	'map', 00H
-$SG178961 DB	'Raven map file (*.map)', 00H
+$SG178292 DB	'map', 00H
+$SG178293 DB	'Raven map file (*.map)', 00H
 	ORG $+1
-$SG178962 DB	'Filename: ', 00H
+$SG178294 DB	'Filename: ', 00H
 	ORG $+1
-$SG179030 DB	'Error', 00H
+$SG178362 DB	'Error', 00H
 	ORG $+2
-$SG179031 DB	'Registration Failed!', 00H
+$SG178363 DB	'Registration Failed!', 00H
 	ORG $+3
-$SG179034 DB	'Error!', 00H
+$SG178366 DB	'Error!', 00H
 	ORG $+1
-$SG179035 DB	'CreateWindowEx Failed!', 00H
+$SG178367 DB	'CreateWindowEx Failed!', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -9744,7 +9744,7 @@ _colour$ = 8						; size = 4
 ??$AddTeam@VRandom_Single_Target_Team@@@TeamManager@@QAEXW4teams@@@Z PROC ; TeamManager::AddTeam<Random_Single_Target_Team>, COMDAT
 ; _this$ = ecx
 
-; 46   : {
+; 48   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -9769,7 +9769,7 @@ _colour$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 47   : 	if (m_Teams[colour] != NULL) {
+; 49   : 	if (m_Teams[colour] != NULL) {
 
 	mov	eax, DWORD PTR _colour$[ebp]
 	push	eax
@@ -9779,7 +9779,7 @@ _colour$ = 8						; size = 4
 	cmp	DWORD PTR [eax], 0
 	je	SHORT $LN2@AddTeam
 
-; 48   : 		delete m_Teams[colour];
+; 50   : 		delete m_Teams[colour];
 
 	mov	ecx, DWORD PTR _colour$[ebp]
 	push	ecx
@@ -9807,8 +9807,8 @@ $LN4@AddTeam:
 	mov	DWORD PTR tv79[ebp], 0
 $LN2@AddTeam:
 
-; 49   : 	}
-; 50   : 	m_Teams[colour] = new T(game);
+; 51   : 	}
+; 52   : 	m_Teams[colour] = new T(game);
 
 	push	36					; 00000024H
 	call	??2@YAPAXI@Z				; operator new
@@ -9838,7 +9838,7 @@ $LN7@AddTeam:
 	mov	edx, DWORD PTR $T3[ebp]
 	mov	DWORD PTR [eax], edx
 
-; 51   : }
+; 53   : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -10841,7 +10841,7 @@ $LN8@WindowProc:
 ; 99   :          //create the game
 ; 100  :          g_pRaven = new Raven_Game();
 
-	push	64					; 00000040H
+	push	48					; 00000030H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T2[ebp], eax
@@ -11232,11 +11232,11 @@ $LN22@WindowProc:
 ; 205  :           
 ; 206  :           FileOpenDlg(hwnd, szFileName, szTitleName, "Raven map file (*.map)", "map");
 
-	push	OFFSET $SG178960
+	push	OFFSET $SG178292
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
-	push	OFFSET $SG178961
+	push	OFFSET $SG178293
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
@@ -11260,9 +11260,9 @@ $LN22@WindowProc:
 ; 207  : 
 ; 208  :           debug_con << "Filename: " << szTitleName << "";
 
-	push	OFFSET $SG178963
+	push	OFFSET $SG178295
 	push	OFFSET ?szTitleName@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PADA
-	push	OFFSET $SG178962
+	push	OFFSET $SG178294
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0L@D@DebugConsole@@QAEAAV0@AAY0L@$$CBD@Z ; DebugConsole::operator<<<char [11]>
@@ -12792,7 +12792,7 @@ $LN95@WindowProc:
 _TEXT	ENDS
 text$x	SEGMENT
 __unwindfunclet$?WindowProc@@YGJPAUHWND__@@IIJ@Z$0:
-	push	64					; 00000040H
+	push	48					; 00000030H
 	mov	eax, DWORD PTR $T2[ebp]
 	push	eax
 	call	??3@YAXPAXI@Z				; operator delete
@@ -13033,7 +13033,7 @@ ___flags$ = 8						; size = 4
 	mov	eax, DWORD PTR ___flags$[ebp]
 	and	eax, 1
 	je	SHORT $LN2@scalar
-	push	64					; 00000040H
+	push	48					; 00000030H
 	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
 	call	??3@YAXPAXI@Z				; operator delete
@@ -13056,7 +13056,7 @@ _this$ = -4						; size = 4
 ?GetTeamManager@Raven_Game@@QBEPAVTeamManager@@XZ PROC	; Raven_Game::GetTeamManager, COMDAT
 ; _this$ = ecx
 
-; 169  :   TeamManager*							   GetTeamManager() const{ return m_pTeamManager; }
+; 167  :   TeamManager*							   GetTeamManager() const{ return m_pTeamManager; }
 
 	push	ebp
 	mov	ebp, esp
@@ -13078,7 +13078,7 @@ _this$ = -4						; size = 4
 ?GetSelectedBot@Raven_Game@@QBEPAVRaven_Bot@@XZ PROC	; Raven_Game::GetSelectedBot, COMDAT
 ; _this$ = ecx
 
-; 161  :   Raven_Bot*  GetSelectedBot() const { return m_pSelectedBot; }
+; 159  :   Raven_Bot*  GetSelectedBot() const { return m_pSelectedBot; }
 
 	push	ebp
 	mov	ebp, esp
@@ -13101,7 +13101,7 @@ _this$ = -4						; size = 4
 ?TogglePause@Raven_Game@@QAEXXZ PROC			; Raven_Game::TogglePause, COMDAT
 ; _this$ = ecx
 
-; 140  :   void        TogglePause(){m_bPaused = !m_bPaused;}
+; 138  :   void        TogglePause(){m_bPaused = !m_bPaused;}
 
 	push	ebp
 	mov	ebp, esp
@@ -13110,7 +13110,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
-	movzx	ecx, BYTE PTR [eax+56]
+	movzx	ecx, BYTE PTR [eax+40]
 	test	ecx, ecx
 	jne	SHORT $LN3@TogglePaus
 	mov	DWORD PTR tv68[ebp], 1
@@ -13120,7 +13120,7 @@ $LN3@TogglePaus:
 $LN4@TogglePaus:
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	al, BYTE PTR tv68[ebp]
-	mov	BYTE PTR [edx+56], al
+	mov	BYTE PTR [edx+40], al
 	mov	esp, ebp
 	pop	ebp
 	ret	0
@@ -28131,8 +28131,8 @@ _WinMain@16 PROC
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG179030
-	push	OFFSET $SG179031
+	push	OFFSET $SG178362
+	push	OFFSET $SG178363
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp
@@ -28219,8 +28219,8 @@ $LN6@WinMain:
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG179034
-	push	OFFSET $SG179035
+	push	OFFSET $SG178366
+	push	OFFSET $SG178367
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp

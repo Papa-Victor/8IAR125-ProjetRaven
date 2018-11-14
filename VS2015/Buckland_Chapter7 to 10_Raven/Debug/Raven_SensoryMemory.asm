@@ -27,7 +27,7 @@ CONST	SEGMENT
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+3
-$SG160604 DB	'< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent'
+$SG154042 DB	'< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent'
 	DB	'>: Attempting to get position of unrecorded bot', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
@@ -299,10 +299,10 @@ PUBLIC	??$_Try_emplace@ABQAVRaven_Bot@@$$V@?$map@PAVRaven_Bot@@VMemoryRecord@@U?
 PUBLIC	??$move@AAI@std@@YA$$QAIAAI@Z			; std::move<unsigned int &>
 PUBLIC	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
 PUBLIC	??$destroy@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@1@QAPAU?$_List_node@PAVRaven_Bot@@PAX@1@@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_Bot *,void *> > >::destroy<std::_List_node<Raven_Bot *,void *> *>
-PUBLIC	??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ; std::forward<std::_Zero_then_variadic_args_t>
 PUBLIC	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 PUBLIC	??$destroy@PAU?$_Tree_node@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@PAX@std@@@?$_Default_allocator_traits@V?$allocator@U?$_Tree_node@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_Tree_node@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@PAX@std@@@1@QAPAU?$_Tree_node@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@PAX@1@@Z ; std::_Default_allocator_traits<std::allocator<std::_Tree_node<std::pair<Raven_Bot * const,MemoryRecord>,void *> > >::destroy<std::_Tree_node<std::pair<Raven_Bot * const,MemoryRecord>,void *> *>
 PUBLIC	??$forward@ABU?$less@PAVRaven_Bot@@@std@@@std@@YAABU?$less@PAVRaven_Bot@@@0@ABU10@@Z ; std::forward<std::less<Raven_Bot *> const &>
+PUBLIC	??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ; std::forward<std::_Zero_then_variadic_args_t>
 PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@U?$_Tree_node@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@PAX@std@@@std@@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@QAVRaven_Bot@@VMemoryRecord@@@std@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<std::_Tree_node<std::pair<Raven_Bot * const,MemoryRecord>,void *> >,std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > >,1>::_Compressed_pair<std::allocator<std::_Tree_node<std::pair<Raven_Bot * const,MemoryRecord>,void *> >,std::_Tree_val<std::_Tree_simple_types<std::pair<Raven_Bot * const,MemoryRecord> > >,1><>
 PUBLIC	??$forward@AAPAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAAAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z ; std::forward<std::_List_node<Raven_Bot *,void *> * &>
 PUBLIC	??$move@AAD@std@@YA$$QADAAD@Z			; std::move<char &>
@@ -380,24 +380,23 @@ PUBLIC	??_C@_1GM@BJMCGEGI@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn
 PUBLIC	??_C@_0CG@NLEHEOHN@cannot?5increment?5end?5map?1set?5it@ ; `string'
 PUBLIC	??_C@_1FA@KLFCDGNE@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@ ; `string'
 PUBLIC	?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A	; std::codecvt<char,char,_Mbstatet>::id
-PUBLIC	?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
 PUBLIC	??_C@_0BM@BALDKKHE@list?5iterators?5incompatible@ ; `string'
 PUBLIC	??_C@_1OE@HJIALJKP@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAL?$AAi?$AAs?$AAt?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1DM@KDLJAKOP@?$AA?$CC?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AAs@ ; `string'
-PUBLIC	?id@?$numpunct@D@std@@2V0locale@2@A		; std::numpunct<char>::id
 PUBLIC	??_C@_0DG@LCFNIIPB@cannot?5dereference?5value?9initia@ ; `string'
 PUBLIC	??_C@_1BDK@NFAHMLDD@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1HA@ILGCNILF@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr@ ; `string'
 PUBLIC	??_C@_0CI@OKFEHCEB@cannot?5dereference?5end?5map?1set?5@ ; `string'
 PUBLIC	??_C@_1FE@NKHAAGMB@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr@ ; `string'
 PUBLIC	??_C@_0CF@JILFNJOL@map?1set?5erase?5iterator?5outside?5@ ; `string'
-PUBLIC	??_C@_1EO@CEDAEPC@?$AA?$CC?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5@ ; `string'
 PUBLIC	??_C@_1BJI@JEIENIGJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
+PUBLIC	??_C@_1EO@CEDAEPC@?$AA?$CC?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5@ ; `string'
 PUBLIC	??_C@_1PC@PKMDLKP@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAv?$AAa?$AAl?$AA?$DM@ ; `string'
 PUBLIC	??_C@_0BD@FEEMDEPI@invalid?5comparator@		; `string'
 PUBLIC	??_C@_1CI@JONCLBEJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAD?$AAe?$AAb?$AAu?$AAg?$AA_?$AAl?$AAt?$AA_@ ; `string'
 PUBLIC	??_C@_1CK@NDNHPKPI@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAc?$AAo?$AAm?$AAp?$AAa?$AAr@ ; `string'
 PUBLIC	?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
+PUBLIC	?id@?$numpunct@D@std@@2V0locale@2@A		; std::numpunct<char>::id
 PUBLIC	??_C@_0BB@MOGOBHAF@list?$DMT?$DO?5too?5long@	; `string'
 PUBLIC	??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ ; `string'
 PUBLIC	??_C@_0CG@MOLIBF@map?1set?5insert?5iterator?5outside@ ; `string'
@@ -469,17 +468,13 @@ _BSS	ENDS
 _BSS	SEGMENT
 ?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::codecvt<char,char,_Mbstatet>::id
 _BSS	ENDS
-;	COMDAT ?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A
+;	COMDAT ?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A
 _BSS	SEGMENT
-?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
+?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
 _BSS	ENDS
 ;	COMDAT ?id@?$numpunct@D@std@@2V0locale@2@A
 _BSS	SEGMENT
 ?id@?$numpunct@D@std@@2V0locale@2@A DD 01H DUP (?)	; std::numpunct<char>::id
-_BSS	ENDS
-;	COMDAT ?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A
-_BSS	SEGMENT
-?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A DD 01H DUP (?) ; std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id
 _BSS	ENDS
 CRT$XCU	SEGMENT
 ?MaxInt$initializer$@@3P6AXXZA DD FLAT:??__EMaxInt@@YAXXZ ; MaxInt$initializer$
@@ -764,6 +759,16 @@ CONST	SEGMENT
 	DB	':', 00H, '_', 00H, 'E', 00H, 'x', 00H, 't', 00H, 'r', 00H, 'a'
 	DB	00H, 'c', 00H, 't', 00H, 00H, 00H		; `string'
 CONST	ENDS
+;	COMDAT ??_C@_1EO@CEDAEPC@?$AA?$CC?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5@
+CONST	SEGMENT
+??_C@_1EO@CEDAEPC@?$AA?$CC?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5@ DB '"'
+	DB	00H, 'm', 00H, 'a', 00H, 'p', 00H, '/', 00H, 's', 00H, 'e', 00H
+	DB	't', 00H, ' ', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 's', 00H, 'e'
+	DB	00H, ' ', 00H, 'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H
+	DB	't', 00H, 'o', 00H, 'r', 00H, ' ', 00H, 'o', 00H, 'u', 00H, 't'
+	DB	00H, 's', 00H, 'i', 00H, 'd', 00H, 'e', 00H, ' ', 00H, 'r', 00H
+	DB	'a', 00H, 'n', 00H, 'g', 00H, 'e', 00H, '"', 00H, 00H, 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1BJI@JEIENIGJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA?$DM?$AAc?$AAl?$AAa?$AAs@
 CONST	SEGMENT
 ??_C@_1BJI@JEIENIGJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ DB 's'
@@ -799,16 +804,6 @@ CONST	SEGMENT
 	DB	' ', 00H, '>', 00H, ',', 00H, '0', 00H, '>', 00H, ' ', 00H, '>'
 	DB	00H, ':', 00H, ':', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 's', 00H
 	DB	'e', 00H, 00H, 00H				; `string'
-CONST	ENDS
-;	COMDAT ??_C@_1EO@CEDAEPC@?$AA?$CC?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5@
-CONST	SEGMENT
-??_C@_1EO@CEDAEPC@?$AA?$CC?$AAm?$AAa?$AAp?$AA?1?$AAs?$AAe?$AAt?$AA?5?$AAe?$AAr?$AAa?$AAs?$AAe?$AA?5@ DB '"'
-	DB	00H, 'm', 00H, 'a', 00H, 'p', 00H, '/', 00H, 's', 00H, 'e', 00H
-	DB	't', 00H, ' ', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 's', 00H, 'e'
-	DB	00H, ' ', 00H, 'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H
-	DB	't', 00H, 'o', 00H, 'r', 00H, ' ', 00H, 'o', 00H, 'u', 00H, 't'
-	DB	00H, 's', 00H, 'i', 00H, 'd', 00H, 'e', 00H, ' ', 00H, 'r', 00H
-	DB	'a', 00H, 'n', 00H, 'g', 00H, 'e', 00H, '"', 00H, 00H, 00H ; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_0CF@JILFNJOL@map?1set?5erase?5iterator?5outside?5@
 CONST	SEGMENT
@@ -2074,19 +2069,15 @@ CRT$XCU	SEGMENT
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
 CRT$XCU	SEGMENT
-??id$initializer$@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA
-CRT$XCU	ENDS
-;	COMDAT CRT$XCU
-CRT$XCU	SEGMENT
 ??id$initializer$@?$codecvt@DDU_Mbstatet@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$codecvt@DDU_Mbstatet@@@std@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
 CRT$XCU	SEGMENT
-??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA
+??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
 ;	COMDAT CRT$XCU
 CRT$XCU	SEGMENT
-??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2P6AXXZA@@3P6AXXZA
+??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA DD FLAT:??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ; ??id$initializer$@?$numpunct@D@std@@2P6AXXZA@@3P6AXXZA
 CRT$XCU	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\tuple
@@ -5229,6 +5220,25 @@ text$x	ENDS
 ??$?0ABQAVRaven_Bot@@$0A@@?$tuple@ABQAVRaven_Bot@@@std@@QAE@ABQAVRaven_Bot@@@Z ENDP ; std::tuple<Raven_Bot * const &>::tuple<Raven_Bot * const &><Raven_Bot * const &,0>
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
+;	COMDAT ??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ
+text$di	SEGMENT
+??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ PROC	; `dynamic initializer for 'std::numpunct<char>::id'', COMDAT
+
+; 297  : 	__PURE_APPDOMAIN_GLOBAL locale::id numpunct<_Elem>::id;
+
+	push	ebp
+	mov	ebp, esp
+	push	0
+	mov	ecx, OFFSET ?id@?$numpunct@D@std@@2V0locale@2@A ; std::numpunct<char>::id
+	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	pop	ebp
+	ret	0
+??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ENDP	; `dynamic initializer for 'std::numpunct<char>::id''
+text$di	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
 ;	COMDAT ??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ
 text$di	SEGMENT
 ??__E?id@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ PROC ; `dynamic initializer for 'std::num_get<char,std::istreambuf_iterator<char,std::char_traits<char> > >::id'', COMDAT
@@ -5657,25 +5667,6 @@ __Arg$ = 8						; size = 4
 ??$move@AAPAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YA$$QAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z ENDP ; std::move<std::_List_node<Raven_Bot *,void *> * &>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
-;	COMDAT ??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ
-text$di	SEGMENT
-??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ PROC	; `dynamic initializer for 'std::numpunct<char>::id'', COMDAT
-
-; 297  : 	__PURE_APPDOMAIN_GLOBAL locale::id numpunct<_Elem>::id;
-
-	push	ebp
-	mov	ebp, esp
-	push	0
-	mov	ecx, OFFSET ?id@?$numpunct@D@std@@2V0locale@2@A ; std::numpunct<char>::id
-	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	pop	ebp
-	ret	0
-??__E?id@?$numpunct@D@std@@2V0locale@2@A@@YAXXZ ENDP	; `dynamic initializer for 'std::numpunct<char>::id''
-text$di	ENDS
-; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocale
 ;	COMDAT ??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ
 text$di	SEGMENT
@@ -5693,25 +5684,6 @@ text$di	SEGMENT
 	pop	ebp
 	ret	0
 ??__E?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::codecvt<char,char,_Mbstatet>::id''
-text$di	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xlocnum
-;	COMDAT ??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ
-text$di	SEGMENT
-??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ PROC ; `dynamic initializer for 'std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id'', COMDAT
-
-; 1843 : 	__PURE_APPDOMAIN_GLOBAL locale::id num_put<_Elem, _OutIt>::id;
-
-	push	ebp
-	mov	ebp, esp
-	push	0
-	mov	ecx, OFFSET ?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
-	call	??0id@locale@std@@QAE@I@Z		; std::locale::id::id
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	pop	ebp
-	ret	0
-??__E?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A@@YAXXZ ENDP ; `dynamic initializer for 'std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id''
 text$di	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
@@ -5816,6 +5788,28 @@ ___formal$ = 8						; size = 1
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
+;	COMDAT ??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z
+_TEXT	SEGMENT
+__Arg$ = 8						; size = 4
+??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z PROC ; std::forward<std::_Zero_then_variadic_args_t>, COMDAT
+
+; 1573 : 	{	// forward an lvalue as either an lvalue or an rvalue
+
+	push	ebp
+	mov	ebp, esp
+
+; 1574 : 	return (static_cast<_Ty&&>(_Arg));
+
+	mov	eax, DWORD PTR __Arg$[ebp]
+
+; 1575 : 	}
+
+	pop	ebp
+	ret	0
+??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ENDP ; std::forward<std::_Zero_then_variadic_args_t>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
 ;	COMDAT ??$forward@ABU?$less@PAVRaven_Bot@@@std@@@std@@YAABU?$less@PAVRaven_Bot@@@0@ABU10@@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
@@ -5877,28 +5871,6 @@ __Arg$ = 8						; size = 4
 	pop	ebp
 	ret	0
 ??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
-;	COMDAT ??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z
-_TEXT	SEGMENT
-__Arg$ = 8						; size = 4
-??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z PROC ; std::forward<std::_Zero_then_variadic_args_t>, COMDAT
-
-; 1573 : 	{	// forward an lvalue as either an lvalue or an rvalue
-
-	push	ebp
-	mov	ebp, esp
-
-; 1574 : 	return (static_cast<_Ty&&>(_Arg));
-
-	mov	eax, DWORD PTR __Arg$[ebp]
-
-; 1575 : 	}
-
-	pop	ebp
-	ret	0
-??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ENDP ; std::forward<std::_Zero_then_variadic_args_t>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
@@ -10810,7 +10782,7 @@ _this$ = -4						; size = 4
 ?GetAllBots@Raven_Game@@QBEABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@XZ PROC ; Raven_Game::GetAllBots, COMDAT
 ; _this$ = ecx
 
-; 166  :   const std::list<Raven_Bot*>&             GetAllBots()const{return m_Bots;}
+; 164  :   const std::list<Raven_Bot*>&             GetAllBots()const{return m_Bots;}
 
 	push	ebp
 	mov	ebp, esp
@@ -14619,7 +14591,7 @@ $LN2@GetLastRec:
 ; 210  : 
 ; 211  :   throw std::runtime_error("< Raven_SensoryMemory::GetLastRecordedPositionOfOpponent>: Attempting to get position of unrecorded bot");
 
-	push	OFFSET $SG160604
+	push	OFFSET $SG154042
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0runtime_error@std@@QAE@PBD@Z		; std::runtime_error::runtime_error
 	push	OFFSET __TI2?AVruntime_error@std@@

@@ -10,18 +10,6 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG172634 DB	'Slug_MaxForce', 00H
-?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-	ORG $+1
-$SG172635 DB	'Slug_Mass', 00H
-	ORG $+2
-$SG172636 DB	'Slug_MaxSpeed', 00H
-	ORG $+2
-$SG172637 DB	'Slug_Scale', 00H
-	ORG $+1
-$SG172638 DB	'Slug_Damage', 00H
-$SG172639 DB	'Slug_Persistance', 00H
-	ORG $+3
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
 	DD	0ff00H
@@ -37,6 +25,17 @@ $SG172639 DB	'Slug_Persistance', 00H
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
+$SG170778 DB	'Slug_MaxForce', 00H
+?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
+	ORG $+1
+$SG170779 DB	'Slug_Mass', 00H
+	ORG $+2
+$SG170780 DB	'Slug_MaxSpeed', 00H
+	ORG $+2
+$SG170781 DB	'Slug_Scale', 00H
+	ORG $+1
+$SG170782 DB	'Slug_Damage', 00H
+$SG170783 DB	'Slug_Persistance', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -273,13 +272,6 @@ PUBLIC	?Facing@Raven_Bot@@QBE?AUVector2D@@XZ		; Raven_Bot::Facing
 PUBLIC	?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ	; Raven_Bot::GetWorld
 PUBLIC	?From@Wall2D@@QBE?AUVector2D@@XZ		; Wall2D::From
 PUBLIC	?To@Wall2D@@QBE?AUVector2D@@XZ			; Wall2D::To
-PUBLIC	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
-PUBLIC	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst
-PUBLIC	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast
-PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second
-PUBLIC	?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ; std::vector<Wall2D *,std::allocator<Wall2D *> >::begin
-PUBLIC	?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ; std::vector<Wall2D *,std::allocator<Wall2D *> >::end
-PUBLIC	?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ ; Raven_Map::GetWalls
 PUBLIC	?deallocate@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@2@QAU?$_List_node@PAVRaven_Bot@@PAX@2@I@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_Bot *,void *> > >::deallocate
 PUBLIC	??1?$_List_alloc@U?$_List_base_types@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ ; std::_List_alloc<std::_List_base_types<Raven_Bot *,std::allocator<Raven_Bot *> > >::~_List_alloc<std::_List_base_types<Raven_Bot *,std::allocator<Raven_Bot *> > >
 PUBLIC	?_Free_proxy@?$_List_alloc@U?$_List_base_types@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@std@@QAEXXZ ; std::_List_alloc<std::_List_base_types<Raven_Bot *,std::allocator<Raven_Bot *> > >::_Free_proxy
@@ -306,6 +298,13 @@ PUBLIC	?clear@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXXZ
 PUBLIC	?_Tidy@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXXZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::_Tidy
 PUBLIC	?_Orphan_ptr@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXPAU?$_List_node@PAVRaven_Bot@@PAX@2@@Z ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::_Orphan_ptr
 PUBLIC	?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ		; Raven_Game::GetMap
+PUBLIC	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
+PUBLIC	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst
+PUBLIC	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast
+PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second
+PUBLIC	?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ; std::vector<Wall2D *,std::allocator<Wall2D *> >::begin
+PUBLIC	?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ; std::vector<Wall2D *,std::allocator<Wall2D *> >::end
+PUBLIC	?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ ; Raven_Map::GetWalls
 PUBLIC	??$FindClosestPointOfIntersectionWithWalls@V?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@@YA_NUVector2D@@0AANAAU0@ABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@Z ; FindClosestPointOfIntersectionWithWalls<std::vector<Wall2D *,std::allocator<Wall2D *> > >
 PUBLIC	??0?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@U_Iterator_base12@2@@std@@QAE@XZ ; std::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>
 PUBLIC	??0?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@U_Iterator_base12@2@@std@@QAE@PAU?$_List_node@PAVRaven_Bot@@PAX@1@PBV?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@1@@Z ; std::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> >,std::_Iterator_base12>
@@ -392,7 +391,6 @@ PUBLIC	??$destroy@PAVRaven_Bot@@@?$_Default_allocator_traits@V?$allocator@U?$_Li
 PUBLIC	??$_Fill_unchecked@PAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@V12@@std@@YAXPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@0ABV10@@Z ; std::_Fill_unchecked<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > >
 PUBLIC	??$destroy@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@PAX@std@@@1@QAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@1@@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,void *> > >::destroy<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
 PUBLIC	??$_Get_size_of_n@$07@std@@YAII@Z		; std::_Get_size_of_n<8>
-PUBLIC	??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z ; std::addressof<std::_List_node<Raven_Bot *,void *> *>
 PUBLIC	??$_Uninitialized_fill_n@PAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@IV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@2@@std@@YAPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@QAV10@IABV10@AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@@Z ; std::_Uninitialized_fill_n<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,unsigned int,std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
 PUBLIC	??$_Get_size_of_n@$03@std@@YAII@Z		; std::_Get_size_of_n<4>
 PUBLIC	??$_Uninitialized_move@PAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@PAV12@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@2@@std@@YAPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@QAV10@0PAV10@AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@@Z ; std::_Uninitialized_move<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
@@ -408,6 +406,7 @@ PUBLIC	??$forward@V?$allocator@D@std@@@std@@YA$$QAV?$allocator@D@0@AAV10@@Z ; st
 PUBLIC	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> >
 PUBLIC	??$forward@ABQAD@std@@YAABQADABQAD@Z		; std::forward<char * const &>
 PUBLIC	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
+PUBLIC	??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z ; std::addressof<std::_List_node<Raven_Bot *,void *> *>
 PUBLIC	??$destroy@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@1@QAPAU?$_List_node@PAVRaven_Bot@@PAX@1@@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_Bot *,void *> > >::destroy<std::_List_node<Raven_Bot *,void *> *>
 PUBLIC	??$_Destroy_range1@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@std@@@std@@YAXPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@0AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@U?$integral_constant@_N$00@0@@Z ; std::_Destroy_range1<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
 PUBLIC	??$addressof@PAU?$_List_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@PAX@std@@@std@@YAPAPAU?$_List_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@PAX@0@AAPAU10@@Z ; std::addressof<std::_List_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,void *> *>
@@ -1903,6 +1902,26 @@ __ehfuncinfo$??$FindClosestPointOfIntersectionWithWalls@V?$vector@PAVWall2D@@V?$
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
+__ehfuncinfo$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
 __unwindtable$?_Orphan_ptr@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXPAU?$_List_node@PAVRaven_Bot@@PAX@2@@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$?_Orphan_ptr@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXPAU?$_List_node@PAVRaven_Bot@@PAX@2@@Z$0
 __ehfuncinfo$?_Orphan_ptr@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QAEXPAU?$_List_node@PAVRaven_Bot@@PAX@2@@Z DD 019930522H
@@ -1956,26 +1975,6 @@ xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
 __ehfuncinfo$??1?$_List_alloc@U?$_List_base_types@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -5574,6 +5573,28 @@ __Ptr$ = 12						; size = 4
 ??$destroy@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@1@QAPAU?$_List_node@PAVRaven_Bot@@PAX@1@@Z ENDP ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_Bot *,void *> > >::destroy<std::_List_node<Raven_Bot *,void *> *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xstddef
+;	COMDAT ??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z
+_TEXT	SEGMENT
+__Val$ = 8						; size = 4
+??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z PROC ; std::addressof<std::_List_node<Raven_Bot *,void *> *>, COMDAT
+
+; 329  : 	{	// return address of _Val
+
+	push	ebp
+	mov	ebp, esp
+
+; 330  : 	return (__builtin_addressof(_Val));
+
+	mov	eax, DWORD PTR __Val$[ebp]
+
+; 331  : 	}
+
+	pop	ebp
+	ret	0
+??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z ENDP ; std::addressof<std::_List_node<Raven_Bot *,void *> *>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
 ;	COMDAT ??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z
 _TEXT	SEGMENT
@@ -6686,28 +6707,6 @@ __Al$ = 20						; size = 4
 	pop	ebp
 	ret	0
 ??$_Uninitialized_fill_n@PAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@IV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@2@@std@@YAPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@QAV10@IABV10@AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@@Z ENDP ; std::_Uninitialized_fill_n<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > *,unsigned int,std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xstddef
-;	COMDAT ??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z
-_TEXT	SEGMENT
-__Val$ = 8						; size = 4
-??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z PROC ; std::addressof<std::_List_node<Raven_Bot *,void *> *>, COMDAT
-
-; 329  : 	{	// return address of _Val
-
-	push	ebp
-	mov	ebp, esp
-
-; 330  : 	return (__builtin_addressof(_Val));
-
-	mov	eax, DWORD PTR __Val$[ebp]
-
-; 331  : 	}
-
-	pop	ebp
-	ret	0
-??$addressof@PAU?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@YAPAPAU?$_List_node@PAVRaven_Bot@@PAX@0@AAPAU10@@Z ENDP ; std::addressof<std::_List_node<Raven_Bot *,void *> *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
@@ -10657,6 +10656,283 @@ __ehhandler$??$FindClosestPointOfIntersectionWithWalls@V?$vector@PAVWall2D@@V?$a
 text$x	ENDS
 ??$FindClosestPointOfIntersectionWithWalls@V?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@@YA_NUVector2D@@0AANAAU0@ABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@Z ENDP ; FindClosestPointOfIntersectionWithWalls<std::vector<Wall2D *,std::allocator<Wall2D *> > >
 ; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_map.h
+;	COMDAT ?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ PROC ; Raven_Map::GetWalls, COMDAT
+; _this$ = ecx
+
+; 115  :   const std::vector<Wall2D*>&        GetWalls()const{return m_Walls;}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ ENDP ; Raven_Map::GetWalls
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
+;	COMDAT ?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+___$ReturnUdt$ = 8					; size = 4
+?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ PROC ; std::vector<Wall2D *,std::allocator<Wall2D *> >::end, COMDAT
+; _this$ = ecx
+
+; 1633 : 		{	// return iterator for end of nonmutable sequence
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	push	ecx
+	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 1634 : 		return (const_iterator(this->_Mylast(), _STD addressof(this->_Get_data())));
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
+	push	eax
+	call	??$addressof@$$CBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@YAPBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@0@ABV10@@Z ; std::addressof<std::_Vector_val<std::_Simple_types<Wall2D *> > const >
+	add	esp, 4
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast
+	mov	eax, DWORD PTR [eax]
+	push	eax
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	call	??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@QAE@PAPAVWall2D@@PBU_Container_base12@1@@Z ; std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+
+; 1635 : 		}
+
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	add	esp, 16					; 00000010H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-8]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ENDP ; std::vector<Wall2D *,std::allocator<Wall2D *> >::end
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
+;	COMDAT ?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+___$ReturnUdt$ = 8					; size = 4
+?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ PROC ; std::vector<Wall2D *,std::allocator<Wall2D *> >::begin, COMDAT
+; _this$ = ecx
+
+; 1623 : 		{	// return iterator for beginning of nonmutable sequence
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	push	ecx
+	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 1624 : 		return (const_iterator(this->_Myfirst(), _STD addressof(this->_Get_data())));
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
+	push	eax
+	call	??$addressof@$$CBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@YAPBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@0@ABV10@@Z ; std::addressof<std::_Vector_val<std::_Simple_types<Wall2D *> > const >
+	add	esp, 4
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst
+	mov	eax, DWORD PTR [eax]
+	push	eax
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	call	??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@QAE@PAPAVWall2D@@PBU_Container_base12@1@@Z ; std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+
+; 1625 : 		}
+
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	add	esp, 16					; 00000010H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-8]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ENDP ; std::vector<Wall2D *,std::allocator<Wall2D *> >::begin
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility
+;	COMDAT ?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ PROC ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second, COMDAT
+; _this$ = ecx
+
+; 306  : 		{	// return const reference to second
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 307  : 		return (_Myval2);
+
+	mov	eax, DWORD PTR _this$[ebp]
+
+; 308  : 		}
+
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ENDP ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
+;	COMDAT ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast, COMDAT
+; _this$ = ecx
+
+; 590  : 		{	// return const reference to _Mylast
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 591  : 		return (_Get_data()._Mylast);
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
+	add	eax, 8
+
+; 592  : 		}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
+;	COMDAT ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst, COMDAT
+; _this$ = ecx
+
+; 580  : 		{	// return const reference to _Myfirst
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 581  : 		return (_Get_data()._Myfirst);
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
+	add	eax, 4
+
+; 582  : 		}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
+;	COMDAT ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data, COMDAT
+; _this$ = ecx
+
+; 559  : 		{	// return const reference to _Vector_val
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 560  : 		return (_Mypair._Get_second());
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second
+
+; 561  : 		}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_game.h
 ;	COMDAT ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ
 _TEXT	SEGMENT
@@ -10664,7 +10940,7 @@ _this$ = -4						; size = 4
 ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
 ; _this$ = ecx
 
-; 165  :   Raven_Map* const                         GetMap(){return m_pMap;}
+; 163  :   Raven_Map* const                         GetMap(){return m_pMap;}
 
 	push	ebp
 	mov	ebp, esp
@@ -11925,283 +12201,6 @@ __Count$ = 16						; size = 4
 	pop	ebp
 	ret	0
 ?deallocate@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_Bot@@PAX@std@@@2@QAU?$_List_node@PAVRaven_Bot@@PAX@2@I@Z ENDP ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_Bot *,void *> > >::deallocate
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_map.h
-;	COMDAT ?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ PROC ; Raven_Map::GetWalls, COMDAT
-; _this$ = ecx
-
-; 115  :   const std::vector<Wall2D*>&        GetWalls()const{return m_Walls;}
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ ENDP ; Raven_Map::GetWalls
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
-;	COMDAT ?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-___$ReturnUdt$ = 8					; size = 4
-?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ PROC ; std::vector<Wall2D *,std::allocator<Wall2D *> >::end, COMDAT
-; _this$ = ecx
-
-; 1633 : 		{	// return iterator for end of nonmutable sequence
-
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	push	ecx
-	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 1634 : 		return (const_iterator(this->_Mylast(), _STD addressof(this->_Get_data())));
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
-	push	eax
-	call	??$addressof@$$CBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@YAPBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@0@ABV10@@Z ; std::addressof<std::_Vector_val<std::_Simple_types<Wall2D *> > const >
-	add	esp, 4
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast
-	mov	eax, DWORD PTR [eax]
-	push	eax
-	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
-	call	??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@QAE@PAPAVWall2D@@PBU_Container_base12@1@@Z ; std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >
-	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
-
-; 1635 : 		}
-
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	add	esp, 16					; 00000010H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ:
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-8]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ENDP ; std::vector<Wall2D *,std::allocator<Wall2D *> >::end
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
-;	COMDAT ?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
-_TEXT	SEGMENT
-_this$ = -16						; size = 4
-__$EHRec$ = -12						; size = 12
-___$ReturnUdt$ = 8					; size = 4
-?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ PROC ; std::vector<Wall2D *,std::allocator<Wall2D *> >::begin, COMDAT
-; _this$ = ecx
-
-; 1623 : 		{	// return iterator for beginning of nonmutable sequence
-
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	push	ecx
-	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 1624 : 		return (const_iterator(this->_Myfirst(), _STD addressof(this->_Get_data())));
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
-	push	eax
-	call	??$addressof@$$CBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@YAPBV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@0@ABV10@@Z ; std::addressof<std::_Vector_val<std::_Simple_types<Wall2D *> > const >
-	add	esp, 4
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst
-	mov	eax, DWORD PTR [eax]
-	push	eax
-	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
-	call	??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@std@@QAE@PAPAVWall2D@@PBU_Container_base12@1@@Z ; std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Wall2D *> > >
-	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
-
-; 1625 : 		}
-
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	add	esp, 16					; 00000010H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ:
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-8]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ENDP ; std::vector<Wall2D *,std::allocator<Wall2D *> >::begin
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xutility
-;	COMDAT ?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ PROC ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second, COMDAT
-; _this$ = ecx
-
-; 306  : 		{	// return const reference to second
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 307  : 		return (_Myval2);
-
-	mov	eax, DWORD PTR _this$[ebp]
-
-; 308  : 		}
-
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ENDP ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
-;	COMDAT ?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast, COMDAT
-; _this$ = ecx
-
-; 590  : 		{	// return const reference to _Mylast
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 591  : 		return (_Get_data()._Mylast);
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
-	add	eax, 8
-
-; 592  : 		}
-
-	add	esp, 4
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
-;	COMDAT ?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst, COMDAT
-; _this$ = ecx
-
-; 580  : 		{	// return const reference to _Myfirst
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 581  : 		return (_Get_data()._Myfirst);
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
-	add	eax, 4
-
-; 582  : 		}
-
-	add	esp, 4
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\vector
-;	COMDAT ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ PROC ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data, COMDAT
-; _this$ = ecx
-
-; 559  : 		{	// return const reference to _Vector_val
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 560  : 		return (_Mypair._Get_second());
-
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@$00@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Compressed_pair<std::allocator<Wall2D *>,std::_Vector_val<std::_Simple_types<Wall2D *> >,1>::_Get_second
-
-; 561  : 		}
-
-	add	esp, 4
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\common\2d\wall2d.h
@@ -18827,7 +18826,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T9[ebp], esp
-	push	OFFSET $SG172634
+	push	OFFSET $SG170778
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv290[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -18842,7 +18841,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG172635
+	push	OFFSET $SG170779
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv291[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -18857,7 +18856,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG172636
+	push	OFFSET $SG170780
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv292[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -18872,7 +18871,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG172637
+	push	OFFSET $SG170781
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv293[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -18887,7 +18886,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG172638
+	push	OFFSET $SG170782
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv294[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
@@ -18967,7 +18966,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG172639
+	push	OFFSET $SG170783
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv295[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 6

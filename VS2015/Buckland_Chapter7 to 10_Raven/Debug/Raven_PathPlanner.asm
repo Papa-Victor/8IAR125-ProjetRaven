@@ -27,9 +27,9 @@ CONST	SEGMENT
 	DD	0e6e6ffH
 ?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
 	ORG $+3
-$SG191909 DB	'<SparseGraph::GetNode>: invalid index', 00H
+$SG191276 DB	'<SparseGraph::GetNode>: invalid index', 00H
 	ORG $+2
-$SG191910 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+$SG191277 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
 	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
 	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
@@ -45,7 +45,7 @@ $SG191910 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, 'e', 00H, 'g', 00H, 'r', 00H, 'a', 00H, 'p'
 	DB	00H, 'h', 00H, '.', 00H, 'h', 00H, 00H, 00H
 	ORG $+2
-$SG191911 DB	'(', 00H, 'i', 00H, 'd', 00H, 'x', 00H, ' ', 00H, '<', 00H
+$SG191278 DB	'(', 00H, 'i', 00H, 'd', 00H, 'x', 00H, ' ', 00H, '<', 00H
 	DB	' ', 00H, '(', 00H, 'i', 00H, 'n', 00H, 't', 00H, ')', 00H, 'm'
 	DB	00H, '_', 00H, 'N', 00H, 'o', 00H, 'd', 00H, 'e', 00H, 's', 00H
 	DB	'.', 00H, 's', 00H, 'i', 00H, 'z', 00H, 'e', 00H, '(', 00H, ')'
@@ -58,9 +58,9 @@ $SG191911 DB	'(', 00H, 'i', 00H, 'd', 00H, 'x', 00H, ' ', 00H, '<', 00H
 	DB	00H, 'e', 00H, '>', 00H, ':', 00H, ' ', 00H, 'i', 00H, 'n', 00H
 	DB	'v', 00H, 'a', 00H, 'l', 00H, 'i', 00H, 'd', 00H, ' ', 00H, 'i'
 	DB	00H, 'n', 00H, 'd', 00H, 'e', 00H, 'x', 00H, '"', 00H, 00H, 00H
-$SG176929 DB	'<Raven_PathPlanner::GetPathAsNodes>: no current search', 00H
+$SG176296 DB	'<Raven_PathPlanner::GetPathAsNodes>: no current search', 00H
 	ORG $+1
-$SG176930 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+$SG176297 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
 	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
 	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
@@ -82,7 +82,7 @@ $SG176930 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'n', 00H, 'e', 00H, 'r', 00H, '.', 00H, 'c', 00H, 'p', 00H, 'p'
 	DB	00H, 00H, 00H
 	ORG $+2
-$SG176931 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
+$SG176298 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
 	DB	'r', 00H, 'e', 00H, 'n', 00H, 't', 00H, 'S', 00H, 'e', 00H, 'a'
 	DB	00H, 'r', 00H, 'c', 00H, 'h', 00H, ' ', 00H, '&', 00H, '&', 00H
 	DB	' ', 00H, '"', 00H, '<', 00H, 'R', 00H, 'a', 00H, 'v', 00H, 'e'
@@ -95,10 +95,10 @@ $SG176931 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
 	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, ' ', 00H, 's', 00H, 'e', 00H
 	DB	'a', 00H, 'r', 00H, 'c', 00H, 'h', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG177899 DB	'<Raven_PathPlanner::CycleOnce>: No search object instant'
+$SG177266 DB	'<Raven_PathPlanner::CycleOnce>: No search object instant'
 	DB	'iated', 00H
 	ORG $+6
-$SG177900 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
+$SG177267 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'r', 00H, 's', 00H, '\', 00H, 'u', 00H, 't', 00H, 'i', 00H, 'l'
 	DB	00H, 'i', 00H, 's', 00H, 'a', 00H, 't', 00H, 'e', 00H, 'u', 00H
 	DB	'r', 00H, '\', 00H, 'd', 00H, 'o', 00H, 'c', 00H, 'u', 00H, 'm'
@@ -120,7 +120,7 @@ $SG177900 DB	'c', 00H, ':', 00H, '\', 00H, 'u', 00H, 's', 00H, 'e', 00H
 	DB	'n', 00H, 'e', 00H, 'r', 00H, '.', 00H, 'c', 00H, 'p', 00H, 'p'
 	DB	00H, 00H, 00H
 	ORG $+2
-$SG177901 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
+$SG177268 DB	'm', 00H, '_', 00H, 'p', 00H, 'C', 00H, 'u', 00H, 'r', 00H
 	DB	'r', 00H, 'e', 00H, 'n', 00H, 't', 00H, 'S', 00H, 'e', 00H, 'a'
 	DB	00H, 'r', 00H, 'c', 00H, 'h', 00H, ' ', 00H, '&', 00H, '&', 00H
 	DB	' ', 00H, '"', 00H, '<', 00H, 'R', 00H, 'a', 00H, 'v', 00H, 'e'
@@ -339,11 +339,9 @@ PUBLIC	?GetCostToNode@Raven_PathPlanner@@QBENI@Z	; Raven_PathPlanner::GetCostToN
 PUBLIC	?GetCostToClosestItem@Raven_PathPlanner@@QBENI@Z ; Raven_PathPlanner::GetCostToClosestItem
 PUBLIC	?CycleOnce@Raven_PathPlanner@@QBEHXZ		; Raven_PathPlanner::CycleOnce
 PUBLIC	?GetNodePosition@Raven_PathPlanner@@QBE?AUVector2D@@H@Z ; Raven_PathPlanner::GetNodePosition
-PUBLIC	?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ ; Team::GetDroppedWeapons
-PUBLIC	?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ	; Trigger<Raven_Bot>::GraphNodeIndex
-PUBLIC	?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ	; Trigger<Raven_Bot>::isActive
 PUBLIC	?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ		; Raven_Game::GetMap
 PUBLIC	?GetPathManager@Raven_Game@@QAEQAV?$PathManager@VRaven_PathPlanner@@@@XZ ; Raven_Game::GetPathManager
+PUBLIC	?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ ; Team::GetDroppedWeapons
 PUBLIC	?deallocate@?$allocator@U?$_List_node@PAVRaven_PathPlanner@@PAX@std@@@std@@QAEXQAU?$_List_node@PAVRaven_PathPlanner@@PAX@2@I@Z ; std::allocator<std::_List_node<Raven_PathPlanner *,void *> >::deallocate
 PUBLIC	?allocate@?$allocator@U?$_List_node@PAVRaven_PathPlanner@@PAX@std@@@std@@QAEPAU?$_List_node@PAVRaven_PathPlanner@@PAX@2@I@Z ; std::allocator<std::_List_node<Raven_PathPlanner *,void *> >::allocate
 PUBLIC	?deallocate@?$_Default_allocator_traits@V?$allocator@U?$_List_node@PAVRaven_PathPlanner@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_List_node@PAVRaven_PathPlanner@@PAX@std@@@2@QAU?$_List_node@PAVRaven_PathPlanner@@PAX@2@I@Z ; std::_Default_allocator_traits<std::allocator<std::_List_node<Raven_PathPlanner *,void *> > >::deallocate
@@ -407,6 +405,8 @@ PUBLIC	??F?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Trigger@VRave
 PUBLIC	??1?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@@std@@QAE@XZ ; std::_List_iterator<std::_List_val<std::_List_simple_types<Trigger<Raven_Bot> *> > >::~_List_iterator<std::_List_val<std::_List_simple_types<Trigger<Raven_Bot> *> > >
 PUBLIC	??0?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@@std@@QAE@ABV01@@Z ; std::_List_iterator<std::_List_val<std::_List_simple_types<Trigger<Raven_Bot> *> > >::_List_iterator<std::_List_val<std::_List_simple_types<Trigger<Raven_Bot> *> > >
 PUBLIC	??0?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@@std@@QAE@$$QAV01@@Z ; std::_List_iterator<std::_List_val<std::_List_simple_types<Trigger<Raven_Bot> *> > >::_List_iterator<std::_List_val<std::_List_simple_types<Trigger<Raven_Bot> *> > >
+PUBLIC	?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ	; Trigger<Raven_Bot>::GraphNodeIndex
+PUBLIC	?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ	; Trigger<Raven_Bot>::isActive
 PUBLIC	??0?$allocator@U?$_List_node@VPathEdge@@PAX@std@@@std@@QAE@XZ ; std::allocator<std::_List_node<PathEdge,void *> >::allocator<std::_List_node<PathEdge,void *> >
 PUBLIC	?deallocate@?$allocator@U?$_List_node@VPathEdge@@PAX@std@@@std@@QAEXQAU?$_List_node@VPathEdge@@PAX@2@I@Z ; std::allocator<std::_List_node<PathEdge,void *> >::deallocate
 PUBLIC	?allocate@?$allocator@U?$_List_node@VPathEdge@@PAX@std@@@std@@QAEPAU?$_List_node@VPathEdge@@PAX@2@I@Z ; std::allocator<std::_List_node<PathEdge,void *> >::allocate
@@ -30987,6 +30987,50 @@ _this$ = -4						; size = 4
 ??0?$allocator@U?$_List_node@VPathEdge@@PAX@std@@@std@@QAE@XZ ENDP ; std::allocator<std::_List_node<PathEdge,void *> >::allocator<std::_List_node<PathEdge,void *> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\common\triggers\trigger.h
+;	COMDAT ?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ PROC		; Trigger<Raven_Bot>::isActive, COMDAT
+; _this$ = ecx
+
+; 80   :   bool isActive(){return m_bActive;}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	al, BYTE PTR [eax+69]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ ENDP		; Trigger<Raven_Bot>::isActive
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\common\triggers\trigger.h
+;	COMDAT ?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ PROC	; Trigger<Raven_Bot>::GraphNodeIndex, COMDAT
+; _this$ = ecx
+
+; 78   :   int  GraphNodeIndex()const{return m_iGraphNodeIndex;}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax+72]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ ENDP	; Trigger<Raven_Bot>::GraphNodeIndex
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ;	COMDAT ??0?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@@std@@QAE@$$QAV01@@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -34363,6 +34407,28 @@ __Count$ = 12						; size = 4
 ?deallocate@?$allocator@U?$_List_node@PAVRaven_PathPlanner@@PAX@std@@@std@@QAEXQAU?$_List_node@PAVRaven_PathPlanner@@PAX@2@I@Z ENDP ; std::allocator<std::_List_node<Raven_PathPlanner *,void *> >::deallocate
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.h
+;	COMDAT ?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ PROC ; Team::GetDroppedWeapons, COMDAT
+; _this$ = ecx
+
+; 29   : 	Raven_Map::TriggerSystem::TriggerList& GetDroppedWeapons() { return m_DroppedWeapons; }
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 16					; 00000010H
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ ENDP ; Team::GetDroppedWeapons
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_game.h
 ;	COMDAT ?GetPathManager@Raven_Game@@QAEQAV?$PathManager@VRaven_PathPlanner@@@@XZ
 _TEXT	SEGMENT
@@ -34370,7 +34436,7 @@ _this$ = -4						; size = 4
 ?GetPathManager@Raven_Game@@QAEQAV?$PathManager@VRaven_PathPlanner@@@@XZ PROC ; Raven_Game::GetPathManager, COMDAT
 ; _this$ = ecx
 
-; 167  :   PathManager<Raven_PathPlanner>* const    GetPathManager(){return m_pPathManager;}
+; 165  :   PathManager<Raven_PathPlanner>* const    GetPathManager(){return m_pPathManager;}
 
 	push	ebp
 	mov	ebp, esp
@@ -34392,7 +34458,7 @@ _this$ = -4						; size = 4
 ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
 ; _this$ = ecx
 
-; 165  :   Raven_Map* const                         GetMap(){return m_pMap;}
+; 163  :   Raven_Map* const                         GetMap(){return m_pMap;}
 
 	push	ebp
 	mov	ebp, esp
@@ -34405,72 +34471,6 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ ENDP		; Raven_Game::GetMap
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\common\triggers\trigger.h
-;	COMDAT ?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ PROC		; Trigger<Raven_Bot>::isActive, COMDAT
-; _this$ = ecx
-
-; 80   :   bool isActive(){return m_bActive;}
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	al, BYTE PTR [eax+69]
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?isActive@?$Trigger@VRaven_Bot@@@@QAE_NXZ ENDP		; Trigger<Raven_Bot>::isActive
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\common\triggers\trigger.h
-;	COMDAT ?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ PROC	; Trigger<Raven_Bot>::GraphNodeIndex, COMDAT
-; _this$ = ecx
-
-; 78   :   int  GraphNodeIndex()const{return m_iGraphNodeIndex;}
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax+72]
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?GraphNodeIndex@?$Trigger@VRaven_Bot@@@@QBEHXZ ENDP	; Trigger<Raven_Bot>::GraphNodeIndex
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\team.h
-;	COMDAT ?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ PROC ; Team::GetDroppedWeapons, COMDAT
-; _this$ = ecx
-
-; 29   : 	Raven_Map::TriggerSystem::TriggerList& GetDroppedWeapons() { return m_DroppedWeapons; }
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	add	eax, 16					; 00000010H
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?GetDroppedWeapons@Team@@QAEAAV?$list@PAV?$Trigger@VRaven_Bot@@@@V?$allocator@PAV?$Trigger@VRaven_Bot@@@@@std@@@std@@XZ ENDP ; Team::GetDroppedWeapons
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\navigation\raven_pathplanner.cpp
@@ -34556,13 +34556,13 @@ __$EHRec$ = -12						; size = 12
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+8], 0
 	je	SHORT $LN6@CycleOnce
-	mov	ecx, OFFSET $SG177899
+	mov	ecx, OFFSET $SG177266
 	test	ecx, ecx
 	jne	SHORT $LN7@CycleOnce
 $LN6@CycleOnce:
 	push	257					; 00000101H
-	push	OFFSET $SG177900
-	push	OFFSET $SG177901
+	push	OFFSET $SG177267
+	push	OFFSET $SG177268
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN7@CycleOnce:
@@ -35308,13 +35308,13 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+8], 0
 	je	SHORT $LN6@GetPath
-	mov	ecx, OFFSET $SG176929
+	mov	ecx, OFFSET $SG176296
 	test	ecx, ecx
 	jne	SHORT $LN7@GetPath
 $LN6@GetPath:
 	push	134					; 00000086H
-	push	OFFSET $SG176930
-	push	OFFSET $SG176931
+	push	OFFSET $SG176297
+	push	OFFSET $SG176298
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN7@GetPath:
@@ -39590,13 +39590,13 @@ _idx$ = 8						; size = 4
 	jge	SHORT $LN3@GetNode
 	cmp	DWORD PTR _idx$[ebp], 0
 	jl	SHORT $LN3@GetNode
-	mov	eax, OFFSET $SG191909
+	mov	eax, OFFSET $SG191276
 	test	eax, eax
 	jne	SHORT $LN4@GetNode
 $LN3@GetNode:
 	push	449					; 000001c1H
-	push	OFFSET $SG191910
-	push	OFFSET $SG191911
+	push	OFFSET $SG191277
+	push	OFFSET $SG191278
 	call	__wassert
 	add	esp, 12					; 0000000cH
 $LN4@GetNode:

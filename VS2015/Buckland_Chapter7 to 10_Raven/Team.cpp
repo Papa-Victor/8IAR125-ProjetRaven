@@ -30,6 +30,22 @@ void Team::AddDroppedWeapon(int weaponType, Vector2D pos, NavGraph navGraph, Rav
 	}
 }
 
+void Team::TryDroppedWeapons(std::list<Raven_Bot*> botList)
+{
+	for (std::list<Raven_Bot*>::iterator curBot = botList.begin(); curBot != botList.end(); curBot++) {
+		for (Raven_Map::TriggerSystem::TriggerList::iterator curTrigger = m_DroppedWeapons.begin(); curTrigger != m_DroppedWeapons.end(); curTrigger++) {
+			(*curTrigger)->Try(*curBot);
+		}
+	}
+}
+
+void Team::RenderDroppedWeapons()
+{
+	for (Raven_Map::TriggerSystem::TriggerList::iterator curTrigger = m_DroppedWeapons.begin(); curTrigger != m_DroppedWeapons.end(); curTrigger++) {
+		(*curTrigger)->Render();
+	}
+}
+
 Team::~Team()
 {
 	m_teamBots.clear();

@@ -182,6 +182,7 @@ void Raven_Game::Update()
 
   //update the triggers
   m_pMap->UpdateTriggerSystem(m_Bots);
+  m_pTeamManager->TryDroppedWeapons(m_Bots);
 
   //if the user has requested that the number of bots be decreased, remove
   //one
@@ -703,6 +704,7 @@ void Raven_Game::Render()
   
   //render the map
   m_pMap->Render();
+  m_pTeamManager->RenderDroppedWeapons();
 
   //render all the bots unless the user has selected the option to only 
   //render those bots that are in the fov of the selected bot

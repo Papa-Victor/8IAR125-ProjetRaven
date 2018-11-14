@@ -10,6 +10,46 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
+$SG173800 DB	'Slug_MaxSpeed', 00H
+?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
+	ORG $+1
+$SG173801 DB	'RailGun_IdealRange', 00H
+	ORG $+1
+$SG173802 DB	'RailGun_FiringFreq', 00H
+	ORG $+1
+$SG173803 DB	'RailGun_MaxRoundsCarried', 00H
+	ORG $+3
+$SG173804 DB	'RailGun_DefaultRounds', 00H
+	ORG $+2
+$SG173828 DB	'DistanceToTarget', 00H
+	ORG $+3
+$SG173829 DB	'AmmoStatus', 00H
+	ORG $+1
+$SG173830 DB	'Desirability', 00H
+	ORG $+3
+$SG173890 DB	'DistanceToTarget', 00H
+	ORG $+3
+$SG173891 DB	'Target_Close', 00H
+	ORG $+3
+$SG173892 DB	'Target_Medium', 00H
+	ORG $+2
+$SG173893 DB	'Target_Far', 00H
+	ORG $+1
+$SG173894 DB	'Desirability', 00H
+	ORG $+3
+$SG173895 DB	'VeryDesirable', 00H
+	ORG $+2
+$SG173896 DB	'Desirable', 00H
+	ORG $+2
+$SG173897 DB	'Undesirable', 00H
+$SG173898 DB	'AmmoStatus', 00H
+	ORG $+1
+$SG173899 DB	'Ammo_Loads', 00H
+	ORG $+1
+$SG173900 DB	'Ammo_Okay', 00H
+	ORG $+2
+$SG173901 DB	'Ammo_Low', 00H
+	ORG $+3
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
 	DD	0ff00H
@@ -25,46 +65,6 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-	ORG $+3
-$SG175656 DB	'Slug_MaxSpeed', 00H
-	ORG $+2
-$SG175657 DB	'RailGun_IdealRange', 00H
-	ORG $+1
-$SG175658 DB	'RailGun_FiringFreq', 00H
-	ORG $+1
-$SG175659 DB	'RailGun_MaxRoundsCarried', 00H
-	ORG $+3
-$SG175660 DB	'RailGun_DefaultRounds', 00H
-	ORG $+2
-$SG175684 DB	'DistanceToTarget', 00H
-	ORG $+3
-$SG175685 DB	'AmmoStatus', 00H
-	ORG $+1
-$SG175686 DB	'Desirability', 00H
-	ORG $+3
-$SG175746 DB	'DistanceToTarget', 00H
-	ORG $+3
-$SG175747 DB	'Target_Close', 00H
-	ORG $+3
-$SG175748 DB	'Target_Medium', 00H
-	ORG $+2
-$SG175749 DB	'Target_Far', 00H
-	ORG $+1
-$SG175750 DB	'Desirability', 00H
-	ORG $+3
-$SG175751 DB	'VeryDesirable', 00H
-	ORG $+2
-$SG175752 DB	'Desirable', 00H
-	ORG $+2
-$SG175753 DB	'Undesirable', 00H
-$SG175754 DB	'AmmoStatus', 00H
-	ORG $+1
-$SG175755 DB	'Ammo_Loads', 00H
-	ORG $+1
-$SG175756 DB	'Ammo_Okay', 00H
-	ORG $+2
-$SG175757 DB	'Ammo_Low', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -534,10 +534,10 @@ PUBLIC	??$_Deallocate@$07$0A@@std@@YAXPAXI@Z		; std::_Deallocate<8,0>
 PUBLIC	??$addressof@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@YAPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@0@AAU10@@Z ; std::addressof<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
 PUBLIC	??$addressof@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@@std@@YAPAU?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@0@AAU10@@Z ; std::addressof<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *> >
 PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
+PUBLIC	??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><FuzzyRule *>
 PUBLIC	?deallocate@?$_Default_allocator_traits@V?$allocator@U_Container_proxy@std@@@std@@@std@@SAXAAV?$allocator@U_Container_proxy@std@@@2@QAU_Container_proxy@2@I@Z ; std::_Default_allocator_traits<std::allocator<std::_Container_proxy> >::deallocate
 PUBLIC	??$destroy@U_Container_proxy@std@@@?$_Default_allocator_traits@V?$allocator@U_Container_proxy@std@@@std@@@std@@SAXAAV?$allocator@U_Container_proxy@std@@@1@QAU_Container_proxy@1@@Z ; std::_Default_allocator_traits<std::allocator<std::_Container_proxy> >::destroy<std::_Container_proxy>
 PUBLIC	??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@$0A@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z ; std::_Deallocate_plain<std::allocator<std::_Container_proxy>,0>
-PUBLIC	??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><FuzzyRule *>
 PUBLIC	??$_Unfancy@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@PAU10@@Z ; std::_Unfancy<std::_Container_proxy>
 PUBLIC	??$construct@U_Container_proxy@std@@U12@@?$_Default_allocator_traits@V?$allocator@U_Container_proxy@std@@@std@@@std@@SAXAAV?$allocator@U_Container_proxy@std@@@1@QAU_Container_proxy@1@$$QAU31@@Z ; std::_Default_allocator_traits<std::allocator<std::_Container_proxy> >::construct<std::_Container_proxy,std::_Container_proxy>
 PUBLIC	??$_Freenode0@V?$allocator@U?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@std@@@std@@@?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@std@@SAXAAV?$allocator@U?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@std@@@1@PAU01@@Z ; std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *>,void *>::_Freenode0<std::allocator<std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *>,void *> > >
@@ -583,10 +583,10 @@ PUBLIC	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_S
 PUBLIC	??$_Pocma@V?$allocator@UVector2D@@@std@@@std@@YAXAAV?$allocator@UVector2D@@@0@0U?$integral_constant@_N$00@0@@Z ; std::_Pocma<std::allocator<Vector2D> >
 PUBLIC	??$forward@ABQAD@std@@YAABQADABQAD@Z		; std::forward<char * const &>
 PUBLIC	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
-PUBLIC	??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ; std::forward<std::_Zero_then_variadic_args_t>
 PUBLIC	??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ; std::forward<std::_Container_proxy>
 PUBLIC	??$destroy@PAU?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@std@@@?$_Default_allocator_traits@V?$allocator@U?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@std@@@std@@@std@@SAXAAV?$allocator@U?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@std@@@1@QAPAU?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@1@@Z ; std::_Default_allocator_traits<std::allocator<std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *>,void *> > >::destroy<std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *>,void *> *>
 PUBLIC	??$forward@ABU?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAABU?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@ABU10@@Z ; std::forward<std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > const &>
+PUBLIC	??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ; std::forward<std::_Zero_then_variadic_args_t>
 PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@U?$_Tree_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@PAX@std@@@std@@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVFuzzyVariable@@@std@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *>,void *> >,std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *> > >,1>::_Compressed_pair<std::allocator<std::_Tree_node<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *>,void *> >,std::_Tree_val<std::_Tree_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,FuzzyVariable *> > >,1><>
 PUBLIC	??$_Destroy_range1@V?$allocator@UVector2D@@@std@@@std@@YAXPAUVector2D@@0AAV?$allocator@UVector2D@@@0@U?$integral_constant@_N$00@0@@Z ; std::_Destroy_range1<std::allocator<Vector2D> >
 PUBLIC	??$_Destroy_range1@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@std@@@std@@YAXPAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@0@0AAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@@0@U?$integral_constant@_N$00@0@@Z ; std::_Destroy_range1<std::allocator<std::_List_unchecked_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > > > > >
@@ -750,10 +750,10 @@ PUBLIC	??_C@_1GK@NKIMOCIG@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe
 PUBLIC	??_C@_0CF@JCBFHMPL@cannot?5dereference?5end?5list?5ite@ ; `string'
 PUBLIC	??_C@_1EO@CNEFBDCF@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr@ ; `string'
 PUBLIC	??_C@_0DE@DMNPKCGM@cannot?5increment?5value?9initiali@ ; `string'
+PUBLIC	??_C@_1BNA@HKIAGLCE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_1GM@BJMCGEGI@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@ ; `string'
 PUBLIC	??_C@_0CG@NLEHEOHN@cannot?5increment?5end?5map?1set?5it@ ; `string'
 PUBLIC	??_C@_1FA@KLFCDGNE@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@ ; `string'
-PUBLIC	??_C@_1BNA@HKIAGLCE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs@ ; `string'
 PUBLIC	??_C@_0BD@FEEMDEPI@invalid?5comparator@		; `string'
 PUBLIC	??_C@_1CI@JONCLBEJ@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAD?$AAe?$AAb?$AAu?$AAg?$AA_?$AAl?$AAt?$AA_@ ; `string'
 PUBLIC	??_C@_1CK@NDNHPKPI@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAc?$AAo?$AAm?$AAp?$AAa?$AAr@ ; `string'
@@ -868,8 +868,8 @@ EXTRN	?AddRule@FuzzyModule@@QAEXAAVFuzzyTerm@@0@Z:PROC ; FuzzyModule::AddRule
 EXTRN	??_ERaven_Weapon@@UAEPAXI@Z:PROC		; Raven_Weapon::`vector deleting destructor'
 EXTRN	??_ERailGun@@UAEPAXI@Z:PROC			; RailGun::`vector deleting destructor'
 EXTRN	?Instance@Cgdi@@SAPAV1@XZ:PROC			; Cgdi::Instance
-EXTRN	?AddSoundTrigger@Raven_Map@@QAEXPAVRaven_Bot@@N@Z:PROC ; Raven_Map::AddSoundTrigger
 EXTRN	?AddRailGunSlug@Raven_Game@@QAEXPAVRaven_Bot@@UVector2D@@@Z:PROC ; Raven_Game::AddRailGunSlug
+EXTRN	?AddSoundTrigger@Raven_Map@@QAEXPAVRaven_Bot@@N@Z:PROC ; Raven_Map::AddSoundTrigger
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__CxxThrowException@8:PROC
@@ -1715,6 +1715,35 @@ CONST	ENDS
 CONST	SEGMENT
 ??_C@_0BD@FEEMDEPI@invalid?5comparator@ DB 'invalid comparator', 00H ; `string'
 CONST	ENDS
+;	COMDAT ??_C@_1FA@KLFCDGNE@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@
+CONST	SEGMENT
+??_C@_1FA@KLFCDGNE@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@ DB '"'
+	DB	00H, 'c', 00H, 'a', 00H, 'n', 00H, 'n', 00H, 'o', 00H, 't', 00H
+	DB	' ', 00H, 'i', 00H, 'n', 00H, 'c', 00H, 'r', 00H, 'e', 00H, 'm'
+	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, ' ', 00H, 'e', 00H, 'n', 00H
+	DB	'd', 00H, ' ', 00H, 'm', 00H, 'a', 00H, 'p', 00H, '/', 00H, 's'
+	DB	00H, 'e', 00H, 't', 00H, ' ', 00H, 'i', 00H, 't', 00H, 'e', 00H
+	DB	'r', 00H, 'a', 00H, 't', 00H, 'o', 00H, 'r', 00H, '"', 00H, 00H
+	DB	00H						; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0CG@NLEHEOHN@cannot?5increment?5end?5map?1set?5it@
+CONST	SEGMENT
+??_C@_0CG@NLEHEOHN@cannot?5increment?5end?5map?1set?5it@ DB 'cannot incre'
+	DB	'ment end map/set iterator', 00H		; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1GM@BJMCGEGI@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@
+CONST	SEGMENT
+??_C@_1GM@BJMCGEGI@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@ DB '"'
+	DB	00H, 'c', 00H, 'a', 00H, 'n', 00H, 'n', 00H, 'o', 00H, 't', 00H
+	DB	' ', 00H, 'i', 00H, 'n', 00H, 'c', 00H, 'r', 00H, 'e', 00H, 'm'
+	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, ' ', 00H, 'v', 00H, 'a', 00H
+	DB	'l', 00H, 'u', 00H, 'e', 00H, '-', 00H, 'i', 00H, 'n', 00H, 'i'
+	DB	00H, 't', 00H, 'i', 00H, 'a', 00H, 'l', 00H, 'i', 00H, 'z', 00H
+	DB	'e', 00H, 'd', 00H, ' ', 00H, 'm', 00H, 'a', 00H, 'p', 00H, '/'
+	DB	00H, 's', 00H, 'e', 00H, 't', 00H, ' ', 00H, 'i', 00H, 't', 00H
+	DB	'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o', 00H, 'r', 00H, '"'
+	DB	00H, 00H, 00H				; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_1BNA@HKIAGLCE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs@
 CONST	SEGMENT
 ??_C@_1BNA@HKIAGLCE@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAT?$AAr?$AAe?$AAe?$AA_?$AAc?$AAo?$AAn?$AAs@ DB 's'
@@ -1754,35 +1783,6 @@ CONST	SEGMENT
 	DB	'>', 00H, ' ', 00H, '>', 00H, ':', 00H, ':', 00H, 'o', 00H, 'p'
 	DB	00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o', 00H, 'r', 00H
 	DB	' ', 00H, '+', 00H, '+', 00H, 00H, 00H	; `string'
-CONST	ENDS
-;	COMDAT ??_C@_1FA@KLFCDGNE@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@
-CONST	SEGMENT
-??_C@_1FA@KLFCDGNE@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@ DB '"'
-	DB	00H, 'c', 00H, 'a', 00H, 'n', 00H, 'n', 00H, 'o', 00H, 't', 00H
-	DB	' ', 00H, 'i', 00H, 'n', 00H, 'c', 00H, 'r', 00H, 'e', 00H, 'm'
-	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, ' ', 00H, 'e', 00H, 'n', 00H
-	DB	'd', 00H, ' ', 00H, 'm', 00H, 'a', 00H, 'p', 00H, '/', 00H, 's'
-	DB	00H, 'e', 00H, 't', 00H, ' ', 00H, 'i', 00H, 't', 00H, 'e', 00H
-	DB	'r', 00H, 'a', 00H, 't', 00H, 'o', 00H, 'r', 00H, '"', 00H, 00H
-	DB	00H						; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0CG@NLEHEOHN@cannot?5increment?5end?5map?1set?5it@
-CONST	SEGMENT
-??_C@_0CG@NLEHEOHN@cannot?5increment?5end?5map?1set?5it@ DB 'cannot incre'
-	DB	'ment end map/set iterator', 00H		; `string'
-CONST	ENDS
-;	COMDAT ??_C@_1GM@BJMCGEGI@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@
-CONST	SEGMENT
-??_C@_1GM@BJMCGEGI@?$AA?$CC?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAi?$AAn?$AAc?$AAr?$AAe?$AAm?$AAe@ DB '"'
-	DB	00H, 'c', 00H, 'a', 00H, 'n', 00H, 'n', 00H, 'o', 00H, 't', 00H
-	DB	' ', 00H, 'i', 00H, 'n', 00H, 'c', 00H, 'r', 00H, 'e', 00H, 'm'
-	DB	00H, 'e', 00H, 'n', 00H, 't', 00H, ' ', 00H, 'v', 00H, 'a', 00H
-	DB	'l', 00H, 'u', 00H, 'e', 00H, '-', 00H, 'i', 00H, 'n', 00H, 'i'
-	DB	00H, 't', 00H, 'i', 00H, 'a', 00H, 'l', 00H, 'i', 00H, 'z', 00H
-	DB	'e', 00H, 'd', 00H, ' ', 00H, 'm', 00H, 'a', 00H, 'p', 00H, '/'
-	DB	00H, 's', 00H, 'e', 00H, 't', 00H, ' ', 00H, 'i', 00H, 't', 00H
-	DB	'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o', 00H, 'r', 00H, '"'
-	DB	00H, 00H, 00H				; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_0DE@DMNPKCGM@cannot?5increment?5value?9initiali@
 CONST	SEGMENT
@@ -10954,6 +10954,28 @@ ___formal$ = 8						; size = 1
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
+;	COMDAT ??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z
+_TEXT	SEGMENT
+__Arg$ = 8						; size = 4
+??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z PROC ; std::forward<std::_Zero_then_variadic_args_t>, COMDAT
+
+; 1573 : 	{	// forward an lvalue as either an lvalue or an rvalue
+
+	push	ebp
+	mov	ebp, esp
+
+; 1574 : 	return (static_cast<_Ty&&>(_Arg));
+
+	mov	eax, DWORD PTR __Arg$[ebp]
+
+; 1575 : 	}
+
+	pop	ebp
+	ret	0
+??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ENDP ; std::forward<std::_Zero_then_variadic_args_t>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
 ;	COMDAT ??$forward@ABU?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@std@@YAABU?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@ABU10@@Z
 _TEXT	SEGMENT
 __Arg$ = 8						; size = 4
@@ -11015,28 +11037,6 @@ __Arg$ = 8						; size = 4
 	pop	ebp
 	ret	0
 ??$forward@U_Container_proxy@std@@@std@@YA$$QAU_Container_proxy@0@AAU10@@Z ENDP ; std::forward<std::_Container_proxy>
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\type_traits
-;	COMDAT ??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z
-_TEXT	SEGMENT
-__Arg$ = 8						; size = 4
-??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z PROC ; std::forward<std::_Zero_then_variadic_args_t>, COMDAT
-
-; 1573 : 	{	// forward an lvalue as either an lvalue or an rvalue
-
-	push	ebp
-	mov	ebp, esp
-
-; 1574 : 	return (static_cast<_Ty&&>(_Arg));
-
-	mov	eax, DWORD PTR __Arg$[ebp]
-
-; 1575 : 	}
-
-	pop	ebp
-	ret	0
-??$forward@U_Zero_then_variadic_args_t@std@@@std@@YA$$QAU_Zero_then_variadic_args_t@0@AAU10@@Z ENDP ; std::forward<std::_Zero_then_variadic_args_t>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
@@ -13524,31 +13524,6 @@ __Ptr$ = 8						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
-;	COMDAT ??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___formal$ = 8						; size = 4
-??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z PROC ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><FuzzyRule *>, COMDAT
-; _this$ = ecx
-
-; 986  : 		{	// construct from a related allocator (do nothing)
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 987  : 		}
-
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z ENDP ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><FuzzyRule *>
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
 ;	COMDAT ??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@$0A@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z
 _TEXT	SEGMENT
 __Al$ = 8						; size = 4
@@ -13630,6 +13605,31 @@ __Count$ = 16						; size = 4
 	pop	ebp
 	ret	0
 ?deallocate@?$_Default_allocator_traits@V?$allocator@U_Container_proxy@std@@@std@@@std@@SAXAAV?$allocator@U_Container_proxy@std@@@2@QAU_Container_proxy@2@I@Z ENDP ; std::_Default_allocator_traits<std::allocator<std::_Container_proxy> >::deallocate
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
+;	COMDAT ??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___formal$ = 8						; size = 4
+??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z PROC ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><FuzzyRule *>, COMDAT
+; _this$ = ecx
+
+; 986  : 		{	// construct from a related allocator (do nothing)
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 987  : 		}
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??$?0PAVFuzzyRule@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@PAVFuzzyRule@@@1@@Z ENDP ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><FuzzyRule *>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\xmemory0
@@ -16826,7 +16826,7 @@ _this$ = -4						; size = 4
 ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
 ; _this$ = ecx
 
-; 165  :   Raven_Map* const                         GetMap(){return m_pMap;}
+; 163  :   Raven_Map* const                         GetMap(){return m_pMap;}
 
 	push	ebp
 	mov	ebp, esp
@@ -17109,7 +17109,7 @@ $LN2@GetDesirab:
 ; 73   :     //fuzzify distance and amount of ammo
 ; 74   :     m_FuzzyModule.Fuzzify("DistanceToTarget", DistToTarget);
 
-	push	OFFSET $SG175684
+	push	OFFSET $SG173828
 	lea	ecx, DWORD PTR $T4[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -17127,7 +17127,7 @@ $LN2@GetDesirab:
 
 ; 75   :     m_FuzzyModule.Fuzzify("AmmoStatus", (double)m_iNumRoundsLeft);
 
-	push	OFFSET $SG175685
+	push	OFFSET $SG173829
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -17152,7 +17152,7 @@ $LN2@GetDesirab:
 ; 76   : 
 ; 77   :     m_dLastDesirabilityScore = m_FuzzyModule.DeFuzzify("Desirability", FuzzyModule::max_av);
 
-	push	OFFSET $SG175686
+	push	OFFSET $SG173830
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -17526,7 +17526,7 @@ _owner$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG175656
+	push	OFFSET $SG173800
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv269[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -17541,7 +17541,7 @@ _owner$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG175657
+	push	OFFSET $SG173801
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv270[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -17556,7 +17556,7 @@ _owner$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T4[ebp], esp
-	push	OFFSET $SG175658
+	push	OFFSET $SG173802
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv271[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -17571,7 +17571,7 @@ _owner$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T3[ebp], esp
-	push	OFFSET $SG175659
+	push	OFFSET $SG173803
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv272[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -17585,7 +17585,7 @@ _owner$ = 8						; size = 4
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG175660
+	push	OFFSET $SG173804
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv273[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
@@ -17889,7 +17889,7 @@ __$EHRec$ = -12						; size = 12
 ; 89   : 
 ; 90   :   FuzzyVariable& DistanceToTarget = m_FuzzyModule.CreateFLV("DistanceToTarget");
 
-	push	OFFSET $SG175746
+	push	OFFSET $SG173890
 	lea	ecx, DWORD PTR $T27[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -17918,7 +17918,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T24[ebp], esp
-	push	OFFSET $SG175747
+	push	OFFSET $SG173891
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	ecx, DWORD PTR _$S1$[ebp]
 	push	ecx
@@ -17943,7 +17943,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T23[ebp], esp
-	push	OFFSET $SG175748
+	push	OFFSET $SG173892
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	eax, DWORD PTR _$S2$[ebp]
 	push	eax
@@ -17968,7 +17968,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T22[ebp], esp
-	push	OFFSET $SG175749
+	push	OFFSET $SG173893
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	edx, DWORD PTR _$S3$[ebp]
 	push	edx
@@ -17982,7 +17982,7 @@ __$EHRec$ = -12						; size = 12
 ; 95   : 
 ; 96   :   FuzzyVariable& Desirability = m_FuzzyModule.CreateFLV("Desirability");
 
-	push	OFFSET $SG175750
+	push	OFFSET $SG173894
 	lea	ecx, DWORD PTR $T26[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 4
@@ -18011,7 +18011,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T21[ebp], esp
-	push	OFFSET $SG175751
+	push	OFFSET $SG173895
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	edx, DWORD PTR _$S4$[ebp]
 	push	edx
@@ -18036,7 +18036,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T20[ebp], esp
-	push	OFFSET $SG175752
+	push	OFFSET $SG173896
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	ecx, DWORD PTR _$S5$[ebp]
 	push	ecx
@@ -18061,7 +18061,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T19[ebp], esp
-	push	OFFSET $SG175753
+	push	OFFSET $SG173897
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	eax, DWORD PTR _$S6$[ebp]
 	push	eax
@@ -18075,7 +18075,7 @@ __$EHRec$ = -12						; size = 12
 ; 101  : 
 ; 102  :   FuzzyVariable& AmmoStatus = m_FuzzyModule.CreateFLV("AmmoStatus");
 
-	push	OFFSET $SG175754
+	push	OFFSET $SG173898
 	lea	ecx, DWORD PTR $T25[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 8
@@ -18103,7 +18103,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T18[ebp], esp
-	push	OFFSET $SG175755
+	push	OFFSET $SG173899
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	eax, DWORD PTR _$S7$[ebp]
 	push	eax
@@ -18128,7 +18128,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T17[ebp], esp
-	push	OFFSET $SG175756
+	push	OFFSET $SG173900
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	edx, DWORD PTR _$S8$[ebp]
 	push	edx
@@ -18153,7 +18153,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T16[ebp], esp
-	push	OFFSET $SG175757
+	push	OFFSET $SG173901
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	ecx, DWORD PTR _$S9$[ebp]
 	push	ecx

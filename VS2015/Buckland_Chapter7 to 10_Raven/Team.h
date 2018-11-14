@@ -26,6 +26,8 @@ public:
 	bool BotInTeam(Raven_Bot const *bot)const;
 
 	void AddDroppedWeapon(int weaponType, Vector2D pos, NavGraph navGraph, Raven_Bot* pBot);
+	void TryDroppedWeapons(std::list<Raven_Bot*> botList);
+	void RenderDroppedWeapons();
 	Raven_Map::TriggerSystem::TriggerList& GetDroppedWeapons() { return m_DroppedWeapons; }
 
 	virtual void AddBot(Raven_Bot* bot) = 0;

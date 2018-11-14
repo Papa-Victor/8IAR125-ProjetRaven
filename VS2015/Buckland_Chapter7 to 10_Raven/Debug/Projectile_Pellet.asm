@@ -10,16 +10,6 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG172639 DB	'Pellet_MaxForce', 00H
-$SG172640 DB	'Pellet_Mass', 00H
-$SG172641 DB	'Pellet_MaxSpeed', 00H
-$SG172642 DB	'Pellet_Scale', 00H
-?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
-	ORG $+2
-$SG172643 DB	'Pellet_Damage', 00H
-	ORG $+2
-$SG172644 DB	'Pellet_Persistance', 00H
-	ORG $+1
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
 	DD	0ff00H
@@ -35,6 +25,15 @@ $SG172644 DB	'Pellet_Persistance', 00H
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
+$SG170783 DB	'Pellet_MaxForce', 00H
+$SG170784 DB	'Pellet_Mass', 00H
+$SG170785 DB	'Pellet_MaxSpeed', 00H
+$SG170786 DB	'Pellet_Scale', 00H
+?piecewise_construct@std@@3Upiecewise_construct_t@1@B	ORG $+1 ; std::piecewise_construct
+	ORG $+2
+$SG170787 DB	'Pellet_Damage', 00H
+	ORG $+2
+$SG170788 DB	'Pellet_Persistance', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -288,6 +287,7 @@ PUBLIC	?Facing@Raven_Bot@@QBE?AUVector2D@@XZ		; Raven_Bot::Facing
 PUBLIC	?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ	; Raven_Bot::GetWorld
 PUBLIC	?From@Wall2D@@QBE?AUVector2D@@XZ		; Wall2D::From
 PUBLIC	?To@Wall2D@@QBE?AUVector2D@@XZ			; Wall2D::To
+PUBLIC	?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ		; Raven_Game::GetMap
 PUBLIC	?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
 PUBLIC	?_Myfirst@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Myfirst
 PUBLIC	?_Mylast@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABQAPAVWall2D@@XZ ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Mylast
@@ -295,7 +295,6 @@ PUBLIC	?_Get_second@?$_Compressed_pair@V?$allocator@PAVWall2D@@@std@@V?$_Vector_
 PUBLIC	?begin@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ; std::vector<Wall2D *,std::allocator<Wall2D *> >::begin
 PUBLIC	?end@?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@QBE?AV?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@std@@@2@XZ ; std::vector<Wall2D *,std::allocator<Wall2D *> >::end
 PUBLIC	?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ ; Raven_Map::GetWalls
-PUBLIC	?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ		; Raven_Game::GetMap
 PUBLIC	??$FindClosestPointOfIntersectionWithWalls@V?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@@YA_NUVector2D@@0AANAAU0@ABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@Z ; FindClosestPointOfIntersectionWithWalls<std::vector<Wall2D *,std::allocator<Wall2D *> > >
 PUBLIC	??$try_emplace@$$V@?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@QAE?AU?$pair@V?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@@std@@_N@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z ; std::unordered_map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::hash<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::equal_to<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >,std::allocator<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >::try_emplace<>
 PUBLIC	??0?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@std@@U_Iterator_base12@2@@std@@QAE@PAU?$_List_node@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@PAX@1@PBV?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@std@@@1@@Z ; std::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >,std::_Iterator_base12>::_List_unchecked_const_iterator<std::_List_val<std::_List_simple_types<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > >,std::_Iterator_base12>
@@ -9444,28 +9443,6 @@ __ehhandler$??$FindClosestPointOfIntersectionWithWalls@V?$vector@PAVWall2D@@V?$a
 text$x	ENDS
 ??$FindClosestPointOfIntersectionWithWalls@V?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@@YA_NUVector2D@@0AANAAU0@ABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@Z ENDP ; FindClosestPointOfIntersectionWithWalls<std::vector<Wall2D *,std::allocator<Wall2D *> > >
 ; Function compile flags: /Odtp /RTCsu
-; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_game.h
-;	COMDAT ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
-; _this$ = ecx
-
-; 165  :   Raven_Map* const                         GetMap(){return m_pMap;}
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax]
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ ENDP		; Raven_Game::GetMap
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_map.h
 ;	COMDAT ?GetWalls@Raven_Map@@QBEABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@XZ
 _TEXT	SEGMENT
@@ -9741,6 +9718,28 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ?_Get_data@?$_Vector_alloc@U?$_Vec_base_types@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@std@@QBEABV?$_Vector_val@U?$_Simple_types@PAVWall2D@@@std@@@2@XZ ENDP ; std::_Vector_alloc<std::_Vec_base_types<Wall2D *,std::allocator<Wall2D *> > >::_Get_data
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\raven_game.h
+;	COMDAT ?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ PROC		; Raven_Game::GetMap, COMDAT
+; _this$ = ecx
+
+; 163  :   Raven_Map* const                         GetMap(){return m_pMap;}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?GetMap@Raven_Game@@QAEQAVRaven_Map@@XZ ENDP		; Raven_Game::GetMap
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\common\2d\wall2d.h
@@ -16494,7 +16493,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T9[ebp], esp
-	push	OFFSET $SG172639
+	push	OFFSET $SG170783
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv290[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -16509,7 +16508,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T8[ebp], esp
-	push	OFFSET $SG172640
+	push	OFFSET $SG170784
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv291[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -16524,7 +16523,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T7[ebp], esp
-	push	OFFSET $SG172641
+	push	OFFSET $SG170785
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv292[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -16539,7 +16538,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T6[ebp], esp
-	push	OFFSET $SG172642
+	push	OFFSET $SG170786
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv293[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -16554,7 +16553,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T5[ebp], esp
-	push	OFFSET $SG172643
+	push	OFFSET $SG170787
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv294[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
@@ -16634,7 +16633,7 @@ _target$ = 12						; size = 16
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG172644
+	push	OFFSET $SG170788
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv295[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 6
