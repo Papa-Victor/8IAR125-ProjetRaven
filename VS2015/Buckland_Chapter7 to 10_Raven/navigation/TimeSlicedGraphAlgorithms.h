@@ -24,7 +24,7 @@
 #include "Graph/AStarHeuristicPolicies.h"
 #include "SearchTerminationPolicies.h"
 #include "PathEdge.h"
-
+#include "../Team.h"
 
 
 //these enums are used as return values from each search update method
@@ -306,7 +306,7 @@ private:
   //lowest overall F cost (G+H) are positioned at the front.
   IndexedPriorityQLow<double>*     m_pPQ;
 
- 
+  Team*							 m_pTeam;
 
 public:
 
@@ -319,13 +319,35 @@ public:
                                               m_SearchFrontier(G.NumNodes()),
                                               m_CostToThisNode(G.NumNodes(), 0.0),
                                               m_iSource(source),
-                                              m_iTarget(target)
+                                              m_iTarget(target),
+											  m_pTeam(NULL)
   { 
      //create the PQ         ,
      m_pPQ =new IndexedPriorityQLow<double>(m_CostToThisNode, m_Graph.NumNodes());
 
     //put the source node on the queue
     m_pPQ->insert(m_iSource);
+  }
+
+
+  Graph_SearchDijkstras_TS(const graph_type&  G,
+	  Team*					team,
+	  int                   source,
+	  int                   target) :Graph_SearchTimeSliced<Edge>(Dijkstra),
+
+	  m_Graph(G),
+	  m_ShortestPathTree(G.NumNodes()),
+	  m_SearchFrontier(G.NumNodes()),
+	  m_CostToThisNode(G.NumNodes(), 0.0),
+	  m_iSource(source),
+	  m_iTarget(target),
+	  m_pTeam(team)
+  {
+	  //create the PQ         ,
+	  m_pPQ = new IndexedPriorityQLow<double>(m_CostToThisNode, m_Graph.NumNodes());
+
+	  //put the source node on the queue
+	  m_pPQ->insert(m_iSource);
   }
 
   //let the search class take care of tidying up memory (the wary amongst
@@ -373,7 +395,7 @@ int Graph_SearchDijkstras_TS<graph_type, termination_condition>::CycleOnce()
   m_ShortestPathTree[NextClosestNode] = m_SearchFrontier[NextClosestNode];
 
   //if the target has been found exit
-  if (termination_condition::isSatisfied(m_Graph, m_iTarget, NextClosestNode))
+  if (termination_condition::isSatisfied(m_Graph, m_pTeam, m_iTarget, NextClosestNode))
   {
     //make a note of the node index that has satisfied the condition. This
     //is so we can work backwards from the index to extract the path from

@@ -76,5 +76,22 @@ maps/Raven_DM1.map loaded okay
 deleting raven bot (id = 403)
 BOT 401 IS STUCK!!
 BOT 402 IS STUCK!!
-deleting raven bot (id = 401)
+BOT 402 IS STUCK!!
+Player is exorcised from bot 402
 deleting raven bot (id = 402)
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 1652 IS STUCK!!
+Player is exorcised from bot 401
+BOT 1652 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 1652 IS STUCK!!
+deleting raven bot (id = 1652)
+BOT 3197 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 3197 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 3197 IS STUCK!!
+deleting raven bot (id = 401)
+deleting raven bot (id = 3197)

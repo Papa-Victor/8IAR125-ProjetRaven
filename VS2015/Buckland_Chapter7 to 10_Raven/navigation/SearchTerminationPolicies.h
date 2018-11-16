@@ -10,6 +10,7 @@
 //          algorithm
 //-----------------------------------------------------------------------------
 
+#include "../Team.h"
 
 
 //--------------------------- FindNodeIndex -----------------------------------
@@ -37,7 +38,7 @@ class FindActiveTrigger
 public:
 
   template <class graph_type>
-  static bool isSatisfied(const graph_type& G, int target, int CurrentNodeIdx)
+  static bool isSatisfied(const graph_type& G, Team* team, int target, int CurrentNodeIdx)
   {
     bool bSatisfied = false;
 
@@ -48,9 +49,11 @@ public:
     //it is active and that it is of the correct type.
     if ((node.ExtraInfo() != NULL) && 
          node.ExtraInfo()->isActive() && 
-        (node.ExtraInfo()->EntityType() == target) )
+        (node.ExtraInfo()->EntityType() == target))
     {    
-      bSatisfied = true;
+		if (node.ExtraInfo()->GetTeam() == NULL || node.ExtraInfo()->GetTeam() == team) {
+			bSatisfied = true;
+		}
     }
 
     return bSatisfied;

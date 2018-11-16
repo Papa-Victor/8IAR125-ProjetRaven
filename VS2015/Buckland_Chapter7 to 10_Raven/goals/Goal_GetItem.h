@@ -6,6 +6,7 @@
 #include "Raven_Goal_Types.h"
 #include "../Raven_Bot.h"
 #include "triggers/trigger.h"
+#include "../Team.h"
 
 
 //helper function to change an item type enumeration into a goal type

@@ -16,6 +16,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

@@ -10,10 +10,10 @@ bool Team::BotInTeam(Raven_Bot const *bot) const
 	return false;
 }
 
-void Team::AddDroppedWeapon(int weaponType, Vector2D pos, NavGraph navGraph, Raven_Bot* pBot)
+void Team::AddDroppedWeapon(int weaponType, Vector2D pos, NavGraph& navGraph, Raven_Bot* pBot)
 {
 	if (pBot->GetWeaponSys()->GetWeaponFromInventory(weaponType) != NULL) {
-		Trigger_TeamWeaponGiver *wg = new Trigger_TeamWeaponGiver(pos, pBot);
+		Trigger<Raven_Bot> *wg = new Trigger_TeamWeaponGiver(pos, pBot);
 
 		wg->SetEntityType(weaponType);
 
@@ -22,6 +22,8 @@ void Team::AddDroppedWeapon(int weaponType, Vector2D pos, NavGraph navGraph, Rav
 
 		//let the corresponding navgraph node point to this object
 		NavGraph::NodeType& node = navGraph.GetNode(wg->GraphNodeIndex());
+
+		int graphNodeIndex = wg->GraphNodeIndex();
 
 		node.SetExtraInfo(wg);
 

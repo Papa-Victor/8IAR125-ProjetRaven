@@ -36,10 +36,10 @@ void Random_Single_Target_Team::AddBot(Raven_Bot * bot)
 {
 	m_teamBots.push_back(bot);
 	bot->SetTeam(this);
+	bot->SetTargetControl(false);
 	if (bot == m_currentTarget || m_currentTarget == NULL) {
 		DetermineTarget();
 	}
-	bot->SetTargetControl(false);
 	bot->GetTargetSys()->SetTarget(m_currentTarget);
 }
 

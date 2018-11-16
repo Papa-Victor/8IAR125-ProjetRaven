@@ -6,7 +6,7 @@
 
 
 Trigger_TeamWeaponGiver::Trigger_TeamWeaponGiver(Vector2D pos, Raven_Bot* pBot) 
-	: Trigger<Raven_Bot>(BaseGameEntity::GetNextValidID())
+	: Trigger<Raven_Bot>(BaseGameEntity::GetNextValidID(), pBot->GetTeam())
 {
 	SetPos(pos);
 	SetBRadius(m_radius);

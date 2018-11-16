@@ -1,4 +1,16 @@
-﻿  TeamManager.cpp
-c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\teammanager.cpp(104): warning C4018: '<': signed/unsigned mismatch
-c:\users\utilisateur\documents\gitkraken\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\teammanager.cpp(80): warning C4715: 'TeamManager::GetDroppedWeaponPosition': not all control paths return a value
-  Raven.vcxproj -> C:\Users\Utilisateur\Documents\GitKraken\8IAR125-ProjetRaven\VS2015\Buckland_Chapter7 to 10_Raven\.\Debug\Raven.exe
+﻿  Raven_PathPlanner.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Raven_Feature.cpp
+  Goal_TraverseEdge.cpp
+  Goal_SeekToPosition.cpp
+  Goal_NegotiateDoor.cpp
+  Goal_MoveToPosition.cpp
+  Goal_GetItem.cpp
+  Goal_FollowPath.cpp
+  Goal_Explore.cpp
+  ExploreGoal_Evaluator.cpp
+  Trigger_TeamWeaponGiver.cpp
+  Raven_Game.cpp
+  Raven_Bot.cpp
+  Raven.vcxproj -> C:\Users\Utilisateur\Documents\GitHub\8IAR125-ProjetRaven\VS2015\Buckland_Chapter7 to 10_Raven\.\Debug\Raven.exe

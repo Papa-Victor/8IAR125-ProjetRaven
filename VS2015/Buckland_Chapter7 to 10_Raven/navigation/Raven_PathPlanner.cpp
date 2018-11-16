@@ -88,8 +88,10 @@ double Raven_PathPlanner::GetCostToClosestItem(unsigned int GiverType)const
   //type GiverType
   Raven_Map::TriggerSystem::TriggerList triggers = m_pOwner->GetWorld()->GetMap()->GetTriggers();
 
-  if (m_pOwner->GetTeam() != NULL) {
-	  Raven_Map::TriggerSystem::TriggerList teamTriggers = m_pOwner->GetTeam()->GetDroppedWeapons();
+  Team* botTeam = m_pOwner->GetTeam();
+  if (botTeam != NULL) {
+	  Raven_Map::TriggerSystem::TriggerList teamTriggers = botTeam->GetDroppedWeapons();
+	  int size = teamTriggers.size();
 	  for (Raven_Map::TriggerSystem::TriggerList::iterator it = teamTriggers.begin(); it != teamTriggers.end(); it++) {
 		  triggers.push_back(*it);
 	  }
@@ -445,6 +447,7 @@ bool Raven_PathPlanner::RequestPathToItem(unsigned int ItemType)
   typedef Graph_SearchDijkstras_TS<Raven_Map::NavGraph, t_con> DijSearch;
   
   m_pCurrentSearch = new DijSearch(m_NavGraph,
+								   m_pOwner->GetTeam(),
                                    ClosestNodeToBot,
                                    ItemType);  
 

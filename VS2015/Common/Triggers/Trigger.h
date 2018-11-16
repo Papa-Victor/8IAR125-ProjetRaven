@@ -13,6 +13,8 @@
 #include "game/BaseGameEntity.h"
 #include "TriggerRegion.h"
 
+class Team;
+
 struct Telegram;
 struct Vector2D;
 
@@ -39,6 +41,8 @@ private:
   int            m_iGraphNodeIndex;
 
 protected:
+
+  Team* m_Team;
   
   void SetGraphNodeIndex(int idx){m_iGraphNodeIndex = idx;}
 
@@ -60,11 +64,23 @@ public:
                            m_bRemoveFromGame(false),
                            m_bActive(true),
                            m_iGraphNodeIndex(-1),
-                           m_pRegionOfInfluence(NULL)
+                           m_pRegionOfInfluence(NULL),
+						   m_Team(NULL)
                            
   {}
 
+  Trigger(unsigned int id, Team* team) :BaseGameEntity(id),
+										m_bRemoveFromGame(false),
+										m_bActive(true),
+										m_iGraphNodeIndex(-1),
+										m_pRegionOfInfluence(NULL),
+										m_Team(team)
+
+  {}
+
   virtual ~Trigger(){delete m_pRegionOfInfluence;}
+
+  Team* GetTeam() { return m_Team; }
 
   //when this is called the trigger determines if the entity is within the
   //trigger's region of influence. If it is then the trigger will be 

@@ -10,8 +10,6 @@ class Trigger_TeamWeaponGiver : public Trigger<Raven_Bot>
 private:
 	const double m_radius = 7;
 
-	Team* m_Team;
-
 	//vrtex buffers for rocket shape
 	std::vector<Vector2D>         m_vecRLVB;
 	std::vector<Vector2D>         m_vecRLVBTrans;
