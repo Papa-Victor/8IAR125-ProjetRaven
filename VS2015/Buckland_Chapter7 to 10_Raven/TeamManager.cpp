@@ -46,6 +46,15 @@ void TeamManager::NewWorldBot(Raven_Bot * addedBot)
 	}
 }
 
+void TeamManager::BotWorldRemoval(Raven_Bot * bot)
+{
+	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+		if (*curTeam != NULL && (*curTeam)->BotInTeam(bot)) {
+			(*curTeam)->RemoveBot(bot);
+		}
+	}
+}
+
 Vector2D TeamManager::GetDroppedWeaponPosition(int team, int weaponType)
 {
 	switch (team) {

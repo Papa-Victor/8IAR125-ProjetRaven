@@ -109,6 +109,7 @@ PUBLIC	?Instance@TeamManager@@SAPAV1@PAVRaven_Game@@@Z	; TeamManager::Instance
 PUBLIC	?AddBot@TeamManager@@QAEXW4teams@@PAVRaven_Bot@@@Z ; TeamManager::AddBot
 PUBLIC	?RemoveBot@TeamManager@@QAEXW4teams@@PAVRaven_Bot@@@Z ; TeamManager::RemoveBot
 PUBLIC	?NewWorldBot@TeamManager@@QAEXPAVRaven_Bot@@@Z	; TeamManager::NewWorldBot
+PUBLIC	?BotWorldRemoval@TeamManager@@QAEXPAVRaven_Bot@@@Z ; TeamManager::BotWorldRemoval
 PUBLIC	?GetDroppedWeaponPosition@TeamManager@@QAE?AUVector2D@@HH@Z ; TeamManager::GetDroppedWeaponPosition
 PUBLIC	?TryDroppedWeapons@TeamManager@@QAEXV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z ; TeamManager::TryDroppedWeapons
 PUBLIC	?RenderDroppedWeapons@TeamManager@@QAEXXZ	; TeamManager::RenderDroppedWeapons
@@ -5106,7 +5107,7 @@ _bot$ = 8						; size = 4
 ?OnBotDeath@TeamManager@@QAEXPAVRaven_Bot@@@Z PROC	; TeamManager::OnBotDeath
 ; _this$ = ecx
 
-; 102  : {
+; 111  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -5121,8 +5122,8 @@ _bot$ = 8						; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 103  : 	Team* curTeam;
-; 104  : 	for (int i = 0; i < m_Teams.size(); i++) {
+; 112  : 	Team* curTeam;
+; 113  : 	for (int i = 0; i < m_Teams.size(); i++) {
 
 	mov	DWORD PTR _i$4[ebp], 0
 	jmp	SHORT $LN4@OnBotDeath
@@ -5137,7 +5138,7 @@ $LN4@OnBotDeath:
 	cmp	DWORD PTR _i$4[ebp], eax
 	jae	$LN1@OnBotDeath
 
-; 105  : 		curTeam = m_Teams[i];
+; 114  : 		curTeam = m_Teams[i];
 
 	mov	ecx, DWORD PTR _i$4[ebp]
 	push	ecx
@@ -5147,12 +5148,12 @@ $LN4@OnBotDeath:
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR _curTeam$[ebp], edx
 
-; 106  : 		if (curTeam != NULL) {
+; 115  : 		if (curTeam != NULL) {
 
 	cmp	DWORD PTR _curTeam$[ebp], 0
 	je	$LN5@OnBotDeath
 
-; 107  : 			if (curTeam->BotInTeam(bot)) {
+; 116  : 			if (curTeam->BotInTeam(bot)) {
 
 	mov	eax, DWORD PTR _bot$[ebp]
 	push	eax
@@ -5162,7 +5163,7 @@ $LN4@OnBotDeath:
 	test	ecx, ecx
 	je	$LN6@OnBotDeath
 
-; 108  : 				curTeam->AddDroppedWeapon(type_shotgun, GetDroppedWeaponPosition(i, type_shotgun), game->GetMap()->GetNavGraph(), bot);
+; 117  : 				curTeam->AddDroppedWeapon(type_shotgun, GetDroppedWeaponPosition(i, type_shotgun), game->GetMap()->GetNavGraph(), bot);
 
 	mov	edx, DWORD PTR _bot$[ebp]
 	push	edx
@@ -5193,7 +5194,7 @@ $LN4@OnBotDeath:
 	mov	ecx, DWORD PTR _curTeam$[ebp]
 	call	?AddDroppedWeapon@Team@@QAEXHUVector2D@@AAV?$SparseGraph@V?$NavGraphNode@PAV?$Trigger@VRaven_Bot@@@@@@VNavGraphEdge@@@@PAVRaven_Bot@@@Z ; Team::AddDroppedWeapon
 
-; 109  : 				curTeam->AddDroppedWeapon(type_rocket_launcher, GetDroppedWeaponPosition(i, type_rocket_launcher), game->GetMap()->GetNavGraph(), bot);
+; 118  : 				curTeam->AddDroppedWeapon(type_rocket_launcher, GetDroppedWeaponPosition(i, type_rocket_launcher), game->GetMap()->GetNavGraph(), bot);
 
 	mov	ecx, DWORD PTR _bot$[ebp]
 	push	ecx
@@ -5224,7 +5225,7 @@ $LN4@OnBotDeath:
 	mov	ecx, DWORD PTR _curTeam$[ebp]
 	call	?AddDroppedWeapon@Team@@QAEXHUVector2D@@AAV?$SparseGraph@V?$NavGraphNode@PAV?$Trigger@VRaven_Bot@@@@@@VNavGraphEdge@@@@PAVRaven_Bot@@@Z ; Team::AddDroppedWeapon
 
-; 110  : 				curTeam->AddDroppedWeapon(type_rail_gun, GetDroppedWeaponPosition(i, type_rail_gun), game->GetMap()->GetNavGraph(), bot);
+; 119  : 				curTeam->AddDroppedWeapon(type_rail_gun, GetDroppedWeaponPosition(i, type_rail_gun), game->GetMap()->GetNavGraph(), bot);
 
 	mov	ecx, DWORD PTR _bot$[ebp]
 	push	ecx
@@ -5256,8 +5257,8 @@ $LN4@OnBotDeath:
 	call	?AddDroppedWeapon@Team@@QAEXHUVector2D@@AAV?$SparseGraph@V?$NavGraphNode@PAV?$Trigger@VRaven_Bot@@@@@@VNavGraphEdge@@@@PAVRaven_Bot@@@Z ; Team::AddDroppedWeapon
 $LN6@OnBotDeath:
 
-; 111  : 			}
-; 112  : 			curTeam->CheckDeadBot(bot);
+; 120  : 			}
+; 121  : 			curTeam->CheckDeadBot(bot);
 
 	mov	esi, esp
 	mov	ecx, DWORD PTR _bot$[ebp]
@@ -5271,15 +5272,15 @@ $LN6@OnBotDeath:
 	call	__RTC_CheckEsp
 $LN5@OnBotDeath:
 
-; 113  : 
-; 114  : 		}
-; 115  : 
-; 116  : 	}
+; 122  : 
+; 123  : 		}
+; 124  : 
+; 125  : 	}
 
 	jmp	$LN2@OnBotDeath
 $LN1@OnBotDeath:
 
-; 117  : }
+; 126  : }
 
 	pop	edi
 	pop	esi
@@ -5301,7 +5302,7 @@ _this$ = -4						; size = 4
 ?RenderDroppedWeapons@TeamManager@@QAEXXZ PROC		; TeamManager::RenderDroppedWeapons
 ; _this$ = ecx
 
-; 92   : {
+; 101  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -5315,7 +5316,7 @@ _this$ = -4						; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 93   : 	for (std::array<Team*, 3>::iterator it = m_Teams.begin(); it != m_Teams.end(); it++) {
+; 102  : 	for (std::array<Team*, 3>::iterator it = m_Teams.begin(); it != m_Teams.end(); it++) {
 
 	lea	eax, DWORD PTR _it$3[ebp]
 	push	eax
@@ -5342,14 +5343,14 @@ $LN4@RenderDrop:
 	test	eax, eax
 	je	SHORT $LN1@RenderDrop
 
-; 94   : 		if (*it != NULL) {
+; 103  : 		if (*it != NULL) {
 
 	lea	ecx, DWORD PTR _it$3[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
 	cmp	DWORD PTR [eax], 0
 	je	SHORT $LN5@RenderDrop
 
-; 95   : 			(*it)->RenderDroppedWeapons();
+; 104  : 			(*it)->RenderDroppedWeapons();
 
 	lea	ecx, DWORD PTR _it$3[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
@@ -5357,13 +5358,13 @@ $LN4@RenderDrop:
 	call	?RenderDroppedWeapons@Team@@QAEXXZ	; Team::RenderDroppedWeapons
 $LN5@RenderDrop:
 
-; 96   : 		}
-; 97   : 	}
+; 105  : 		}
+; 106  : 	}
 
 	jmp	SHORT $LN2@RenderDrop
 $LN1@RenderDrop:
 
-; 98   : }
+; 107  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -5407,7 +5408,7 @@ _botList$ = 8						; size = 12
 ?TryDroppedWeapons@TeamManager@@QAEXV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z PROC ; TeamManager::TryDroppedWeapons
 ; _this$ = ecx
 
-; 83   : {
+; 92   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -5431,7 +5432,7 @@ _botList$ = 8						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 84   : 	for (std::array<Team*, 3>::iterator it = m_Teams.begin(); it != m_Teams.end(); it++) {
+; 93   : 	for (std::array<Team*, 3>::iterator it = m_Teams.begin(); it != m_Teams.end(); it++) {
 
 	lea	eax, DWORD PTR _it$5[ebp]
 	push	eax
@@ -5458,14 +5459,14 @@ $LN4@TryDropped:
 	test	eax, eax
 	je	SHORT $LN3@TryDropped
 
-; 85   : 		if (*it != NULL) {
+; 94   : 		if (*it != NULL) {
 
 	lea	ecx, DWORD PTR _it$5[ebp]
 	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
 	cmp	DWORD PTR [eax], 0
 	je	SHORT $LN5@TryDropped
 
-; 86   : 			(*it)->TryDroppedWeapons(botList);
+; 95   : 			(*it)->TryDroppedWeapons(botList);
 
 	sub	esp, 12					; 0000000cH
 	mov	ecx, esp
@@ -5482,13 +5483,13 @@ $LN4@TryDropped:
 	call	?TryDroppedWeapons@Team@@QAEXV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z ; Team::TryDroppedWeapons
 $LN5@TryDropped:
 
-; 87   : 		}
-; 88   : 	}
+; 96   : 		}
+; 97   : 	}
 
 	jmp	SHORT $LN2@TryDropped
 $LN3@TryDropped:
 
-; 89   : }
+; 98   : }
 
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	lea	ecx, DWORD PTR _botList$[ebp]
@@ -5554,7 +5555,7 @@ _weaponType$ = 16					; size = 4
 ?GetDroppedWeaponPosition@TeamManager@@QAE?AUVector2D@@HH@Z PROC ; TeamManager::GetDroppedWeaponPosition
 ; _this$ = ecx
 
-; 50   : {
+; 59   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -5567,7 +5568,7 @@ _weaponType$ = 16					; size = 4
 	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 51   : 	switch (team) {
+; 60   : 	switch (team) {
 
 	mov	eax, DWORD PTR _team$[ebp]
 	mov	DWORD PTR tv64[ebp], eax
@@ -5580,8 +5581,8 @@ _weaponType$ = 16					; size = 4
 	jmp	$LN2@GetDropped
 $LN10@GetDropped:
 
-; 52   : 	case teams::RED:
-; 53   : 		switch (weaponType) {
+; 61   : 	case teams::RED:
+; 62   : 		switch (weaponType) {
 
 	mov	ecx, DWORD PTR _weaponType$[ebp]
 	mov	DWORD PTR tv65[ebp], ecx
@@ -5594,8 +5595,8 @@ $LN10@GetDropped:
 	jmp	$LN4@GetDropped
 $LN11@GetDropped:
 
-; 54   : 		case type_shotgun:
-; 55   : 			return Vector2D(150, 20);
+; 63   : 		case type_shotgun:
+; 64   : 			return Vector2D(150, 20);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4034000000000000
@@ -5609,8 +5610,8 @@ $LN11@GetDropped:
 	jmp	$LN2@GetDropped
 $LN12@GetDropped:
 
-; 56   : 		case type_rocket_launcher:
-; 57   : 			return Vector2D(130, 20);
+; 65   : 		case type_rocket_launcher:
+; 66   : 			return Vector2D(130, 20);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4034000000000000
@@ -5624,8 +5625,8 @@ $LN12@GetDropped:
 	jmp	$LN2@GetDropped
 $LN13@GetDropped:
 
-; 58   : 		case type_rail_gun:
-; 59   : 			return Vector2D(150, 40);
+; 67   : 		case type_rail_gun:
+; 68   : 			return Vector2D(150, 40);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4044000000000000
@@ -5639,9 +5640,9 @@ $LN13@GetDropped:
 	jmp	$LN2@GetDropped
 $LN4@GetDropped:
 
-; 60   : 		}
-; 61   : 	case teams::BLUE:
-; 62   : 		switch (weaponType) {
+; 69   : 		}
+; 70   : 	case teams::BLUE:
+; 71   : 		switch (weaponType) {
 
 	mov	edx, DWORD PTR _weaponType$[ebp]
 	mov	DWORD PTR tv78[ebp], edx
@@ -5654,8 +5655,8 @@ $LN4@GetDropped:
 	jmp	$LN6@GetDropped
 $LN15@GetDropped:
 
-; 63   : 		case type_shotgun:
-; 64   : 			return Vector2D(342, 40);
+; 72   : 		case type_shotgun:
+; 73   : 			return Vector2D(342, 40);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4044000000000000
@@ -5669,8 +5670,8 @@ $LN15@GetDropped:
 	jmp	$LN2@GetDropped
 $LN16@GetDropped:
 
-; 65   : 		case type_rocket_launcher:
-; 66   : 			return Vector2D(360, 40);
+; 74   : 		case type_rocket_launcher:
+; 75   : 			return Vector2D(360, 40);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4044000000000000
@@ -5684,8 +5685,8 @@ $LN16@GetDropped:
 	jmp	$LN2@GetDropped
 $LN17@GetDropped:
 
-; 67   : 		case type_rail_gun:
-; 68   : 			return Vector2D(378, 42);
+; 76   : 		case type_rail_gun:
+; 77   : 			return Vector2D(378, 42);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4045000000000000
@@ -5699,9 +5700,9 @@ $LN17@GetDropped:
 	jmp	$LN2@GetDropped
 $LN6@GetDropped:
 
-; 69   : 		}
-; 70   : 	case teams::GREEN:
-; 71   : 		switch (weaponType) {
+; 78   : 		}
+; 79   : 	case teams::GREEN:
+; 80   : 		switch (weaponType) {
 
 	mov	eax, DWORD PTR _weaponType$[ebp]
 	mov	DWORD PTR tv91[ebp], eax
@@ -5714,8 +5715,8 @@ $LN6@GetDropped:
 	jmp	$LN8@GetDropped
 $LN19@GetDropped:
 
-; 72   : 		case type_shotgun:
-; 73   : 			return Vector2D(470, 180);
+; 81   : 		case type_shotgun:
+; 82   : 			return Vector2D(470, 180);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4066800000000000
@@ -5729,8 +5730,8 @@ $LN19@GetDropped:
 	jmp	SHORT $LN2@GetDropped
 $LN20@GetDropped:
 
-; 74   : 		case type_rocket_launcher:
-; 75   : 			return Vector2D(470, 165);
+; 83   : 		case type_rocket_launcher:
+; 84   : 			return Vector2D(470, 165);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4064a00000000000
@@ -5744,8 +5745,8 @@ $LN20@GetDropped:
 	jmp	SHORT $LN2@GetDropped
 $LN21@GetDropped:
 
-; 76   : 		case type_rail_gun:
-; 77   : 			return Vector2D(470, 150);
+; 85   : 		case type_rail_gun:
+; 86   : 			return Vector2D(470, 150);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4062c00000000000
@@ -5759,9 +5760,9 @@ $LN21@GetDropped:
 $LN8@GetDropped:
 $LN2@GetDropped:
 
-; 78   : 		}
-; 79   : 	}
-; 80   : }
+; 87   : 		}
+; 88   : 	}
+; 89   : }
 
 	add	esp, 20					; 00000014H
 	cmp	ebp, esp
@@ -5770,6 +5771,136 @@ $LN2@GetDropped:
 	pop	ebp
 	ret	12					; 0000000cH
 ?GetDroppedWeaponPosition@TeamManager@@QAE?AUVector2D@@HH@Z ENDP ; TeamManager::GetDroppedWeaponPosition
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\teammanager.cpp
+_TEXT	SEGMENT
+tv133 = -64						; size = 4
+$T1 = -60						; size = 16
+$T2 = -44						; size = 16
+_curTeam$3 = -24					; size = 16
+_this$ = -4						; size = 4
+_bot$ = 8						; size = 4
+?BotWorldRemoval@TeamManager@@QAEXPAVRaven_Bot@@@Z PROC	; TeamManager::BotWorldRemoval
+; _this$ = ecx
+
+; 50   : {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 64					; 00000040H
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-64]
+	mov	ecx, 16					; 00000010H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 51   : 	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+
+	lea	eax, DWORD PTR _curTeam$3[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
+	call	?begin@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::begin
+	jmp	SHORT $LN4@BotWorldRe
+$LN2@BotWorldRe:
+	push	0
+	lea	ecx, DWORD PTR $T2[ebp]
+	push	ecx
+	lea	ecx, DWORD PTR _curTeam$3[ebp]
+	call	??E?$_Array_iterator@PAVTeam@@$02@std@@QAE?AV01@H@Z ; std::_Array_iterator<Team *,3>::operator++
+$LN4@BotWorldRe:
+	lea	edx, DWORD PTR $T1[ebp]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 4
+	call	?end@?$array@PAVTeam@@$02@std@@QAE?AV?$_Array_iterator@PAVTeam@@$02@2@XZ ; std::array<Team *,3>::end
+	push	eax
+	lea	ecx, DWORD PTR _curTeam$3[ebp]
+	call	??9?$_Array_const_iterator@PAVTeam@@$02@std@@QBE_NABV01@@Z ; std::_Array_const_iterator<Team *,3>::operator!=
+	movzx	eax, al
+	test	eax, eax
+	je	SHORT $LN1@BotWorldRe
+
+; 52   : 		if (*curTeam != NULL && (*curTeam)->BotInTeam(bot)) {
+
+	lea	ecx, DWORD PTR _curTeam$3[ebp]
+	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
+	cmp	DWORD PTR [eax], 0
+	je	SHORT $LN5@BotWorldRe
+	mov	ecx, DWORD PTR _bot$[ebp]
+	push	ecx
+	lea	ecx, DWORD PTR _curTeam$3[ebp]
+	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
+	mov	ecx, DWORD PTR [eax]
+	call	?BotInTeam@Team@@QBE_NPBVRaven_Bot@@@Z	; Team::BotInTeam
+	movzx	edx, al
+	test	edx, edx
+	je	SHORT $LN5@BotWorldRe
+
+; 53   : 			(*curTeam)->RemoveBot(bot);
+
+	lea	ecx, DWORD PTR _curTeam$3[ebp]
+	call	??D?$_Array_iterator@PAVTeam@@$02@std@@QBEAAPAVTeam@@XZ ; std::_Array_iterator<Team *,3>::operator*
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv133[ebp], eax
+	mov	esi, esp
+	mov	ecx, DWORD PTR _bot$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv133[ebp]
+	mov	eax, DWORD PTR [edx]
+	mov	ecx, DWORD PTR tv133[ebp]
+	mov	edx, DWORD PTR [eax+8]
+	call	edx
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN5@BotWorldRe:
+
+; 54   : 		}
+; 55   : 	}
+
+	jmp	SHORT $LN2@BotWorldRe
+$LN1@BotWorldRe:
+
+; 56   : }
+
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN9@BotWorldRe
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	pop	edi
+	pop	esi
+	add	esp, 64					; 00000040H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	npad	3
+$LN9@BotWorldRe:
+	DD	1
+	DD	$LN8@BotWorldRe
+$LN8@BotWorldRe:
+	DD	-24					; ffffffe8H
+	DD	16					; 00000010H
+	DD	$LN7@BotWorldRe
+$LN7@BotWorldRe:
+	DB	99					; 00000063H
+	DB	117					; 00000075H
+	DB	114					; 00000072H
+	DB	84					; 00000054H
+	DB	101					; 00000065H
+	DB	97					; 00000061H
+	DB	109					; 0000006dH
+	DB	0
+?BotWorldRemoval@TeamManager@@QAEXPAVRaven_Bot@@@Z ENDP	; TeamManager::BotWorldRemoval
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\users\utilisateur\documents\github\8iar125-projetraven\vs2015\buckland_chapter7 to 10_raven\teammanager.cpp

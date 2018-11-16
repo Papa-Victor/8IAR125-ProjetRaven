@@ -36,6 +36,7 @@ public:
 	void AddBot(teams colour, Raven_Bot* bot);
 	void RemoveBot(teams colour, Raven_Bot* bot);
 	void NewWorldBot(Raven_Bot* addedBot);
+	void BotWorldRemoval(Raven_Bot* bot);
 
 	Vector2D GetDroppedWeaponPosition(int team, int weaponType);
 	void TryDroppedWeapons(std::list<Raven_Bot*> botList);

@@ -194,6 +194,7 @@ void Raven_Game::Update()
 	  m_Bots.pop_back();
       if (pBot == m_pSelectedBot)m_pSelectedBot=0;
 	  m_pTeamManager->OnBotDeath(pBot);
+	  m_pTeamManager->BotWorldRemoval(pBot);
       NotifyAllBotsOfRemoval(pBot);
 	  delete pBot;
 
