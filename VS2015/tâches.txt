@@ -4,4 +4,4 @@ William : a,b, règles floues.
 
 Marc-Antoine: c, e, joueur humain et esquive.
 
-Vincent: f, équipe. e.3)
+Vincent: f(done), équipe. e.3(done)
