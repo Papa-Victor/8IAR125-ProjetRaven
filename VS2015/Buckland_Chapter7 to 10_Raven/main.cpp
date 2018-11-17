@@ -13,6 +13,7 @@
 #include "lua/Raven_Scriptor.h"
 #include "TeamManager.h"
 #include "Random_Single_Target_Team.h"
+#include "Normal_Leader_Single_Target_Team.h"
 
 
 //need to include this for the toolbar stuff
@@ -336,10 +337,18 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 
 	//---------------------------------------------------RED TEAM-----------------------------------------
 	  case ID_CREATE_RANDOMSINGLETARGET_RED:
-		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::RED);
+		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::RED, g_pRaven);
 		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_ENABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_ENABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_NORMALLEADERSINGLETARGET_RED:
+		  g_pRaven->GetTeamManager()->AddTeam<Normal_Leader_Single_Target_Team>(teams::RED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDLEADER, MF_ENABLED);
 		  break;
 	  
 	  case ID_REDTEAM_REMOVETEAM:
@@ -347,6 +356,7 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_DISABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_DISABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDLEADER, MF_DISABLED);
 		  break;
 
 	  case ID_REDTEAM_ADDBOT:
@@ -356,12 +366,24 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 	  case ID_REDTEAM_REMOVEBOT:
 		  g_pRaven->GetTeamManager()->RemoveBot(teams::RED, g_pRaven->GetSelectedBot());
 		  break;
+
+	  case ID_REDTEAM_ADDLEADER:
+		  g_pRaven->GetTeamManager()->SetLeader(teams::RED, g_pRaven->GetSelectedBot());
+		  break;
 	//---------------------------------------------------BLUE TEAM----------------------------------------
 	  case ID_CREATE_RANDOMSINGLETARGET_BLUE:
-		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::BLUE);
+		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::BLUE, g_pRaven);
 		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_ENABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_ENABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_NORMALLEADERSINGLETARGET_BLUE:
+		  g_pRaven->GetTeamManager()->AddTeam<Normal_Leader_Single_Target_Team>(teams::BLUE);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDLEADER, MF_ENABLED);
 		  break;
 
 	  case ID_BLUETEAM_REMOVETEAM:
@@ -369,6 +391,7 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_DISABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_DISABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDLEADER, MF_DISABLED);
 		  break;
 
 	  case ID_BLUETEAM_ADDBOT:
@@ -378,12 +401,24 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 	  case ID_BLUETEAM_REMOVEBOT:
 		  g_pRaven->GetTeamManager()->RemoveBot(teams::BLUE, g_pRaven->GetSelectedBot());
 		  break;
+
+	  case ID_BLUETEAM_ADDLEADER:
+		  g_pRaven->GetTeamManager()->SetLeader(teams::BLUE, g_pRaven->GetSelectedBot());
+		  break;
 	//--------------------------------------------------GREEN TEAM----------------------------------------
 	  case ID_CREATE_RANDOMSINGLETARGET_GREEN:
-		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::GREEN);
+		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::GREEN, g_pRaven);
 		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_ENABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_ENABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_NORMALLEADERSINGLETARGET_GREEN:
+		  g_pRaven->GetTeamManager()->AddTeam<Normal_Leader_Single_Target_Team>(teams::GREEN);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDLEADER, MF_ENABLED);
 		  break;
 
 	  case ID_GREENTEAM_REMOVETEAM:
@@ -391,6 +426,7 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_DISABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_DISABLED);
 		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDLEADER, MF_DISABLED);
 		  break;
 
 	  case ID_GREENTEAM_ADDBOT:
@@ -399,6 +435,10 @@ LRESULT CALLBACK WindowProc (HWND   hwnd,
 
 	  case ID_GREENTEAM_REMOVEBOT:
 		  g_pRaven->GetTeamManager()->RemoveBot(teams::GREEN, g_pRaven->GetSelectedBot());
+		  break;
+
+	  case ID_GREENTEAM_ADDLEADER:
+		  g_pRaven->GetTeamManager()->SetLeader(teams::GREEN, g_pRaven->GetSelectedBot());
 		  break;
       }//end switch
     }

@@ -1,4 +1,7 @@
 Nicholas et Nicholas : d, réseau neuronal.
+
 William : a,b, règles floues.
+
 Marc-Antoine: c, e, joueur humain et esquive.
-Vincent: f, équipe.
+
+Vincent: f, équipe. e.3)

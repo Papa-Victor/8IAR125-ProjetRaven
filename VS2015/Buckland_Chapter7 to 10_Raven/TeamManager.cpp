@@ -55,6 +55,20 @@ void TeamManager::BotWorldRemoval(Raven_Bot * bot)
 	}
 }
 
+void TeamManager::UpdateTargetting()
+{
+	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+		if (*curTeam != NULL) {
+			(*curTeam)->UpdateTargetting();
+		}
+	}
+}
+
+void TeamManager::SetLeader(teams team, Raven_Bot * bot)
+{
+	m_Teams[team]->SetLeader(bot);
+}
+
 Vector2D TeamManager::GetDroppedWeaponPosition(int team, int weaponType)
 {
 	switch (team) {

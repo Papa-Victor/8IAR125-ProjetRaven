@@ -34,6 +34,8 @@ public:
 	virtual void RemoveBot(Raven_Bot* bot) = 0;
 	virtual void CheckDeadBot(const Raven_Bot* bot){}
 	virtual void NewWorldBot(const Raven_Bot* bot){}
+	virtual void SetLeader(Raven_Bot* bot) {}
+	virtual void UpdateTargetting(){}
 
 };
 #endif // !TEAM_H

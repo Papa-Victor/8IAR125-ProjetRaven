@@ -147,6 +147,9 @@ void Raven_Game::Update()
     }   
   }
   
+  //update the teams
+  m_pTeamManager->UpdateTargetting();
+
   //update the bots
   bool bSpawnPossible = true;
   

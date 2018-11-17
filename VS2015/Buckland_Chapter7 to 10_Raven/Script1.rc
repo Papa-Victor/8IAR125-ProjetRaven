@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Anglais (États-Unis) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -61,30 +61,36 @@ BEGIN
             POPUP "Create/Modify Team"
             BEGIN
                 MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_RED
+                MENUITEM "Normal Leader Single Target", ID_CREATE_NORMALLEADERSINGLETARGET_RED
             END
             MENUITEM "Remove Team",                 ID_REDTEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_REDTEAM_ADDBOT, INACTIVE
             MENUITEM "Remove Bot",                  ID_REDTEAM_REMOVEBOT, INACTIVE
+            MENUITEM "Set Leader",                  ID_REDTEAM_ADDLEADER, INACTIVE
         END
         POPUP "Blue Team"
         BEGIN
             POPUP "Create/Modify Team"
             BEGIN
                 MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_BLUE
+                MENUITEM "Normal Leader Single Target", ID_CREATE_NORMALLEADERSINGLETARGET_BLUE
             END
             MENUITEM "Remove Team",                 ID_BLUETEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_BLUETEAM_ADDBOT, INACTIVE
             MENUITEM "Remove Bot",                  ID_BLUETEAM_REMOVEBOT, INACTIVE
+            MENUITEM "Set Leader",                  ID_BLUETEAM_ADDLEADER, INACTIVE
         END
         POPUP "Green Team"
         BEGIN
             POPUP "Create/Modify Team"
             BEGIN
                 MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_GREEN
+                MENUITEM "Normal Leader Single Target", ID_CREATE_NORMALLEADERSINGLETARGET_GREEN
             END
             MENUITEM "Remove Team",                 ID_GREENTEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_GREENTEAM_ADDBOT, INACTIVE
             MENUITEM "Remove Bot",                  ID_GREENTEAM_REMOVEBOT, INACTIVE
+            MENUITEM "Set Leader",                  ID_GREENTEAM_ADDLEADER, INACTIVE
         END
     END
 END
@@ -154,7 +160,7 @@ BEGIN
     END
 END
 
-#endif    // Anglais (États-Unis) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
