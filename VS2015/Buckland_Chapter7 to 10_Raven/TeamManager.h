@@ -42,6 +42,8 @@ public:
 	void UpdateTargetting();
 	void SetLeader(teams team, Raven_Bot* bot);
 
+	void RenderTeamCircles();
+
 	Vector2D GetDroppedWeaponPosition(int team, int weaponType);
 	void TryDroppedWeapons(std::list<Raven_Bot*> botList);
 	void RenderDroppedWeapons();

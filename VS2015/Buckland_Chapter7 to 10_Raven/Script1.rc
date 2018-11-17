@@ -62,6 +62,7 @@ BEGIN
             BEGIN
                 MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_RED
                 MENUITEM "Normal Leader Single Target", ID_CREATE_NORMALLEADERSINGLETARGET_RED
+                MENUITEM "Brain Leader Single Target",  ID_CREATE_BRAINLEADERSINGLETARGET_RED
             END
             MENUITEM "Remove Team",                 ID_REDTEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_REDTEAM_ADDBOT, INACTIVE
@@ -74,6 +75,7 @@ BEGIN
             BEGIN
                 MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_BLUE
                 MENUITEM "Normal Leader Single Target", ID_CREATE_NORMALLEADERSINGLETARGET_BLUE
+                MENUITEM "Brain Leader Single Target",  ID_CREATE_BRAINLEADERSINGLETARGET_BLUE
             END
             MENUITEM "Remove Team",                 ID_BLUETEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_BLUETEAM_ADDBOT, INACTIVE
@@ -86,6 +88,7 @@ BEGIN
             BEGIN
                 MENUITEM "Random Single Target",        ID_CREATE_RANDOMSINGLETARGET_GREEN
                 MENUITEM "Normal Leader Single Target", ID_CREATE_NORMALLEADERSINGLETARGET_GREEN
+                MENUITEM "Brain Leader Single Target",  ID_CREATE_BRAINLEADERSINGLETARGET_GREEN
             END
             MENUITEM "Remove Team",                 ID_GREENTEAM_REMOVETEAM, INACTIVE
             MENUITEM "Add Bot",                     ID_GREENTEAM_ADDBOT, INACTIVE

@@ -1,5 +1,15 @@
 #include "Normal_Leader_Single_Target_Team.h"
-#include "../Common/Time/Regulator.h"
+
+
+
+Normal_Leader_Single_Target_Team::~Normal_Leader_Single_Target_Team()
+{
+	m_currentTarget = NULL;
+	m_pLeader = NULL;
+	while (!m_teamBots.empty()) {
+		RemoveBot(m_teamBots.back());
+	}
+}
 
 void Normal_Leader_Single_Target_Team::AddBot(Raven_Bot * bot)
 {
@@ -19,7 +29,7 @@ void Normal_Leader_Single_Target_Team::RemoveBot(Raven_Bot * bot)
 	bot->SetTargetControl(true);
 	if (bot == m_pLeader) {
 		if (m_teamBots.size() != 0) {
-			SetLeader(*m_teamBots.begin());
+			SetLeader(m_teamBots.front());
 		}
 		else {
 			m_pLeader = NULL;
@@ -31,6 +41,9 @@ void Normal_Leader_Single_Target_Team::RemoveBot(Raven_Bot * bot)
 void Normal_Leader_Single_Target_Team::SetLeader(Raven_Bot * bot)
 {
 	if (bot != m_pLeader) {
+		if (m_pLeader != NULL) {
+			m_pLeader->SetTargetControl(false);
+		}
 		if (!BotInTeam(bot)) {
 			AddBot(bot);
 		}
@@ -40,18 +53,9 @@ void Normal_Leader_Single_Target_Team::SetLeader(Raven_Bot * bot)
 	}
 }
 
-void Normal_Leader_Single_Target_Team::GiveCurrentTarget()
-{
-	for (std::list<Raven_Bot*>::iterator it = m_teamBots.begin(); it != m_teamBots.end(); it++) {
-		if (*it != m_pLeader && (*it)->GetTargetSelectionRegulator()->isReady()) {
-			(*it)->GetTargetSys()->SetTarget(m_currentTarget);
-		}
-	}
-}
-
 void Normal_Leader_Single_Target_Team::UpdateTargetting()
 {
-	if (m_pLeader != NULL) {
+	if (m_pLeader != NULL && m_pLeader->GetTargetSelectionRegulator()->isReady()) {
 		m_currentTarget = m_pLeader->GetTargetSys()->GetTarget();
 		GiveCurrentTarget();
 	}

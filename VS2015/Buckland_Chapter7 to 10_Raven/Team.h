@@ -6,6 +6,8 @@
 #include "Game/EntityManager.h"
 #include <list>
 
+enum teams;
+
 typedef NavGraphNode<Trigger<Raven_Bot>*>         GraphNodeX;
 typedef SparseGraph<GraphNodeX, NavGraphEdge>      NavGraph;
 
@@ -27,6 +29,7 @@ public:
 
 	void AddDroppedWeapon(int weaponType, Vector2D pos, NavGraph& navGraph, Raven_Bot* pBot);
 	void TryDroppedWeapons(std::list<Raven_Bot*> botList);
+	void RenderTeamCircles(teams team);
 	void RenderDroppedWeapons();
 	Raven_Map::TriggerSystem::TriggerList& GetDroppedWeapons() { return m_DroppedWeapons; }
 
@@ -36,6 +39,7 @@ public:
 	virtual void NewWorldBot(const Raven_Bot* bot){}
 	virtual void SetLeader(Raven_Bot* bot) {}
 	virtual void UpdateTargetting(){}
+
 
 };
 #endif // !TEAM_H

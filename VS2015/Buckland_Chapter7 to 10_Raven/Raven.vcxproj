@@ -217,6 +217,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Brain_Leader_Single_Target_Team.cpp" />
     <ClCompile Include="main.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -540,6 +541,7 @@
     <ClCompile Include="Trigger_TeamWeaponGiver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Brain_Leader_Single_Target_Team.h" />
     <ClInclude Include="Leader_Single_Target_Team.h" />
     <ClInclude Include="Normal_Leader_Single_Target_Team.h" />
     <ClInclude Include="Random_Single_Target_Team.h" />

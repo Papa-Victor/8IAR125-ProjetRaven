@@ -289,6 +289,9 @@
     <ClCompile Include="Normal_Leader_Single_Target_Team.cpp">
       <Filter>Game\teams</Filter>
     </ClCompile>
+    <ClCompile Include="Brain_Leader_Single_Target_Team.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Raven_Bot.h">
@@ -648,6 +651,7 @@
     <ClInclude Include="Normal_Leader_Single_Target_Team.h">
       <Filter>Game\teams</Filter>
     </ClInclude>
+    <ClInclude Include="Brain_Leader_Single_Target_Team.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Params.lua">
