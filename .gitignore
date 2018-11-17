@@ -1,4 +1,13 @@
+# Visual Studio folders
 .vs/
 Debug/
 ipch/
 Release/
+
+# Visual Studio files
+*.VC.db
+*.suo
+*.user
+
+# Misc files (might be VS, dunno)
+*Log.txt
