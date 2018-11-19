@@ -8,6 +8,7 @@ Release/
 *.VC.db
 *.suo
 *.user
+*.aps
 
 # Misc files (might be VS, dunno)
 *Log.txt
