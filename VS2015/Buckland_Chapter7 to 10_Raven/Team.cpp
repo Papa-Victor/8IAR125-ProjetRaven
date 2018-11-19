@@ -1,6 +1,7 @@
 #include "Team.h"
 #include "Trigger_TeamWeaponGiver.h"
 #include "Raven_WeaponSystem.h"
+#include "TeamManager.h"
 
 bool Team::BotInTeam(Raven_Bot const *bot) const
 {
@@ -38,6 +39,30 @@ void Team::TryDroppedWeapons(std::list<Raven_Bot*> botList)
 		for (Raven_Map::TriggerSystem::TriggerList::iterator curTrigger = m_DroppedWeapons.begin(); curTrigger != m_DroppedWeapons.end(); curTrigger++) {
 			(*curTrigger)->Try(*curBot);
 		}
+	}
+}
+
+void Team::RenderTeamCircles(teams team)
+{
+	switch (team) {
+	case teams::RED:
+		gdi->ThickRedPen(); gdi->HollowBrush();
+		for (std::list<Raven_Bot*>::iterator curBot = m_teamBots.begin(); curBot != m_teamBots.end(); curBot++) {
+			gdi->Circle((*curBot)->Pos(), (*curBot)->BRadius() + 3);
+		}
+		break;
+	case teams::BLUE:
+		gdi->ThickBluePen(); gdi->HollowBrush();
+		for (std::list<Raven_Bot*>::iterator curBot = m_teamBots.begin(); curBot != m_teamBots.end(); curBot++) {
+			gdi->Circle((*curBot)->Pos(), (*curBot)->BRadius() + 3);
+		}
+		break;
+	case teams::GREEN:
+		gdi->ThickGreenPen(); gdi->HollowBrush();
+		for (std::list<Raven_Bot*>::iterator curBot = m_teamBots.begin(); curBot != m_teamBots.end(); curBot++) {
+			gdi->Circle((*curBot)->Pos(), (*curBot)->BRadius() + 3);
+		}
+		break;
 	}
 }
 

@@ -171,6 +171,8 @@ public:
   void          SetDead(){m_Status = dead;}
   void          SetAlive(){m_Status = alive;}
 
+  Regulator*	GetTargetSelectionRegulator() { return m_pTargetSelectionRegulator; }
+
   //returns a value indicating the time in seconds it will take the bot
   //to reach the given position at its current speed.
   double        CalculateTimeToReachPosition(Vector2D pos)const; 

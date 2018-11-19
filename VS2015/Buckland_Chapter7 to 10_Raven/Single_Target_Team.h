@@ -8,7 +8,7 @@ class Single_Target_Team : public Team
 protected:
 	Raven_Bot* m_currentTarget;
 
-	void GiveCurrentTarget();
+	virtual void GiveCurrentTarget();
 
 	virtual void DetermineTarget() = 0;
 

@@ -13,6 +13,8 @@
 #include "lua/Raven_Scriptor.h"
 #include "TeamManager.h"
 #include "Random_Single_Target_Team.h"
+#include "Normal_Leader_Single_Target_Team.h"
+#include "Brain_Leader_Single_Target_Team.h"
 
 
 //need to include this for the toolbar stuff
@@ -307,20 +309,15 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 		case IDM_BOTS_SHOW_TARGET:
 
 			UserOptions->m_bShowTargetOfSelectedBot = !UserOptions->m_bShowTargetOfSelectedBot;
-
 			CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_TARGET, UserOptions->m_bShowTargetOfSelectedBot);
-
 			break;
-
+			
 		case IDM_BOTS_SHOW_SENSED:
 
 			UserOptions->m_bShowOpponentsSensedBySelectedBot = !UserOptions->m_bShowOpponentsSensedBySelectedBot;
-
 			CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SENSED, UserOptions->m_bShowOpponentsSensedBySelectedBot);
-
 			break;
-
-
+			
 		case IDM_BOTS_SHOW_FOV:
 
 			UserOptions->m_bOnlyShowBotsInTargetsFOV = !UserOptions->m_bOnlyShowBotsInTargetsFOV;
@@ -328,6 +325,137 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 			CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_FOV, UserOptions->m_bOnlyShowBotsInTargetsFOV);
 
 			break;
+
+	//---------------------------------------------------RED TEAM-----------------------------------------
+	  case ID_CREATE_RANDOMSINGLETARGET_RED:
+		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::RED, g_pRaven);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_NORMALLEADERSINGLETARGET_RED:
+		  g_pRaven->GetTeamManager()->AddTeam<Normal_Leader_Single_Target_Team>(teams::RED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDLEADER, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_BRAINLEADERSINGLETARGET_RED:
+		  g_pRaven->GetTeamManager()->AddTeam<Brain_Leader_Single_Target_Team>(teams::RED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDLEADER, MF_ENABLED);
+		  break;
+	  
+	  case ID_REDTEAM_REMOVETEAM:
+		  g_pRaven->GetTeamManager()->RemoveTeam(teams::RED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDLEADER, MF_DISABLED);
+		  break;
+
+	  case ID_REDTEAM_ADDBOT:
+		  g_pRaven->GetTeamManager()->AddBot(teams::RED, g_pRaven->GetSelectedBot());
+		  break;
+	  
+	  case ID_REDTEAM_REMOVEBOT:
+		  g_pRaven->GetTeamManager()->RemoveBot(teams::RED, g_pRaven->GetSelectedBot());
+		  break;
+
+	  case ID_REDTEAM_ADDLEADER:
+		  g_pRaven->GetTeamManager()->SetLeader(teams::RED, g_pRaven->GetSelectedBot());
+		  break;
+
+	//---------------------------------------------------BLUE TEAM----------------------------------------
+	  case ID_CREATE_RANDOMSINGLETARGET_BLUE:
+		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::BLUE, g_pRaven);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_NORMALLEADERSINGLETARGET_BLUE:
+		  g_pRaven->GetTeamManager()->AddTeam<Normal_Leader_Single_Target_Team>(teams::BLUE);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDLEADER, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_BRAINLEADERSINGLETARGET_BLUE:
+		  g_pRaven->GetTeamManager()->AddTeam<Brain_Leader_Single_Target_Team>(teams::BLUE);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDLEADER, MF_ENABLED);
+		  break;
+
+	  case ID_BLUETEAM_REMOVETEAM:
+		  g_pRaven->GetTeamManager()->RemoveTeam(teams::BLUE);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDLEADER, MF_DISABLED);
+		  break;
+
+	  case ID_BLUETEAM_ADDBOT:
+		  g_pRaven->GetTeamManager()->AddBot(teams::BLUE, g_pRaven->GetSelectedBot());
+		  break;
+
+	  case ID_BLUETEAM_REMOVEBOT:
+		  g_pRaven->GetTeamManager()->RemoveBot(teams::BLUE, g_pRaven->GetSelectedBot());
+		  break;
+
+	  case ID_BLUETEAM_ADDLEADER:
+		  g_pRaven->GetTeamManager()->SetLeader(teams::BLUE, g_pRaven->GetSelectedBot());
+		  break;
+	//--------------------------------------------------GREEN TEAM----------------------------------------
+	  case ID_CREATE_RANDOMSINGLETARGET_GREEN:
+		  g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::GREEN, g_pRaven);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_NORMALLEADERSINGLETARGET_GREEN:
+		  g_pRaven->GetTeamManager()->AddTeam<Normal_Leader_Single_Target_Team>(teams::GREEN);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDLEADER, MF_ENABLED);
+		  break;
+
+	  case ID_CREATE_BRAINLEADERSINGLETARGET_GREEN:
+		  g_pRaven->GetTeamManager()->AddTeam<Brain_Leader_Single_Target_Team>(teams::GREEN);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_ENABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDLEADER, MF_ENABLED);
+		  break;
+
+	  case ID_GREENTEAM_REMOVETEAM:
+		  g_pRaven->GetTeamManager()->RemoveTeam(teams::GREEN);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_DISABLED);
+		  EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDLEADER, MF_DISABLED);
+		  break;
+
+	  case ID_GREENTEAM_ADDBOT:
+		  g_pRaven->GetTeamManager()->AddBot(teams::GREEN, g_pRaven->GetSelectedBot());
+		  break;
+
+	  case ID_GREENTEAM_REMOVEBOT:
+		  g_pRaven->GetTeamManager()->RemoveBot(teams::GREEN, g_pRaven->GetSelectedBot());
+		  break;
+
+	  case ID_GREENTEAM_ADDLEADER:
+		  g_pRaven->GetTeamManager()->SetLeader(teams::GREEN, g_pRaven->GetSelectedBot());
+		  break;
 
 		case IDM_BOTS_SHOW_SCORES:
 
@@ -343,74 +471,6 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 
 			CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_GOAL_Q, UserOptions->m_bShowGoalsOfSelectedBot);
 
-			break;
-
-
-			//---------------------------------------------------RED TEAM-----------------------------------------
-		case ID_CREATE_RANDOMSINGLETARGET_RED:
-			g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::RED);
-			EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_ENABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_ENABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_ENABLED);
-			break;
-
-		case ID_REDTEAM_REMOVETEAM:
-			g_pRaven->GetTeamManager()->RemoveTeam(teams::RED);
-			EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVETEAM, MF_DISABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_ADDBOT, MF_DISABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_REDTEAM_REMOVEBOT, MF_DISABLED);
-			break;
-
-		case ID_REDTEAM_ADDBOT:
-			g_pRaven->GetTeamManager()->AddBot(teams::RED, g_pRaven->GetSelectedBot());
-			break;
-
-		case ID_REDTEAM_REMOVEBOT:
-			g_pRaven->GetTeamManager()->RemoveBot(teams::RED, g_pRaven->GetSelectedBot());
-			break;
-			//---------------------------------------------------BLUE TEAM----------------------------------------
-		case ID_CREATE_RANDOMSINGLETARGET_BLUE:
-			g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::BLUE);
-			EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_ENABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_ENABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_ENABLED);
-			break;
-
-		case ID_BLUETEAM_REMOVETEAM:
-			g_pRaven->GetTeamManager()->RemoveTeam(teams::BLUE);
-			EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVETEAM, MF_DISABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_ADDBOT, MF_DISABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_BLUETEAM_REMOVEBOT, MF_DISABLED);
-			break;
-
-		case ID_BLUETEAM_ADDBOT:
-			g_pRaven->GetTeamManager()->AddBot(teams::BLUE, g_pRaven->GetSelectedBot());
-			break;
-
-		case ID_BLUETEAM_REMOVEBOT:
-			g_pRaven->GetTeamManager()->RemoveBot(teams::BLUE, g_pRaven->GetSelectedBot());
-			break;
-			//--------------------------------------------------GREEN TEAM----------------------------------------
-		case ID_CREATE_RANDOMSINGLETARGET_GREEN:
-			g_pRaven->GetTeamManager()->AddTeam<Random_Single_Target_Team>(teams::GREEN);
-			EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_ENABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_ENABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_ENABLED);
-			break;
-
-		case ID_GREENTEAM_REMOVETEAM:
-			g_pRaven->GetTeamManager()->RemoveTeam(teams::GREEN);
-			EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVETEAM, MF_DISABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_ADDBOT, MF_DISABLED);
-			EnableMenuItem(GetMenu(hwnd), ID_GREENTEAM_REMOVEBOT, MF_DISABLED);
-			break;
-
-		case ID_GREENTEAM_ADDBOT:
-			g_pRaven->GetTeamManager()->AddBot(teams::GREEN, g_pRaven->GetSelectedBot());
-			break;
-
-		case ID_GREENTEAM_REMOVEBOT:
-			g_pRaven->GetTeamManager()->RemoveBot(teams::GREEN, g_pRaven->GetSelectedBot());
 			break;
 		}//end switch
 	}

@@ -32,11 +32,17 @@ public:
 
 	template <class T>
 	void AddTeam(teams colour);
+	template <class T>
+	void AddTeam(teams colour, Raven_Game* game);
 	void RemoveTeam(teams colour) { delete m_Teams[colour]; m_Teams[colour] = NULL; }
 	void AddBot(teams colour, Raven_Bot* bot);
 	void RemoveBot(teams colour, Raven_Bot* bot);
 	void NewWorldBot(Raven_Bot* addedBot);
 	void BotWorldRemoval(Raven_Bot* bot);
+	void UpdateTargetting();
+	void SetLeader(teams team, Raven_Bot* bot);
+
+	void RenderTeamCircles();
 
 	Vector2D GetDroppedWeaponPosition(int team, int weaponType);
 	void TryDroppedWeapons(std::list<Raven_Bot*> botList);
@@ -49,6 +55,15 @@ public:
 
 template<class T>
 inline void TeamManager::AddTeam(teams colour)
+{
+	if (m_Teams[colour] != NULL) {
+		delete m_Teams[colour];
+	}
+	m_Teams[colour] = new T();	
+}
+
+template<class T>
+inline void TeamManager::AddTeam(teams colour, Raven_Game * game)
 {
 	if (m_Teams[colour] != NULL) {
 		delete m_Teams[colour];

@@ -55,6 +55,33 @@ void TeamManager::BotWorldRemoval(Raven_Bot * bot)
 	}
 }
 
+void TeamManager::UpdateTargetting()
+{
+	for (std::array<Team*, 3>::iterator curTeam = m_Teams.begin(); curTeam != m_Teams.end(); curTeam++) {
+		if (*curTeam != NULL) {
+			(*curTeam)->UpdateTargetting();
+		}
+	}
+}
+
+void TeamManager::SetLeader(teams team, Raven_Bot * bot)
+{
+	m_Teams[team]->SetLeader(bot);
+}
+
+void TeamManager::RenderTeamCircles()
+{
+	if (m_Teams[teams::RED] != NULL) {
+		m_Teams[teams::RED]->RenderTeamCircles(teams::RED);
+	}
+	if (m_Teams[teams::BLUE] != NULL) {
+		m_Teams[teams::BLUE]->RenderTeamCircles(teams::BLUE);
+	}
+	if (m_Teams[teams::GREEN] != NULL) {
+		m_Teams[teams::GREEN]->RenderTeamCircles(teams::GREEN);
+	}
+}
+
 Vector2D TeamManager::GetDroppedWeaponPosition(int team, int weaponType)
 {
 	switch (team) {
@@ -70,11 +97,11 @@ Vector2D TeamManager::GetDroppedWeaponPosition(int team, int weaponType)
 	case teams::BLUE:
 		switch (weaponType) {
 		case type_shotgun:
-			return Vector2D(342, 40);
+			return Vector2D(350, 40);
 		case type_rocket_launcher:
-			return Vector2D(360, 40);
+			return Vector2D(370, 40);
 		case type_rail_gun:
-			return Vector2D(378, 42);
+			return Vector2D(390, 40);
 		}
 	case teams::GREEN:
 		switch (weaponType) {

@@ -144,6 +144,9 @@ void Raven_Game::Update()
 			curW = m_Projectiles.erase(curW);
 		}
 	}
+	
+  //update the teams
+  m_pTeamManager->UpdateTargetting();
 
 	//update the bots
 	bool bSpawnPossible = true;
@@ -749,6 +752,9 @@ void Raven_Game::Render()
 	}
 
 	// gdi->TextAtPos(300, WindowHeight - 70, "Num Current Searches: " + ttos(m_pPathManager->GetNumActiveSearches()));
+	
+  //render the circles around team members
+  m_pTeamManager->RenderTeamCircles();
 
 	 //render a red circle around the selected bot (blue if possessed)
 	if (m_pSelectedBot)

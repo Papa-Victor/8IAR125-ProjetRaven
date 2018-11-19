@@ -218,11 +218,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataSet.cpp" />
+    <ClCompile Include="Brain_Leader_Single_Target_Team.cpp" />
     <ClCompile Include="main.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='boundschecker|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Normal_Leader_Single_Target_Team.cpp" />
     <ClCompile Include="Random_Single_Target_Team.cpp" />
     <ClCompile Include="Raven_Bot.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -542,6 +544,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSet.h" />
+    <ClInclude Include="Brain_Leader_Single_Target_Team.h" />
+    <ClInclude Include="Leader_Single_Target_Team.h" />
+    <ClInclude Include="Normal_Leader_Single_Target_Team.h" />
     <ClInclude Include="Random_Single_Target_Team.h" />
     <ClInclude Include="Raven_Bot.h" />
     <ClInclude Include="Raven_Game.h" />
