@@ -126,6 +126,7 @@ public:
 
   //returns the number of rounds remaining for the weapon
   int           NumRoundsRemaining()const{return m_iNumRoundsLeft;}
+  int			MaxRounds() const { return this->m_iMaxRoundsCarried; }
   void          DecrementNumRounds(){if (m_iNumRoundsLeft>0) --m_iNumRoundsLeft;}
   void          IncrementRounds(int num); 
   unsigned int  GetType()const{return m_iType;}

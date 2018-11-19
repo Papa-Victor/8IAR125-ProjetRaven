@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// fichier Include Microsoft Visual C++.
-// Utilisé par Script1.rc
+// Microsoft Visual C++ generated include file.
+// Used by Script1.rc
 //
 #define IDR_MENU1                       101
 #define ID_MENU_LOAD                    40001
@@ -46,13 +46,16 @@
 #define ID_CREATE_RANDOMSINGLETARGET_RED 40038
 #define ID_CREATE_RANDOMSINGLETARGET_BLUE 40039
 #define ID_CREATE_RANDOMSINGLETARGET_GREEN 40040
+#define ID_ML_TOGGLERECORDING           40041
+#define ID_ML_TRAIN                     40042
+#define ID_ML_TEST                      40043
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        111
-#define _APS_NEXT_COMMAND_VALUE         40041
+#define _APS_NEXT_COMMAND_VALUE         40044
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           101
 #endif

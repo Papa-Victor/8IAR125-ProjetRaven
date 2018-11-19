@@ -11,3 +11,6 @@ Release/
 
 # Misc files (might be VS, dunno)
 *Log.txt
+
+# Machine Learning files
+*.csv
