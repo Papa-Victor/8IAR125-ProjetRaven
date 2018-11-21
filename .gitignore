@@ -9,6 +9,7 @@ Release/
 *.suo
 *.user
 *.aps
+*.ilk
 
 # Misc files (might be VS, dunno)
 *Log.txt
