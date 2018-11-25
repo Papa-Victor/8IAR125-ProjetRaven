@@ -9,7 +9,6 @@
 #include "Raven_SteeringBehaviors.h"
 #include "Raven_UserOptions.h"
 #include "time/Regulator.h"
-#include "Raven_WeaponSystem.h"
 #include "Raven_SensoryMemory.h"
 
 #include "Messaging/Telegram.h"
@@ -169,9 +168,7 @@ void Raven_Bot::Update()
 			m_pWeaponSys->SelectWeapon();
 		}
 
-		//this method aims the bot's current weapon at the current target
-		//and takes a shot if a shot is possible
-		m_pWeaponSys->TakeAimAndShoot();
+		this->TakeAimAndShoot();
 	}
 }
 

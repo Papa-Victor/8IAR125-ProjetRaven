@@ -21,7 +21,9 @@
 #include <commctrl.h>
 #pragma comment(lib, "comctl32.lib")
 
-
+#include <fstream>
+#include <sys/stat.h>
+#include <boost/archive/text_iarchive.hpp>
 
 //--------------------------------- Globals ------------------------------
 //------------------------------------------------------------------------
@@ -32,11 +34,29 @@ char*	g_szWindowClassName = "MyWindowClass";
 
 Raven_Game* g_pRaven;
 
+void UpdateTrainingDataMenuItems(HWND hwnd) 
+{
+	// Check if there is training data to work with.
+	struct stat trainingFileStats;
+	int result = stat(TrainingFileName, &trainingFileStats);
+	EnableMenuItem(GetMenu(hwnd), ID_ML_TRAIN, result ? MFS_DISABLED : MFS_ENABLED);
+}
 
-void ToggleRecording(HWND   hwnd)
+void ToggleRecording(HWND hwnd)
 {
 	g_pRaven->ToggleRecording();
 	CheckMenuItemAppropriately(hwnd, ID_ML_TOGGLERECORDING, g_pRaven->IsRecording());
+
+	if (!g_pRaven->IsRecording())
+	{
+		UpdateTrainingDataMenuItems(hwnd);
+	}
+}
+
+void UpdatePerceptronMenuItems(HWND hwnd) 
+{
+	EnableMenuItem(GetMenu(hwnd), ID_ML_ADDBOT, g_pRaven->Perceptron() ? MFS_ENABLED : MFS_DISABLED);
+	EnableMenuItem(GetMenu(hwnd), ID_ML_REMOVEBOT, g_pRaven->Perceptron() ? MFS_ENABLED : MFS_DISABLED);
 }
 
 //---------------------------- WindowProc ---------------------------------
@@ -121,6 +141,18 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 		CheckMenuItemAppropriately(hwnd, IDM_NAVIGATION_SHOW_INDICES, UserOptions->m_bShowNodeIndices);
 		CheckMenuItemAppropriately(hwnd, IDM_BOTS_SHOW_SENSED, UserOptions->m_bShowOpponentsSensedBySelectedBot);
 
+		UpdateTrainingDataMenuItems(hwnd);
+
+		// Check if there is a trained perceptron to work with.
+		std::ifstream perceptronFile{ PerceptronFileName };
+		if (perceptronFile.is_open())
+		{
+			boost::archive::text_iarchive tia{ perceptronFile };
+			g_pRaven->Perceptron() = new mlpack::perceptron::Perceptron<mlpack::perceptron::SimpleWeightUpdate, mlpack::perceptron::RandomInitialization>;
+			tia >> g_pRaven->Perceptron();
+		}
+
+		UpdatePerceptronMenuItems(hwnd);
 	}
 
 	break;
@@ -213,6 +245,19 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 		{
 		case ID_ML_TOGGLERECORDING:
 			ToggleRecording(hwnd);
+			break;
+
+		case ID_ML_TRAIN:
+			g_pRaven->Train();
+			UpdatePerceptronMenuItems(hwnd);
+			break;
+
+		case ID_ML_ADDBOT:
+			g_pRaven->AddMLBot();
+			break;
+
+		case ID_ML_REMOVEBOT:
+			g_pRaven->RemoveMLBot();
 			break;
 
 		case IDM_GAME_LOAD:

@@ -80,7 +80,7 @@
     <Filter Include="Game\teams">
       <UniqueIdentifier>{b8560ffb-5879-49da-8ee7-4205140975da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI\Learning">
+    <Filter Include="Learning">
       <UniqueIdentifier>{d44ca505-9b1d-4b9c-84c1-02ba4428ad67}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -290,16 +290,19 @@
       <Filter>AI\Triggers</Filter>
     </ClCompile>
     <ClCompile Include="DataSet.cpp">
-      <Filter>AI\Learning</Filter>
-    </ClCompile>
-    <ClCompile Include="Raven_Game.ML.cpp">
-      <Filter>Game</Filter>
+      <Filter>Learning</Filter>
     </ClCompile>
     <ClCompile Include="Normal_Leader_Single_Target_Team.cpp">
       <Filter>Game\teams</Filter>
     </ClCompile>
     <ClCompile Include="Brain_Leader_Single_Target_Team.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Raven_Game.ML.cpp">
+      <Filter>Learning</Filter>
+    </ClCompile>
+    <ClCompile Include="Raven_WeaponSystem.ML.cpp">
+      <Filter>Learning</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -655,7 +658,7 @@
       <Filter>AI\Triggers</Filter>
     </ClInclude>
     <ClInclude Include="DataSet.h">
-      <Filter>AI\Learning</Filter>
+      <Filter>Learning</Filter>
     </ClInclude>
     <ClInclude Include="Leader_Single_Target_Team.h">
       <Filter>Game\teams</Filter>
@@ -664,6 +667,9 @@
       <Filter>Game\teams</Filter>
     </ClInclude>
     <ClInclude Include="Brain_Leader_Single_Target_Team.h" />
+    <ClInclude Include="MLBot.h">
+      <Filter>Learning</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Params.lua">

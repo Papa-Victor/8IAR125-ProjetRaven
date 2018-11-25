@@ -15,8 +15,6 @@ enum class Weapon : unsigned char
 
 struct Input
 {
-	friend struct DataSet;
-
 	Input() 
 		: _distance(0.0f)
 		, _ammo(0.0f)
@@ -62,7 +60,6 @@ struct Input
 	friend std::ostream& operator<<(std::ostream& os, const Input& input);
 	friend std::istream& operator>>(std::istream& is, Input& input);
 
-private:
 	union
 	{
 		float values[9];

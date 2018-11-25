@@ -37,7 +37,6 @@
 //-----------------------------------------------------------------------------
 Raven_Game::Raven_Game() :m_pSelectedBot(NULL),
 m_bPaused(false),
-m_bRemoveABot(false),
 m_pMap(NULL),
 m_pPathManager(NULL),
 m_pGraveMarkers(NULL),
@@ -57,6 +56,9 @@ Raven_Game::~Raven_Game()
 	delete m_pMap;
 
 	delete m_pGraveMarkers;
+	
+	if (this->_perceptron)
+		delete this->_perceptron;
 }
 
 
@@ -187,25 +189,25 @@ void Raven_Game::Update()
 
 	//if the user has requested that the number of bots be decreased, remove
 	//one
-	if (m_bRemoveABot)
+	if (this->_botToRemove)
 	{
-		if (!m_Bots.empty())
+		auto findResult = std::find(this->m_Bots.begin(), this->m_Bots.end(), this->_botToRemove);
+		if (findResult != this->m_Bots.end())
 		{
-			Raven_Bot* pBot = m_Bots.back();
-			m_Bots.pop_back();
-			if (pBot == m_pSelectedBot)m_pSelectedBot = 0;
-			m_pTeamManager->OnBotDeath(pBot);
-			m_pTeamManager->BotWorldRemoval(pBot);
-			NotifyAllBotsOfRemoval(pBot);
-			delete pBot;
+			//Raven_Bot* pBot = m_Bots.back();
+			//m_Bots.pop_back();
+			this->m_Bots.erase(findResult);
 
+			if (this->_botToRemove == m_pSelectedBot)m_pSelectedBot = 0;
+			m_pTeamManager->OnBotDeath(this->_botToRemove);
+			m_pTeamManager->BotWorldRemoval(this->_botToRemove);
+			NotifyAllBotsOfRemoval(this->_botToRemove);
+			delete this->_botToRemove;
 
 			/*delete m_Bots.back();
 			m_Bots.remove(pBot);*/
-			pBot = 0;
+			this->_botToRemove = nullptr;
 		}
-
-		m_bRemoveABot = false;
 	}
 
 	if (this->_recording && ++this->_framesSinceRecord == _framesPerRecord)
@@ -259,6 +261,25 @@ bool Raven_Game::AttemptToAddBot(Raven_Bot* pBot)
 	return false;
 }
 
+void Raven_Game::AddBot(Raven_Bot* botToAdd)
+{
+	//switch the default steering behaviors on
+	botToAdd->GetSteering()->WallAvoidanceOn();
+	botToAdd->GetSteering()->SeparationOn();
+
+	m_Bots.push_back(botToAdd);
+
+	//register the bot with the entity manager
+	EntityMgr->RegisterEntity(botToAdd);
+
+	m_pTeamManager->NewWorldBot(botToAdd);
+
+
+#ifdef LOG_CREATIONAL_STUFF
+	debug_con << "Adding bot with ID " << ttos(botToAdd->ID()) << "";
+#endif
+}
+
 //-------------------------- AddBots --------------------------------------
 //
 //  Adds a bot and switches on the default steering behavior
@@ -269,23 +290,7 @@ void Raven_Game::AddBots(unsigned int NumBotsToAdd)
 	{
 		//create a bot. (its position is irrelevant at this point because it will
 		//not be rendered until it is spawned)
-		Raven_Bot* rb = new Raven_Bot(this, Vector2D());
-
-		//switch the default steering behaviors on
-		rb->GetSteering()->WallAvoidanceOn();
-		rb->GetSteering()->SeparationOn();
-
-		m_Bots.push_back(rb);
-
-		//register the bot with the entity manager
-		EntityMgr->RegisterEntity(rb);
-
-		m_pTeamManager->NewWorldBot(rb);
-
-
-#ifdef LOG_CREATIONAL_STUFF
-		debug_con << "Adding bot with ID " << ttos(rb->ID()) << "";
-#endif
+		this->AddBot(new Raven_Bot(this, Vector2D()));
 	}
 }
 
@@ -314,7 +319,10 @@ void Raven_Game::NotifyAllBotsOfRemoval(Raven_Bot* pRemovedBot)const
 //-----------------------------------------------------------------------------
 void Raven_Game::RemoveBot()
 {
-	m_bRemoveABot = true;
+	if (this->m_Bots.size())
+	{
+		this->_botToRemove = this->m_Bots.back();
+	}
 }
 
 //--------------------------- AddBolt -----------------------------------------

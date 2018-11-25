@@ -1,5 +1,6 @@
 #ifndef RAVEN_ENV
 #define RAVEN_ENV
+
 #pragma warning (disable:4786)
 //-----------------------------------------------------------------------------
 //
@@ -36,6 +37,9 @@ class Team;
 #include "constants.h"
 #include "DataSet.h"
 #include <thread>
+#include <stack>
+
+#include <mlpack/methods/perceptron/perceptron.hpp>
 
 class Raven_Game
 {
@@ -64,9 +68,6 @@ private:
 	//if true the game will be paused
 	bool                             m_bPaused;
 
-	//if true a bot is removed from the game
-	bool                             m_bRemoveABot;
-
 	//when a bot is killed a "grave" is displayed for a few seconds. This
 	//class manages the graves
 	GraveMarkers*                    m_pGraveMarkers;
@@ -86,17 +87,21 @@ private:
 	//their memory
 	void NotifyAllBotsOfRemoval(Raven_Bot* pRemovedBot)const;
 
-	static constexpr char* _fileName = "TrainingData.csv";
-	static constexpr unsigned char _framesPerRecord = 15;
+	static constexpr unsigned char _framesPerRecord = 60;
 	static constexpr int _entriesPerWrite = 4096;
+
+	Raven_Bot* _botToRemove = nullptr;
 
 	unsigned char _framesSinceRecord;
 	bool _recording = false;
 
+	mlpack::perceptron::Perceptron<mlpack::perceptron::SimpleWeightUpdate, mlpack::perceptron::RandomInitialization>* _perceptron = nullptr;
+	std::stack<class MLBot*> _mlBots;
+
 	DataSet _dataSets[2];
 	int _currentSet = 0;
 
-	inline float Diagonal()
+	static inline float Diagonal()
 	{
 		return static_cast<float>(std::sqrt(WindowWidth * WindowWidth + WindowHeight * WindowHeight));
 	}
@@ -109,9 +114,18 @@ private:
 
 	void SaveRecordingTask();
 	void Record(bool shot);
+	void AddBot(Raven_Bot* botToAdd);
 
 public:
 
+	mlpack::perceptron::Perceptron<mlpack::perceptron::SimpleWeightUpdate, mlpack::perceptron::RandomInitialization>* Perceptron() const { return this->_perceptron; }
+	mlpack::perceptron::Perceptron<mlpack::perceptron::SimpleWeightUpdate, mlpack::perceptron::RandomInitialization>*& Perceptron() { return this->_perceptron; }
+
+	void Train();
+	void AddMLBot();
+	void RemoveMLBot();
+
+	Input Snapshot(Raven_Bot* bot) const;
 	bool IsRecording() const { return this->_recording; }
 	void ToggleRecording();
 
