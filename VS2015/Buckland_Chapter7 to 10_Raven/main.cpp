@@ -157,6 +157,43 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 
 	break;
 
+	case WM_KEYDOWN:
+	{
+		switch (wParam)
+		{
+		case 'W':
+		{
+			g_pRaven->MoveWASD(Vector2D(0, -1));
+		}
+
+		break;
+
+		case 'A':
+		{
+			g_pRaven->MoveWASD(Vector2D(-1, 0));
+		}
+
+		break;
+
+		case 'S':
+		{
+			g_pRaven->MoveWASD(Vector2D(0, 1));
+		}
+
+		break;
+
+		case 'D':
+		{
+			g_pRaven->MoveWASD(Vector2D(1, 0));
+		}
+
+		break;
+
+		}
+	}
+
+	break;
+
 	case WM_KEYUP:
 	{
 		switch (wParam)
