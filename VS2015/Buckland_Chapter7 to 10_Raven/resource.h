@@ -45,7 +45,6 @@
 #define ID_CREATE_RANDOMSINGLETARGET_GREEN 40040
 #define ID_ML_TOGGLERECORDING           40041
 #define ID_ML_TRAIN                     40042
-#define ID_ML_TEST                      40043
 #define ID_REDTEAM_ADDLEADER            40044
 #define ID_BLUETEAM_ADDLEADER           40045
 #define ID_GREENTEAM_ADDLEADER          40046
@@ -55,13 +54,16 @@
 #define ID_CREATE_BRAINLEADERSINGLETARGET_RED 40051
 #define ID_CREATE_BRAINLEADERSINGLETARGET_BLUE 40053
 #define ID_CREATE_BRAINLEADERSINGLETARGET_GREEN 40055
+#define ID_ML_REMOVEBOT                 40056
+#define ID_Menu                         40057
+#define ID_ML_ADDBOT                    40058
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        111
-#define _APS_NEXT_COMMAND_VALUE         40056
+#define _APS_NEXT_COMMAND_VALUE         40060
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           101
 #endif

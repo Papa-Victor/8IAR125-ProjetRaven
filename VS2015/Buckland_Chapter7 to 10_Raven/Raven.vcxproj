@@ -146,6 +146,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../Common;../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -162,11 +163,15 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_program_options-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>.\Raven___Win32_boundschecker/Raven.bsc</OutputFile>
     </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\lib\*.dll" "$(TargetDir)" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='boundschecker|x64'">
     <Midl>
@@ -193,6 +198,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../Common;../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -208,11 +214,15 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <AdditionalDependencies>../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_program_options-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>.\Raven___Win32_boundschecker/Raven.bsc</OutputFile>
     </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\lib\*.dll" "$(TargetDir)" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
@@ -241,7 +251,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>../third_parties;../Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Common;../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -257,17 +267,14 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalDependencies>../third_parties/mlpack/lib/mlpack.lib;../third_parties/boost/lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../third_parties/boost/lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../lib/libopenblas.dll.a;../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>.\Debug/Raven.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>echo $(TargetDir)
-echo $(TargetPath)
-xcopy "$(SolutionDir)..\third_parties\mlpack\mlpack.dll" "$(TargetDir)" /y
-xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command>
+      <Command>xcopy "$(SolutionDir)..\lib\*.dll" "$(TargetDir)" /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -295,7 +302,7 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>../third_parties;../Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Common;../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -310,17 +317,14 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <AdditionalDependencies>../third_parties/mlpack/lib/mlpack.lib;../third_parties/boost/lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../third_parties/boost/lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../lib/libopenblas.dll.a;../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>.\Debug/Raven.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>echo $(TargetDir)
-echo $(TargetPath)
-xcopy "$(SolutionDir)..\third_parties\mlpack\mlpack.dll" "$(TargetDir)" /y
-xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command>
+      <Command>xcopy "$(SolutionDir)..\lib\*.dll" "$(TargetDir)" /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -348,7 +352,7 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalIncludeDirectories>../Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Common;../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -364,11 +368,15 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_program_options-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>.\Release/Raven.bsc</OutputFile>
     </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\lib\*.dll" "$(TargetDir)" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -394,7 +402,7 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalIncludeDirectories>../Common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Common;../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -409,11 +417,15 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
+      <AdditionalDependencies>../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_program_options-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>.\Release/Raven.bsc</OutputFile>
     </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\lib\*.dll" "$(TargetDir)" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataSet.cpp" />
@@ -829,6 +841,7 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='boundschecker|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='boundschecker|x64'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Raven_WeaponSystem.ML.cpp" />
     <ClCompile Include="Single_Target_Team.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="TeamManager.cpp" />
@@ -934,6 +947,7 @@ xcopy "$(SolutionDir)..\third_parties\openblas\*.dll" "$(TargetDir)" /y</Command
     <ClInclude Include="DataSet.h" />
     <ClInclude Include="Brain_Leader_Single_Target_Team.h" />
     <ClInclude Include="Leader_Single_Target_Team.h" />
+    <ClInclude Include="MLBot.h" />
     <ClInclude Include="Normal_Leader_Single_Target_Team.h" />
     <ClInclude Include="Random_Single_Target_Team.h" />
     <ClInclude Include="Raven_Bot.h" />

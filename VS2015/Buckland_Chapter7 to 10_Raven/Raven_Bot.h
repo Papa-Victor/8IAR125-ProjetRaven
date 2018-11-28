@@ -17,6 +17,7 @@
 #include "misc/utils.h"
 #include "Raven_TargetingSystem.h"
 
+#include "Raven_WeaponSystem.h"
 
 class Raven_PathPlanner;
 class Raven_Steering;
@@ -26,7 +27,6 @@ class Raven_Weapon;
 struct Telegram;
 class Raven_Bot;
 class Goal_Think;
-class Raven_WeaponSystem;
 class Raven_SensoryMemory;
 class Team;
 
@@ -128,6 +128,13 @@ private:
   //initializes the bot's VB with its geometry
   void          SetUpVertexBuffer();
 
+protected:
+	virtual void TakeAimAndShoot() const
+	{
+		//this method aims the bot's current weapon at the current target
+		//and takes a shot if a shot is possible
+		m_pWeaponSys->TakeAimAndShoot();
+	}
 
 public:
   

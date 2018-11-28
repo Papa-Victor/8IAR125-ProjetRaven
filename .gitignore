@@ -9,9 +9,11 @@ Release/
 *.suo
 *.user
 *.aps
+*.ilk
 
 # Misc files (might be VS, dunno)
 *Log.txt
 
 # Machine Learning files
 *.csv
+VS2015/Buckland_Chapter7 to 10_Raven/Perceptron

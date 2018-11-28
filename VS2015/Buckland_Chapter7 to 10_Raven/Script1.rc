@@ -100,7 +100,8 @@ BEGIN
     BEGIN
         MENUITEM "Toggle Recording ( R )",      ID_ML_TOGGLERECORDING
         MENUITEM "Train",                       ID_ML_TRAIN
-        MENUITEM "Test",                        ID_ML_TEST
+        MENUITEM "Add Bot",                     ID_ML_ADDBOT
+        MENUITEM "Remove Bot",                  ID_ML_REMOVEBOT
     END
 END
 

@@ -5,5 +5,11 @@ constexpr int WindowWidth  = 500;
 constexpr int WindowHeight = 500;
 constexpr int FrameRate    = 60;
 
+constexpr char* TrainingFileName = "TrainingData.csv";
+constexpr char* PerceptronFileName = "Perceptron";
+
+constexpr float MinimumSuccessRate = 0.95;
+constexpr int IterationsPerLog = 100;
+constexpr int MaxIterations = 1000;
 
 #endif
