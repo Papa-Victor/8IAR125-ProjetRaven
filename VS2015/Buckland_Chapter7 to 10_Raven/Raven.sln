@@ -14,8 +14,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.boundschecker|x64.ActiveCfg = boundschecker|x64
 		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.boundschecker|x64.Build.0 = boundschecker|x64
-		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.Debug|x64.ActiveCfg = Debug|x64
-		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.Debug|x64.Build.0 = Debug|x64
+		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.Debug|x64.ActiveCfg = Debug|Win32
+		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.Debug|x64.Build.0 = Debug|Win32
 		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.Release|x64.ActiveCfg = Release|x64
 		{EC1EBBC4-4F57-4002-856A-5C1BCFBC7BF9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
