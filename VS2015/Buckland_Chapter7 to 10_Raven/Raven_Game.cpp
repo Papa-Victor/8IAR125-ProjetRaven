@@ -493,6 +493,33 @@ void Raven_Game::ClickRightMouseButton(POINTS p)
 	}
 }
 
+
+//-------------------------- MoveWASD -----------------------------
+//
+//  this method is called when the user press on W,A,S or D
+//
+//  the method checks to see if a bot is selected.
+//
+//  it moves in the direcction of the key (W - UP, A - LEFT, S - DOWN, D - RIGHT)
+//  
+//-----------------------------------------------------------------------------
+void Raven_Game::MoveWASD(Vector2D p)
+{
+	//if there is no selected bot just return;
+	if (m_pSelectedBot == NULL) return;
+
+	//if the bot is possessed pressing W,A,S or D make it move
+	if (m_pSelectedBot->isPossessed())
+	{
+		//clear any current goals
+		//m_pSelectedBot->GetBrain()->RemoveAllSubgoals();
+		m_pSelectedBot->GetSteering()->SetTarget(m_pSelectedBot->Pos() + p);
+		m_pSelectedBot->GetSteering()->SeekOn();
+		//m_pSelectedBot->GetBrain()->AddGoal_MoveToPosition(m_pSelectedBot->Pos() + p);
+			//AddGoal_MoveToPosition(m_pSelectedBot->Pos() + p);
+	}
+}
+
 //---------------------- ClickLeftMouseButton ---------------------------------
 //-----------------------------------------------------------------------------
 void Raven_Game::ClickLeftMouseButton(POINTS p)
