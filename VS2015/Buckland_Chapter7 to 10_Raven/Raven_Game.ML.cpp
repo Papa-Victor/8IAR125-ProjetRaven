@@ -210,7 +210,7 @@ void Raven_Game::Record(bool shot)
 			this->_dataSets[this->_currentSet].Add(snapshot, output);
 			this->_framesSinceRecord = 0;
 
-			if (this->_dataSets[this->_currentSet].Size() == _entriesPerWrite)
+			if (this->_dataSets[this->_currentSet].Size() == EntriesPerWrite)
 			{
 				this->SaveRecording();
 			}

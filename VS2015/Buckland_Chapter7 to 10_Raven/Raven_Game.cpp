@@ -210,7 +210,7 @@ void Raven_Game::Update()
 		}
 	}
 
-	if (this->_recording && ++this->_framesSinceRecord == _framesPerRecord)
+	if (this->_recording && ++this->_framesSinceRecord == FramesPerRecord)
 	{
 		this->Record(false);
 	}

@@ -87,9 +87,6 @@ private:
 	//their memory
 	void NotifyAllBotsOfRemoval(Raven_Bot* pRemovedBot)const;
 
-	static constexpr unsigned char _framesPerRecord = 60;
-	static constexpr int _entriesPerWrite = 4096;
-
 	Raven_Bot* _botToRemove = nullptr;
 
 	unsigned char _framesSinceRecord;

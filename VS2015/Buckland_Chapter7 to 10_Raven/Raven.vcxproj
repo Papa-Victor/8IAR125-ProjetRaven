@@ -368,7 +368,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalDependencies>../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_program_options-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../lib/libopenblas.dll.a;../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-s-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -417,7 +417,7 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <AdditionalDependencies>../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-gd-x64-1_66.lib;../lib/libboost_serialization-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_program_options-vc141-mt-sgd-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../lib/libopenblas.dll.a;../lib/mlpack.lib;../lib/libboost_serialization-vc141-mt-s-x64-1_66.lib;../lib/libboost_prg_exec_monitor-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
