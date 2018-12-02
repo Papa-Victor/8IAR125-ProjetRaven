@@ -83,6 +83,8 @@ Raven_Bot::Raven_Bot(Raven_Game* world, Vector2D pos) :
 		script->GetDouble("Bot_AimPersistance"));
 
 	m_pSensoryMem = new Raven_SensoryMemory(this, script->GetDouble("Bot_MemorySpan"));
+
+	InitializeFuzzyModule();
 }
 
 //-------------------------------- dtor ---------------------------------------
@@ -393,6 +395,10 @@ void Raven_Bot::ChangeWeapon(unsigned int type)
 //-----------------------------------------------------------------------------
 void Raven_Bot::FireWeapon(Vector2D pos)
 {
+	/*double DistToTarget = Vec2DDistance(m_pOwner->Pos(), m_pOwner->GetTargetSys()->GetTarget()->Pos());*/
+
+	/*m_fuzzyModule.Fuzzify("DistToTarget", m_pTargSys.get)*/
+
 	m_pWeaponSys->ShootAt(pos);
 }
 
@@ -585,4 +591,36 @@ void Raven_Bot::IncreaseHealth(unsigned int val)
 {
 	m_iHealth += val;
 	Clamp(m_iHealth, 0, m_iMaxHealth);
+}
+
+
+void Raven_Bot::InitializeFuzzyModule()
+{
+	m_fuzzyModule = new FuzzyModule();
+
+	FuzzyVariable& DistToTarget = m_fuzzyModule->CreateFLV("DistToTarget");
+
+	FzSet& Target_Close = DistToTarget.AddLeftShoulderSet("Target_Close", 0, 75, 150);
+	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium", 75, 150, 300);
+	FzSet& Target_Far = DistToTarget.AddRightShoulderSet("Target_Far", 200, 450, 600);
+
+	FuzzyVariable& Velocity = m_fuzzyModule->CreateFLV("Velocity");
+
+	FzSet& Vecocity_Low = Velocity.AddTriangularSet("Vecocity_Low", 0, 0.2, 0.4);
+	FzSet& Vecocity_Medium = Velocity.AddTriangularSet("Vecocity_Medium", 0.3, 0.65, 0.8);
+	FzSet& Vecocity_High = Velocity.AddTriangularSet("Vecocity_High", 0.5, 0.8, 1);
+
+	FuzzyVariable& VisibilityTime = m_fuzzyModule->CreateFLV("VisibilityTime");
+
+	FzSet& VisibilityTime_Low = VisibilityTime.AddTriangularSet("VisibilityTime_Low", 0, 50, 100);
+	FzSet& VisibilityTime_Medium = VisibilityTime.AddTriangularSet("VisibilityTime_Medium", 50, 150, 200);
+	FzSet& VisibilityTime_High = VisibilityTime.AddTriangularSet("VisibilityTime_High", 150, 200, 250);
+
+	FuzzyVariable& ShootPrecision = m_fuzzyModule->CreateFLV("ShootPrecision");
+
+	FzSet& ShootPrecision_Low = ShootPrecision.AddTriangularSet("ShootPrecision_Low", 0, 50, 100);
+	FzSet& ShootPrecision_Medium = ShootPrecision.AddTriangularSet("ShootPrecision_Medium", 0, 50, 100);
+	FzSet& ShootPrecision_High = ShootPrecision.AddTriangularSet("ShootPrecision_High", 0, 50, 100);
+
+
 }

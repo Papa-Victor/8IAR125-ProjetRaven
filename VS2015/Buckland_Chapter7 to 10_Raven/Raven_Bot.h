@@ -16,6 +16,7 @@
 #include "game/MovingEntity.h"
 #include "misc/utils.h"
 #include "Raven_TargetingSystem.h"
+#include "fuzzy/FuzzyModule.h"
 
 #include "Raven_WeaponSystem.h"
 
@@ -116,6 +117,8 @@ private:
   //the buffer for the transformed vertices
   std::vector<Vector2D>              m_vecBotVBTrans;
 
+  FuzzyModule*						m_fuzzyModule;
+
 
   //bots shouldn't be copied, only created or respawned
   Raven_Bot(const Raven_Bot&);
@@ -127,6 +130,8 @@ private:
 
   //initializes the bot's VB with its geometry
   void          SetUpVertexBuffer();
+
+  void			InitializeFuzzyModule();
 
 protected:
 	virtual void TakeAimAndShoot() const
@@ -228,6 +233,7 @@ public:
   Raven_Bot* const                   GetTargetBot()const{return m_pTargSys->GetTarget();}
   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
   Raven_SensoryMemory* const         GetSensoryMem()const{return m_pSensoryMem;}
+  FuzzyModule* const				GetFuzzyModule()const { return m_fuzzyModule; }
 
 
 };
