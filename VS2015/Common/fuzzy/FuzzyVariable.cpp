@@ -10,6 +10,8 @@
 #include <iostream>
 #include <algorithm>
 
+#include "Debug/DebugConsole.h"
+
 //------------------------------ dtor -----------------------------------------
 //-----------------------------------------------------------------------------
 FuzzyVariable::~FuzzyVariable()
@@ -29,6 +31,7 @@ FuzzyVariable::~FuzzyVariable()
 void FuzzyVariable::Fuzzify(double val)
 {    
   //make sure the value is within the bounds of this variable
+	/*debug_con << "fuzzy value : " << val << "";*/
   assert ( (val >= m_dMinRange) && (val <= m_dMaxRange) && 
            "<FuzzyVariable::Fuzzify>: value out of range");
 

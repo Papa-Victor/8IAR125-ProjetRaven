@@ -600,27 +600,82 @@ void Raven_Bot::InitializeFuzzyModule()
 
 	FuzzyVariable& DistToTarget = m_fuzzyModule->CreateFLV("DistToTarget");
 
-	FzSet& Target_Close = DistToTarget.AddLeftShoulderSet("Target_Close", 0, 75, 150);
-	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium", 75, 150, 300);
-	FzSet& Target_Far = DistToTarget.AddRightShoulderSet("Target_Far", 200, 450, 600);
+	FzSet& Target_Close = DistToTarget.AddLeftShoulderSet("Target_Close", 0, 25, 50);
+	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium", 45, 65, 75);
+	FzSet& Target_Far = DistToTarget.AddRightShoulderSet("Target_Far", 65, 75, 100);
+	FzSet& Target_VeryFar = DistToTarget.AddRightShoulderSet("Target_VeryFar", 90, 300, 500);
 
 	FuzzyVariable& Velocity = m_fuzzyModule->CreateFLV("Velocity");
 
-	FzSet& Vecocity_Low = Velocity.AddTriangularSet("Vecocity_Low", 0, 0.2, 0.4);
+	FzSet& Vecocity_Low = Velocity.AddTriangularSet("Vecocity_Low", -2, 0.2, 0.4);
 	FzSet& Vecocity_Medium = Velocity.AddTriangularSet("Vecocity_Medium", 0.3, 0.65, 0.8);
-	FzSet& Vecocity_High = Velocity.AddTriangularSet("Vecocity_High", 0.5, 0.8, 1);
+	FzSet& Vecocity_High = Velocity.AddTriangularSet("Vecocity_High", 0.5, 0.8, 2);
 
 	FuzzyVariable& VisibilityTime = m_fuzzyModule->CreateFLV("VisibilityTime");
 
-	FzSet& VisibilityTime_Low = VisibilityTime.AddTriangularSet("VisibilityTime_Low", 0, 50, 100);
-	FzSet& VisibilityTime_Medium = VisibilityTime.AddTriangularSet("VisibilityTime_Medium", 50, 150, 200);
-	FzSet& VisibilityTime_High = VisibilityTime.AddTriangularSet("VisibilityTime_High", 150, 200, 250);
+	FzSet& VisibilityTime_Low = VisibilityTime.AddTriangularSet("VisibilityTime_Low", 0, 0.2, 0.8);
+	FzSet& VisibilityTime_Medium = VisibilityTime.AddTriangularSet("VisibilityTime_Medium", 0.7, 1.2, 1.5);
+	FzSet& VisibilityTime_High = VisibilityTime.AddTriangularSet("VisibilityTime_High", 1.2, 2, 100);
 
 	FuzzyVariable& ShootPrecision = m_fuzzyModule->CreateFLV("ShootPrecision");
 
-	FzSet& ShootPrecision_Low = ShootPrecision.AddTriangularSet("ShootPrecision_Low", 0, 50, 100);
-	FzSet& ShootPrecision_Medium = ShootPrecision.AddTriangularSet("ShootPrecision_Medium", 0, 50, 100);
-	FzSet& ShootPrecision_High = ShootPrecision.AddTriangularSet("ShootPrecision_High", 0, 50, 100);
+	FzSet& ShootPrecision_VeryLow = ShootPrecision.AddLeftShoulderSet("ShootPrecision_VeryLow", 0.25, 0.245, 0.24);
+	FzSet& ShootPrecision_Low = ShootPrecision.AddLeftShoulderSet("ShootPrecision_Low", 0.245, 0.24, 0.23);
+	FzSet& ShootPrecision_Medium = ShootPrecision.AddTriangularSet("ShootPrecision_Medium", 0.25, 0.20, 0.15);
+	FzSet& ShootPrecision_High = ShootPrecision.AddRightShoulderSet("ShootPrecision_High", 0.20, 0.17, 0.15);
+	FzSet& ShootPrecision_VeryHigh = ShootPrecision.AddRightShoulderSet("ShootPrecision_VeryHigh", 0.15, 0.10, 0);
 
+	//Target_Close
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_Low), VisibilityTime_Low), ShootPrecision_Low);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_Medium), VisibilityTime_Medium), ShootPrecision_Medium);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_High), VisibilityTime_High), ShootPrecision_High);
 
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_Low), VisibilityTime_High), ShootPrecision_VeryHigh);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_Medium), VisibilityTime_Low), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_High), VisibilityTime_Medium), ShootPrecision_High);
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_Low), VisibilityTime_Medium), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_Medium), VisibilityTime_High), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Close, Vecocity_High), VisibilityTime_Low), ShootPrecision_Medium);
+
+	//Target_Medium
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_Low), VisibilityTime_Low), ShootPrecision_Medium);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_Medium), VisibilityTime_Medium), ShootPrecision_Medium);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_High), VisibilityTime_High), ShootPrecision_Medium);
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_Low), VisibilityTime_High), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_Medium), VisibilityTime_Low), ShootPrecision_Low);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_High), VisibilityTime_Medium), ShootPrecision_Low);
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_Low), VisibilityTime_Medium), ShootPrecision_Medium);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_Medium), VisibilityTime_High), ShootPrecision_Medium);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Medium, Vecocity_High), VisibilityTime_Low), ShootPrecision_Low);
+
+	//Target_Far
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_Low), VisibilityTime_Low), ShootPrecision_Medium);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_Medium), VisibilityTime_Medium), ShootPrecision_Low);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_High), VisibilityTime_High), ShootPrecision_Medium);
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_Low), VisibilityTime_High), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_Medium), VisibilityTime_Low), ShootPrecision_VeryLow);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_High), VisibilityTime_Medium), ShootPrecision_Low);
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_Low), VisibilityTime_Medium), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_Medium), VisibilityTime_High), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_Far, Vecocity_High), VisibilityTime_Low), ShootPrecision_VeryLow);
+
+	//Target_VeryFar
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_Low), VisibilityTime_Low), ShootPrecision_Low);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_Medium), VisibilityTime_Medium), ShootPrecision_Low);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_High), VisibilityTime_High), ShootPrecision_Low);
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_Low), VisibilityTime_High), ShootPrecision_High);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_Medium), VisibilityTime_Low), ShootPrecision_Low);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_High), VisibilityTime_Medium), ShootPrecision_VeryLow);
+
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_Low), VisibilityTime_Medium), ShootPrecision_Low);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_Medium), VisibilityTime_High), ShootPrecision_Medium);
+	m_fuzzyModule->AddRule(FzAND(FzAND(Target_VeryFar, Vecocity_High), VisibilityTime_Low), ShootPrecision_VeryLow);
 }

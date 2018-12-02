@@ -11,6 +11,8 @@
 #include "2D/transformations.h"
 
 
+#include "Debug/DebugConsole.h"
+
 
 //------------------------- ctor ----------------------------------------------
 //-----------------------------------------------------------------------------
@@ -177,7 +179,24 @@ void Raven_WeaponSystem::AddNoiseToAim(Vector2D& AimingPos)const
 {
   Vector2D toPos = AimingPos - m_pOwner->Pos();
 
-  Vec2DRotateAroundOrigin(toPos, RandInRange(-m_dAimAccuracy, m_dAimAccuracy));
+  FuzzyModule* fz = m_pOwner->GetFuzzyModule();
+
+  double targetVelocity = (m_pOwner->GetTargetBot()->Velocity()).Length();
+
+  double distToTarget = (m_pOwner->GetTargetBot()->Pos() - m_pOwner->Pos()).Length();
+
+  double timeVisible = m_pOwner->GetTargetSys()->GetTimeTargetHasBeenVisible();
+
+  /*debug_con << "timeVisible : " << timeVisible << "";*/
+
+  fz->Fuzzify("Velocity", targetVelocity);
+  fz->Fuzzify("DistToTarget", distToTarget);
+  fz->Fuzzify("VisibilityTime", timeVisible);
+  
+  double aimAccuracy = fz->DeFuzzify("ShootPrecision", FuzzyModule::max_av);
+  /*double aimAccuracy = m_dAimAccuracy;*/
+
+  Vec2DRotateAroundOrigin(toPos, RandInRange(-aimAccuracy, aimAccuracy));
 
   AimingPos = toPos + m_pOwner->Pos();
 }
