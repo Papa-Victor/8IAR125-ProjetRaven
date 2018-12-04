@@ -511,7 +511,7 @@ void Raven_Game::ClickRightMouseButton(POINTS p)
 //  it moves in the direcction of the key (W - UP, A - LEFT, S - DOWN, D - RIGHT)
 //  
 //-----------------------------------------------------------------------------
-void Raven_Game::MoveWASD(Vector2D p)
+void Raven_Game::MoveWASD()
 {
 	//if there is no selected bot just return;
 	if (m_pSelectedBot == NULL) return;
@@ -520,12 +520,33 @@ void Raven_Game::MoveWASD(Vector2D p)
 	if (m_pSelectedBot->isPossessed())
 	{
 		//clear any current goals
-		//m_pSelectedBot->GetBrain()->RemoveAllSubgoals();
-		m_pSelectedBot->GetSteering()->SetTarget(m_pSelectedBot->Pos() + p);
+		m_pSelectedBot->GetBrain()->RemoveAllSubgoals();
+
+		m_pSelectedBot->GetSteering()->SetTarget(m_pSelectedBot->Pos() + Vector2D(15 * (m_d - m_a),15 * (m_s - m_w)));
 		m_pSelectedBot->GetSteering()->SeekOn();
 		//m_pSelectedBot->GetBrain()->AddGoal_MoveToPosition(m_pSelectedBot->Pos() + p);
 			//AddGoal_MoveToPosition(m_pSelectedBot->Pos() + p);
 	}
+}
+
+void Raven_Game::SetW(int _w)
+{
+	m_w = _w;
+}
+
+void Raven_Game::SetA(int _a)
+{
+	m_a = _a;
+}
+
+void Raven_Game::SetS(int _s)
+{
+	m_s = _s;
+}
+
+void Raven_Game::SetD(int _d)
+{
+	m_d = _d;
 }
 
 //---------------------- ClickLeftMouseButton ---------------------------------
