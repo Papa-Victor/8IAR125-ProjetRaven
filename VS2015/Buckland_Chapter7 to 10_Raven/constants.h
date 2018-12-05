@@ -10,7 +10,7 @@ constexpr char* PerceptronFileName = "Perceptron";
 
 constexpr float MinimumSuccessRate = 0.95;
 constexpr int IterationsPerLog = 100;
-constexpr int MaxIterations = 1000;
+constexpr int MaxIterations = 10000;
 
 constexpr unsigned char FramesPerRecord = 15;
 constexpr int EntriesPerWrite = 4096;

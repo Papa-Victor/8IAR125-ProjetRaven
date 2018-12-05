@@ -58,8 +58,9 @@ void Raven_Game::Train()
 	arma::subview<double>::extract(testingData, subTestingData);
 	arma::subview<double>::extract(testingLabels, subTestingLabels);
 
+	int i = 0;
 	float successRate = 0.0f;
-	for (int i = 0; i < MaxIterations && successRate < MinimumSuccessRate; i += IterationsPerLog)
+	while (i < MaxIterations && successRate < MinimumSuccessRate)
 	{
 		this->_perceptron->Train(trainingData, arma::conv_to<arma::Row<size_t>>::from(trainingLabels.row(0)), 2);
 
@@ -76,7 +77,7 @@ void Raven_Game::Train()
 		}
 
 		successRate = static_cast<float>(equalOccurences) / static_cast<float>(predictedLabels.n_cols);
-		debug_con << "(" << i << ") " << (successRate * 100) << "% success rate.\n";
+		debug_con << "(" << (i += IterationsPerLog) << ") " << (successRate * 100) << "% success rate.\n";
 		debug_con.flush();
 	}
 

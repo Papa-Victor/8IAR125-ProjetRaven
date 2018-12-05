@@ -2,6 +2,7 @@
 
 #include "Raven_Game.h"
 #include "armory/Raven_Weapon.h"
+#include "Debug/DebugConsole.h"
 #include <armadillo/armadillo.h>
 
 void Raven_WeaponSystem::TakeAimAndShoot(mlpack::perceptron::Perceptron<mlpack::perceptron::SimpleWeightUpdate, mlpack::perceptron::RandomInitialization>* firingBehavior) const

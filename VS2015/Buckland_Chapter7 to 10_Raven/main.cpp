@@ -743,12 +743,23 @@ int WINAPI WinMain(HINSTANCE hInstance,
 				}
 			}
 
-			if (timer.ReadyForNextFrame() && msg.message != WM_QUIT)
+			try
 			{
-				g_pRaven->Update();
+				if (timer.ReadyForNextFrame() && msg.message != WM_QUIT)
+				{
+					g_pRaven->Update();
 
-				//render 
-				RedrawWindow(hWnd);
+					//render 
+					RedrawWindow(hWnd);
+				}
+			}
+			catch (const std::exception& ex)
+			{
+				// Save the data we got.
+				if (g_pRaven->IsRecording())
+				{
+					ToggleRecording(hWnd);
+				}
 			}
 
 			//give the OS a little time
