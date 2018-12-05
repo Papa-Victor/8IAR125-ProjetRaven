@@ -163,28 +163,32 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 		{
 		case 'W':
 		{
-			g_pRaven->MoveWASD(Vector2D(0, -1));
+			g_pRaven->SetW(1);
+			g_pRaven->MoveWASD();
 		}
 
 		break;
 
 		case 'A':
 		{
-			g_pRaven->MoveWASD(Vector2D(-1, 0));
+			g_pRaven->SetA(1);
+			g_pRaven->MoveWASD();
 		}
 
 		break;
 
 		case 'S':
 		{
-			g_pRaven->MoveWASD(Vector2D(0, 1));
+			g_pRaven->SetS(1);
+			g_pRaven->MoveWASD();
 		}
 
 		break;
 
 		case 'D':
 		{
-			g_pRaven->MoveWASD(Vector2D(1, 0));
+			g_pRaven->SetD(1);
+			g_pRaven->MoveWASD();
 		}
 
 		break;
@@ -242,6 +246,30 @@ LRESULT CALLBACK WindowProc(HWND   hwnd,
 		case 'X':
 
 			g_pRaven->ExorciseAnyPossessedBot();
+
+			break;
+
+		case 'W':
+	
+			g_pRaven->SetW(0);
+
+			break;
+
+		case 'A':
+		
+			g_pRaven->SetA(0);
+
+			break;
+
+		case 'S':
+		
+			g_pRaven->SetS(0);
+
+			break;
+
+		case 'D':
+		
+			g_pRaven->SetD(0);
 
 			break;
 

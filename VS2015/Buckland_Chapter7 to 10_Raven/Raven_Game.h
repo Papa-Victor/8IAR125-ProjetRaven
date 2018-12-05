@@ -65,6 +65,9 @@ private:
 	//This class manages the teams
 	TeamManager*					   m_pTeamManager;
 
+	//Hold current pressed keys for movement
+	int                            m_w, m_a, m_s, m_d = 0;
+
 	//if true the game will be paused
 	bool                             m_bPaused;
 
@@ -183,7 +186,12 @@ public:
 	// bot/s will attempt to move to that position.
 	void        ClickRightMouseButton(POINTS p);
 
-	void MoveWASD(Vector2D p);
+	void MoveWASD();
+
+	void SetW(int _w);
+	void SetA(int _a);
+	void SetS(int _s);
+	void SetD(int _d);
 
 	//this method is called when the user clicks the left mouse button. If there
 	//is a possessed bot, this fires the weapon, else does nothing
